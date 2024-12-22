@@ -1,4 +1,4 @@
-import Problems from "@/Components/Problems/Problems";
+import Problems from "@/components/Problems/Problems";
 
 export default function ChallengesPage() {
   return (

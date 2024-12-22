@@ -1,10 +1,10 @@
-import About from "@/Components/About/About";
-import FAQ from "@/Components/FAQ/FAQ";
-import Hero from "@/Components/Hero/Hero";
-import Itenary from "@/Components/Itenary/Itenary";
-import Prize from "@/Components/Prizes/Prizes";
-import Sponsors from "@/Components/Sponsors/Sponsors";
-import Theme from "@/Components/Theme/Theme";
+import About from "@/components/About/About";
+import FAQ from "@/components/FAQ/FAQ";
+import Hero from "@/components/Hero/Hero";
+import Itenary from "@/components/Itenary/Itenary";
+import Prize from "@/components/Prizes/Prizes";
+import Sponsors from "@/components/Sponsors/Sponsors";
+import Theme from "@/components/Theme/Theme";
 
 export default function Home() {
   return (
