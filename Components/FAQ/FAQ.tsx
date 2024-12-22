@@ -3,7 +3,7 @@ import styles from "./FAQ.module.css";
 
 const FAQ = () => {
   return (
-    <div>FAQ</div>
+    <div>FAQ 2</div>
   )
 }
 
