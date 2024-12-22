@@ -1,9 +1,14 @@
 import About from "@/Components/About/About";
+import Header from "@/Components/Header/Header";
 
 export default function AboutPage() {
   return (
     <>
-    <About />
+      <div>
+        <Header text="About" />
+        <About />
+      </div>
+
     </>
   );
 }
