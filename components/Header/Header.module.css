@@ -2,17 +2,16 @@
   position: relative;
   overflow: hidden;
   display: inline-block;
-  padding: 0 0.5rem 0 0.5rem;
+  padding: 0 0.5rem;
   border-radius: 1px;
-  @apply sm:p-0;
 }
 
 .headingText {
-  @apply font-semibold leading-none  sm:text-7xl xs:text-6xl text-5xl;
+  @apply font-semibold leading-none lg:text-8xl sm:text-7xl xs:text-6xl text-5xl;
 }
 
 .heading:hover .headingText {
-  text-shadow: 0 0 10px rgba(16, 220, 60, 0.5); 
+  text-shadow: 0 0 20px rgba(16, 220, 60, 0.5); 
 }
 
 .heading > span {
@@ -47,3 +46,5 @@
     transform: translateX(100%);
   }
 }
+
+
