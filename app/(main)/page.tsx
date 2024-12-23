@@ -9,13 +9,13 @@ import Theme from "@/components/Theme/Theme";
 export default function Home() {
   return (
     <>
-    <Hero />
-    <About />
-    <Theme />
-    <Itenary />
-    <Sponsors />
-    <Prize />
-    <FAQ />
+      <Hero />
+      <About />
+      <Theme />
+      <Itenary />
+      <Sponsors />
+      <Prize />
+      <FAQ />
     </>
   );
 }

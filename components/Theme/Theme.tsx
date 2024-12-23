@@ -122,7 +122,7 @@ const Theme = () => {
   });
 
   return (
-    <section id="themes" className="py-12 relative z-50 bg-[#07182d]">
+    <section id="themes" className="py-12 relative z-50 bg-[var(--background)]">
       <div className="absolute inset-0 bg-scrolling-pattern animate-bg-scroll"></div>
 
       <div className="container mx-auto px-4">
