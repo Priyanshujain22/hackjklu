@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import themesData from '../../data/themes.json';
 import Header from "../Header/Header";
-import styles from "./Themes.module.css";
+// import styles from "./Themes.module.css";
 
 interface CardData {
   image: string;
@@ -20,17 +20,20 @@ const useIntersectionObserver = (options: IntersectionObserverOptions = {}) => {
     const observer = new IntersectionObserver(([entry]) => {
       setIsIntersecting(entry.isIntersecting);
     }, options);
-
-    if (elementRef.current) {
-      observer.observe(elementRef.current);
+  
+    const currentRef = elementRef.current;
+  
+    if (currentRef) {
+      observer.observe(currentRef);
     }
-
+  
     return () => {
-      if (elementRef.current) {
-        observer.unobserve(elementRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, [options]);
+  
 
   return [elementRef, isIntersecting] as const;
 };
@@ -114,6 +117,7 @@ const Card: React.FC<CardData & { delay?: number }> = React.memo(
   }
 );
 
+Card.displayName = "Card";
 
 const Theme = () => {
   const [headerRef, isHeaderVisible] = useIntersectionObserver({

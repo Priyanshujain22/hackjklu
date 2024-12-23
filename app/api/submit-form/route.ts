@@ -23,7 +23,7 @@ export async function POST(req: Request) {
     const sheetId = process.env.GOOGLE_SHEET_ID;
     const range = "Sheet1!A1:H1";
 
-    const response = await google.sheets("v4").spreadsheets.values.append({
+    await google.sheets("v4").spreadsheets.values.append({
       auth,
       spreadsheetId: sheetId!,
       range,
@@ -45,8 +45,7 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json({ message: "Form data successfully submitted!" }, { status: 200 });
-  } catch (error) {
-    console.error("Error submitting form:", error);
+  } catch {
     return NextResponse.json({ message: "Internal server error" }, { status: 500 });
   }
 }

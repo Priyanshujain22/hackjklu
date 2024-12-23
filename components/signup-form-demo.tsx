@@ -4,7 +4,17 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import themes from "../data/themes.json";
 
-// Utility function to sanitize input (trims whitespace, removes invalid characters)
+interface FormErrors {
+  name?: string;
+  email?: string;
+  phone?: string;
+  designation?: string;
+  organization?: string;
+  theme?: string;
+  problem?: string;
+  description?: string;
+}
+
 const sanitizeInput = (input: string) => input.trim();
 
 export default function SignupFormDemo() {
@@ -20,22 +30,22 @@ export default function SignupFormDemo() {
   });
 
   const [formStatus, setFormStatus] = useState("");
-  const [errors, setErrors] = useState<any>({});
+  const [errors, setErrors] = useState<FormErrors>({});
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
     const { id, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [id]: value }));
   };
 
   const validateForm = () => {
-    const newErrors: any = {};
+    const newErrors: FormErrors = {};
 
-    // Name: Check for presence and whitespace
     if (!formData.name || formData.name.trim() === "") {
       newErrors.name = "Name is required";
     }
 
-    // Email: Check for presence and valid format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email || formData.email.trim() === "") {
       newErrors.email = "Email is required";
@@ -43,49 +53,41 @@ export default function SignupFormDemo() {
       newErrors.email = "Please enter a valid email";
     }
 
-    // Phone: Check for presence and valid format (basic phone number format)
-    const phoneRegex = /^[0-9]{10}$/; // Ensure phone number has 10 digits
+    const phoneRegex = /^[0-9]{10}$/;
     if (!formData.phone || formData.phone.trim() === "") {
       newErrors.phone = "Phone number is required";
     } else if (!phoneRegex.test(formData.phone)) {
       newErrors.phone = "Please enter a valid phone number (10 digits)";
     }
 
-    // Designation: Check if selected
     if (!formData.designation) {
       newErrors.designation = "Designation is required";
     }
 
-    // Organization: Check if entered
     if (!formData.organization || formData.organization.trim() === "") {
       newErrors.organization = "Organization is required";
     }
 
-    // Theme: Ensure a theme is selected
     if (!formData.theme) {
       newErrors.theme = "Please select a theme";
     }
 
-    // Problem: Ensure entered
     if (!formData.problem || formData.problem.trim() === "") {
       newErrors.problem = "Problem description is required";
     }
 
-    // Description: Ensure entered
     if (!formData.description || formData.description.trim() === "") {
       newErrors.description = "Description is required";
     }
 
     setErrors(newErrors);
 
-    // Return true if there are no errors, false if errors present
     return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Validate form before proceeding
     if (!validateForm()) {
       setFormStatus("Please fill in all required fields correctly");
       return;
@@ -93,7 +95,6 @@ export default function SignupFormDemo() {
 
     setFormStatus("Submitting...");
 
-    // Sanitize inputs to remove any extraneous spaces or bad characters
     const sanitizedFormData = {
       ...formData,
       name: sanitizeInput(formData.name),
@@ -122,26 +123,23 @@ export default function SignupFormDemo() {
       } else {
         setFormStatus(data.message || "Error submitting the form");
       }
-    } catch (error) {
+    } catch {
       setFormStatus("Network error. Please try again.");
     }
   };
 
   return (
     <div className="max-w-7xl mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-gray-900 flex flex-col md:flex-row gap-8">
-      {/* Left Section: Image and Description */}
       <div className="md:w-1/2 flex flex-col justify-center items-center">
         <Image src="/hackjklu-logo.png" alt="Hack JKLU v4" width={200} height={200} className="mb-4" />
         <h2 className="font-bold text-xl text-neutral-900 mb-4 text-center">Welcome to Hack JKLU v4</h2>
         <p className="text-neutral-800 text-sm max-w-md mx-auto text-center">
-          Provide your problem statements and solutions to be part of the Hackathon. Let's innovate and collaborate together!
+          Provide your problem statements and solutions to be part of the Hackathon. Let&apos;s innovate and collaborate together!
         </p>
       </div>
 
-      {/* Right Section: Form */}
       <div className="md:w-1/2 text-primary">
         <form className="grid grid-cols-1 md:grid-cols-2 gap-4" onSubmit={handleSubmit}>
-          {/* Form Fields */}
           <LabelInputContainer>
             <Input
               id="name"

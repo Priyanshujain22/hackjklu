@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "./Itenary.module.css";
+// import styles from "./Itenary.module.css";
 
 const Itenary = () => {
   return (
