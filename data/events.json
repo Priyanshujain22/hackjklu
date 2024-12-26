@@ -1,0 +1,37 @@
+[
+    {
+        "title": "BIT Code",
+        "description": "A Monthly event of coding contest based on algorithms, data structures and problem solving.",
+        "bgImage": "/events/bitcode.jpg"
+    },
+    {
+        "title": "WEB-A-THON",
+        "description": "A web development contest for solving the general BIT Sindri problems. This contest helps all the students in boosting their productivity and innovation together with like-minded people.",
+        "bgImage": "/events/web-a-thon.jpg"
+    },
+    {
+        "title": "CodeStorm",
+        "description": "A coding competetion where participants get to engage themselves in showcasing their coding skills by solving a series of mind bending problems with ingenious algorithms.",
+        "bgImage": "/events/codestorm.jpg"
+    },
+    {
+        "title": "The Monsoon Code",
+        "description": "The Monsoon Code 2020 in association with Codechef and TAP Cell, BIT Sindri was a short contest with problems varying from implementations to usage of algorithms.",
+        "bgImage": "/events/tmc.jpeg"
+    },
+    {
+        "title": "Design-a-Tello",
+        "description": "A Logo Re-Design competition conducted by the design team of hncc where one can showcase their creativity and imagination",
+        "bgImage": "/events/designatello.jpg"
+    },
+    {
+        "title": "DOTY",
+        "description": "The event had four basic domains based on the platform for development, viz. App Development, Game Development, Web Development and Machine Learning implementations.",
+        "bgImage": "/events/doty.jpg"
+    },
+    {
+        "title": "Hackatron",
+        "description": "HnCC BIT Sindri is here with a national level hackathon, \"Hackatron\" and aims to promote solutions which are hard to find. It comes with cash prizes worth Rs 55000 and cool swags.",
+        "bgImage": "/events/hackatron.jpg"
+    }
+]
