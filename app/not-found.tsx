@@ -93,8 +93,8 @@ const NotFound: FC = () => {
         </h2>
 
         <p className="text-gray-450 mb-8 max-w-md text-lg">
-          The page you're looking for has vanished into the digital void.
-          Let's get you back to familiar territory.
+          The page you&apos;re looking for has vanished into the digital void.
+          Let&apos;s get you back to familiar territory.
         </p>
 
         <Link href="/">
