@@ -1,10 +1,29 @@
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "../ui/accordion";
 import React from 'react';
+import Header from '../Header/Header';
+import faqData from "@/data/faq.json";
 // import styles from "./FAQ.module.css";
 
 const FAQ = () => {
   return (
-    <div>FAQ 2</div>
-  )
+    <section className="p-8 rounded-lg">
+      <h2 className="text-center mb-10">
+        <Header text="FAQ" />
+      </h2>
+      <Accordion type="single" defaultValue="item-0">
+        {faqData.map((faq, index) => (
+          <AccordionItem key={index} value={`item-${index}`} className="border-b border-gray-700">
+            <AccordionTrigger className="text-lg font-bold py-4 flex justify-between items-center hover:text-[#10dc3c]">
+              {faq.question}
+            </AccordionTrigger>
+            <AccordionContent className="py-4 text-lg text-gray-300">
+              {faq.answer}
+            </AccordionContent>
+          </AccordionItem>
+        ))}
+      </Accordion>
+    </section>
+  );
 }
 
-export default FAQ
+export default FAQ;
