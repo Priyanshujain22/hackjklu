@@ -5,6 +5,7 @@ import Itenary from "@/components/Itenary/Itenary";
 import Prize from "@/components/Prizes/Prizes";
 import Sponsors from "@/components/Sponsors/Sponsors";
 import Theme from "@/components/Theme/Theme";
+import GalleryHome from "@/components/Gallery/GalleryHome";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Itenary />
       <Sponsors />
       <Prize />
+      <GalleryHome />
       <FAQ />
     </>
   );
