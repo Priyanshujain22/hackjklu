@@ -105,7 +105,7 @@ const Card: React.FC<CardData & { delay?: number }> = React.memo(
             className={`absolute bottom-0 left-0 right-0 p-4 text-white transition-transform duration-700 ease-out ${isHovered ? "translate-y-8" : "translate-y-[40%]"
               }`}
           >
-            <div className="relative z-10">
+            <div className="relative z-1">
               <h2 className="text-lg sm:text-xl font-bold mb-8 text-shadow-lg">
                 {title}
               </h2>
@@ -126,13 +126,13 @@ const Theme = () => {
   });
 
   return (
-    <section id="themes" className="py-12 relative z-50 bg-[var(--background)]">
+    <section id="themes" className="py-12 relative z-5 bg-[var(--background)]">
       <div className="absolute inset-0 bg-scrolling-pattern animate-bg-scroll"></div>
 
       <div className="container mx-auto px-4">
         <div
           ref={headerRef}
-          className={`text-gray-200 text-center relative z-20 transition-all duration-700 ${isHeaderVisible
+          className={`text-gray-200 text-center relative z-2 transition-all duration-700 ${isHeaderVisible
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-5"
             }`}
