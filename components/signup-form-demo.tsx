@@ -3,6 +3,7 @@ import { Input } from "./ui/input";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import themes from "../data/themes.json";
+import NextLink from "next/link";
 
 interface FormErrors {
   name?: string;
@@ -150,6 +151,11 @@ export default function SignupFormDemo() {
         <p className="text-neutral-800 text-sm max-w-md mx-auto text-center">
           Provide your problem statements and solutions to be part of the Hackathon. Let&apos;s innovate and collaborate together!
         </p>
+        <NextLink href="/" passHref>
+          <button className="mt-2 bg-[#1ab331] text-black px-5 py-3 rounded-md shadow hover:bg-[#10fcd2] focus:ring-2 focus:ring-green-400">
+            Go To Home
+          </button>
+        </NextLink>
       </div>
 
       <div className="md:w-1/2 text-primary">

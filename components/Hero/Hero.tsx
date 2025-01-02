@@ -37,22 +37,19 @@ const Hero = () => {
           </p>
           <div className="hidden md:flex items-center justify-between">
             <RegisterBtn />
-            <NextLink href="https://hackjklu.com/discord" passHref>
+            <NextLink href="/give-your-statement" passHref>
               <div className={`ml-4 relative`}>
-                <div className="rounded-md bg-[#7289da] p-0.5">
-                  <div className="rounded-[0.3rem] items-center justify-center bg-[#23272a] py-2 px-3">
-                    <span className="text-white text-sm">Join us on Discord</span>
+                <div className="rounded-md bg-[#00bcd4] p-0.5">
+                  <div className="rounded-[0.3rem] items-center justify-center bg-[#00363d] py-3 px-5">
+                    <span className="text-white text-lg">Give Your Statement</span>
                   </div>
                 </div>
               </div>
             </NextLink>
-
-
           </div>
         </div>
 
-
-        <div className=" ml-[2rem] flex justfiy-center items-center">
+        <div className=" ml-[2rem] flex justify-center items-center">
           <Image
             className=""
             src="/hero-image.png"
@@ -74,11 +71,11 @@ const Hero = () => {
           <RegisterBtn />
         </div>
         <div className="md:hidden flex items-center justify-between">
-          <NextLink href="https://hackjklu.com/discord" passHref>
+          <NextLink href="/give-your-statement" passHref>
             <div className={`relative`}>
-              <div className="rounded-md bg-[#7289da] p-0.5">
-                <div className="rounded-[0.3rem] items-center justify-center bg-[#23272a] px-3 py-2">
-                  <span className="text-white text-sm">Join us on Discord</span>
+              <div className="rounded-md bg-[#00bcd4] p-0.5">
+                <div className="rounded-[0.3rem] items-center justify-center bg-[#00363d] px-3 py-2">
+                  <span className="text-white text-sm">Give Your Statement</span>
                 </div>
               </div>
             </div>
@@ -89,4 +86,4 @@ const Hero = () => {
   )
 }
 
-export default Hero
+export default Hero;
