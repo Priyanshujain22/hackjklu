@@ -37,59 +37,73 @@ export default function SignupFormDemo() {
   ) => {
     const { id, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [id]: value }));
+    validateField(id, value);
+  };
+
+  const validateField = (field: string, value: string) => {
+    const fieldErrors: FormErrors = { ...errors };
+
+    switch (field) {
+      case "name":
+        fieldErrors.name = value.trim() ? "" : "Name is required";
+        break;
+      case "email":
+        fieldErrors.email = value.trim()
+          ? /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
+            ? ""
+            : "Please enter a valid email"
+          : "Email is required";
+        break;
+      case "phone":
+        fieldErrors.phone = value.trim()
+          ? /^[0-9]{10}$/.test(value)
+            ? ""
+            : "Please enter a valid phone number (10 digits)"
+          : "Phone number is required";
+        break;
+      case "designation":
+        fieldErrors.designation = value ? "" : "Designation is required";
+        break;
+      case "organization":
+        fieldErrors.organization = value.trim() ? "" : "Organization is required";
+        break;
+      case "theme":
+        fieldErrors.theme = value ? "" : "Please select a theme";
+        break;
+      case "problem":
+        fieldErrors.problem = value.trim() ? "" : "Problem description is required";
+        break;
+      case "description":
+        fieldErrors.description = value.trim() ? "" : "Description is required";
+        break;
+      default:
+        break;
+    }
+
+    setErrors(fieldErrors);
   };
 
   const validateForm = () => {
     const newErrors: FormErrors = {};
 
-    if (!formData.name || formData.name.trim() === "") {
-      newErrors.name = "Name is required";
+    Object.keys(formData).forEach((key) => {
+      validateField(key, (formData as any)[key]);
+    });
+
+    const firstErrorMessage = Object.values(errors).find((error) => error);
+    
+    if (firstErrorMessage) {
+      setFormStatus(firstErrorMessage);
+      return false;
     }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!formData.email || formData.email.trim() === "") {
-      newErrors.email = "Email is required";
-    } else if (!emailRegex.test(formData.email)) {
-      newErrors.email = "Please enter a valid email";
-    }
-
-    const phoneRegex = /^[0-9]{10}$/;
-    if (!formData.phone || formData.phone.trim() === "") {
-      newErrors.phone = "Phone number is required";
-    } else if (!phoneRegex.test(formData.phone)) {
-      newErrors.phone = "Please enter a valid phone number (10 digits)";
-    }
-
-    if (!formData.designation) {
-      newErrors.designation = "Designation is required";
-    }
-
-    if (!formData.organization || formData.organization.trim() === "") {
-      newErrors.organization = "Organization is required";
-    }
-
-    if (!formData.theme) {
-      newErrors.theme = "Please select a theme";
-    }
-
-    if (!formData.problem || formData.problem.trim() === "") {
-      newErrors.problem = "Problem description is required";
-    }
-
-    if (!formData.description || formData.description.trim() === "") {
-      newErrors.description = "Description is required";
-    }
-
-    setErrors(newErrors);
-
-    return Object.keys(newErrors).length === 0;
+    return true;
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!validateForm()) {
-      setFormStatus("Please fill in all required fields correctly");
       return;
     }
 
@@ -119,7 +133,7 @@ export default function SignupFormDemo() {
       const data = await response.json();
 
       if (response.ok) {
-        setFormStatus("Form submitted successfully!");
+        setFormStatus("Form submitted!");
       } else {
         setFormStatus(data.message || "Error submitting the form");
       }
@@ -140,17 +154,24 @@ export default function SignupFormDemo() {
 
       <div className="md:w-1/2 text-primary">
         <form className="grid grid-cols-1 md:grid-cols-2 gap-4" onSubmit={handleSubmit}>
-          <LabelInputContainer>
-            <Input
-              id="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Your Name"
-              type="text"
-              required
-            />
-            {errors.name && <span className="text-red-600 text-xs">{errors.name}</span>}
-          </LabelInputContainer>
+          {[
+            { id: "name", type: "text", placeholder: "Your Name" },
+            { id: "email", type: "email", placeholder: "your@mail.com" },
+            { id: "phone", type: "tel", placeholder: "Your Number" },
+            { id: "organization", type: "text", placeholder: "Your Organization" },
+            { id: "problem", type: "text", placeholder: "Describe Your Problem", isFullRow: true },
+          ].map(({ id, type, placeholder, isFullRow }) => (
+            <LabelInputContainer className={isFullRow ? "md:col-span-2" : ""} key={id}>
+              <Input
+                id={id}
+                value={(formData as any)[id]}
+                onChange={handleChange}
+                placeholder={placeholder}
+                type={type}
+                required
+              />
+            </LabelInputContainer>
+          ))}
 
           <LabelInputContainer>
             <select
@@ -167,43 +188,6 @@ export default function SignupFormDemo() {
               <option value="software-engineer">Software Engineer</option>
               <option value="other">Other</option>
             </select>
-            {errors.designation && <span className="text-red-600 text-xs">{errors.designation}</span>}
-          </LabelInputContainer>
-
-          <LabelInputContainer>
-            <Input
-              id="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="your@mail.com"
-              type="email"
-              required
-            />
-            {errors.email && <span className="text-red-600 text-xs">{errors.email}</span>}
-          </LabelInputContainer>
-
-          <LabelInputContainer>
-            <Input
-              id="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              placeholder="Your Number"
-              type="tel"
-              required
-            />
-            {errors.phone && <span className="text-red-600 text-xs">{errors.phone}</span>}
-          </LabelInputContainer>
-
-          <LabelInputContainer>
-            <Input
-              id="organization"
-              value={formData.organization}
-              onChange={handleChange}
-              placeholder="Your Organization"
-              type="text"
-              required
-            />
-            {errors.organization && <span className="text-red-600 text-xs">{errors.organization}</span>}
           </LabelInputContainer>
 
           <LabelInputContainer>
@@ -223,19 +207,6 @@ export default function SignupFormDemo() {
                 </option>
               ))}
             </select>
-            {errors.theme && <span className="text-red-600 text-xs">{errors.theme}</span>}
-          </LabelInputContainer>
-
-          <LabelInputContainer className="md:col-span-2">
-            <Input
-              id="problem"
-              value={formData.problem}
-              onChange={handleChange}
-              placeholder="Describe Your Problem"
-              type="text"
-              required
-            />
-            {errors.problem && <span className="text-red-600 text-xs">{errors.problem}</span>}
           </LabelInputContainer>
 
           <LabelInputContainer className="md:col-span-2">
@@ -244,20 +215,23 @@ export default function SignupFormDemo() {
               value={formData.description}
               onChange={handleChange}
               placeholder="Provide a detailed description here"
-              className="flex h-28 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring md:text-sm"
+              className="flex h-28 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm placeholder:text-muted-foreground focus-visible:ring-1 focus-visible:ring-ring"
               required
             />
-            {errors.description && <span className="text-red-600 text-xs">{errors.description}</span>}
           </LabelInputContainer>
 
           <div className="md:col-span-2 mt-4">
             <button
-              className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium"
+              className={`block w-full text-white rounded-md h-10 font-medium ${
+                formStatus === "Submitting..."
+                  ? "bg-gray-500"
+                  : "bg-gradient-to-br from-black to-neutral-600"
+              }`}
               type="submit"
+              disabled={formStatus === "Submitting..."}
             >
-              Submit
+              {formStatus || "Submit"}
             </button>
-            {formStatus && <p>{formStatus}</p>}
           </div>
         </form>
       </div>
@@ -271,6 +245,4 @@ const LabelInputContainer = ({
 }: {
   children: React.ReactNode;
   className?: string;
-}) => (
-  <div className={cn("flex flex-col space-y-2", className)}>{children}</div>
-);
+}) => <div className={cn("flex flex-col space-y-2", className)}>{children}</div>;

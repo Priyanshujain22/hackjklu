@@ -9,11 +9,11 @@ const images = Array.from({ length: 18 }, (_, i) => ({
 
 const GalleryHome = () => {
   return (
-    <section className="p-8 rounded-lg">
+    <section className="p-8">
       <h2 className="text-center mb-10">
-        <Header text="Photos from Past" />
+        <Header text="Past Photos" />
       </h2>
-      <div className="">
+      <div className="py-10">
         {Array.from({ length: 3 }).map((_, rowIdx) => (
           <InfiniteMovingCards
             key={rowIdx}

@@ -6,7 +6,7 @@ import faqData from "@/data/faq.json";
 
 const FAQ = () => {
   return (
-    <section className="p-8 rounded-lg">
+    <section className="p-8">
       <h2 className="text-center mb-10">
         <Header text="FAQ" />
       </h2>
