@@ -4,6 +4,7 @@ import React from "react";
 import { cn } from "@/lib/utils";  // Utility class for conditional styling
 import Link from "next/link";
 import styles from "../Navbar/Navbar.module.css";  // Use CSS Module for shared styles
+import Image from "next/image";  // Import Image from next/image
 
 export const FloatingNav = ({
   navItems,
@@ -30,14 +31,16 @@ export const FloatingNav = ({
       )}
     >
       <div className={cn(styles.logoContainer, "flex items-center space-x-1")}>
-        <img
+        <Image
           src="/hackjklu-logo.png"
           alt="Hack JKLU Logo"
+          width={48}  // Add width for optimization
+          height={48}  // Add height for optimization
           className={cn(styles.logo, "h-12 pl-0")}
         />
         <h1
           className={cn(
-            styles.logoHeading,
+            "",
             "text-2xl lg:text-4xl pl-2 font-extrabold text-[#10dc3c]"
           )}
         >

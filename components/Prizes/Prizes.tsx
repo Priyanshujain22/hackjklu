@@ -1,14 +1,18 @@
 "use client";
 
-import React from "react";
+import React, { FC } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
-// import styles from "./Prizes.module.css";
 
 import { Tally1, Tally2, Tally3 } from 'lucide-react';
 import Header from "../Header/Header";
 
-export const Icon = ({ className, ...rest }: any) => {
+// Define props for the Icon component
+interface IconProps extends React.SVGProps<SVGSVGElement> {
+  className?: string;
+}
+
+export const Icon: FC<IconProps> = ({ className, ...rest }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -93,7 +97,6 @@ const Prize = () => {
             ]}
             dotSize={2}
           />
-          {/* Radial gradient for the cute fade */}
           <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/90" />
         </Card>
         <Card title="INR 20000" icon={<Tally3 size={64} />}>
@@ -104,7 +107,8 @@ const Prize = () => {
           />
         </Card>
       </div>
-    </section>)
-}
+    </section>
+  );
+};
 
-export default Prize
+export default Prize;

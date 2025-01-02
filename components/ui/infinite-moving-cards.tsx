@@ -1,7 +1,8 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import Image from "next/image";
 
 export const InfiniteMovingCards = ({
   items,
@@ -58,15 +59,17 @@ export const InfiniteMovingCards = ({
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
       >
-        {items.map((item, idx) => (
+        {items.map((item) => (
           <li
             className="flex-shrink-0 w-[200px] h-[150px] md:w-[300px] md:h-[200px] rounded-lg overflow-hidden shadow-lg transition-shadow duration-300 hover:shadow-[0_0_2px_#10cf23,0_0_5px_#10cf23]"
             key={item.name}
           >
-            <img
+            <Image
               src={item.src}
               alt={item.name}
-              className="w-full h-full object-cover"
+              width={300}  // Automatically handled by Next.js
+              height={200}  // Automatically handled by Next.js
+              className="object-cover"
             />
           </li>
         ))}

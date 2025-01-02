@@ -107,7 +107,7 @@ const Problems = () => {
         </div>
         {filteredChallenges.length === 0 && (
           <p className="text-center text-gray-400">
-            Can't find any matches for the input search.
+            Can&apos;t find any matches for the input search.
           </p>
         )}
         {filteredChallenges.map((challenge: Challenge) => (

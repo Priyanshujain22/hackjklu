@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import NextLink from "next/link";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import styles from "./Footer.module.css";
 
@@ -109,10 +110,12 @@ const Footer: React.FC = () => {
 
                 <div className="flex flex-col md:flex-row justify-between items-center mt-8">
                     <div className="flex flex-row items-center">
-                        <img
+                        <Image
                             src="/hackjklu-logo.png"
                             alt="Hack JKLU Logo"
-                            className={cn(styles.logo, "h-14 pl-8")}
+                            width={56}
+                            height={56}
+                            className={cn(styles.logo)}
                         />
                         <h1
                             className={cn(

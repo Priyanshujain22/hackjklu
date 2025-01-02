@@ -5,6 +5,19 @@ import Image from "next/image";
 import themes from "../data/themes.json";
 import NextLink from "next/link";
 
+// Define form data type
+interface FormData {
+  name: string;
+  email: string;
+  phone: string;
+  designation: string;
+  organization: string;
+  theme: string;
+  problem: string;
+  description: string;
+}
+
+// Define form errors type
 interface FormErrors {
   name?: string;
   email?: string;
@@ -16,10 +29,11 @@ interface FormErrors {
   description?: string;
 }
 
+// Utility function to sanitize input
 const sanitizeInput = (input: string) => input.trim();
 
 export default function SignupFormDemo() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     phone: "",
@@ -38,10 +52,10 @@ export default function SignupFormDemo() {
   ) => {
     const { id, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [id]: value }));
-    validateField(id, value);
+    validateField(id as keyof FormData, value);
   };
 
-  const validateField = (field: string, value: string) => {
+  const validateField = (field: keyof FormData, value: string) => {
     const fieldErrors: FormErrors = { ...errors };
 
     switch (field) {
@@ -85,20 +99,17 @@ export default function SignupFormDemo() {
   };
 
   const validateForm = () => {
-    const newErrors: FormErrors = {};
+    let valid = true;
+    const updatedErrors: FormErrors = {};
 
     Object.keys(formData).forEach((key) => {
-      validateField(key, (formData as any)[key]);
+      const value = formData[key as keyof FormData];
+      validateField(key as keyof FormData, value);
+      if (value.trim() === "") valid = false;
     });
 
-    const firstErrorMessage = Object.values(errors).find((error) => error);
-    
-    if (firstErrorMessage) {
-      setFormStatus(firstErrorMessage);
-      return false;
-    }
-
-    return true;
+    setErrors(updatedErrors);
+    return valid;
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -170,7 +181,7 @@ export default function SignupFormDemo() {
             <LabelInputContainer className={isFullRow ? "md:col-span-2" : ""} key={id}>
               <Input
                 id={id}
-                value={(formData as any)[id]}
+                value={formData[id as keyof FormData]}
                 onChange={handleChange}
                 placeholder={placeholder}
                 type={type}
@@ -245,6 +256,7 @@ export default function SignupFormDemo() {
   );
 }
 
+// LabelInputContainer Component
 const LabelInputContainer = ({
   children,
   className,

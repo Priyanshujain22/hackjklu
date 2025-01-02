@@ -32,7 +32,7 @@ const Hero = () => {
           <p className="hidden md:block text-gray-300 text-[1.1rem] mb-[2rem]">
             Come be a part of an event where amazing minds team up to solve
             problems and bring new ideas to life. The top three contestants will
-            each win prizes. Don't miss out—register today and put your skills
+            each win prizes. Don&apos;t miss out—register today and put your skills
             to the test in the mainframe!
           </p>
           <div className="hidden md:flex items-center justify-between">
@@ -64,7 +64,7 @@ const Hero = () => {
         <p className="block md:hidden text-center text-gray-300 text-[0.9rem] mb-[1.5rem]">
           Come be a part of an event where amazing minds team up to solve
           problems and bring new ideas to life. The top three contestants will
-          each win prizes. Don't miss out—register today and put your skills to
+          each win prizes. Don&apos;t miss out—register today and put your skills to
           the test in the mainframe!
         </p>
         <div className="my-[1rem] flex items-center md:hidden">
