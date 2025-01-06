@@ -49,7 +49,9 @@ const config: Config = {
 					'3': 'hsl(var(--chart-3))',
 					'4': 'hsl(var(--chart-4))',
 					'5': 'hsl(var(--chart-5))'
-				}
+				}, 
+				neonGreen: '#0BFB00',
+				neonBlue: '#1f54fb',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -85,7 +87,7 @@ const config: Config = {
 				}, shimmer: {
 					from: { backgroundPosition: '0 0' },
 					to: { backgroundPosition: '-200% 0' },
-				  },
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
