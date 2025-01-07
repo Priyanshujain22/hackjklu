@@ -8,43 +8,9 @@
 
 .headingText {
   @apply font-semibold leading-none lg:text-8xl sm:text-7xl xs:text-6xl text-5xl;
+  color: #0BFB00; /* Apply neon green color to text */
 }
 
 .heading:hover .headingText {
-  text-shadow: 0 0 20px rgba(16, 220, 60, 0.5); 
+  text-shadow: 0 0 20px #1f54fb; /* Apply neon blue glow on hover */
 }
-
-.heading > span {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background: linear-gradient(to right, transparent, #10dc3c);
-  height: 3px;
-  width: 100%;
-  animation: animate 2s linear infinite;
-  opacity: 0.2;
-  border-top-right-radius: 1px;
-  border-bottom-right-radius: 1px;
-  transition: all 400ms ease-in-out;
-}
-
-.heading > span:nth-child(2) {
-  left: -100%;
-  transition: all 400ms ease-in-out;
-  animation: animate 2s linear infinite;
-  animation-delay: 2s;
-}
-
-.heading:hover > span {
-  opacity: 1;
-}
-@keyframes animate {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
-
-
