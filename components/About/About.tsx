@@ -18,7 +18,7 @@ const About = () => {
             <div className="text-sm lg:text-base flex flex-col md:flex-row items-center my-[1rem] lg:my-[2rem]">
               <div className="w-full lg:w-1/2 lg:p-8 leading-relaxed order-2 md:order-1">
                 <p className="tracking-wide text-sm lg:text-base">
-                  We gladly announce the return of Hack JKLU v4.0 an annual
+                  We gladly announce the return of HackJKLU v4.0 an annual
                   hackathon event aimed at instilling creativity in the
                   fundamental culture of JK Lakshmipat University an exciting
                   event that takes place within the span of 3 days bringing
@@ -27,7 +27,7 @@ const About = () => {
                 </p>
                 <br />
                 <p className="tracking-wide text-sm lg:text-base">
-                  Hack JKLU v4.0, is a community of tech enthusiasts,
+                  HackJKLU v4.0, is a community of tech enthusiasts,
                   innovators and problem solvers where they get a chance to
                   compete under one roof by thinking outside the box and solving
                   real life problems with their innovative ideas with an

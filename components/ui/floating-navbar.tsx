@@ -44,7 +44,7 @@ export const FloatingNav = ({
             "text-2xl lg:text-4xl pl-2 font-extrabold text-[#10dc3c]"
           )}
         >
-          Hack JKLU v4.0
+          HackJKLU v4.0
         </h1>
       </div>
 

@@ -59,7 +59,7 @@ const Navbar = () => {
                 className="h-10"
               />
               <h1 className="text-2xl font-bold text-[#10dc3c]">
-                Hack JKLU v4.0
+                HackJKLU v4.0
               </h1>
             </div>
 
