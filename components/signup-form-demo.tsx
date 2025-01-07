@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-import { Input } from "./ui/input";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import themes from "../data/themes.json";
-import NextLink from "next/link";
+import Image from "next/image";
 
-// Define form data type
 interface FormData {
   name: string;
   email: string;
@@ -17,7 +14,6 @@ interface FormData {
   description: string;
 }
 
-// Define form errors type
 interface FormErrors {
   name?: string;
   email?: string;
@@ -29,7 +25,6 @@ interface FormErrors {
   description?: string;
 }
 
-// Utility function to sanitize input
 const sanitizeInput = (input: string) => input.trim();
 
 export default function SignupFormDemo() {
@@ -155,21 +150,18 @@ export default function SignupFormDemo() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-gray-900 flex flex-col md:flex-row gap-8">
-      <div className="md:w-1/2 flex flex-col justify-center items-center">
-        <Image src="/hackjklu-logo.png" alt="Hack JKLU v4" width={200} height={200} className="mb-4" />
-        <h2 className="font-bold text-xl text-neutral-900 mb-4 text-center">Welcome to Hack JKLU v4</h2>
-        <p className="text-neutral-800 text-sm max-w-md mx-auto text-center">
+    <div className="mx-auto rounded-lg p-6 shadow-lg flex flex-col md:flex-row gap-6">
+
+      <div className="md:w-2/5 flex flex-col justify-center items-center space-y-6 px-4 md:px-8">
+        <Image src="/hackjklu-logo.png" alt="HackJKLU v4" width={250} height={250} className="mb-2" />
+        <h2 className="font-bold text-3xl md:text-4xl text-neutral-100 mb-2 text-center">
+          Welcome to HackJKLU v4
+        </h2>
+        <p className="text-neutral-200 text-lg md:text-xl max-w-md mx-auto text-justify">
           Provide your problem statements and solutions to be part of the Hackathon. Let&apos;s innovate and collaborate together!
         </p>
-        <NextLink href="/" passHref>
-          <button className="mt-2 bg-[#1ab331] text-black px-5 py-3 rounded-md shadow hover:bg-[#10fcd2] focus:ring-2 focus:ring-green-400">
-            Go To Home
-          </button>
-        </NextLink>
       </div>
-
-      <div className="md:w-1/2 text-primary">
+      <div className="md:w-3/5 text-primary">
         <form className="grid grid-cols-1 md:grid-cols-2 gap-4" onSubmit={handleSubmit}>
           {[
             { id: "name", type: "text", placeholder: "Your Name" },
@@ -179,13 +171,14 @@ export default function SignupFormDemo() {
             { id: "problem", type: "text", placeholder: "Describe Your Problem", isFullRow: true },
           ].map(({ id, type, placeholder, isFullRow }) => (
             <LabelInputContainer className={isFullRow ? "md:col-span-2" : ""} key={id}>
-              <Input
+              <input
                 id={id}
                 value={formData[id as keyof FormData]}
                 onChange={handleChange}
                 placeholder={placeholder}
                 type={type}
                 required
+                className="border-2 border-[#1f54fb] focus:border-transparent bg-transparent focus:ring-4 focus:ring-gradient-focus focus:outline-none p-3 rounded-md text-lg text-white w-full"
               />
             </LabelInputContainer>
           ))}
@@ -195,15 +188,21 @@ export default function SignupFormDemo() {
               id="designation"
               value={formData.designation}
               onChange={handleChange}
-              className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm"
+              className="border-2 border-[#1f54fb] focus:border-transparent focus:ring-4 focus:ring-gradient-focus focus:outline-none bg-transparent px-4 py-2 text-lg text-white shadow-md rounded-md w-full"
               required
             >
-              <option value="" disabled>
+              <option value="" disabled className="text-black bg-white">
                 Select Designation
               </option>
-              <option value="student">Student</option>
-              <option value="software-engineer">Software Engineer</option>
-              <option value="other">Other</option>
+              <option value="student" className="text-black bg-white">
+                Student
+              </option>
+              <option value="software-engineer" className="text-black bg-white">
+                Software Engineer
+              </option>
+              <option value="other" className="text-black bg-white">
+                Other
+              </option>
             </select>
           </LabelInputContainer>
 
@@ -212,14 +211,14 @@ export default function SignupFormDemo() {
               id="theme"
               value={formData.theme}
               onChange={handleChange}
-              className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm"
+              className="border-2 border-[#1f54fb] focus:border-transparent focus:ring-4 focus:ring-gradient-focus focus:outline-none bg-transparent px-4 py-2 text-lg text-white shadow-md rounded-md w-full"
               required
             >
-              <option value="" disabled>
+              <option value="" disabled className="text-black bg-white">
                 Select Theme
               </option>
               {themes.map((theme, index) => (
-                <option key={index} value={theme.title.toLowerCase()}>
+                <option key={index} value={theme.title.toLowerCase()} className="text-black bg-white">
                   {theme.title}
                 </option>
               ))}
@@ -232,18 +231,14 @@ export default function SignupFormDemo() {
               value={formData.description}
               onChange={handleChange}
               placeholder="Provide a detailed description here"
-              className="flex h-28 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm placeholder:text-muted-foreground focus-visible:ring-1 focus-visible:ring-ring"
+              className="border-2 border-[#1f54fb] focus:border-transparent focus:ring-4 focus:ring-gradient-focus focus:outline-none bg-transparent px-4 py-2 text-lg text-white shadow-md rounded-md w-full h-28"
               required
             />
           </LabelInputContainer>
 
-          <div className="md:col-span-2 mt-4">
+          <div className="md:col-span-2 mt-2">
             <button
-              className={`block w-full text-white rounded-md h-10 font-medium ${
-                formStatus === "Submitting..."
-                  ? "bg-gray-500"
-                  : "bg-gradient-to-br from-black to-neutral-600"
-              }`}
+              className="block w-full text-white rounded-md h-12 font-medium bg-gradient-to-br from-[#0BFB00] to-[#1f54fb] text-lg"
               type="submit"
               disabled={formStatus === "Submitting..."}
             >
@@ -256,11 +251,10 @@ export default function SignupFormDemo() {
   );
 }
 
-// LabelInputContainer Component
 const LabelInputContainer = ({
   children,
   className,
 }: {
   children: React.ReactNode;
   className?: string;
-}) => <div className={cn("flex flex-col space-y-2", className)}>{children}</div>;
+}) => <div className={cn("flex flex-col space-y-4", className)}>{children}</div>;
