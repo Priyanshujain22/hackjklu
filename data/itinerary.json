@@ -1,24 +1,25 @@
 {
   "day1Events": [
-    { "time": "12:00 PM", "event": "Check-in" },
-    { "time": "02:00 PM", "event": "Opening Ceremony" },
-    { "time": "03:00 PM", "event": "Workshop by JDW" },
-    { "time": "06:00 PM", "event": "Hackathon Starts" }
+    { "time": "12:00 PM", "event": "Check-in", "tags": ["mandatory", "food"] },
+    { "time": "02:00 PM", "event": "Opening Ceremony", "tags": ["mandatory"] },
+    { "time": "03:00 PM", "event": "Workshop by JDW", "tags": ["workshop"] },
+    { "time": "06:00 PM", "event": "Hackathon Starts", "tags": ["mandatory"] }
   ],
   "day2Events": [
-    { "time": "09:00 AM", "event": "Session by Prof. Iyenger" },
-    { "time": "10:00 AM", "event": "Mentoring Round" },
-    { "time": "01:00 PM", "event": "Coding Ninjas Event" },
-    { "time": "03:00 PM", "event": "Improv by Nakab" },
-    { "time": "04:00 PM", "event": "Session by Pranav M." },
-    { "time": "06:00 PM", "event": "Workshop by GFG" },
-    { "time": "09:00 PM", "event": "Music Night by Anunaad" }
+    { "time": "09:00 AM", "event": "Session by Prof. Iyenger", "tags": ["workshop"] },
+    { "time": "10:00 AM", "event": "Mentoring Round", "tags": ["all"] },
+    { "time": "01:00 PM", "event": "Coding Ninjas Event", "tags": ["fun"] },
+    { "time": "03:00 PM", "event": "Improv by Nakab", "tags": ["fun"] },
+    { "time": "04:00 PM", "event": "Session by Pranav M.", "tags": ["workshop"] },
+    { "time": "05:00 PM", "event": "Evening Snacks", "tags": ["food"] },
+    { "time": "06:00 PM", "event": "Workshop by GFG", "tags": ["workshop"] },
+    { "time": "09:00 PM", "event": "Music Night by Anunaad", "tags": ["fun"] }
   ],
   "day3Events": [
-    { "time": "06:00 AM", "event": "Submission Time" },
-    { "time": "09:00 AM", "event": "Evaluation Round 1" },
-    { "time": "01:00 PM", "event": "Evaluation Round 2" },
-    { "time": "03:00 PM", "event": "Closing Ceremony" },
-    { "time": "07:00 PM", "event": "DJ night by JDW" }
+    { "time": "06:00 AM", "event": "Submission Time", "tags": ["mandatory"] },
+    { "time": "09:00 AM", "event": "Evaluation Round 1", "tags": ["mandatory"] },
+    { "time": "01:00 PM", "event": "Evaluation Round 2", "tags": ["mandatory"] },
+    { "time": "03:00 PM", "event": "Closing Ceremony", "tags": ["mandatory"] },
+    { "time": "07:00 PM", "event": "DJ night by JDW", "tags": ["fun"] }
   ]
 }
