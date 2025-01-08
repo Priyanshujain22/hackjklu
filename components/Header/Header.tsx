@@ -14,13 +14,13 @@ const Header = ({ text }: HeaderProps) => {
     <div className={style.heading}>
       <ScrambleHover
           text={text}
-          scrambleSpeed={80}
+          scrambleSpeed={100}
           sequential={false}
           // revealDirection="center"
-          maxIterations={10}
-          useOriginalCharsOnly={false}
+          maxIterations={8}
+          useOriginalCharsOnly={true}
           className={style.headingText}
-          characters="abcdefghijklmnopqrstuvwxyz!@#$%^&*()_+-=[]{}|;':\,./<>?"
+          // characters="abcdefghijklmnopqrstuvwxyz!@#$%^&*()_+-=[]{}|;':\,./<>?"
         />
     </div>
   );

@@ -8,7 +8,7 @@
 
 .headingText {
   @apply font-semibold leading-none lg:text-8xl sm:text-7xl xs:text-6xl text-5xl;
-  color: #0BFB00; /* Apply neon green color to text */
+  color: #fff; /* Apply neon green color to text */
 }
 
 .heading:hover .headingText {

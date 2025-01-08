@@ -1,4 +1,5 @@
 import React from 'react';
+import { AuroraHero } from '../ui/AuroraHero';
 import NextLink from "next/link";
 import RegisterBtn from '../ui/registerbtn';
 import Image from "next/image";
@@ -8,7 +9,9 @@ import Image from "next/image";
 const Hero = () => {
   return (
     <section className='mx-auto'>
-      <div
+      <AuroraHero />
+      
+      {/* <div
         className={`flex flex-col md:flex-row items-center justify-center p-10`}
       >
         <div className="flex flex-col items-center md:items-start justify-center w-100% md:w-1/2">
@@ -81,7 +84,7 @@ const Hero = () => {
             </div>
           </NextLink>
         </div>
-      </div>
+      </div> */}
     </section>
   )
 }

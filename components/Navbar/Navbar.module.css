@@ -1,6 +1,6 @@
 /* Navbar default styles */
 .navbar {
-    background-color: rgba(0, 0, 0, 0.6); /* Default dark transparent background */
+    background-color: rgba(0, 0, 0, 0); /* Default dark transparent background */
     position: fixed;
     top: 0;
     left: 0;
