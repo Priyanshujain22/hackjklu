@@ -1,8 +1,7 @@
-"use client";
+// "use client";
 
 import React from "react";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
 import styles from "../Navbar/Navbar.module.css";
 import Image from "next/image";
 
@@ -49,7 +48,7 @@ export const FloatingNav = ({
 
       <div className={cn(styles.navLinks, "flex space-x-8")}>
         {navItems.map((navItem, idx) => (
-          <Link
+          <a
             key={idx}
             href={navItem.link}
             className={cn(
@@ -66,7 +65,7 @@ export const FloatingNav = ({
             >
               {navItem.name}
             </span>
-          </Link>
+          </a>
         ))}
       </div>
     </div>

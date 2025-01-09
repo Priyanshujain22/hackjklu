@@ -1,8 +1,6 @@
 import React from 'react';
 import { AuroraHero } from '../ui/AuroraHero';
-import NextLink from "next/link";
-import RegisterBtn from '../ui/registerbtn';
-import Image from "next/image";
+
 
 // import styles from "./Hero.module.css";
 
