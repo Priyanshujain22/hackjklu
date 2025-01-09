@@ -1,22 +1,14 @@
-"use client";
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import useWindowDimensions from "../../hooks/useWindowDimension";
 import { FloatingNav } from "../ui/floating-navbar";
+import navData from "../../data/navbar.json"; // Import the JSON file
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const { width } = useWindowDimensions(); 
-
-  const navItems = [
-    { name: "HOME", link: "/" },
-    { name: "CHALLENGES", link: "/challenges" },
-    { name: "EVENTS", link: "/events" },
-    { name: "GALLERY", link: "/gallery" },
-    { name: "TEAM", link: "/team" },
-  ];
+  const { width } = useWindowDimensions();
 
   const handleScroll = () => {
     if (window.scrollY > 80) {
@@ -42,7 +34,7 @@ const Navbar = () => {
       className={`relative w-full transition-all duration-300 ${isScrolled ? "scrolled" : ""}`}
     >
       {width >= 768 ? (
-        <FloatingNav navItems={navItems} isScrolled={isScrolled} />
+        <FloatingNav navItems={navData} isScrolled={isScrolled} />
       ) : (
         <>
           <div
@@ -75,7 +67,7 @@ const Navbar = () => {
             }`}
           >
             <div className="flex flex-col space-y-6 p-4 items-center">
-              {navItems.map((item, index) => (
+              {navData.map((item, index) => (
                 <a key={index} href={item.link} className="block text-2xl">
                   {item.name}
                 </a>

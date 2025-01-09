@@ -75,8 +75,8 @@ const Card = ({
 
 const Prize = () => {
   return (
-    <section className="p-8">
-      <h2 className="text-center mb-10">
+    <section className="pt-10" id="prizes">
+      <h2 className="text-center my-10">
         <Header text="Prizes" />
       </h2>
       <div className="py-10 flex flex-col lg:flex-row items-center justify-center bg-black w-full gap-4 mx-auto px-8">

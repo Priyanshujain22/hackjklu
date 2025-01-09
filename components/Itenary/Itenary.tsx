@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import itineraryData from "../../data/itinerary.json";
+import Header from "../Header/Header";
 
 interface TimelineEvent {
   time: string;
@@ -30,19 +31,12 @@ const Itenary = () => {
   };
 
   return (
-    <section>
+    <section id="itinerary" className='pt-10'>
       <div className="mx-[1rem] my-[3rem] min-h-screen" id="itinerary-section">
         <div className="container mx-auto">
-          <h1
-            className="mb-4 text-center text-[2rem] md:text-[4rem]"
-            style={{
-              backgroundImage: "linear-gradient(90deg, #cf3a33 5.87%, #f6982f 59.11%)",
-              WebkitBackgroundClip: "text",
-              color: "transparent",
-            }}
-          >
-            ITINERARY
-          </h1>
+          <h2 className="text-center my-10">
+            <Header text="Itinerary" />
+          </h2>
 
           {/* Button Group for Highlighting */}
           <div className="text-center my-4">

@@ -126,7 +126,7 @@ const Theme = () => {
   });
 
   return (
-    <section id="themes" className="py-12 relative z-5 bg-[var(--background)]">
+    <section id="themes" className="py-10 relative z-5 bg-[var(--background)]">
       <div className="absolute inset-0 bg-scrolling-pattern animate-bg-scroll"></div>
 
       <div className="container mx-auto px-4">
@@ -137,7 +137,7 @@ const Theme = () => {
               : "opacity-0 translate-y-5"
             }`}
         >
-          <h1 className="font-extrabold font-mont text-4xl sm:text-5xl mt-2">
+          <h1 className="font-extrabold font-mont text-4xl sm:text-5xl my-10">
             <Header text="Themes" />
           </h1>
         </div>

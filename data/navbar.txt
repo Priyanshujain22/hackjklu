@@ -1,0 +1,46 @@
+[
+  {
+    "name": "HOME",
+    "link": "/"
+  },
+  {
+    "name": "ABOUT",
+    "link": "/#about"
+  },
+  {
+    "name": "PRIZES",
+    "link": "/#prizes"
+  },
+  {
+    "name": "SPONSORS",
+    "link": "/#sponsors"
+  },
+  {
+    "name": "THEMES",
+    "link": "/#themes"
+  },
+  {
+    "name": "ITINERARY",
+    "link": "/#itinerary"
+  },
+  {
+    "name": "FAQ",
+    "link": "/#faq"
+  },
+  {
+    "name": "CHALLENGES",
+    "link": "/challenges"
+  },
+  {
+    "name": "EVENTS",
+    "link": "/events"
+  },
+  {
+    "name": "GALLERY",
+    "link": "/gallery"
+  },
+  {
+    "name": "TEAM",
+    "link": "/team"
+  }
+]

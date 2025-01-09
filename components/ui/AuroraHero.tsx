@@ -98,6 +98,7 @@ export const AuroraHero = () => {
 
   return (
     <motion.section
+    id="main"
       style={{
         backgroundImage,
       }}

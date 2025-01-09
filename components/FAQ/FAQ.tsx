@@ -6,8 +6,8 @@ import faqData from "@/data/faq.json";
 
 const FAQ = () => {
   return (
-    <section className="p-8">
-      <h2 className="text-center mb-10">
+    <section className="pt-10" id="faq">
+      <h2 className="text-center my-10">
         <Header text="FAQ" />
       </h2>
       <Accordion type="single" defaultValue="item-0">

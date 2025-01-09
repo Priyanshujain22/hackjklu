@@ -19,7 +19,7 @@ export default function RootLayout({
         <div className={isRootRoute ? "" : "mt-24"}>
           {children}
         </div>
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );

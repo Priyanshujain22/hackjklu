@@ -1,0 +1,26 @@
+[
+  {
+    "name": "HOME",
+    "link": "/"
+  },
+  {
+    "name": "ABOUT",
+    "link": "/#about"
+  },
+  {
+    "name": "ITINERARY",
+    "link": "/#itinerary"
+  },
+  {
+    "name": "FAQ",
+    "link": "/#faq"
+  },
+  {
+    "name": "EVENTS",
+    "link": "/events"
+  },
+  {
+    "name": "TEAM",
+    "link": "/team"
+  }
+]

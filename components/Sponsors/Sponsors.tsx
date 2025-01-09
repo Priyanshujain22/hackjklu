@@ -5,8 +5,8 @@ import Header from '../Header/Header';
 
 const Sponsors = () => {
   return (
-    <section className="p-8">
-      <h2 className="text-center mb-10">
+    <section className="pt-10" id='sponsors'>
+      <h2 className="text-center my-10">
         <Header text="Sponsors" />
       </h2>
       <div className="py-10 flex justify-center items-center">
