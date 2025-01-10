@@ -62,18 +62,18 @@ const CountdownTimer = () => {
 
     const timerId = setInterval(updateTimer, 1000);
 
-    return () => clearInterval(timerId); // Cleanup interval on component unmount
+    return () => clearInterval(timerId);
   }, []);
 
   const renderCard = (value: string, label: string) => (
     <div className="flex flex-col items-center p-4 bg-transparent border-white border rounded-lg flex-1 aspect-w-1 aspect-h-1">
       <div className="text-5xl font-bold text-white">{value}</div>
-      <div className="text-lg font-semibold text-gray-300 mt-2">{label}</div>
+      <div className="text-sm sm:text-lg font-semibold text-gray-300 mt-2">{label}</div>
     </div>
   );
 
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-4 w-full max-w-4xl">
+    <div className="grid grid-cols-4 gap-4 mt-4 w-full">
       {renderCard(timeRemaining.days, "Days")}
       {renderCard(timeRemaining.hours, "Hours")}
       {renderCard(timeRemaining.minutes, "Minutes")}
@@ -105,7 +105,7 @@ export const AuroraHero = () => {
       className="relative grid min-h-screen place-content-center overflow-hidden bg-gray-950 px-4 py-24 sm:px-8 sm:py-20 text-gray-200"
     >
       <div className="relative z-10 flex flex-col items-center">
-        <CardContainer className="z-50">
+        <CardContainer className="z-50 p-4">
           <CardBody className="relative group/card border-white/[0.2] flex flex-col gap-y-10 justify-center items-center w-auto rounded-xl p-6 sm:p-10">
             <CardItem translateZ="50" className="text-6xl sm:text-9xl text-center font-bold text-white">
               HackJKLU v4.0

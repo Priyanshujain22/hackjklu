@@ -13,7 +13,7 @@ interface SocialLinks {
 
 interface TeamCardProps {
   name: string;
-  title: string;
+  title?: string;
   socials: SocialLinks;
   imageSrc: string;
 }

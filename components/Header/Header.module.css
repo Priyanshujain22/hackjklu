@@ -2,15 +2,15 @@
   position: relative;
   overflow: hidden;
   display: inline-block;
-  padding: 0 0.5rem;
+  padding: 1rem;
   border-radius: 1px;
 }
 
 .headingText {
   @apply font-semibold leading-none lg:text-8xl sm:text-7xl xs:text-6xl text-5xl;
-  color: #fff; /* Apply neon green color to text */
+  color: #fff;
 }
 
 .heading:hover .headingText {
-  text-shadow: 0 0 20px #1f54fb; /* Apply neon blue glow on hover */
+  text-shadow: 0 0 20px #1f54fb;
 }
