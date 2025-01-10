@@ -32,7 +32,7 @@ const Itenary = () => {
 
   return (
     <section id="itinerary" className='pt-10'>
-      <div className="mx-[1rem] my-[3rem] min-h-screen" id="itinerary-section">
+      <div className="mx-[2rem] my-[3rem] min-h-screen" id="itinerary-section">
         <div className="container mx-auto">
           <h2 className="text-center my-10">
             <Header text="Itinerary" />
@@ -41,31 +41,31 @@ const Itenary = () => {
           {/* Button Group for Highlighting */}
           <div className="text-center my-4">
             <button
-              className={`px-4 py-2 mx-2 ${activeFilter === "all" ? "bg-blue-500 text-white" : "bg-gray-300"}`}
+              className={`px-4 py-2 rounded-lg mx-2 ${activeFilter === "all" ? "bg-neonBlue text-white" : "bg-transparent text-neonGreen border border-neonGreen"}`}
               onClick={() => setActiveFilter("all")}
             >
               All
             </button>
             <button
-              className={`px-4 py-2 mx-2 ${activeFilter === "mandatory" ? "bg-blue-500 text-white" : "bg-gray-300"}`}
+              className={`px-4 py-2 rounded-lg mx-2 ${activeFilter === "mandatory" ? "bg-neonBlue text-white" : "bg-transparent text-neonGreen border border-neonGreen"}`}
               onClick={() => setActiveFilter("mandatory")}
             >
               Mandatory
             </button>
             <button
-              className={`px-4 py-2 mx-2 ${activeFilter === "fun" ? "bg-blue-500 text-white" : "bg-gray-300"}`}
+              className={`px-4 py-2 rounded-lg mx-2 ${activeFilter === "fun" ? "bg-neonBlue text-white" : "bg-transparent text-neonGreen border border-neonGreen"}`}
               onClick={() => setActiveFilter("fun")}
             >
               Fun
             </button>
             <button
-              className={`px-4 py-2 mx-2 ${activeFilter === "food" ? "bg-blue-500 text-white" : "bg-gray-300"}`}
+              className={`px-4 py-2 rounded-lg mx-2 ${activeFilter === "food" ? "bg-neonBlue text-white" : "bg-transparent text-neonGreen border border-neonGreen "}`}
               onClick={() => setActiveFilter("food")}
             >
               Food
             </button>
             <button
-              className={`px-4 py-2 mx-2 ${activeFilter === "workshop" ? "bg-blue-500 text-white" : "bg-gray-300"}`}
+              className={`px-4 py-2 rounded-lg mx-2 ${activeFilter === "workshop" ? "bg-neonBlue text-white" : "bg-transparent text-neonGreen border border-neonGreen"}`}
               onClick={() => setActiveFilter("workshop")}
             >
               Workshop
@@ -77,7 +77,7 @@ const Itenary = () => {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             <div>
               <div className="rounded-xl border-2 border-gray-500">
-                <h2 className="rounded-t-xl border-b-2 border-gray-500 bg-gray-800 px-4 py-2 text-center text-lg font-semibold text-gray-300">
+                <h2 className="rounded-t-xl border-b-2 border-gray-500 bg-gray-800 px-4 py-2 text-center text-lg font-semibold text-white">
                   Day 1
                 </h2>
                 <Timeline
@@ -88,7 +88,7 @@ const Itenary = () => {
             </div>
             <div>
               <div className="rounded-xl border-2 border-gray-500">
-                <h2 className="rounded-t-xl border-b-2 border-gray-500 bg-gray-800 px-4 py-2 text-center text-lg font-semibold text-gray-300">
+                <h2 className="rounded-t-xl border-b-2 border-gray-500 bg-gray-800 px-4 py-2 text-center text-lg font-semibold text-white">
                   Day 2
                 </h2>
                 <Timeline
@@ -99,7 +99,7 @@ const Itenary = () => {
             </div>
             <div>
               <div className="rounded-xl border-2 border-gray-500">
-                <h2 className="rounded-t-xl border-b-2 border-gray-500 bg-gray-800 px-4 py-2 text-center text-lg font-semibold text-gray-300">
+                <h2 className="rounded-t-xl border-b-2 border-gray-500 bg-gray-800 px-4 py-2 text-center text-lg font-semibold text-white">
                   Day 3
                 </h2>
                 <Timeline
@@ -118,7 +118,7 @@ const Itenary = () => {
 const Timeline: React.FC<{ events: TimelineEvent[]; highlightClass: (tags: string[]) => string }> = ({ events, highlightClass }) => {
   return (
     <div className="relative ml-[3.5rem]">
-      <div className="absolute left-0 h-full w-px bg-gray-500" style={{
+      <div className="absolute left-0 h-full w-px bg-gray-700" style={{
         boxShadow: "0px 0px 2.783px 0px #FFF, 0px 0px 5.566px 0px #FFF, 0px 0px 19.481px 0px #FFF",
       }}></div>
       <div className="flex flex-col items-start">
