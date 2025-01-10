@@ -10,7 +10,7 @@ const FAQ = () => {
       <h2 className="text-center my-10">
         <Header text="FAQ" />
       </h2>
-      <Accordion type="single" defaultValue="item-0">
+      <Accordion type="single" defaultValue="item-0" className="px-10" >
         {faqData.map((faq, index) => (
           <AccordionItem key={index} value={`item-${index}`} className="border-b border-gray-700">
             <AccordionTrigger className="text-lg font-bold py-4 flex justify-between items-center hover:text-[#10dc3c]">
