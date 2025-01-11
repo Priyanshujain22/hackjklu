@@ -1,39 +1,31 @@
 [
     {
-      "title": "Education",
+      "title": "Sustainability & Environment",
+      "image": "/Themes/sustainiblity.jpg"
+    },
+    {
+      "title": "Healthcare & Well-being",
+      "image": "/Themes/healthcare.jpg"
+    },
+    {
+      "title": "Technology & Innovation",
+      "image": "/Themes/technology.jpg"
+    },
+    {
+      "title": "Education & Social Innovation",
       "image": "/Themes/education.jpg"
     },
     {
-      "title": "Health",
-      "image": "/Themes/health.jpg"
+      "title": "Finance & Business Solutions",
+      "image": "/Themes/buisness.jpg"
     },
     {
-      "title": "Transport",
-      "image": "/Themes/transport.jpg"
+      "title": "Entertainment, Media & Culture",
+      "image": "/Themes/media.jpg"
     },
     {
-      "title": "Gaming",
-      "image": "/Themes/gaming.jpg"
-    },
-    {
-      "title": "E-commerce",
-      "image": "/Themes/eCommerce.jpg"
-    },
-    {
-      "title": "Social Media",
-      "image": "/Themes/socialMedia.jpg"
-    },
-    {
-      "title": "Cybersecurity",
-      "image": "/Themes/cybersecurity.jpg"
-    },
-    {
-      "title": "FinTech",
-      "image": "/Themes/finTech.jpg"
-    },
-    {
-      "title": "IOT",
-      "image": "/Themes/iot.jpg"
+      "title": "Open Innovation",
+      "image": "/Themes/innovation.jpg"
     }
   ]
   
