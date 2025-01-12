@@ -13,42 +13,10 @@ const Footer: React.FC = () => {
             <div className="md:mx-[3rem]">
                 <div className="flex flex-col md:flex-row justify-between items-start">
                     <div className="w-full md:w-50% lg:40% flex flex-col">
-                        <button
-                            className={cn(
-                                "inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50",
-                                styles.registrationsButton
-                            )}
-                        >
-                            Registrations Started
-                        </button>
-
-                        <NextLink href="/" passHref>
-                            <p
-                                className={cn(
-                                    `text-[0.9rem] mt-[2rem] my-[1rem] md:text-[1.2rem] text-gray-600 hover:text-gray-500 hover:underline`,
-                                    styles.neonglow
-                                )}
-                            >
-                                Code of conduct
-                            </p>
-                        </NextLink>
-                        <NextLink href="/" passHref>
-                            <p
-                                className={cn(
-                                    `text-[0.9rem] md:text-[1.2rem] text-gray-600 hover:text-gray-500 hover:underline`,
-                                    styles.neonglow
-                                )}
-                            >
-                                Terms & Conditions
-                            </p>
-                        </NextLink>
-
                         <div className="mt-[2rem] md:mr-[7rem] mb-[2rem]">
                             <h4
                                 className={cn(
                                     "text-[1rem] md:text-[1.5rem] text-[#10dc3c] mb-[0.5rem] md:mb-[1.5rem]",
-                                    styles.glow,
-                                    styles.Underline
                                 )}
                             >
                                 ADDRESS
@@ -63,13 +31,10 @@ const Footer: React.FC = () => {
                             <h4
                                 className={cn(
                                     "text-[1rem] md:text-[1.5rem] text-[#10dc3c] font-base mb-[0.5rem] md:mb-[1.5rem]",
-                                    styles.glow,
-                                    styles.Underline
                                 )}
                             >
                                 CONTACT INFO
                             </h4>
-                            <br />
                             <a
                                 className="md:mb-[0.5rem] text-[0.7rem] md:text-[1.2rem] font-thin"
                                 href="mailto:counciloftechnicalaffairs@jklu.edu.in"
@@ -81,22 +46,31 @@ const Footer: React.FC = () => {
                                 <br />
                                 Registrations: +91 XXXXX XXXXX (xyz)
                             </p>
-                            Follow us:{" "}
-                            <a
-                                href="/"
+                        </div>
+                        <div className="my-4">
+                            <h4
                                 className={cn(
-                                    "text-white  text-[0.8rem] md:text-[1.1rem] my-[1rem]",
-                                    styles.neonglowFound
+                                    "text-[1rem] md:text-[1.5rem] text-[#10dc3c] font-base mb-[0.5rem] md:mb-[1.5rem]",
                                 )}
                             >
-                                @hackjklu_v4.0
+                                FOLLOW US
+                            </h4>
+                        </div>
+                        <div className="flex space-x-4">
+                            <a href="https://www.facebook.com" target="_blank">
+                                <Image src="/socialMediaIcons/facebook.png" alt="Facebook" width={54} height={54} />
+                            </a>
+                            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                                <Image src="/socialMediaIcons/instagram.png" alt="Instagram" width={54} height={54} />
+                            </a>
+                            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                                <Image src="/socialMediaIcons/linkedin.png" alt="LinkedIn" width={54} height={54} />
                             </a>
                         </div>
                     </div>
-                    <br />
 
                     <div className="w-full md:w-50% lg:w-50%">
-                        <div className={cn(styles.neonBorder)}>
+                        <div className={cn()}>
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.117070008914!2d75.64722912457951!3d26.836228513374916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396c4af4fe68f403%3A0x3bf05f95df22b8c4!2sJK%20Lakshmipat%20University!5e0!3m2!1sen!2sin!4v1695563431231!5m2!1sen!2sin"
                                 width="100%"
@@ -106,27 +80,9 @@ const Footer: React.FC = () => {
                         </div>
                     </div>
                 </div>
-                <br />
 
                 <div className="flex flex-col md:flex-row justify-between items-center mt-8">
-                    <div className="flex flex-row items-center">
-                        <Image
-                            src="/hackjklu-logo.png"
-                            alt="Hack JKLU Logo"
-                            width={56}
-                            height={56}
-                            className={cn(styles.logo)}
-                        />
-                        <h1
-                            className={cn(
-                                styles.logoHeading,
-                                "text-5xl pl-2 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500"
-                            )}
-                        >
-                            HackJKLU
-                        </h1>
-                    </div>
-                    <p className="my-[1rem] text-[0.7rem] md:text-base mx-auto">
+                    <p className="my-[1rem] text-[0.7rem] md:text-base mx-[auto]">
                         &copy; 2025 HackJKLU. All rights reserved.
                     </p>
                     <div>
