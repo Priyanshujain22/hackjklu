@@ -1,37 +1,49 @@
 [
     {
-        "name": "AnanyaSharma",
-        "title": "Lead Developer",
-        "imageSrc": "AnanyaSharma",
+        "name": "Rachit Sharma",
+        "title": "Promotion",
+        "imageSrc": "RachitSharma",
+        "socials": {
+            "gb": "https://github.com/Rachit-Sharma0410",
+            "linkedin": "https://www.linkedin.com/in/rachit-sharma-56770b290",
+            "email": "RACHITSHARMA@jklu.edu.in",
+            "phone": "+91 9351187511",
+            "instagram": "https://www.instagram.com/myself_._rachit?igsh=Z250ZzdhZWZpZzYy"
+        }
+    },
+    {
+        "name": "Saurav Kumar Yadav",
+        "title": "Discipline",
+        "imageSrc": "Saurav",
         "socials": {
             "gb": "johndoe.com",
             "linkedin": "johndoe.com",
-            "email": "johndoe@example.com"
+            "email": "saurav@jklu.edu.in",
+            "instagram": "https://www.instagram.com/nvm_saurav/?utm_source=ig_web_button_share_sheet",
+            "phone": "+91 62847995858"
         }
     },
     {
-        "name": "ParasGoyal",
-        "title": "Lead Developer",
-        "imageSrc": "ParasGoyal",
-        "socials": {
-            "gb": "johndoe.com",
-            "linkedin": "johndoe.com"
-        }
-    },
-    {
-        "name": "DivyaSharma",
-        "title": "Designer",
+        "name": "Anirudh Saini",
+        "title": "Photography",
         "role": "UI/UX",
-        "imageSrc": "DivyaSharma",
-        "socials": {}
+        "imageSrc": "AnirudhSaini",
+        "socials": {
+            "email": "ANIRUDHSAINI@jklu.edu.in",
+            "instagram": "https://www.instagram.com/aniruxxdh?igsh=MXU2M3c4YWtxdmN0bQ%3D%3D&utm_source=qr",
+            "phone": "+91 8440044099",
+            "linkedin": "https://www.linkedin.com/in/anirudh-saini-7a3450345/"
+        }
     },
     {
-        "name": "ParasGoyal",
+        "name": "Karan Kumar",
         "title": "Lead Developer",
-        "imageSrc": "ParasGoyal",
+        "imageSrc": "KaranKumar",
         "socials": {
             "gb": "johndoe.com",
-            "linkedin": "johndoe.com"
+            "linkedin": "https://www.linkedin.com/in/karan-kumawat-26770b24a",
+            "email": "karankumar@jklu.edu.in",
+            "phone": "+91 9313308922"
         }
     },
     {

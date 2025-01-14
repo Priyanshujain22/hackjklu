@@ -1,11 +1,13 @@
 [
   {
-      "name": "AnanyaSharma",
-      "imageSrc": "AnanyaSharma",
+      "name": "Shubham Jain",
+      "imageSrc": "shubhamjain",
       "socials": {
-          "gb": "johndoe.com",
-          "linkedin": "johndoe.com",
-          "email": "johndoe@example.com"
+          "gb": "https://github.com/ShubhamJain-23",
+          "linkedin": "https://www.linkedin.com/in/shubham-jain2302/",
+          "email": "SHUBHAMJAIN2023@jklu.edu.in",
+          "instagram": "https://www.instagram.com/shubham_jain.23/",
+          "phone": "+91 9828780775"
       }
   },
   {
@@ -13,7 +15,8 @@
       "imageSrc": "ParasGoyal",
       "socials": {
           "gb": "johndoe.com",
-          "linkedin": "johndoe.com"
+          "linkedin": "johndoe.com",
+          "email": "joedoe@gmail.com"
       }
   },
   {

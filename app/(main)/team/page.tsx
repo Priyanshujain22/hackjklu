@@ -8,6 +8,7 @@ interface SocialLinks {
   gb?: string;
   email?: string;
   linkedin?: string;
+  instagram?: string;
 }
 
 interface TeamCardProps {
@@ -33,7 +34,7 @@ export default function TeamPage() {
               <TeamCard
                 key={`${String(index)}-team`}
                 name={item.name}
-                imageSrc={`/team/${item.imageSrc}.jpg`}
+                imageSrc={`/team/${item.imageSrc}.webp`}
                 socials={item.socials}
               />
             );
@@ -49,7 +50,7 @@ export default function TeamPage() {
                 key={`${String(index)}-team`}
                 name={item.name}
                 title={item.title}
-                imageSrc={`/team/${item.imageSrc}.jpg`}
+                imageSrc={`/team/${item.imageSrc}.webp`}
                 socials={item.socials}
               />
             );

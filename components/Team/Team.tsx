@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "./Team.module.css";
 import Image from 'next/image';
-import { Mail, Github, Linkedin } from 'lucide-react';
+import { Mail, Github, Linkedin, Instagram, Phone } from 'lucide-react';
 
 const ICON_SIZE = 28;
 
@@ -9,6 +9,8 @@ interface SocialLinks {
   gb?: string;
   email?: string;
   linkedin?: string;
+  instagram?: string;
+  phone?: string;
 }
 
 interface TeamCardProps {
@@ -46,6 +48,20 @@ const TeamCard: React.FC<TeamCardProps> = ({ name, title, socials, imageSrc }) =
                 href={socials.gb}
               >
                 <Github size={ICON_SIZE} width={ICON_SIZE} />
+              </a>
+            )}
+            {socials.phone && (
+              <a href={`tel:${socials.phone}`} target="_blank" rel="noopener noreferrer">
+                <Phone size={ICON_SIZE} />
+              </a>
+            )}
+            {socials.instagram && (
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={socials.instagram}
+              >
+                <Instagram size={ICON_SIZE} />
               </a>
             )}
 
