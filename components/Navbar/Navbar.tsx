@@ -50,7 +50,7 @@ const Navbar = () => {
                 height={40}
                 className="h-10"
               />
-              <h1 className="text-2xl font-bold text-[#10dc3c]">
+              <h1 className="text-2xl font-bold text-white">
                 HackJKLU v4.0
               </h1>
             </div>

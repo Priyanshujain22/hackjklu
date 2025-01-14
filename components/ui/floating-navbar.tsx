@@ -39,7 +39,7 @@ export const FloatingNav = ({
         <h1
           className={cn(
             "",
-            "text-2xl lg:text-4xl pl-2 font-extrabold text-[#10dc3c]"
+            "text-2xl lg:text-4xl pl-2 font-extrabold text-white"
           )}
         >
           HackJKLU v4.0
