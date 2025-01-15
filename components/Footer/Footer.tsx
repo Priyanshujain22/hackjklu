@@ -3,12 +3,11 @@ import React from "react";
 import NextLink from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import styles from "./Footer.module.css";
 
 const Footer: React.FC = () => {
     return (
         <footer
-            className={`bg-[#000000c6] mt-[1rem] md:mt-[2rem] text-white p-5 md:p-8`}
+            className={`text-white relative p-5 md:p-8`}
         >
             <div className="md:mx-[3rem]">
                 <div className="flex flex-col md:flex-row justify-between items-start">

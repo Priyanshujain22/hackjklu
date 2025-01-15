@@ -31,7 +31,7 @@ const Itenary = () => {
   };
 
   return (
-    <section id="itinerary" className='pt-10'>
+    <section id="itinerary" className='pt-10 relative'>
       <div className="mx-[2rem] my-[3rem] min-h-screen" id="itinerary-section">
         <div className="container mx-auto">
           <h2 className="text-center my-10">

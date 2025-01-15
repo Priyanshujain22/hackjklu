@@ -6,7 +6,7 @@ import faqData from "@/data/faq.json";
 
 const FAQ = () => {
   return (
-    <section className="pt-10" id="faq">
+    <section className="pt-10 relative" id="faq">
       <h2 className="text-center my-10">
         <Header text="FAQ" />
       </h2>

@@ -20,20 +20,20 @@ const useIntersectionObserver = (options: IntersectionObserverOptions = {}) => {
     const observer = new IntersectionObserver(([entry]) => {
       setIsIntersecting(entry.isIntersecting);
     }, options);
-  
+
     const currentRef = elementRef.current;
-  
+
     if (currentRef) {
       observer.observe(currentRef);
     }
-  
+
     return () => {
       if (currentRef) {
         observer.unobserve(currentRef);
       }
     };
   }, [options]);
-  
+
 
   return [elementRef, isIntersecting] as const;
 };
@@ -126,15 +126,13 @@ const Theme = () => {
   });
 
   return (
-    <section id="themes" className="py-10 relative z-5 bg-[var(--background)]">
-      <div className="absolute inset-0 bg-scrolling-pattern animate-bg-scroll"></div>
-
+    <section id="themes" className="py-10 z-5">
       <div className="container mx-auto px-4">
         <div
           ref={headerRef}
           className={`text-gray-200 text-center relative z-2 transition-all duration-700 ${isHeaderVisible
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-5"
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-5"
             }`}
         >
           <h1 className="font-extrabold font-mont text-4xl sm:text-5xl my-10">
@@ -150,32 +148,6 @@ const Theme = () => {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        .bg-scrolling-pattern {
-          background: url("/download.png")
-            repeat 0 0;
-          filter: invert(100%) sepia(100%) saturate(100%) hue-rotate(180deg)
-            brightness(100%) contrast(100%);
-        }
-
-        @keyframes bg-scrolling-reverse {
-          100% {
-            background-position: 50px 50px;
-          }
-        }
-
-        @keyframes bg-scrolling {
-          0% {
-            background-position: 50px 50px;
-          }
-        }
-
-        :global(.animate-bg-scroll) {
-          animation: bg-scrolling-reverse 2.92s infinite;
-          animation-timing-function: linear;
-        }
-      `}</style>
     </section>
   );
 }

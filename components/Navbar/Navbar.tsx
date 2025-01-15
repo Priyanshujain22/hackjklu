@@ -38,8 +38,8 @@ const Navbar = () => {
       ) : (
         <>
           <div
-            className={`fixed top-0 w-full bg-[rgba(0,0,0,0.6)] text-white z-50 flex justify-between items-center p-4 ${
-              isScrolled ? "border-b-[#10dc3c] border-b-2" : ""
+            className={`fixed top-0 w-full text-white z-50 flex justify-between items-center p-4 ${
+              isScrolled ? "border-b-[#10dc3c] border-b-2 bg-[rgba(0,0,0,0.6)]" : "bg-[rgba(0,0,0,0.2)]"
             }`}
           >
             <div className="flex items-center space-x-2">
