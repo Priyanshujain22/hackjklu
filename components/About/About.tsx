@@ -1,36 +1,43 @@
-import React from 'react';
+"use client"
+
+import { useRef } from "react"
 import Image from "next/image";
 import Header from '../Header/Header';
-
-// import styles from "./About.module.css";
+import VariableFontCursorProximity from "../ui/VariableFontCursorProximity";
 
 const About = () => {
+  const containerRef = useRef<HTMLDivElement>(null)
   return (
-    <section id='about' className='pt-10 relative'>
+    <section id='about' className='pt-10 relative' ref={containerRef}>
       <div className="md:mx-[5rem] lg:mx-[10rem]">
         <h1 className="text-[2.2rem] md:text-[4rem] font-bold text-center my-[1rem] md:my-[1.5rem] lg:my-[2rem]">
           <Header text='About Us' />
         </h1>
         <div className={`mx-[1rem]`}>
           <div className="text-sm lg:text-base flex flex-col md:flex-row items-center my-[1rem] lg:my-[2rem]">
-            <div className="w-full lg:w-1/2 lg:p-8 leading-relaxed order-2 md:order-1">
-              <p className="tracking-wide text-sm lg:text-lg">
-                We gladly announce the return of HackJKLU v4.0 an annual
-                hackathon event aimed at instilling creativity in the
-                fundamental culture of JK Lakshmipat University an exciting
-                event that takes place within the span of 3 days bringing
-                together one of the sharpest minds from different disciplines
-                including Engineering, Management and design.
-              </p>
-              <br />
-              <p className="tracking-wide text-sm lg:text-lg">
-                HackJKLU v4.0, is a community of tech enthusiasts,
-                innovators and problem solvers where they get a chance to
-                compete under one roof by thinking outside the box and solving
-                real life problems with their innovative ideas with an
-                environment that encourages diversity and promotes
-                collaboration.
-              </p>
+            <div className="w-full lg:w-1/2 lg:p-8 leading-relaxed order-2 md:order-1 text-justify">
+              <div className="mb-2">
+                <VariableFontCursorProximity
+                  label={`We gladly announce the return of HackJKLU v4.0 an annual hackathon event aimed at instilling creativity in the fundamental culture of JK Lakshmipat University an exciting event that takes place within the span of 3 days bringing together one of the sharpest minds from different disciplines including Engineering, Management and design.`}
+                  className="tracking-wide text-sm lg:text-lg"
+                  fromFontVariationSettings="'wght' 400, 'slnt' 0"
+                  toFontVariationSettings="'wght' 900, 'slnt' -10"
+                  falloff="gaussian"
+                  radius={70}
+                  containerRef={containerRef}
+                />
+              </div>
+              <div>
+                <VariableFontCursorProximity
+                  label={`HackJKLU v4.0, is a community of tech enthusiasts, innovators and problem solvers where they get a chance to compete under one roof by thinking outside the box and solving real life problems with their innovative ideas with an environment that encourages diversity and promotes collaboration.`}
+                  className="tracking-wide text-sm lg:text-lg"
+                  fromFontVariationSettings="'wght' 400, 'slnt' 0"
+                  toFontVariationSettings="'wght' 900, 'slnt' -10"
+                  falloff="gaussian"
+                  radius={70}
+                  containerRef={containerRef}
+                />
+              </div>
             </div>
             <div className="w-full lg:w-1/2 flex items-center justify-center order-1 md:order-2">
               <Image
