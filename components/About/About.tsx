@@ -10,11 +10,11 @@ const About = () => {
   return (
     <section id='about' className='pt-10 relative' ref={containerRef}>
       <div className="md:mx-[5rem] lg:mx-[10rem]">
-        <h1 className="text-[2.2rem] md:text-[4rem] font-bold text-center my-[1rem] md:my-[1.5rem] lg:my-[2rem]">
+        <h1 className="text-[2.2rem] md:text-[4rem] font-bold text-center   ">
           <Header text='About Us' />
         </h1>
         <div className={`mx-[1rem]`}>
-          <div className="text-sm lg:text-base flex flex-col md:flex-row items-center my-[1rem] lg:my-[2rem]">
+          <div className="text-sm lg:text-base flex flex-col md:flex-row items-center my-[1rem]">
             <div className="w-full lg:w-1/2 lg:p-8 leading-relaxed order-2 md:order-1 text-justify">
               <div className="mb-2">
                 <VariableFontCursorProximity
@@ -45,7 +45,7 @@ const About = () => {
                 alt=""
                 width={300}
                 height={300}
-                className="w-[180px] h-[180px] md:w-[360px] md:h-[325px] lg:w-[300px] lg:h-[300px] mb-[3rem]"
+                className="w-[180px] h-[180px] md:w-[360px] md:h-[325px] lg:w-[300px] lg:h-[300px]"
               />
             </div>
           </div>
