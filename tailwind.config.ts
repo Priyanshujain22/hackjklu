@@ -61,7 +61,6 @@ const config: Config = {
 			screens: {
 				xs: {
 					min: '400px',
-					max: '640px'
 				}
 			},
 			keyframes: {

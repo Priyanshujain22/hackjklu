@@ -1,25 +1,24 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({ subsets: ["latin"]});
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const pathname = usePathname();
-  const isRootRoute = pathname === "/";
+
 
   return (
     <html lang="en">
-      <body className="relative">
-      <div className="absolute inset-0 bg-scrolling-pattern animate-bg-scroll"></div>
+      <body className={`relative ${montserrat.className}`}>
+        <div className="absolute inset-0 bg-scrolling-pattern animate-bg-scroll"></div>
         <Navbar />
-        <div className={isRootRoute ? "" : ""}>
-          {children}
-        </div>
+        {children}
         <Footer />
       </body>
       <style jsx>{`
