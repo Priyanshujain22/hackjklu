@@ -4,6 +4,14 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import styles from "../Navbar/Navbar.module.css";
 import Image from "next/image";
+import { Press_Start_2P } from "next/font/google";
+
+const press_start_2p = Press_Start_2P({
+  weight: "400",
+  style: "normal",
+  subsets: ["latin"],
+  preload: true,
+});
 
 export const FloatingNav = ({
   navItems,
@@ -39,7 +47,7 @@ export const FloatingNav = ({
         <h1
           className={cn(
             "",
-            "text-2xl lg:text-4xl pl-2 font-extrabold text-white"
+            `text-xl lg:text-2xl pl-2 font-extrabold text-white ${press_start_2p.className} `
           )}
         >
           HackJKLU v4.0

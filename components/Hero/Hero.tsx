@@ -21,6 +21,7 @@ const press_start_2p = Press_Start_2P({
   subsets: ["latin"],
   preload: true,
 });
+
 const COLORS_TOP = ["#97FE71", "#1f54fb", "#47DE81", "#1f54fb"];
 
 const RotatingStars = () => {

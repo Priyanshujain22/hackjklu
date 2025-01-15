@@ -3,7 +3,15 @@ import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import useWindowDimensions from "../../hooks/useWindowDimension";
 import { FloatingNav } from "../ui/floating-navbar";
-import navData from "../../data/navbar.json"; // Import the JSON file
+import navData from "../../data/navbar.json";
+import { Press_Start_2P } from "next/font/google";
+
+const press_start_2p = Press_Start_2P({
+  weight: "400",
+  style: "normal",
+  subsets: ["latin"],
+  preload: true,
+});
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -50,7 +58,7 @@ const Navbar = () => {
                 height={40}
                 className="h-10"
               />
-              <h1 className="text-2xl font-bold text-white">
+              <h1 className={` ${press_start_2p.className} text-2xl font-bold text-white`}>
                 HackJKLU v4.0
               </h1>
             </div>
