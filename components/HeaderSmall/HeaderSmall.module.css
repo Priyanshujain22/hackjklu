@@ -1,0 +1,15 @@
+.heading {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  padding: 0 0.5rem;
+}
+
+.headingText {
+  @apply font-semibold leading-none lg:text-4xl sm:text-2xl text-xl text-center;
+  color: #fff;
+}
+
+.heading:hover .headingText {
+  text-shadow: 0 0 0.15em #0BFB00;
+}

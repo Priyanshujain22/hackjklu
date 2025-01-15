@@ -10,7 +10,7 @@ const About = () => {
   return (
     <section id='about' className='pt-10 relative' ref={containerRef}>
       <div className="md:mx-[5rem] lg:mx-[10rem]">
-        <h1 className="text-[2.2rem] md:text-[4rem] font-bold text-center   ">
+        <h1 className="text-center my-10">
           <Header text='About Us' />
         </h1>
         <div className={`mx-[1rem]`}>
