@@ -13,6 +13,7 @@ import {
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 import { Press_Start_2P } from "next/font/google";
 import BreathingText from '../ui/BreathingText';
+import Link from "next/link";
 
 const press_start_2p = Press_Start_2P({
   weight: "400",
@@ -130,10 +131,10 @@ const Hero = () => {
                 />
               </div>
             </CardItem>
-            <CardItem translateZ="60" className="text-2xl sm:text-3xl mb-2 text-center font-bold text-white">
-              <a href="https://guide.devfolio.co/organizers/apply-with-devfolio-integration" target="_blank" className="text-white bg-blue-500 rounded-2xl p-4">
+            <CardItem translateZ="60" className="text-xl sm:text-3xl mb-2 text-center font-bold text-white">
+              <Link href="https://guide.devfolio.co/organizers/apply-with-devfolio-integration" target="_blank" className="text-white bg-blue-500 rounded-2xl p-4">
                 Apply with Devfolio
-              </a>
+              </Link>
             </CardItem>
             <CardItem translateZ="50" className="w-full">
               <CountdownTimer />
