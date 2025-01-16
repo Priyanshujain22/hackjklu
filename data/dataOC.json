@@ -1,35 +1,41 @@
 [
   {
-      "name": "Shubham Jain",
-      "imageSrc": "shubhamjain",
+      "name": "Vaibhav Chauhan",
+      "imageSrc": "VaibhavChauhan2",
+       "title": "General Secretary",
       "socials": {
-          "gb": "https://github.com/ShubhamJain-23",
-          "linkedin": "https://www.linkedin.com/in/shubham-jain2302/",
-          "email": "SHUBHAMJAIN2023@jklu.edu.in",
-          "instagram": "https://www.instagram.com/shubham_jain.23/",
-          "phone": "+91 9828780775"
+          "gb": "#",
+          "linkedin": "https://www.linkedin.com/in/vctech/",
+          "email": "vaibhavchauhan@jklu.edu.in"
+          
+          
       }
   },
   {
-      "name": "ParasGoyal",
+      "name": "Paras Goyal",
       "imageSrc": "ParasGoyal",
+      "title": "\u200B",
+      
       "socials": {
-          "gb": "johndoe.com",
-          "linkedin": "johndoe.com",
-          "email": "joedoe@gmail.com"
+          "gb": "https://github.com/paras-2407",
+          "linkedin": "https://www.linkedin.com/in/paras-goyal-a19249264/",
+          "email": "mailto:parasgoyal@jklu.edu.in"
       }
   },
   {
-      "name": "DivyaSharma",
+      "name": "Yash Puri Goswami",
       "imageSrc": "DivyaSharma",
       "socials": {}
   },
   {
-      "name": "ParasGoyal",
-      "imageSrc": "ParasGoyal",
+      "name": "Shubham Jain",
+      "imageSrc": "shubhamjain",
+      "title": "Secreatary",
       "socials": {
-          "gb": "johndoe.com",
-          "linkedin": "johndoe.com"
+          "gb": "https://github.com/ShubhamJain-23",
+          "linkedin": "https://www.linkedin.com/in/shubham-jain2302/",
+          "email": "mailto:shubhamjain2023@jklu.edu.in"
+
       }
   }
 ]

@@ -34,6 +34,7 @@ export default function TeamPage() {
               <TeamCard
                 key={`${String(index)}-team`}
                 name={item.name}
+                title={item.title}
                 imageSrc={`/team/${item.imageSrc}.webp`}
                 socials={item.socials}
               />

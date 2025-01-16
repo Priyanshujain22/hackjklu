@@ -6,9 +6,9 @@
         "socials": {
             "gb": "https://github.com/Rachit-Sharma0410",
             "linkedin": "https://www.linkedin.com/in/rachit-sharma-56770b290",
-            "email": "RACHITSHARMA@jklu.edu.in",
-            "phone": "+91 9351187511",
-            "instagram": "https://www.instagram.com/myself_._rachit?igsh=Z250ZzdhZWZpZzYy"
+            "email": "RACHITSHARMA@jklu.edu.in"
+            
+            
         }
     },
     {
@@ -16,11 +16,11 @@
         "title": "Discipline",
         "imageSrc": "Saurav",
         "socials": {
-            "gb": "johndoe.com",
-            "linkedin": "johndoe.com",
-            "email": "saurav@jklu.edu.in",
-            "instagram": "https://www.instagram.com/nvm_saurav/?utm_source=ig_web_button_share_sheet",
-            "phone": "+91 62847995858"
+            "gb": "#",
+            "linkedin": "",
+            "email": "saurav@jklu.edu.in"
+            
+           
         }
     },
     {
@@ -29,36 +29,54 @@
         "role": "UI/UX",
         "imageSrc": "AnirudhSaini",
         "socials": {
+            "gb": "#",
             "email": "ANIRUDHSAINI@jklu.edu.in",
-            "instagram": "https://www.instagram.com/aniruxxdh?igsh=MXU2M3c4YWtxdmN0bQ%3D%3D&utm_source=qr",
-            "phone": "+91 8440044099",
             "linkedin": "https://www.linkedin.com/in/anirudh-saini-7a3450345/"
         }
     },
     {
-        "name": "Karan Kumar",
-        "title": "Lead Developer",
+        "name": "Karan Kumawat",
+        "title": "Registration",
         "imageSrc": "KaranKumar",
         "socials": {
-            "gb": "johndoe.com",
+            "gb": "#",
             "linkedin": "https://www.linkedin.com/in/karan-kumawat-26770b24a",
-            "email": "karankumar@jklu.edu.in",
-            "phone": "+91 9313308922"
+            "email": "karankumar@jklu.edu.in"
+            
         }
     },
     {
-        "name": "DivyaSharma",
-        "title": "Designer",
-        "imageSrc": "DivyaSharma",
-        "socials": {}
+        "name": "Vandan P Shah",
+        "title": "Social Media",
+        "imageSrc": "VANDANSHAH",
+        "socials": {
+            "gb": "#",
+            "linkedin": "https://www.linkedin.com/in/vandan-shah-71b6352b7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+            "email":"Vandanshah@jklu.edu.in"
+        }
     },
     {
-        "name": "ParasGoyal",
-        "title": "Lead Developer",
-        "imageSrc": "ParasGoyal",
+        "name": "Preet Taparia",
+        "title": "Tech and Support",
+        "imageSrc": "PreetTaparia",
         "socials": {
-            "gb": "johndoe.com",
-            "linkedin": "johndoe.com"
+            "gb": "https://github.com/Preet-taparia",
+            "linkedin": "https://www.linkedin.com/in/preet-taparia/",
+            "email": "preettaparia@jlku.edu.in"
+        
+
+        }
+    },
+    {
+        "name": "Aayushi Meel",
+        "title": "Food and Accomodation",
+        "imageSrc": "AayushiMeel",
+        "socials": {
+            "gb": "#",
+            "linkedin": "https://www.linkedin.com/in/aayushi-meel-01505a2b7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+            "email": "aayushimeel1@gmail.com"
         }
     }
+
+
 ]
