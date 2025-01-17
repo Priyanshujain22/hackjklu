@@ -13,7 +13,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`relative`}>
-        <div className="absolute inset-0 bg-scrolling-pattern animate-bg-scroll"></div>
+      <div className="fixed inset-0 bg-scrolling-pattern animate-bg-scroll"></div>
         <Navbar />
         {children}
         <Footer />
