@@ -4,7 +4,7 @@
       "imageSrc": "VaibhavChauhan212",
        "title": "General Secretary",
       "socials": {
-          "gb": "#",
+          
           "linkedin": "https://www.linkedin.com/in/vctech/",
           "email": "vaibhavchauhan@jklu.edu.in"
           
@@ -19,17 +19,17 @@
       "socials": {
           "gb": "https://github.com/paras-2407",
           "linkedin": "https://www.linkedin.com/in/paras-goyal-a19249264/",
-          "email": "mailto:parasgoyal@jklu.edu.in"
+          "email": "parasgoyal@jklu.edu.in"
       }
   },
   {
       "name": "Yash Puri Goswami",
       "title": "\u200c",
-      
+      "imageSrc":"YashGoswami",
       "socials": {
-        "gb": "#",
-        "linkedin": "#",
-        "email": "#"
+        
+        "linkedin": "https://www.linkedin.com/in/yashpuri045",
+        "email": "yashgoswami@jklu.edu.in"
       }
   },
   {

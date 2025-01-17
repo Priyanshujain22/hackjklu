@@ -16,8 +16,7 @@
         "title": "Discipline",
         "imageSrc": "saurav",
         "socials": {
-            "gb": "#",
-            "linkedin": "",
+            
             "email": "saurav@jklu.edu.in"
             
            
@@ -29,7 +28,7 @@
         "role": "UI/UX",
         "imageSrc": "AnirudhSaini",
         "socials": {
-            "gb": "#",
+           
             "email": "ANIRUDHSAINI@jklu.edu.in",
             "linkedin": "https://www.linkedin.com/in/anirudh-saini-7a3450345/"
         }
@@ -39,7 +38,7 @@
         "title": "Registration",
         "imageSrc": "KaranKumar",
         "socials": {
-            "gb": "#",
+           
             "linkedin": "https://www.linkedin.com/in/karan-kumawat-26770b24a",
             "email": "karankumar@jklu.edu.in"
             
@@ -50,7 +49,6 @@
         "title": "Social Media",
         "imageSrc": "VANDANSHAH",
         "socials": {
-            "gb": "#",
             "linkedin": "https://www.linkedin.com/in/vandan-shah-71b6352b7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
             "email":"Vandanshah@jklu.edu.in"
         }
@@ -72,9 +70,10 @@
         "title": "Food and Accomodation",
         "imageSrc": "akashfinal",
         "socials": {
-            "gb": "#",
+            
             "linkedin": "https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAAEWzT_UBVyX_vxEcGXhZ3d3ImfVaSd4KYw8&keywords=akash%20saraswat&origin=RICH_QUERY_SUGGESTION&position=0&searchId=4503f735-f2c3-426a-8233-bf1a517c46a7&sid=)x6&spellCorrectionEnabled=false",
-            "email": "#"
+            "email": "akash@jklu.edu.inm"
+            
         }
     },
     {
@@ -82,7 +81,7 @@
         "title": "Food and Accomodation",
         "imageSrc": "AAYUSHIMEELfinal",
         "socials": {
-            "gb": "#",
+            
             "linkedin": "https://www.linkedin.com/in/aayushi-meel-01505a2b7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
             "email": "aayushimeel1@gmail.com"
         }
@@ -92,8 +91,7 @@
     "title": "Media and Report",
     "imageSrc": "RaniInglefinal",
     "socials": {
-        "gb": "#",
-        "linkedin": "#",
+
         "email": "raniingle@jklu.edu.in"
         }
     },
@@ -114,7 +112,7 @@
         "title": "Prize and Certificate",
         "imageSrc": "ShrashtiChouhan2",
         "socials": {
-            "gb": "#",
+            
             "linkedin": "https://www.linkedin.com/in/shrashti-chouhan-27553b251?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
             "email": "shrashtichouhan@jklu.edu.in"
         }
@@ -125,7 +123,7 @@
         "title": "Internal Arrangements",
         "imageSrc": "ShivamSharma",
         "socials": {
-            "gb": "#",
+           
             "linkedin": "https://www.linkedin.com/in/shivam-sharma-8a7618259?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
             "email": "shivamsharma2022@jklu.edu.in"
         }
@@ -136,11 +134,18 @@
         "title": "Decoration",
         "imageSrc": "KavishaGupta",
         "socials": {
-            "gb": "#",
+           
             "linkedin": "https://www.linkedin.com/in/kavishagupta20/",
             "email": ""
         }
     
+    },
+
+    {
+        "name":"xyz",
+        "title":"Design",
+        "socials":{
+        }
     }
 
 

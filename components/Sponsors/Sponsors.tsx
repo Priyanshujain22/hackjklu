@@ -44,6 +44,10 @@ const renderCards = (data: Sponsor[]) => {
               height={128}
             />
           </div>
+          <div className="text-center lg:text-left">
+            <h3 className="text-lg font-bold">{card.name}</h3>
+          </div>
+        
         </Button>
       ))}
     </div>
@@ -57,23 +61,23 @@ const Sponsors: React.FC = () => {
         <Header text="Sponsors" />
       </h2>
 
-      {/* Gold Sponsors */}
-      <div className="p-10">
-        <HeaderSmall text="Gold" />
-        {renderCards(sponsorsData.gold)}
-      </div>
+     {/* Gold Sponsors */}
+<div className="p-10 text-center">
+  <HeaderSmall text="Gold" />
+  <div className="flex justify-center">{renderCards(sponsorsData.gold)}</div>
+</div>
 
-      {/* Silver Sponsors */}
-      <div className="p-10">
-        <HeaderSmall text="Silver" />
-        {renderCards(sponsorsData.silver)}
-      </div>
+{/* Silver Sponsors */}
+<div className="p-10 text-center">
+  <HeaderSmall text="Silver" />
+  <div className="flex justify-center">{renderCards(sponsorsData.silver)}</div>
+</div>
 
-      {/* Bronze Sponsors */}
-      <div className="p-10">
-        <HeaderSmall text="Bronze" />
-        {renderCards(sponsorsData.bronze)}
-      </div>
+{/* Bronze Sponsors */}
+<div className="p-10 text-center">
+  <HeaderSmall text="Bronze" />
+  <div className="flex justify-center">{renderCards(sponsorsData.bronze)}</div>
+</div>
     </section>
   );
 };

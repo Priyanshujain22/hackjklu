@@ -44,7 +44,7 @@ export default function TeamPage() {
         <h2 className="text-center my-10">
           <Header text="Core Team" />
         </h2>
-        <div className={`${styles.cardContainer}`}>
+        <div className={`${styles.cardTeamContainer}`}>
           {teamData.map((item, index) => {
             return (
               <TeamCard
