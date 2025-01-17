@@ -1,16 +1,23 @@
 .card {
   @apply p-4 relative flex flex-col justify-center items-center overflow-hidden rounded-2xl;
-  min-height: 350px;
+  
   background: linear-gradient(
     45deg,
     rgba(20, 204, 60, 0.2) 0%,
     rgba(16, 232, 60, 0.3) 100%
+
+    
   );
   transition: all 300ms ease-in-out;
+  width: 300px;
+  height: 410px;
+  margin: 20px;
+  box-sizing: border-box;
+  
 }
 
 .cardContainer {
-  @apply grid sm:grid-cols-2 lg:grid-cols-4 gap-8;
+  @apply grid grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] gap-8;
 }
 
 .cardContainer .card:hover {
@@ -49,6 +56,26 @@
   @apply text-5xl mb-14 mt-16 font-extrabold md:text-center md:pl-0 sm:mt-12;
 }
 
+.title {
+  margin-top: 4px;
+  margin-bottom: -8px;
+  line-height: 1.5;
+  color: #07f039;
+  font-weight: 650;
+  
+  
+}
+.card img{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
 @keyframes animate {
   0% {
     transform: rotate(0deg);
@@ -56,4 +83,5 @@
   100% {
     transform: rotate(360deg);
   }
+
 }
