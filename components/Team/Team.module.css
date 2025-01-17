@@ -76,20 +76,20 @@
 
 .cardTeamContainer {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
-  gap: 16px; /* Adjust spacing between rows and columns */
-  justify-content: center; /* Center the entire grid */
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 16px; 
+  justify-content: center; 
 }
 
-/* Specific positioning for the last two cards */
+
 .cardTeamContainer > div:nth-last-child(2) {
-  grid-column: 2; /* Place in the second column */
-  grid-row: auto; /* Automatically adjust the row */
+  grid-column: 2; 
+  grid-row: auto; 
 }
 
 .cardTeamContainer > div:nth-last-child(1) {
-  grid-column: 3; /* Place in the third column */
-  grid-row: auto; /* Automatically adjust the row */
+  grid-column: 3; 
+  grid-row: auto; 
 }
 
 
