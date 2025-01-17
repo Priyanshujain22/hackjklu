@@ -2,31 +2,16 @@ import React from 'react';
 import { Button } from "../ui/MovingBorders";
 import Header from '../Header/Header';
 import Image from 'next/image';
-import sponsors from '@/data/sponsors.json';
+import sponsors from '@/data/pastsponsors.json';
 
-// Define TypeScript types for the sponsor data structure
 interface Sponsor {
   name: string;
   photo: string;
   website: string;
 }
 
-interface SponsorsData {
-  gold: Sponsor[];
-  silver: Sponsor[];
-  bronze: Sponsor[];
-}
-
 const PastSponsors: React.FC = () => {
-  // Cast imported JSON data to the SponsorsData type
-  const sponsorsData: SponsorsData = sponsors as SponsorsData;
-
-  // Combine all sponsors into a single array
-  const allSponsors = [
-    ...sponsorsData.gold,
-    ...sponsorsData.silver,
-    ...sponsorsData.bronze
-  ];
+  const allSponsors: Sponsor[] = sponsors;
 
   return (
     <section className="pt-10 relative" id="pastSponsors">
