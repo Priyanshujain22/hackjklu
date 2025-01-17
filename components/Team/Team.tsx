@@ -9,8 +9,6 @@ interface SocialLinks {
   gb?: string;
   email?: string;
   linkedin?: string;
- 
-  
 }
 
 interface TeamCardProps {
@@ -50,8 +48,7 @@ const TeamCard: React.FC<TeamCardProps> = ({ name, title, socials, imageSrc }) =
                 <Github size={ICON_SIZE} width={ICON_SIZE} />
               </a>
             )}
-          
-          
+
             {socials.linkedin && (
               <a
                 target="_blank"
