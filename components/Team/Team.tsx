@@ -23,7 +23,7 @@ interface TeamCardProps {
 const TeamCard: React.FC<TeamCardProps> = ({ name, title, socials, imageSrc }) => {
   return (
     <div className={styles.card}>
-      <div className="z-10 w-full text-center h-60 mb-18 mt-4 overflow-hidden rounded-lg">
+      <div className="z-10 w-full text-center h-60 mb-18 mt-0 overflow-hidden rounded-lg">
         <Image
           className={styles.image}
           height="100"
