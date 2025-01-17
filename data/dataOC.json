@@ -1,7 +1,7 @@
 [
   {
       "name": "Vaibhav Chauhan",
-      "imageSrc": "VaibhavChauhan2",
+      "imageSrc": "VaibhavChauhan212",
        "title": "General Secretary",
       "socials": {
           "gb": "#",
@@ -13,7 +13,7 @@
   },
   {
       "name": "Paras Goyal",
-      "imageSrc": "ParasGoyal",
+      "imageSrc": "ParasGoyalfinal",
       "title": "\u200B",
       
       "socials": {
@@ -24,13 +24,18 @@
   },
   {
       "name": "Yash Puri Goswami",
-      "imageSrc": "DivyaSharma",
-      "socials": {}
+      "title": "\u200c",
+      
+      "socials": {
+        "gb": "#",
+        "linkedin": "#",
+        "email": "#"
+      }
   },
   {
       "name": "Shubham Jain",
       "imageSrc": "shubhamjain",
-      "title": "Secreatary",
+      "title": "Secretary",
       "socials": {
           "gb": "https://github.com/ShubhamJain-23",
           "linkedin": "https://www.linkedin.com/in/shubham-jain2302/",

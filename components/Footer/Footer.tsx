@@ -3,12 +3,11 @@ import React from "react";
 import NextLink from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import styles from "./Footer.module.css";
 
 const Footer: React.FC = () => {
     return (
         <footer
-            className={`bg-[#000000c6] mt-[1rem] md:mt-[2rem] text-white p-5 md:p-8`}
+            className={`text-white relative p-5 md:p-8`}
         >
             <div className="md:mx-[3rem]">
                 <div className="flex flex-col md:flex-row justify-between items-start">
@@ -47,27 +46,8 @@ const Footer: React.FC = () => {
                                 Registrations: +91 XXXXX XXXXX (xyz)
                             </p>
                         </div>
-                        <div className="my-4">
-                            <h4
-                                className={cn(
-                                    "text-[1rem] md:text-[1.5rem] text-[#10dc3c] font-base mb-[0.5rem] md:mb-[1.5rem]",
-                                )}
-                            >
-                                FOLLOW US
-                            </h4>
-                        </div>
-                        <div className="flex space-x-4">
-                            <a href="https://www.facebook.com" target="_blank">
-                                <Image src="/socialMediaIcons/facebook.png" alt="Facebook" width={54} height={54} />
-                            </a>
-                            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-                                <Image src="/socialMediaIcons/instagram.png" alt="Instagram" width={54} height={54} />
-                            </a>
-                            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-                                <Image src="/socialMediaIcons/linkedin.png" alt="LinkedIn" width={54} height={54} />
-                            </a>
-                        </div>
                     </div>
+                    <br />
 
                     <div className="w-full md:w-50% lg:w-50%">
                         <div className={cn()}>
@@ -79,6 +59,18 @@ const Footer: React.FC = () => {
                             />
                         </div>
                     </div>
+                </div>
+
+                <div className="flex justify-center space-x-4 mt-6 md:mt-0 md:justify-start">
+                    <a href="https://www.facebook.com" target="_blank">
+                        <Image src="/socialMediaIcons/facebook.svg" alt="Facebook" width={54} height={54} />
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                        <Image src="/socialMediaIcons/instagram.svg" alt="Instagram" width={54} height={54} />
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                        <Image src="/socialMediaIcons/linkedin.svg" alt="LinkedIn" width={54} height={54} />
+                    </a>
                 </div>
 
                 <div className="flex flex-col md:flex-row justify-between items-center mt-8">
@@ -98,7 +90,7 @@ const Footer: React.FC = () => {
                             {" "}
                             &{" "}
                         </span>
-                        <NextLink href="/">
+                        <NextLink href="/home">
                             <span className="text-gray-400 text-[0.7rem] md:text-sm">
                                 xyz
                             </span>

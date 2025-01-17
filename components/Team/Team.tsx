@@ -23,7 +23,7 @@ interface TeamCardProps {
 const TeamCard: React.FC<TeamCardProps> = ({ name, title, socials, imageSrc }) => {
   return (
     <div className={styles.card}>
-      <div className="z-10 w-full text-center h-2/3 mb-18 mt-4 overflow-hidden rounded-lg">
+      <div className="z-10 w-full text-center h-60 mb-18 mt-4 overflow-hidden rounded-lg">
         <Image
           className={styles.image}
           height="100"
@@ -36,7 +36,7 @@ const TeamCard: React.FC<TeamCardProps> = ({ name, title, socials, imageSrc }) =
       </div>
       <div className="z-10 text-center my-5">
         <h3 className="text-xl">{name}</h3>
-        <h4>{title}</h4>
+        <h4 className={styles.title}>{title}</h4>
       </div>
       <div className={styles.socials}>
         {socials.gb || socials.email || socials.linkedin ? (

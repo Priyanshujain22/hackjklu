@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import style from "./Header.module.css";
+import style from "./HeaderSmall.module.css";
 import ScrambleHover from '../ui/ScrambleHover';
 import { Press_Start_2P } from "next/font/google";
 
@@ -16,22 +16,22 @@ type HeaderProps = {
   text: string;
 };
 
-const Header = ({ text }: HeaderProps) => {
-  
+
+const HeaderSmall = ({ text }: HeaderProps) => {
   return (
     <div className={style.heading}>
       <ScrambleHover
           text={text}
           scrambleSpeed={100}
           sequential={false}
-          // revealDirection="center"
-          maxIterations={8}
+          revealDirection="center"
+          maxIterations={4}
           useOriginalCharsOnly={true}
           className={style.headingText + ` ${press_start_2p.className}`}
           // characters="abcdefghijklmnopqrstuvwxyz!@#$%^&*()_+-=[]{}|;':\,./<>?"
         />
     </div>
   );
-};
+}
 
-export default Header;
+export default HeaderSmall

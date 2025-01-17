@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Montserrat, sans-serif;
-}
 
 @layer utilities {
   .text-balance {
@@ -75,4 +72,17 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@font-face {
+  font-family: 'Overused Grotesk';
+  src: url('/fonts/OverusedGrotesk-VF.woff2') format('woff2'),
+       url('/fonts/OverusedGrotesk-VF.woff') format('woff'),
+       url('/fonts/OverusedGrotesk-VF.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+.overused-grotesk {
+  font-family: 'Overused Grotesk', sans-serif;
 }

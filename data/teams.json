@@ -14,7 +14,7 @@
     {
         "name": "Saurav Kumar Yadav",
         "title": "Discipline",
-        "imageSrc": "Saurav",
+        "imageSrc": "saurav",
         "socials": {
             "gb": "#",
             "linkedin": "",
@@ -58,7 +58,7 @@
     {
         "name": "Preet Taparia",
         "title": "Tech and Support",
-        "imageSrc": "PreetTaparia",
+        "imageSrc": "PreetTaparia2",
         "socials": {
             "gb": "https://github.com/Preet-taparia",
             "linkedin": "https://www.linkedin.com/in/preet-taparia/",
@@ -68,15 +68,82 @@
         }
     },
     {
+        "name": "Akash Saraswat",
+        "title": "Food and Accomodation",
+        "imageSrc": "akashfinal",
+        "socials": {
+            "gb": "#",
+            "linkedin": "https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAAEWzT_UBVyX_vxEcGXhZ3d3ImfVaSd4KYw8&keywords=akash%20saraswat&origin=RICH_QUERY_SUGGESTION&position=0&searchId=4503f735-f2c3-426a-8233-bf1a517c46a7&sid=)x6&spellCorrectionEnabled=false",
+            "email": "#"
+        }
+    },
+    {
         "name": "Aayushi Meel",
         "title": "Food and Accomodation",
-        "imageSrc": "AayushiMeel",
+        "imageSrc": "AAYUSHIMEELfinal",
         "socials": {
             "gb": "#",
             "linkedin": "https://www.linkedin.com/in/aayushi-meel-01505a2b7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
             "email": "aayushimeel1@gmail.com"
         }
+    },
+    {
+    "name": "Rani Ingle",
+    "title": "Media and Report",
+    "imageSrc": "RaniInglefinal",
+    "socials": {
+        "gb": "#",
+        "linkedin": "#",
+        "email": "raniingle@jklu.edu.in"
+        }
+    },
+    
+    {
+        "name": "Niharika Gupta",
+        "title": "Hospitality",
+        "imageSrc": "NiharikaGupta",
+        "socials": {
+            "gb": "https://github.com/NiharikaGupta031",
+            "linkedin": "https://www.linkedin.com/in/niharika-gupta-b99225259?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+            "email": "niharikagupta@jklu.edu.in"
+        }
+    },
+
+    {
+        "name": "Shrashti Chouhan",
+        "title": "Prize and Certificate",
+        "imageSrc": "ShrashtiChouhan2",
+        "socials": {
+            "gb": "#",
+            "linkedin": "https://www.linkedin.com/in/shrashti-chouhan-27553b251?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+            "email": "shrashtichouhan@jklu.edu.in"
+        }
+    },
+
+    {
+        "name": "Shivam Sharma",
+        "title": "Internal Arrangements",
+        "imageSrc": "ShivamSharma",
+        "socials": {
+            "gb": "#",
+            "linkedin": "https://www.linkedin.com/in/shivam-sharma-8a7618259?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+            "email": "shivamsharma2022@jklu.edu.in"
+        }
+    },
+
+    {
+        "name": "Kavisha Gupta",
+        "title": "Decoration",
+        "imageSrc": "KavishaGupta",
+        "socials": {
+            "gb": "#",
+            "linkedin": "https://www.linkedin.com/in/kavishagupta20/",
+            "email": ""
+        }
+    
     }
 
 
-]
+
+
+] 

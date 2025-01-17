@@ -24,7 +24,7 @@ const teamData: TeamCardProps[] = teams;
 export default function TeamPage() {
   return (
     <>
-      <section className="px-10 md:px-20" >
+      <section className="px-10 md:px-20 relative pt-24" >
       <h2 className="text-center mb-10">
           <Header text="Organizing Team" />
         </h2>

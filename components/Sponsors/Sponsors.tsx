@@ -1,19 +1,81 @@
 import React from 'react';
-import RevealingSoon from '../RevealingSoon/RevealingSoon';
+import HeaderSmall from '../HeaderSmall/HeaderSmall';
+import { Button } from "../ui/MovingBorders";
 import Header from '../Header/Header';
-// import styles from "./Sponsors.module.css";
+import Image from 'next/image';
+import sponsors from '@/data/sponsors.json';
 
-const Sponsors = () => {
+// Define TypeScript types for the sponsor data structure
+interface Sponsor {
+  name: string;
+  photo: string;
+  website: string;
+}
+
+interface SponsorsData {
+  gold: Sponsor[];
+  silver: Sponsor[];
+  bronze: Sponsor[];
+}
+
+// Cast imported JSON data to the `SponsorsData` type
+const sponsorsData: SponsorsData = sponsors as SponsorsData;
+
+const renderCards = (data: Sponsor[]) => {
   return (
-    <section className="pt-10" id='sponsors'>
+    <div className="w-full mt-12 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10">
+      {data.map((card, index) => (
+        <Button
+          key={index}
+          duration={Math.floor(Math.random() * 10000) + 10000}
+          borderRadius="1.75rem"
+          style={{
+            background: "rgb(4,7,29)",
+            borderRadius: `calc(1.75rem * 0.96)`,
+          }}
+          className="text-white border-slate-800"
+        >
+          <div className="flex lg:flex-row flex-col lg:items-center p-3 py-6 md:p-5 lg:p-10 gap-2">
+            <Image
+              src={card.photo}
+              alt={card.name}
+              className="lg:w-32 md:w-20 w-16 "
+              width={128}
+              height={128}
+            />
+          </div>
+        </Button>
+      ))}
+    </div>
+  );
+};
+
+const Sponsors: React.FC = () => {
+  return (
+    <section className="pt-10 relative" id="sponsors">
       <h2 className="text-center my-10">
         <Header text="Sponsors" />
       </h2>
-      <div className="py-10 flex justify-center items-center">
-        <RevealingSoon />
+
+      {/* Gold Sponsors */}
+      <div className="p-10">
+        <HeaderSmall text="Gold" />
+        {renderCards(sponsorsData.gold)}
+      </div>
+
+      {/* Silver Sponsors */}
+      <div className="p-10">
+        <HeaderSmall text="Silver" />
+        {renderCards(sponsorsData.silver)}
+      </div>
+
+      {/* Bronze Sponsors */}
+      <div className="p-10">
+        <HeaderSmall text="Bronze" />
+        {renderCards(sponsorsData.bronze)}
       </div>
     </section>
   );
-}
+};
 
 export default Sponsors;

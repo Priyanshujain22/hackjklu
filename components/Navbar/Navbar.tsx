@@ -3,7 +3,15 @@ import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import useWindowDimensions from "../../hooks/useWindowDimension";
 import { FloatingNav } from "../ui/floating-navbar";
-import navData from "../../data/navbar.json"; // Import the JSON file
+import navData from "../../data/navbar.json";
+import { Press_Start_2P } from "next/font/google";
+
+const press_start_2p = Press_Start_2P({
+  weight: "400",
+  style: "normal",
+  subsets: ["latin"],
+  preload: true,
+});
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -38,8 +46,8 @@ const Navbar = () => {
       ) : (
         <>
           <div
-            className={`fixed top-0 w-full bg-[rgba(0,0,0,0.6)] text-white z-50 flex justify-between items-center p-4 ${
-              isScrolled ? "border-b-[#10dc3c] border-b-2" : ""
+            className={`fixed top-0 w-full text-white z-50 flex justify-between items-center p-4 ${
+              isScrolled ? "border-b-[#10dc3c] border-b-2 bg-[rgba(0,0,0,0.6)]" : "bg-[rgba(0,0,0,0.2)]"
             }`}
           >
             <div className="flex items-center space-x-2">
@@ -50,7 +58,7 @@ const Navbar = () => {
                 height={40}
                 className="h-10"
               />
-              <h1 className="text-2xl font-bold text-[#10dc3c]">
+              <h1 className={` ${press_start_2p.className} text-2xl font-bold text-white`}>
                 HackJKLU v4.0
               </h1>
             </div>
