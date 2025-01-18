@@ -62,14 +62,14 @@ const Footer: React.FC = () => {
                 </div>
 
                 <div className="flex justify-center space-x-4 mt-6 md:mt-0 md:justify-start">
-                    <a href="https://www.facebook.com" target="_blank">
-                        <Image src="/socialMediaIcons/facebook.svg" alt="Facebook" width={54} height={54} />
+                    <a href="/" target="_blank">
+                        <Image src="/socialMediaIcons/facebook.svg" alt="Facebook" width={30} height={30} />
                     </a>
-                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-                        <Image src="/socialMediaIcons/instagram.svg" alt="Instagram" width={54} height={54} />
+                    <a href="https://www.instagram.com/hackjklu?igsh=MWRpNXVsdjV1bWYxMg==" target="_blank" rel="noopener noreferrer">
+                        <Image src="/socialMediaIcons/instagram.svg" alt="Instagram" width={30} height={30} />
                     </a>
-                    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-                        <Image src="/socialMediaIcons/linkedin.svg" alt="LinkedIn" width={54} height={54} />
+                    <a href="/" target="_blank" rel="noopener noreferrer">
+                        <Image src="/socialMediaIcons/linkedin.svg" alt="LinkedIn" width={30} height={30} />
                     </a>
                 </div>
 
