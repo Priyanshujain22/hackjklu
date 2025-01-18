@@ -2,9 +2,6 @@
 
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
-import { Montserrat } from "next/font/google";
-
-const montserrat = Montserrat({ subsets: ["latin"]});
 
 export default function RootLayout({
   children,
@@ -15,8 +12,8 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`relative ${montserrat.className}`}>
-        <div className="absolute inset-0 bg-scrolling-pattern animate-bg-scroll"></div>
+      <body className={`relative`}>
+      <div className="fixed inset-0 bg-scrolling-pattern animate-bg-scroll"></div>
         <Navbar />
         {children}
         <Footer />

@@ -81,7 +81,7 @@ const Card = ({
 
 const Prize = () => {
   return (
-    <section className="pt-10" id="prizes">
+    <section className="pt-10 relative" id="prizes">
       <h2 className="text-center my-10">
         <Header text="Prizes" />
       </h2>

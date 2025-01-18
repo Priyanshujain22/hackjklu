@@ -24,8 +24,8 @@ const teamData: TeamCardProps[] = teams;
 export default function TeamPage() {
   return (
     <>
-      <section className="px-10 md:px-20 relative pt-24" >
-      <h2 className="text-center mb-10">
+      <section className="px-10 relative pt-24" >
+        <h2 className="text-center mb-10">
           <Header text="Organizing Team" />
         </h2>
         <div className={`${styles.cardContainer}`}>
@@ -34,6 +34,7 @@ export default function TeamPage() {
               <TeamCard
                 key={`${String(index)}-team`}
                 name={item.name}
+                title={item.title}
                 imageSrc={`/team/${item.imageSrc}.webp`}
                 socials={item.socials}
               />
@@ -44,10 +45,23 @@ export default function TeamPage() {
           <Header text="Core Team" />
         </h2>
         <div className={`${styles.cardContainer}`}>
-          {teamData.map((item, index) => {
+          {teamData.slice(0, teamData.length - 2).map((item, index) => {
             return (
               <TeamCard
                 key={`${String(index)}-team`}
+                name={item.name}
+                title={item.title}
+                imageSrc={`/team/${item.imageSrc}.webp`}
+                socials={item.socials}
+              />
+            );
+          })}
+        </div>
+        <div className={styles.centeredContainer}>
+          {teamData.slice(-2).map((item, index) => {
+            return (
+              <TeamCard
+                key={`${String(index + teamData.length - 2)}-team`}
                 name={item.name}
                 title={item.title}
                 imageSrc={`/team/${item.imageSrc}.webp`}

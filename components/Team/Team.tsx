@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "./Team.module.css";
 import Image from 'next/image';
-import { Mail, Github, Linkedin, Instagram, Phone } from 'lucide-react';
+import { Mail, Github, Linkedin } from 'lucide-react';
 
 const ICON_SIZE = 28;
 
@@ -9,8 +9,6 @@ interface SocialLinks {
   gb?: string;
   email?: string;
   linkedin?: string;
-  instagram?: string;
-  phone?: string;
 }
 
 interface TeamCardProps {
@@ -23,9 +21,9 @@ interface TeamCardProps {
 const TeamCard: React.FC<TeamCardProps> = ({ name, title, socials, imageSrc }) => {
   return (
     <div className={styles.card}>
-      <div className="z-10 w-full text-center h-60 mb-18 mt-4 overflow-hidden rounded-lg">
+      <div className="z-10 w-full text-center h-60 mb-18 mt-0 overflow-hidden rounded-lg">
         <Image
-          className="z-10 rounded-lg object-cover object-top"
+          className={styles.image}
           height="100"
           width="100"
           layout="responsive"
@@ -36,7 +34,7 @@ const TeamCard: React.FC<TeamCardProps> = ({ name, title, socials, imageSrc }) =
       </div>
       <div className="z-10 text-center my-5">
         <h3 className="text-xl">{name}</h3>
-        <h4>{title}</h4>
+        <h4 className={styles.title}>{title}</h4>
       </div>
       <div className={styles.socials}>
         {socials.gb || socials.email || socials.linkedin ? (
@@ -48,20 +46,6 @@ const TeamCard: React.FC<TeamCardProps> = ({ name, title, socials, imageSrc }) =
                 href={socials.gb}
               >
                 <Github size={ICON_SIZE} width={ICON_SIZE} />
-              </a>
-            )}
-            {socials.phone && (
-              <a href={`tel:${socials.phone}`} target="_blank" rel="noopener noreferrer">
-                <Phone size={ICON_SIZE} />
-              </a>
-            )}
-            {socials.instagram && (
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href={socials.instagram}
-              >
-                <Instagram size={ICON_SIZE} />
               </a>
             )}
 
