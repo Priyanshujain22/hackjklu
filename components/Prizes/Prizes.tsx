@@ -3,7 +3,7 @@
 import React, { FC } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
-import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
+import { CardContainer } from "@/components/ui/3d-card";
 
 import { Tally1, Tally2, Tally3 } from 'lucide-react';
 import Header from "../Header/Header";

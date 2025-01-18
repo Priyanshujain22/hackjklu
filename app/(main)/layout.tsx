@@ -16,7 +16,7 @@ export default function RootLayout({
       <div className="fixed inset-0 bg-scrolling-pattern animate-bg-scroll"></div>
         <Navbar />
         {children}
-        {/* <Footer /> */}
+        <Footer />
       </body>
       <style jsx>{`
         .bg-scrolling-pattern {
