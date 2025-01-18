@@ -41,7 +41,7 @@ const Navbar = () => {
     <div
       className={`relative w-full transition-all duration-300 ${isScrolled ? "scrolled" : ""}`}
     >
-      {width >= 768 ? (
+      {width >= 1024 ? (
         <FloatingNav navItems={navData} isScrolled={isScrolled} />
       ) : (
         <>

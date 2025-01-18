@@ -4,19 +4,31 @@
     "link": "/"
   },
   {
-    "name": "ABOUT",
-    "link": "/#about"
+    "name": "PRIZES",
+    "link": "/prizes"
   },
   {
-    "name": "ITINERARY",
-    "link": "/#itinerary"
+    "name": "SPONSORS",
+    "link": "/sponsors"
+  },
+  {
+    "name": "EVENTS",
+    "link": "/events"
+  },
+  {
+    "name": "Gallery",
+    "link": "/gallery"
   },
   {
     "name": "FAQ",
-    "link": "/#faq"
+    "link": "/faq"
   },
   {
     "name": "TEAM",
     "link": "/team"
+  },
+  {
+    "name": "CONTACT",
+    "link": "/contact"
   }
 ]

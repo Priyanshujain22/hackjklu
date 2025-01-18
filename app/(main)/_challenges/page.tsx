@@ -6,7 +6,7 @@ import Header from "@/components/Header/Header";
 export default function ChallengesPage() {
   return (
     <>
-      <section className="px-10 md:px-20" >
+      <section className="px-10 relative pt-24" >
         <h2 className="text-center">
           <Header text="Problem Statements" />
         </h2>
