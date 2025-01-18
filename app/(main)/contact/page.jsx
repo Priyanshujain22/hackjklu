@@ -18,22 +18,7 @@ export default function ContactPage() {
                   <br />
                   Help you?
                 </h1>
-                <div className="block md:hidden">
-                  <Image src={phoneImg} alt="phone" height={100} width={100} />
-                </div>
               </div>
-
-              <p className=" text-xl font-medium max-w-lg md:max-w-xl lg:max-w-2xl xl:maw-w-3xl">
-                Hacker Experience is what we prioritize! Have questions, need
-                assistance, or just want to connect? Feel free to reach out!
-              </p>
-            </div>
-            <div className="hidden md:block mx-auto">
-              <Image
-                src={phoneImg}
-                alt="phone"
-                className="md:w-[168px] lg:w-[200px] xl:w-[220px]"
-              />
             </div>
           </div>
 
