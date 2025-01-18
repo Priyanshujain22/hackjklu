@@ -5,9 +5,9 @@
 
 .headingText {
   @apply font-semibold leading-none lg:text-6xl sm:text-4xl text-2xl text-center;
-  color: #fff;
+  color: #e7e2e2;
 }
 
 .heading:hover .headingText {
-  text-shadow: 0 0 0.25em #0BFB00;
+  text-shadow: 0.05em 0.05em 0 #13b00bed;
 }
