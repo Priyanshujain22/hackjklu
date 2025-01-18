@@ -4,7 +4,7 @@ import Image from "next/image";
 // import styles from "./Gallery.module.css";
 
 const Gallery = () => {
-  const imageCount = 52;
+  const imageCount = 20;
   const imageList = Array.from(
     { length: imageCount },
     (_, index) => `/gallery/${index + 1}.jpg`
