@@ -1,4 +1,5 @@
 import Header from "@/components/Header/Header";
+import Sponsors from "@/components/Sponsors/Sponsors";
 
 export default function SponsorsPage() {
   return (
@@ -7,6 +8,7 @@ export default function SponsorsPage() {
         <h2 className="text-center mb-10">
           <Header text="Sponsors" />
         </h2>
+        <Sponsors />
       </section>
     </>
   );
