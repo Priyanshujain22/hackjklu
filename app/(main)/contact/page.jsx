@@ -1,26 +1,15 @@
 import Header from "@/components/Header/Header";
-import { Card } from "@/components/ui/card";
 import { Linkedin, Youtube, Instagram } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
-import phoneImg from "@/public/Contact/phone.png";
 
 export default function ContactPage() {
   return (
     <>
       <section className="px-10 md:px-20 relative pt-24">
         <div className="mx-auto space-y-12 text-white">
-          <div className="flex items-start pb-8 md:pb-16">
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <h1 className="text-[42px] md:text-6xl lg:text-8xl font-black leading-tight">
-                  How can we
-                  <br />
-                  Help you?
-                </h1>
-              </div>
-            </div>
-          </div>
+        <h2 className="text-center mb-10">
+          <Header text="Conetact Us" />
+        </h2>
 
           <div className="grid grid-cols-2 gap-8">
             <div className="space-y-2">
