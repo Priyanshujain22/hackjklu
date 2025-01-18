@@ -44,8 +44,8 @@ const Card: React.FC<CardData & { delay?: number }> = React.memo(
     const [coords, setCoords] = useState({ x: 0, y: 0 });
     const [isHovered, setIsHovered] = useState(false);
     const [ref, isVisible] = useIntersectionObserver({
-      threshold: 0.2,
-      rootMargin: "50px",
+      threshold: 0.1,
+      rootMargin: "150px",
     });
 
     const handleMouseMove = useCallback((e: React.MouseEvent) => {
@@ -94,7 +94,7 @@ const Card: React.FC<CardData & { delay?: number }> = React.memo(
         onMouseLeave={handleMouseLeave}
       >
         <div
-          className="w-full h-full rounded-xl bg-[#333] overflow-hidden transition-all duration-700 ease-out"
+          className="w-full h-full rounded-xl border border-opacity-50 border-neonGreen bg-[#333] overflow-hidden transition-all duration-700 ease-out"
           style={cardStyle}
         >
           <div
