@@ -9,6 +9,7 @@ export default function ContactPage() {
   const [headingText, setHeadingText] = useState("Reaching JK Lakshmipat University");  
   const [isHovering, setIsHovering] = useState(false);  
   const [displayText, setDisplayText] = useState(headingText);  
+  const [isUnscrambling, setIsUnscrambling] = useState(false);
 
   useEffect(() => {  
     let interval;  
@@ -26,11 +27,13 @@ export default function ContactPage() {
           scrambleCount++;  
         } else {  
           setDisplayText(headingText);  
+          setIsUnscrambling(true); // Set unscrambling state to true
           clearInterval(interval);  
         }  
-      }, 30);  
+      }, 90);  
     } else {  
       setDisplayText(headingText);  
+      setIsUnscrambling(false); // Reset unscrambling state
     }  
     return () => clearInterval(interval);  
   }, [isHovering, headingText]);  
@@ -40,7 +43,7 @@ export default function ContactPage() {
       <section className="px-6 md:px-16 relative pt-24 bg-gradient-to-b from-black via-gray-900 to-black min-h-screen">  
         <div className="mx-auto space-y-12 text-white max-w-5xl">  
           <h2 className="text-center mb-10">  
-            <Header text="Contact Us" className="text-neon-green font-8bit" />  
+            <Header text="Contact Us" className={`text-neon-green font-8bit ${isUnscrambling ? 'unscrambling' : ''}`} />  
           </h2>  
 
           {/* Combined Section */}  
@@ -109,7 +112,7 @@ export default function ContactPage() {
 
           <div className="space-y-8">  
             <h2  
-              className="text-3xl md:text-4xl xl:text-5xl text-center font-bold text-white font-8bit shadow-md cursor-pointer hover:text-neon-green"  
+              className={`text-3xl md:text-4xl xl:text-5xl text-center font-bold text-white font-8bit shadow-md cursor-pointer hover:text-neon-green heading-text ${isUnscrambling ? 'unscrambling' : ''}`}  
               onMouseEnter={() => setIsHovering(true)}  
               onMouseLeave={() => setIsHovering(false)}  
             >  
@@ -172,6 +175,15 @@ export default function ContactPage() {
         .shadow-neon-green {  
           box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14;  
         }  
+        .heading-text {
+          font-size: 1.5rem; /* Adjust the font size as needed */
+          white-space: nowrap; /* Prevent text from wrapping to the next line */
+          overflow: hidden; /* Hide overflow text */
+          text-overflow: ellipsis; /* Add ellipsis (...) for overflow text */
+        }
+        .unscrambling {
+          text-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14; /* Green shadow effect */
+        }
       `}</style>  
     </>  
   );  
