@@ -1,31 +1,38 @@
 [
     {
       "title": "Sustainability & Environment",
-      "image": "/Themes/sustainiblity.webp"
+      "image": "/Themes/sustainiblity.webp",
+      "description": "Learn about the importance of sustainability and how it impacts our daily lives."
     },
     {
       "title": "Healthcare & Well-being",
-      "image": "/Themes/healthcare.webp"
+      "image": "/Themes/healthcare.webp",
+      "description": "Learn about the importance of healthcare and how it impacts our daily lives."
     },
     {
       "title": "Technology & Innovation",
-      "image": "/Themes/technology.webp"
+      "image": "/Themes/technology.webp",
+      "description": "Learn about the importance of technology and how it impacts our daily lives."
     },
     {
       "title": "Education & Social Innovation",
-      "image": "/Themes/education.webp"
+      "image": "/Themes/education.webp",
+      "description": "Learn about the importance of education and how it impacts our daily lives."
     },
     {
       "title": "Finance & Business Solutions",
-      "image": "/Themes/buisness.webp"
+      "image": "/Themes/buisness.webp",
+      "description": "Learn about the importance of finance and how it impacts our daily lives."
     },
     {
       "title": "Entertainment, Media & Culture",
-      "image": "/Themes/media.webp"
+      "image": "/Themes/media.webp",
+      "description": "Learn about the importance of entertainment and how it impacts our daily lives."
     },
     {
       "title": "Open Innovation",
-      "image": "/Themes/innovation.webp"
+      "image": "/Themes/innovation.webp",
+      "description": "Learn about the importance of open innovation and how it impacts our daily lives."
     }
   ]
   
