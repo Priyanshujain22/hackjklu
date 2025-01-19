@@ -1,7 +1,6 @@
 import React from 'react';
 import HeaderSmall from '../HeaderSmall/HeaderSmall';
 import { Button } from "../ui/MovingBorders";
-import Header from '../Header/Header';
 import Image from 'next/image';
 import sponsors from '@/data/sponsors.json';
 
@@ -30,7 +29,7 @@ const renderCards = (data: Sponsor[]) => {
           duration={Math.floor(Math.random() * 10000) + 10000}
           borderRadius="1.75rem"
           style={{
-            background: "rgb(4,7,29)",
+            background: "rgba(0,0,0,0)",
             borderRadius: `calc(1.75rem * 0.96)`,
           }}
           className="text-white border-slate-800"
@@ -44,10 +43,6 @@ const renderCards = (data: Sponsor[]) => {
               height={128}
             />
           </div>
-          <div className="text-center lg:text-left">
-            <h3 className="text-lg font-bold">{card.name}</h3>
-          </div>
-        
         </Button>
       ))}
     </div>
@@ -56,28 +51,24 @@ const renderCards = (data: Sponsor[]) => {
 
 const Sponsors: React.FC = () => {
   return (
-    <section className="pt-10 relative" id="sponsors">
-      <h2 className="text-center my-10">
-        <Header text="Sponsors" />
-      </h2>
+    <section className="relative" id="sponsors">
+      {/* Gold Sponsors */}
+      <div className="p-10 text-center">
+        <HeaderSmall text="Gold" />
+        <div className="flex justify-center">{renderCards(sponsorsData.gold)}</div>
+      </div>
 
-     {/* Gold Sponsors */}
-<div className="p-10 text-center">
-  <HeaderSmall text="Gold" />
-  <div className="flex justify-center">{renderCards(sponsorsData.gold)}</div>
-</div>
+      {/* Silver Sponsors */}
+      <div className="p-10 text-center">
+        <HeaderSmall text="Silver" />
+        <div className="flex justify-center">{renderCards(sponsorsData.silver)}</div>
+      </div>
 
-{/* Silver Sponsors */}
-<div className="p-10 text-center">
-  <HeaderSmall text="Silver" />
-  <div className="flex justify-center">{renderCards(sponsorsData.silver)}</div>
-</div>
-
-{/* Bronze Sponsors */}
-<div className="p-10 text-center">
-  <HeaderSmall text="Bronze" />
-  <div className="flex justify-center">{renderCards(sponsorsData.bronze)}</div>
-</div>
+      {/* Bronze Sponsors */}
+      <div className="p-10 text-center">
+        <HeaderSmall text="Bronze" />
+        <div className="flex justify-center">{renderCards(sponsorsData.bronze)}</div>
+      </div>
     </section>
   );
 };
