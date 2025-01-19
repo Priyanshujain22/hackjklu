@@ -10,7 +10,30 @@ export default function ContactPage() {
   const [isHovering, setIsHovering] = useState(false);  
   const [displayText, setDisplayText] = useState(headingText);  
 
-
+  useEffect(() => {  
+    let interval;  
+    if (isHovering) {  
+      let scrambleCount = 0;  
+      interval = setInterval(() => {  
+        if (scrambleCount < 10) {  
+          setDisplayText((prev) => {  
+            const scrambled = prev  
+              .split("")  
+              .map(() => String.fromCharCode(33 + Math.random() * 94))  
+              .join("");  
+            return scrambled;  
+          });  
+          scrambleCount++;  
+        } else {  
+          setDisplayText(headingText);  
+          clearInterval(interval);  
+        }  
+      }, 30);  
+    } else {  
+      setDisplayText(headingText);  
+    }  
+    return () => clearInterval(interval);  
+  }, [isHovering, headingText]);  
 
   return (  
     <>  
@@ -51,20 +74,26 @@ export default function ContactPage() {
 
             {/* Social Media Section */}  
             <div className="bg-black bg-opacity-60 border border-neon-green rounded-lg p-8 text-center shadow-lg hover:shadow-neon-green">  
-              <h3 className="text-2xl font-bold font-8bit mb-4">Social Media</h3>  
-              <div className="mt-6 flex flex-col space-y-4 items-center">  
-                <Link target="_blank" href={"https://www.instagram.com/hackjklu"} className="flex items-center space-x-6 justify-start w-full">  
-                  <Instagram size={50} className="text-neon-pink transition-colors duration-200 hover:text-[#39FF14]" />  
-                  <span className="text-lg text-white">Instagram</span>  
-                </Link>  
-                <Link target="_blank" href={"https://www.youtube.com/@CouncilofTechnicalAffairs"} className="flex items-center space-x-6 justify-start w-full">  
-                  <Youtube size={50} className="text-neon-pink transition-colors duration-200 hover:text-[#39FF14]" />  
-                  <span className="text-lg text-white">YouTube</span>  
-                </Link>  
-                <Link target="_blank" href={"https://www.linkedin.com/in/council-of-technical-affairs-jklu/"} className="flex items-center space-x-6 justify-start w-full">  
-                  <Linkedin size={50} className="text-neon-pink transition-colors duration-200 hover:text-[#39FF14]" />  
-                  <span className="text-lg text-white">LinkedIn</span>  
-                </Link>  
+              <h3 className="text-xl font-bold font-8bit mb-4">Social Media</h3>  
+              <div className="mt-6 space-y-12">  
+                <div className="flex items-center space-x-6">  
+                  <Link target="_blank" href={"https://www.instagram.com/hackjklu"} className="flex items-center space-x-6">  
+                    <Instagram size={30} className="text-neon-pink transition-colors duration-200 hover:text-[#39FF14]" />  
+                    <span className="text-lg text-white">Instagram</span>  
+                  </Link>  
+                </div>  
+                <div className="flex items-center space-x-6">  
+                  <Link target="_blank" href={"https://www.youtube.com/@CouncilofTechnicalAffairs"} className="flex items-center space-x-6">  
+                    <Youtube size={30} className="text-neon-pink transition-colors duration-200 hover:text-[#39FF14]" />  
+                    <span className="text-lg text-white">YouTube</span>  
+                  </Link>  
+                </div>  
+                <div className="flex items-center space-x-6">  
+                  <Link target="_blank" href={"https://www.linkedin.com/in/council-of-technical-affairs-jklu/"} className="flex items-center space-x-6">  
+                    <Linkedin size={30} className="text-neon-pink transition-colors duration-200 hover:text-[#39FF14]" />  
+                    <span className="text-lg text-white">LinkedIn</span>  
+                  </Link>  
+                </div>  
               </div>  
             </div>  
           </div>  
