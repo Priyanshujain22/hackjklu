@@ -3,6 +3,7 @@
 import React, { FC } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
+import { CardContainer } from "@/components/ui/3d-card";
 
 import { Tally1, Tally2, Tally3 } from 'lucide-react';
 import Header from "../Header/Header";
@@ -42,12 +43,17 @@ const Card = ({
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="border group/canvas-card flex items-center justify-center border-white/[0.2]  max-w-sm w-full mx-auto p-4 h-[30rem] relative"
+      className="group/canvas-card border flex items-center justify-center border-white/[0.2] max-w-sm w-full mx-auto p-4 h-[30rem] relative overflow-hidden"
     >
       <Icon className="absolute h-6 w-6 -top-3 -left-3 text-white" />
       <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-white" />
       <Icon className="absolute h-6 w-6 -top-3 -right-3 text-white" />
       <Icon className="absolute h-6 w-6 -bottom-3 -right-3 text-white" />
+
+      <div className="absolute inset-0 flex items-center justify-center">
+        {/* Circle with size 80x80 */}
+        <div className="absolute w-80 h-80 bg-white/20 rounded-full"></div>
+      </div>
 
       <AnimatePresence>
         {hovered && (
@@ -79,33 +85,106 @@ const Prize = () => {
       <h2 className="text-center my-10">
         <Header text="Prizes" />
       </h2>
-      <div className="py-10 flex flex-col lg:flex-row items-center justify-center w-full gap-4 mx-auto px-8">
-
-        <Card title="INR 30000" icon={<Tally2 size={64} />}>
+      <div className="py-10 flex flex-col lg:flex-row items-center justify-center bg-black w-full gap-20 mx-auto px-8">
+        <CardContainer>
+            <Card title="🥈 INR 30000" icon={<Tally2 size={64} />}>
           <CanvasRevealEffect
             animationSpeed={5.1}
             containerClassName="bg-emerald-900"
-          />
-        </Card>
-        <Card title="INR 50000" icon={<Tally1 size={64} />}>
-          <CanvasRevealEffect
-            animationSpeed={3}
-            containerClassName="bg-red-900"
             colors={[
               [236, 72, 153],
               [232, 121, 249],
             ]}
             dotSize={2}
           />
-          <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/90" />
-        </Card>
-        <Card title="INR 20000" icon={<Tally3 size={64} />}>
-          <CanvasRevealEffect
-            animationSpeed={3}
-            containerClassName="bg-sky-600"
-            colors={[[125, 211, 252]]}
-          />
-        </Card>
+          <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="absolute inset-0 flex items-center justify-center"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="h-48 w-48 text-yellow-500"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 17.27l5.18 3.73-1.64-5.81L21 9.24l-5.9-.51L12 3.5 8.9 8.73 3 9.24l4.46 5.95-1.64 5.81L12 17.27z"
+            />
+          </svg>
+        </motion.div>
+        <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/90" />
+          
+            </Card>
+        </CardContainer>
+        <CardContainer>
+          <Card title="🥇 INR 50000" icon={<Tally1 size={64} />}>
+        <CanvasRevealEffect
+          animationSpeed={3}
+          containerClassName="bg-red-900"
+          colors={[
+            [236, 72, 153],
+            [232, 121, 249],
+          ]}
+          dotSize={2}
+        />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="absolute inset-0 flex items-center justify-center"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="h-56 w-56 text-yellow-500"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 17.27l5.18 3.73-1.64-5.81L21 9.24l-5.9-.51L12 3.5 8.9 8.73 3 9.24l4.46 5.95-1.64 5.81L12 17.27z"
+            />
+          </svg>
+        </motion.div>
+        <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/90" />
+          </Card>
+        </CardContainer>
+        <CardContainer>
+          <Card title="🥉 INR 20000" icon={<Tally3 size={64} />}>
+        <CanvasRevealEffect
+          animationSpeed={3}
+          containerClassName="bg-sky-600"
+          colors={[[125, 211, 252]]}
+        />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="absolute inset-0 flex items-center justify-center"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="h-40 w-40 text-yellow-500"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 17.27l5.18 3.73-1.64-5.81L21 9.24l-5.9-.51L12 3.5 8.9 8.73 3 9.24l4.46 5.95-1.64 5.81L12 17.27z"
+            />
+          </svg>
+        </motion.div>
+        <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/90" />
+          </Card>
+        </CardContainer>
       </div>
     </section>
   );

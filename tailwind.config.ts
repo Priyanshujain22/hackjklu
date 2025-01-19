@@ -8,6 +8,13 @@ const config: Config = {
 		"./app/**/*.{js,ts,jsx,tsx,mdx}",
 	],
 	theme: {
+		screens: {
+			sm: '640px',
+			md: '768px',
+			lg: '1024px',
+			xl: '1280px',
+			monitor: '1600px',
+		},
 		extend: {
 			colors: {
 				background: 'hsl(var(--background))',
@@ -57,11 +64,6 @@ const config: Config = {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
-			},
-			screens: {
-				xs: {
-					min: '400px',
-				}
 			},
 			keyframes: {
 				'accordion-down': {

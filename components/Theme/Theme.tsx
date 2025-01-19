@@ -44,8 +44,8 @@ const Card: React.FC<CardData & { delay?: number }> = React.memo(
     const [coords, setCoords] = useState({ x: 0, y: 0 });
     const [isHovered, setIsHovered] = useState(false);
     const [ref, isVisible] = useIntersectionObserver({
-      threshold: 0.2,
-      rootMargin: "50px",
+      threshold: 0.1,
+      rootMargin: "150px",
     });
 
     const handleMouseMove = useCallback((e: React.MouseEvent) => {
@@ -94,7 +94,7 @@ const Card: React.FC<CardData & { delay?: number }> = React.memo(
         onMouseLeave={handleMouseLeave}
       >
         <div
-          className="w-full h-full rounded-xl bg-[#333] overflow-hidden transition-all duration-700 ease-out"
+          className="w-full h-full rounded-xl border border-opacity-50 border-neonGreen bg-[#333] overflow-hidden transition-all duration-700 ease-out"
           style={cardStyle}
         >
           <div
@@ -120,32 +120,16 @@ const Card: React.FC<CardData & { delay?: number }> = React.memo(
 Card.displayName = "Card";
 
 const Theme = () => {
-  const [headerRef, isHeaderVisible] = useIntersectionObserver({
-    threshold: 0.2,
-    rootMargin: "50px",
-  });
-
   return (
-    <section id="themes" className="py-10 z-5">
-      <div className="container mx-auto px-4">
-        <div
-          ref={headerRef}
-          className={`text-gray-200 text-center relative z-2 transition-all duration-700 ${isHeaderVisible
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-5"
-            }`}
-        >
-          <h1 className="font-extrabold font-mont text-4xl sm:text-5xl my-10">
-            <Header text="Themes" />
-          </h1>
-        </div>
-
-        <div className="mt-16 mb-12">
-          <div className="grid grid-cols-1 md:px-4 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
-            {themesData.map((card, index) => (
-              <Card key={index} {...card} delay={index * 100} />
-            ))}
-          </div>
+    <section className="pt-10 relative" id="themes">
+      <h2 className="text-center my-10">
+        <Header text="Themes" />
+      </h2>
+      <div className="mt-16 mb-12">
+        <div className="grid grid-cols-1 md:px-4 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
+          {themesData.map((card, index) => (
+            <Card key={index} {...card} delay={index * 100} />
+          ))}
         </div>
       </div>
     </section>
