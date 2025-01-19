@@ -21,7 +21,13 @@ const press_start_2p = Press_Start_2P({
   preload: true,
 });
 
-const COLORS_TOP = ["#97FE71", "#1f54fb", "#47DE81", "#1f54fb"];
+const COLORS_TOP = [
+  "rgba(151, 254, 113, 0.3)",  // lighter green with decreased intensity
+  "rgba(31, 84, 251, 0.5)",    // lighter blue with decreased intensity
+  "rgba(71, 222, 129, 0.5)",   // lighter green with decreased intensity
+  "rgba(31, 84, 251, 0.3)"     // same lighter blue with decreased intensity
+];
+
 
 const RotatingStars = () => {
   const starsRef = useRef<Points>(null);
@@ -45,7 +51,7 @@ const CountdownTimer = () => {
   });
 
   useEffect(() => {
-    const targetDate = new Date("2025-03-07T09:00:00").getTime();
+    const targetDate = new Date("2025-03-07T11:00:00").getTime();
 
     const updateTimer = () => {
       const now = new Date().getTime();
@@ -103,7 +109,7 @@ const Hero = () => {
     });
   }, [color]);
 
-  const backgroundImage = useMotionTemplate`radial-gradient(150% 150% at 50% 0%, #020617 50%, ${color})`;
+  const backgroundImage = useMotionTemplate`radial-gradient(100% 100% at 50% 0%, #020617 50%, ${color})`;
 
   useEffect(() => {
     const script = document.createElement('script');
