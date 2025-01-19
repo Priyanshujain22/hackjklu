@@ -68,7 +68,7 @@ export const FloatingNav = ({
               className={cn(
                 styles.neonglow,
                 styles.shareTechMonoRegular,
-                "hidden sm:block text-sm font-bold neon-glow"
+                "hidden sm:block text-md font-bold"
               )}
             >
               {navItem.name}

@@ -1,67 +1,60 @@
 /* Navbar default styles */
 .navbar {
-    background-color: rgba(
-        0,
-        0,
-        0,
-        0
-    ); /* Default dark transparent background */
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000; /* Ensure the navbar is on top */
-    width: 100%;
-    padding: 20px 40px; /* Initial padding for navbar */
-    border-bottom: 2px solid transparent; /* Default transparent border */
-    transition: all 0.3s ease; /* Smooth transitions for all properties */
-    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2); /* Light shadow for floating effect */
+  background-color: rgba(0, 0, 0, 0); /* Default dark transparent background */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensure the navbar is on top */
+  width: 100%;
+  padding: 20px 40px; /* Initial padding for navbar */
+  border-bottom: 2px solid transparent; /* Default transparent border */
+  transition: all 0.3s ease; /* Smooth transitions for all properties */
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2); /* Light shadow for floating effect */
 }
 
 /* Styles when scrolled (make it "shrink" and add border) */
 .navbar.scrolled {
-    background-color: rgba(0, 0, 0, 0.9); /* Darker background when scrolled */
-    top: 0; /* Keep the navbar at the top after scroll */
-    padding: 10px 40px; /* Smaller padding after scrolling */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); /* Deeper shadow when scrolled */
-    border-bottom: 2px solid rgb(20, 210, 20); /* White border on scroll */
-    /* Additional transitions applied to navbar itself (box-shadow, padding, etc.) */
+  background-color: rgba(0, 0, 0, 0.9); /* Darker background when scrolled */
+  top: 0; /* Keep the navbar at the top after scroll */
+  padding: 10px 40px; /* Smaller padding after scrolling */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); /* Deeper shadow when scrolled */
+  border-bottom: 2px solid rgb(20, 210, 20); /* White border on scroll */
+  /* Additional transitions applied to navbar itself (box-shadow, padding, etc.) */
 }
 
 /* Logo Section: reduce size on scroll */
 .logoContainer {
-    display: flex;
-    align-items: center;
-    transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
 }
 
 .navLinks {
-    display: flex;
-    justify-content: center;
-    margin-left: auto;
-    transition: transform 0.3s ease;
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  transition: transform 0.3s ease;
 }
 
 /* Make the links smaller when scrolled */
 .navLink {
-    font-size: 18px; /* Default font size */
-    transition: font-size 0.3s ease; /* Smooth transition for font size */
+  font-size: 18px; /* Default font size */
+  transition: font-size 0.3s ease; /* Smooth transition for font size */
 }
 
 .navbar.scrolled .navLink {
-    font-size: 16px; /* Smaller font size when scrolled */
+  font-size: 16px; /* Smaller font size when scrolled */
 }
 
 /* Neon glow effect for links */
 .neonglow {
-    position: relative;
-    color: rgb(255, 255, 255);
-    font-weight: bold;
-    transition: text-shadow 0.4s ease, color 0.2s ease;
+  position: relative;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  transition: text-shadow 0.4s ease, color 0.2s ease;
 }
 
 .neonglow:hover {
-    text-shadow: 0 0 10px #10dc3c, 0 0 20px #10dc3c, 0 0 30px #10dc3c,
-        0 0 40px #10dc3c, 0 0 50px #10dc3c, 0 0 60px #10dc3c;
+    text-shadow: 0.1em 0.1em 0 #13b00b;
 }
-
