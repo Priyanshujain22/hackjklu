@@ -125,7 +125,7 @@ const Hero = () => {
             <CardItem translateZ="30" className="text-2xl sm:text-4xl mb-2 text-center font-bold overused-grotesk text-white">
               <div className="flex flex-col items-center justify-center text-white">
                 <BreathingText
-                  label="Dream Design Develop"
+                  label="Ideate | Innovate | Inspire"
                   staggerDuration={0.1}
                   fromFontVariationSettings="'wght' 100, 'slnt' 0"
                   toFontVariationSettings="'wght' 800, 'slnt' -10"
