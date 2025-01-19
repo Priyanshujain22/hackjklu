@@ -6,11 +6,10 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function ContactPage() {
-  const [headingText, setHeadingText] = useState(
+  const [isHovering, setIsHovering] = useState(false);
+  const [displayText, setDisplayText] = useState(
     "Reaching JK Lakshmipat University"
   );
-  const [isHovering, setIsHovering] = useState(false);
-  const [displayText, setDisplayText] = useState(headingText);
   const [isUnscrambling, setIsUnscrambling] = useState(false);
 
   useEffect(() => {
@@ -28,17 +27,17 @@ export default function ContactPage() {
           });
           scrambleCount++;
         } else {
-          setDisplayText(headingText);
+          setDisplayText("Reaching JK Lakshmipat University");
           setIsUnscrambling(true); // Set unscrambling state to true
           clearInterval(interval);
         }
       }, 90);
     } else {
-      setDisplayText(headingText);
+      setDisplayText("Reaching JK Lakshmipat University");
       setIsUnscrambling(false); // Reset unscrambling state
     }
     return () => clearInterval(interval);
-  }, [isHovering, headingText]);
+  }, [isHovering]);
 
   return (
     <>
@@ -186,61 +185,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
-      <style jsx>{`
-        @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"); /* 8-bit style font */
-
-        body {
-          background: linear-gradient(
-            90deg,
-            rgba(0, 0, 0, 1) 0%,
-            rgba(0, 0, 0, 0.9) 100%
-          );
-        }
-        .DinoGame {
-          font-family: "Press Start 2P", cursive; /* Applying 8-bit font */
-        }
-        .text-neon-green {
-          color: #39ff14; /* Bright green color */
-          text-shadow: 0 0 5px rgba(57, 255, 20, 0.6),
-            0 0 10px rgba(57, 255, 20, 0.6);
-        }
-        .text-neon-purple {
-          color: rgba(160, 32, 240, 0.6);
-          text-shadow: 0 0 5px rgba(160, 32, 240, 0.6),
-            0 0 10px rgba(160, 32, 240, 0.6);
-        }
-        .text-neon-pink {
-          color: rgba(255, 0, 127, 0.6);
-          text-shadow: 0 0 5px rgba(255, 0, 127, 0.6),
-            0 0 10px rgba(255, 0, 127, 0.6);
-        }
-        .aspect-video {
-          position: relative;
-          width: 100%;
-          height: 0;
-          padding-top: 56.25%; /* 16:9 Aspect Ratio */
-        }
-        .aspect-video iframe {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-        }
-        .border-neon-green {
-          border-color: #39ff14; /* Bright green color */
-        }
-        .shadow-neon-green {
-          box-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
-        }
-        .heading-text {
-          font-size: 1.5rem; /* Adjust the font size as needed */
-        }
-        .unscrambling {
-          text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14; /* Green shadow effect */
-        }
-      `}</style>
     </>
   );
 }
