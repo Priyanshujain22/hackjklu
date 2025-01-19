@@ -8,6 +8,7 @@ import Header from "../Header/Header";
 interface CardData {
   image: string;
   title: string;
+  description?: string;
 }
 
 type IntersectionObserverOptions = IntersectionObserverInit;
@@ -40,7 +41,7 @@ const useIntersectionObserver = (options: IntersectionObserverOptions = {}) => {
 
 
 const Card: React.FC<CardData & { delay?: number }> = React.memo(
-  ({ image, title, delay = 0 }) => {
+  ({ image, title,description, delay = 0 }) => {
     const [coords, setCoords] = useState({ x: 0, y: 0 });
     const [isHovered, setIsHovered] = useState(false);
     const [ref, isVisible] = useIntersectionObserver({
@@ -101,14 +102,19 @@ const Card: React.FC<CardData & { delay?: number }> = React.memo(
             className="absolute inset-[-38px] bg-cover bg-center transition-all duration-700 ease-out opacity-50 group-hover:opacity-80"
             style={backgroundStyle}
           />
-          <div
-            className={`absolute bottom-0 left-0 right-0 p-4 text-white transition-transform duration-700 ease-out ${isHovered ? "translate-y-8" : "translate-y-[40%]"
-              }`}
-          >
-            <div className="relative z-1">
-              <h2 className="text-lg sm:text-xl font-bold mb-8 text-shadow-lg">
-                {title}
-              </h2>
+        <div
+          className={`absolute bottom-0 left-0 right-0 p-4 text-white transition-transform duration-700 ease-out ${isHovered ? "translate-y-0" : "translate-y-[40%]"
+          }`}
+        >
+        <div className="relative z-1 max-h-full overflow-auto">
+         <h2 className="text-lg sm:text-xl font-bold mb-2 text-shadow-lg mt-0">
+        {title}
+        </h2>
+          {isHovered && (
+            <p className="text-sm mt-2 opacity-100 transition-opacity duration-500 max-h-full overflow-auto">
+              {description}
+            </p>
+          )}
             </div>
           </div>
         </div>
