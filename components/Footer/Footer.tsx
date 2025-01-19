@@ -1,9 +1,6 @@
 "use client";
 import React from "react";
-import NextLink from "next/link";
-import Image from "next/image";
-import { cn } from "@/lib/utils";
-import DinoGame from "@/components/chromeDino/chromeDino";
+// import DinoGame from "@/components/chromeDino/chromeDino";
 
 
 const Footer: React.FC = () => {
@@ -11,7 +8,7 @@ const Footer: React.FC = () => {
         <footer
             className={`text-white`}
         >
-            <DinoGame />
+            {/* <DinoGame /> */}
         </footer>
     );
 };

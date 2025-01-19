@@ -18,7 +18,7 @@ const About = () => {
             <div className="w-full lg:w-1/2 lg:p-8 leading-relaxed order-2 md:order-1">
               <div className="mb-2">
                 <VariableFontCursorProximity
-                  label={`We gladly announce the return of HackJKLU v4.0 an annual hackathon event aimed at instilling creativity in the fundamental culture of JK Lakshmipat University an exciting event that takes place within the span of 3 days bringing together one of the sharpest minds from different disciplines including Engineering, Management and design.`}
+                  label={`We gladly announce the return of HackJKLU v4.0 a premier national-level hackathon hosted by Council of Technical Affairs at JK Lakshmipat University (JKLU), a leading institution in innovation, technology, and interdisciplinary education. This exciting event takes place within the span of 3 days  bringing together top-tier talent from across the nation to solve real-world challenges that impact industries, communities, and the environment.`}
                   className="tracking-wide text-sm lg:text-lg"
                   fromFontVariationSettings="'wght' 400, 'slnt' 0"
                   toFontVariationSettings="'wght' 900, 'slnt' -10"
@@ -29,7 +29,7 @@ const About = () => {
               </div>
               <div>
                 <VariableFontCursorProximity
-                  label={`HackJKLU v4.0, is a community of tech enthusiasts, innovators and problem solvers where they get a chance to compete under one roof by thinking outside the box and solving real life problems with their innovative ideas with an environment that encourages diversity and promotes collaboration.`}
+                  label={`This year's hackathon goes beyond traditional competitions— HackJKLU v4.0 fosters a collaborative ecosystem for interdisciplinary problem-solving and empowers participants to make meaningful contributions to global issues.`}
                   className="tracking-wide text-sm lg:text-lg"
                   fromFontVariationSettings="'wght' 400, 'slnt' 0"
                   toFontVariationSettings="'wght' 900, 'slnt' -10"

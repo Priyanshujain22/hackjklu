@@ -418,7 +418,7 @@ const Prize = () => {
         <div className="flex flex-col gap-6 md:gap-8">
           <div className="grid grid-cols-1">
             <PrizeCard
-              amount="₹25K"
+              amount="₹50K"
               category="1st prize"
               default_bg="radial-gradient(116.96% 115.94% at 9.81% 9.24%, #383300 0%, rgba(56, 50, 0, 0.17) 100%)"
               hover_bg="radial-gradient(116.96% 115.94% at 9.81% 9.24%, #383300 0%, rgba(56, 50, 0, 0.17) 100%)"
@@ -427,7 +427,7 @@ const Prize = () => {
 
           <div className="grid grid-cols-1 gap-6 md:gap-8 lg:grid-cols-2">
             <PrizeCard
-              amount="₹15K"
+              amount="₹25K"
               category="2nd prize"
               default_bg="radial-gradient(148.8% 129.29% at 94.87% 3.94%, #363636 0%, rgba(26, 26, 26, 0.27) 100%)"
               hover_bg="radial-gradient(371.89% 134.33% at 3.21% 1.26%,rgba(255, 255, 255, 0.07) 0%,rgba(217, 217, 217, 0.00) 100%)"
@@ -456,13 +456,19 @@ const Prize = () => {
               />
               <div className="w-full flex flex-col items-center md:items-start gap-2">
                 <p className="text-[#fff] text-[2rem] font-normal">
-                  Best Girls Team
+                  Social Media Winners
                 </p>
                 <p
                   className="text-[#C3C3C3] text-[1.25rem] font-normal 
                       text-center md:text-left"
                 >
-                  Best performing All-Girls Team at HackJKLU
+                  ₹ 15,000.00
+                </p>
+                <p
+                  className="text-[#C3C3C3] text-[1.25rem] font-normal 
+                      text-center md:text-left"
+                >
+                  Social Media Winners consists of Linkedin, Instagram, Youtube Vlog
                 </p>
               </div>
             </div>
@@ -482,13 +488,19 @@ const Prize = () => {
               />
               <div className="w-full flex flex-col items-center md:items-start gap-2">
                 <p className="text-[#fff] text-[2rem] font-normal">
-                  First Time?
+                  Make-a-thon Winners
                 </p>
                 <p
                   className="text-[#C3C3C3] text-[1.25rem] font-normal 
                       text-center md:text-left"
                 >
-                  For freshmen and novices
+                  ₹ 10,000.00
+                </p>
+                <p
+                  className="text-[#C3C3C3] text-[1.25rem] font-normal 
+                      text-center md:text-left"
+                >
+                  Make-a-thon is a competition for school students
                 </p>
               </div>
             </div>
