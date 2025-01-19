@@ -33,9 +33,7 @@ const Speakersjudges: React.FC = () => {
   };
 
   return (
-    <div
-      className={`mt-8 md:mt-16 mb-[5rem] md:mb-[10rem] ${tech_mono.className}`}
-    >
+    <div className={`mt-8 md:mt-16 mb-[5rem] md:mb-[10rem] ${tech_mono.className}`}>
       <section className="relative pt--1">
         {/* Section Header */}
         <h2 className="text-[2.5rem] md:text-[4rem] font-bold text-center my-[4rem] md:my-[6rem] text-[#e9e4e0]">
@@ -61,9 +59,10 @@ const Speakersjudges: React.FC = () => {
                 {/* Image */}
                 <div className="relative w-[10rem] h-[10rem] sm:w-[10rem] sm:h-[10rem] lg:w-[10rem] lg:h-[10rem] overflow-hidden rounded-full transition-all duration-300 transform hover:scale-110">
                   <Image
-                    src={member.photo}
+                    src={member.photo} // Ensure `member.photo` is a valid image URL or local path
                     alt={member.name}
-                    layout="fill"
+                    width={160}  // Set fixed width
+                    height={160} // Set fixed height
                     objectFit="cover" // Ensures image covers the circle
                     objectPosition="center" // Focuses on the center of the image
                     className="rounded-full"
@@ -73,12 +72,23 @@ const Speakersjudges: React.FC = () => {
 
               {/* Name and Details */}
               <div className="flex flex-col mt-4 transition-all duration-300 transform hover:translate-y-2">
-                <p className="font-bold text-xl sm:text-2xl lg:text-3xl mb-2 text-white">
-                  {member.name || "Unknown Name"}
+                {/* Name with Hover and Click Animation */}
+                <p className="font-bold text-xl sm:text-2xl lg:text-3xl mb-2 text-white relative group">
+                  <span className="relative z-10 group-hover:text-[#10dc3c] transition-all duration-300">
+                    {member.name || "Unknown Name"}
+                  </span>
+                  <span className="absolute inset-0 bg-gradient-to-r from-[#10dc3c] to-[#fff] opacity-0 group-hover:opacity-30 transition-all duration-300"></span>
                 </p>
-                <p className="mb-2 text-lg sm:text-xl lg:text-2xl text-gray-300">
-                  {getShortenedRole(member.role || "No role specified")}
+                
+                {/* Role with Hover and Click Animation */}
+                <p className="mb-2 text-lg sm:text-xl lg:text-2xl text-gray-300 relative group">
+                  <span className="relative z-10 group-hover:text-[#10dc3c] transition-all duration-300">
+                    {getShortenedRole(member.role || "No role specified")}
+                  </span>
+                  <span className="absolute inset-0 bg-gradient-to-r from-[#10dc3c] to-[#fff] opacity-0 group-hover:opacity-30 transition-all duration-300"></span>
                 </p>
+
+                {/* LinkedIn Button */}
                 <a
                   href={member.linkedin || "#"}
                   target="_blank"
