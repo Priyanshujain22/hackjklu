@@ -38,56 +38,57 @@ const Speakersjudges: React.FC = () => {
     >
       <section className="relative pt--1">
         {/* Section Header */}
-        <h2 className="text-[1.8rem] md:text-[4rem] font-bold text-center my-[4rem] md:my-[6rem] text-[#e9e4e0]">
+        <h2 className="text-[2.5rem] md:text-[4rem] font-bold text-center my-[4rem] md:my-[6rem] text-[#e9e4e0]">
           <Header text="Speakers & Judges" />
         </h2>
 
         {/* Speaker/Judge Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 md:gap-8 md:mx-[5rem]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 md:mx-[2rem]">
           {importedDataTeam.map((member) => (
             <div
-            key={member.name}
-            className="flex flex-col md:flex-row items-center text-center md:text-left justify-center md:justify-start mb-8"
-          >
-            <Button
-              duration={Math.floor(Math.random() * 10000) + 10000}
-              borderRadius="50%" // Ensure the button maintains a circular shape
-              style={{
-                background: "rgba(0,0,0,0)",
-                padding: "0.5rem", // Add some padding around the image
-              }}
-              className="relative overflow-hidden flex items-center justify-center rounded-full border-5"
+              key={member.name}
+              className="flex flex-col items-center text-center justify-center p-6 rounded-lg shadow-md bg-transparent transform transition-all duration-500 hover:scale-105 hover:shadow-xl"
             >
-              {/* Image */}
-              <div className="relative h-[9rem] w-[9rem] md:h-40 md:w-40 overflow-hidden rounded-full">
-                <Image
-                  src={member.photo}
-                  alt={member.name}
-                  fill
-                  style={{ objectFit: "cover" }}
-                  className="rounded-full"
-                />
-              </div>
-            </Button>
-          
-            {/* Name and Details */}
-            <div className="flex flex-col mt-4 md:mt-0 md:ml-4">
-              <p className="font-bold text-base md:text-[1.7rem] md:mb-[1rem]">
-                {member.name || "Unknown Name"}
-              </p>
-              <p className="mb-2 text-base text-[1.2rem] md:my-[1rem] px-1 md:px-0 md:max-w-[15rem] overflow-hidden">
-                {getShortenedRole(member.role || "No role specified")}
-              </p>
-              <a
-                href={member.linkedin || "#"}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-cyan-200 hover:underline text-[1.1rem]"
+              <Button
+                duration={Math.floor(Math.random() * 10000) + 10000}
+                borderRadius="50%"
+                style={{
+                  background: "rgba(0,0,0,0)",
+                  padding: "0.75rem",
+                }}
+                className="relative overflow-hidden flex items-center justify-center rounded-full transition-transform duration-300 transform hover:scale-110"
               >
-                LinkedIn
-              </a>
+                {/* Image */}
+                <div className="relative w-[10rem] h-[10rem] sm:w-[10rem] sm:h-[10rem] lg:w-[10rem] lg:h-[10rem] overflow-hidden rounded-full transition-all duration-300 transform hover:scale-110">
+                  <Image
+                    src={member.photo}
+                    alt={member.name}
+                    layout="fill"
+                    objectFit="cover" // Ensures image covers the circle
+                    objectPosition="center" // Focuses on the center of the image
+                    className="rounded-full"
+                  />
+                </div>
+              </Button>
+
+              {/* Name and Details */}
+              <div className="flex flex-col mt-4 transition-all duration-300 transform hover:translate-y-2">
+                <p className="font-bold text-xl sm:text-2xl lg:text-3xl mb-2 text-white">
+                  {member.name || "Unknown Name"}
+                </p>
+                <p className="mb-2 text-lg sm:text-xl lg:text-2xl text-gray-300">
+                  {getShortenedRole(member.role || "No role specified")}
+                </p>
+                <a
+                  href={member.linkedin || "#"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-cyan-200 hover:underline text-lg"
+                >
+                  LinkedIn
+                </a>
+              </div>
             </div>
-          </div>          
           ))}
         </div>
       </section>
