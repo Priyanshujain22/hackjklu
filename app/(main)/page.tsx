@@ -15,10 +15,10 @@ export default function Home() {
       <Hero />
       <AboutStrip />
       <About />
+      <Theme />
       <Prize />
       <Speakersjudges/>
       <PastSponsors />
-      <Theme />
       <Itenary />
       <GalleryHome />
       <FAQ />
