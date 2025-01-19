@@ -16,8 +16,24 @@ const SocialMediaIcon: React.FC<SocialMediaIconProps> = ({ Icon, href }) => (
 
 const Footer = () => {
   return (
-    <div className="flex flex-col mt-16 relative">
-      <hr className="border-[#808080] mb-12" />
+    <div className="flex flex-col mt-16 relative text-white">
+      {/* Infinite Scrolling Background */}
+      {/* <span className="absolute inset-x-0 w-full h-[30px] bg-[url('/dino/ground.png')] bg-repeat-x animate-ground-secondary"></span>
+            <span className="absolute inset-x-0 w-full h-[30px] bg-[url('/dino/ground.png')] bg-repeat-x animate-ground"></span> */}
+
+      {/* <div className="my-10"></div> */}
+
+      {/* Quote Section */}
+      <div className="text-center text-3xl md:text-4xl font-bold mb-8">
+        <span className="text-white">"It's not just about writing </span>
+        <span className="text-neonGreen font-semibold ">code</span>
+        <span className="text-white">, it's about the </span>
+        <span className="text-neonGreen font-semibold">experience</span>
+        <span className="text-white">."</span>
+      </div>
+
+      <hr className="border-t-2 border-neonGreen my-4" />
+
       <div className="px-10 flex flex-col lg:flex-row gap-6 lg:gap-12 justify-center lg:justify-between items-center lg:items-start">
         {/* Links Section */}
         <div className="w-full md:w-auto flex items-center lg:items-start flex-wrap mb-6 sm:mb-0 gap-4 sm:gap-10 justify-center lg:justify-start">
@@ -31,7 +47,7 @@ const Footer = () => {
             </Link>
           ))}
         </div>
-        
+
         {/* Social Media Icons */}
         <div className="flex gap-6 justify-center lg:justify-start">
           <SocialMediaIcon
@@ -48,7 +64,7 @@ const Footer = () => {
           />
         </div>
       </div>
-      
+
       {/* Copyright */}
       <p className="text-white text-lg font-normal text-center leading-normal tracking-tight pt-12 mb-8">
         © 2025 HackJKLU 4.0, All rights reserved

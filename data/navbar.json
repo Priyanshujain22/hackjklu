@@ -4,15 +4,19 @@
     "link": "/"
   },
   {
-    "name": "SPONSORS",
-    "link": "/sponsors"
+    "name": "THEMES",
+    "link": "/#themes"
+  },
+  {
+    "name": "PRIZES",
+    "link": "/#prizes"
   },
   {
     "name": "EVENTS",
     "link": "/events"
   },
   {
-    "name": "Gallery",
+    "name": "GALLERY",
     "link": "/gallery"
   },
   {

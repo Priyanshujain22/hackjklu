@@ -37,20 +37,23 @@ export const FloatingNav = ({
       )}
     >
       <div className={cn(styles.logoContainer, "flex items-center space-x-1")}>
-        <Image
-          src="/hackjklu-logo.png"
-          alt="Hack JKLU Logo"
-          width={48}
-          height={48}
-          className={cn(styles.logo, "h-12 pl-0")}
-        />
+        <a href="/">
+          <Image
+            src="/hackjklu-logo.png"
+            alt="Hack JKLU Logo"
+            width={48}
+            height={48}
+            className={cn(styles.logo, "h-12 pl-0")}
+          />
+        </a>
         <h1
           className={cn(
             "",
             `text-xl lg:text-2xl pl-2 font-extrabold text-white ${press_start_2p.className} `
           )}
-        >
-          HackJKLU v4.0
+        ><a href="/">
+            HackJKLU v4.0
+          </a>
         </h1>
       </div>
 

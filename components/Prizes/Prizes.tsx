@@ -71,7 +71,7 @@ const PrizeCard: React.FC<PrizeCardProps> = ({ amount, category, default_bg, hov
         }
       >
         <p
-          className="text-white font-[500] text-[7rem] leading-[8rem] 
+          className="text-white px-5 font-[500] text-[7rem] leading-[8rem] 
             md:text-[10rem] md:leading-[10rem]"
         >
           {amount}
@@ -407,7 +407,7 @@ const Prize = () => {
       <h2 className="text-center my-10">
         <Header text="Prizes" />
       </h2>
-      <div className="px-20">
+      <div className=" px-10 sm:px-20">
         {/* <p
           className="w-full text-[#C3C3C3] text-center font-normal text-[1.25rem] md:text-[1.5rem]"
         >

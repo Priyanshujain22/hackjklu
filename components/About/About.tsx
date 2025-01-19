@@ -18,7 +18,7 @@ const About = () => {
             <div className="w-full lg:w-1/2 lg:p-8 leading-relaxed order-2 md:order-1">
               <div className="mb-2">
                 <VariableFontCursorProximity
-                  label={`We gladly announce the return of HackJKLU v4.0 a premier national-level hackathon hosted by Council of Technical Affairs at JK Lakshmipat University (JKLU), a leading institution in innovation, technology, and interdisciplinary education. This exciting event takes place within the span of 3 days  bringing together top-tier talent from across the nation to solve real-world challenges that impact industries, communities, and the environment.`}
+                  label={`We gladly announce the return of HackJKLU a premier national-level hackathon hosted by Council of Technical Affairs at JK Lakshmipat University (JKLU), a leading institution in innovation, technology, and interdisciplinary education. This exciting event takes place within the span of 3 days  bringing together top-tier talent from across the nation to solve real-world challenges that impact industries, communities, and the environment.`}
                   className="tracking-wide text-sm lg:text-lg"
                   fromFontVariationSettings="'wght' 400, 'slnt' 0"
                   toFontVariationSettings="'wght' 900, 'slnt' -10"
@@ -39,7 +39,7 @@ const About = () => {
                 />
               </div>
             </div>
-            <div className="w-full lg:w-1/2 flex items-center justify-center order-1 md:order-2">
+            <div className="w-full lg:w-1/2 flex items-center justify-center order-1 md:order-2 mb-10 ">
               <Image
                 src="/hackjklu-logo.png"
                 alt=""

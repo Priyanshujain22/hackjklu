@@ -50,17 +50,24 @@ const Navbar = () => {
               isScrolled ? "border-b-[#10dc3c] border-b-2 bg-[rgba(0,0,0,0.6)]" : "bg-[rgba(0,0,0,0.2)]"
             }`}
           >
+            {/* Logo and Text as Link to Homepage */}
             <div className="flex items-center space-x-2">
-              <Image
-                src="/hackjklu-logo.png"
-                alt="Hack JKLU Logo"
-                width={40}
-                height={40}
-                className="h-10"
-              />
-              <h1 className={` ${press_start_2p.className} text-2xl font-bold text-white`}>
-                HackJKLU v4.0
-              </h1>
+              {/* Wrapping Image with Link */}
+                <a href="/">
+                  <Image
+                    src="/hackjklu-logo.png"
+                    alt="Hack JKLU Logo"
+                    width={40}
+                    height={40}
+                    className="h-10"
+                  />
+                </a>
+              {/* Wrapping text with Link */}
+                <a className="hidden sm:block" href="/">
+                  <h1 className={` ${press_start_2p.className} text-xl font-bold text-white`}>
+                    HackJKLU v4.0
+                  </h1>
+                </a>
             </div>
 
             <button onClick={toggleSidebar} className="lg:hidden p-2 text-white">
