@@ -14,7 +14,7 @@ export default function ContactPage() {
 
   return (  
     <>  
-      <section className="px-6 md:px-16 relative pt-24 bg-gradient-to-b from-black via-gray-900 to-black min-h-screen">  
+      <section className="px-6 md:px-16 relative pt-24 ">  
         <div className="mx-auto space-y-12 text-white max-w-5xl">  
           <h2 className="text-center mb-10">  
             <Header text="Contact Us" className="text-neon-green font-8bit" />  

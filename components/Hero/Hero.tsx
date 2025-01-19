@@ -13,7 +13,6 @@ import {
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 import { Press_Start_2P } from "next/font/google";
 import BreathingText from '../ui/BreathingText';
-import Link from "next/link";
 
 const press_start_2p = Press_Start_2P({
   weight: "400",
@@ -105,6 +104,18 @@ const Hero = () => {
   }, [color]);
 
   const backgroundImage = useMotionTemplate`radial-gradient(150% 150% at 50% 0%, #020617 50%, ${color})`;
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://apply.devfolio.co/v2/sdk.js';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    }
+  }, []);
+
   return (
     <motion.section
       id="main"
@@ -132,10 +143,14 @@ const Hero = () => {
                 />
               </div>
             </CardItem>
-            <CardItem translateZ="60" className="text-xl sm:text-3xl mb-2 text-center font-bold text-white">
-              <Link href="https://guide.devfolio.co/organizers/apply-with-devfolio-integration" target="_blank" className="text-white bg-blue-500 rounded-2xl p-4">
-                Apply with Devfolio
-              </Link>
+            {/* Applying Devfolio Button Here */}
+            <CardItem translateZ="60" className="w-full flex items-center justify-center">
+              <div
+                className="apply-button"
+                data-hackathon-slug="YOUR-HACKATHON-SLUG"
+                data-button-theme="light"
+                style={{ height: "44px", width: "312px" }}
+              ></div>
             </CardItem>
             <CardItem translateZ="50" className="w-full">
               <CountdownTimer />
@@ -150,7 +165,7 @@ const Hero = () => {
         </Canvas>
       </div>
     </motion.section>
-  )
-}
+  );
+};
 
 export default Hero;
