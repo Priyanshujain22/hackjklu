@@ -50,11 +50,6 @@
         "website": "https://www.geeksforgeeks.org/"
     },
     {
-        "name": "Dev-Station",
-        "photo": "/sponsors/dev-station.png",
-        "website": "https://www.devstations.tech/"
-    },
-    {
         "name": "The Dev Army",
         "photo": "/sponsors/devarmy.png",
         "website": "https://thedevarmy.com/"
@@ -68,11 +63,6 @@
         "name": "StreamYard",
         "photo": "/sponsors/streamyard.png",
         "website": "https://streamyard.com/"
-    },
-    {
-        "name": "Pantone",
-        "photo": "/sponsors/pantone.jpg",
-        "website": "https://sudarshanbooks.com/"
     },
     {
         "name": "Devs Dungeon",

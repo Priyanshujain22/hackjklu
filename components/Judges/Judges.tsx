@@ -18,9 +18,7 @@ const Speakersjudges: React.FC = () => {
     };
 
     handleResize();
-
     window.addEventListener("resize", handleResize);
-
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -45,63 +43,167 @@ const Speakersjudges: React.FC = () => {
           {importedDataTeam.map((member) => (
             <div
               key={member.name}
-              className="flex flex-col items-center text-center justify-center p-6 rounded-lg shadow-md bg-transparent transform transition-all duration-500 hover:scale-105 hover:shadow-xl"
+              className="flex flex-col items-center text-center justify-center p-6 rounded-lg shadow-md transform transition-all duration-500 hover:scale-105 hover:shadow-xl neon-card fade-in pulse"
+              style={{
+                background: "rgba(7, 190, 210, 0.1)",
+                border: "2px solid rgba(61, 214, 31, 0.8)",
+                boxShadow: "0 0 15px rgba(61, 214, 31, 0.8), 0 0 30px rgba(61, 214, 31, 0.5)",
+                animation: `${member.animation?.type || "none"} ${member.animation?.duration || "0s"}`,
+              }}
             >
               <Button
                 duration={Math.floor(Math.random() * 10000) + 10000}
-                borderRadius="50%"
+                borderRadius="500%"
                 style={{
                   background: "rgba(0,0,0,0)",
                   padding: "0.75rem",
                 }}
                 className="relative overflow-hidden flex items-center justify-center rounded-full transition-transform duration-300 transform hover:scale-110"
               >
-                {/* Image */}
-                <div className="relative w-[10rem] h-[10rem] sm:w-[10rem] sm:h-[10rem] lg:w-[10rem] lg:h-[10rem] overflow-hidden rounded-full transition-all duration-300 transform hover:scale-110">
-                  <Image
-                    src={member.photo} // Ensure `member.photo` is a valid image URL or local path
-                    alt={member.name}
-                    width={160}  // Set fixed width
-                    height={160} // Set fixed height
-                    objectFit="cover" // Ensures image covers the circle
-                    objectPosition="center" // Focuses on the center of the image
-                    className="rounded-full"
-                  />
-                </div>
+                {/* Image (wrapped with <a> tag to link to LinkedIn profile) */}
+                <a href={member.linkedin || "#"} target="_blank" rel="noopener noreferrer">
+                  <div
+                    className="relative w-[10rem] h-[10rem] overflow-hidden rounded-full neon-border"
+                    style={{
+                      border: "3px solid rgba(61, 214, 31, 0.8)",
+                      boxShadow: "0 0 10px rgba(61, 214, 31, 0.8), 0 0 20px rgba(61, 214, 31, 0.6)",
+                    }}
+                  >
+                    <Image
+                      src={member.photo || "/images/default.jpg"}
+                      alt={member.name}
+                      width={160}
+                      height={160}
+                      className="rounded-full object-cover"
+                    />
+                  </div>
+                </a>
               </Button>
 
               {/* Name and Details */}
-              <div className="flex flex-col mt-4 transition-all duration-300 transform hover:translate-y-2">
-                {/* Name with Hover and Click Animation */}
-                <p className="font-bold text-xl sm:text-2xl lg:text-3xl mb-2 text-white relative group">
-                  <span className="relative z-10 group-hover:text-[#10dc3c] transition-all duration-300">
-                    {member.name || "Unknown Name"}
-                  </span>
-                  <span className="absolute inset-0 bg-gradient-to-r from-[#10dc3c] to-[#fff] opacity-0 group-hover:opacity-30 transition-all duration-300"></span>
-                </p>
-                
-                {/* Role with Hover and Click Animation */}
-                <p className="mb-2 text-lg sm:text-xl lg:text-2xl text-gray-300 relative group">
-                  <span className="relative z-10 group-hover:text-[#10dc3c] transition-all duration-300">
-                    {getShortenedRole(member.role || "No role specified")}
-                  </span>
-                  <span className="absolute inset-0 bg-gradient-to-r from-[#10dc3c] to-[#fff] opacity-0 group-hover:opacity-30 transition-all duration-300"></span>
-                </p>
-
-                {/* LinkedIn Button */}
-                <a
-                  href={member.linkedin || "#"}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-cyan-200 hover:underline text-lg"
+              <div className="flex flex-col mt-4">
+                <p
+                  className="font-bold text-xl sm:text-2xl lg:text-3xl mb-2 text-white transform transition duration-300"
+                  style={{
+                    textShadow:
+                      "0 0 10px rgba(61, 214, 31, 0.8), 0 0 20px rgba(61, 214, 31, 0.6)",
+                  }}
                 >
-                  LinkedIn
-                </a>
+                  <span
+                    className="neon-text"
+                    style={{
+                      textShadow:
+                        "0 0 10px rgba(61, 214, 31, 0.8), 0 0 20px rgba(61, 214, 31, 0.6)",
+                    }}
+                  >
+                    {member.name}
+                  </span>
+                </p>
+                <p
+                  className="text-sm sm:text-base lg:text-lg text-[#e9e4e0] transform transition-all duration-300 hover:scale-105 hover:text-[#3dd61f] tracking-normal hover:tracking-wider"
+                >
+                  {getShortenedRole(member.role)}
+                </p>
               </div>
             </div>
           ))}
         </div>
       </section>
+
+      {/* Additional Styles */}
+      <style jsx>{`
+        @keyframes borderMove {
+          0% {
+            border-color: rgba(61, 214, 31, 0.5);
+          }
+          50% {
+            border-color: rgba(61, 214, 31, 0.8);
+          }
+          100% {
+            border-color: rgba(61, 214, 31, 0.5);
+          }
+        }
+
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+
+        @keyframes pulse {
+          0% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.05);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+
+        @keyframes gradientChange {
+          0% {
+            background: linear-gradient(45deg, #00ff00, #66ff33);
+          }
+          25% {
+            background: linear-gradient(45deg, #66ff33, #33cc33);
+          }
+          50% {
+            background: linear-gradient(45deg, #33cc33, #009900);
+          }
+          75% {
+            background: linear-gradient(45deg, #009900, #66ff33);
+          }
+          100% {
+            background: linear-gradient(45deg, #66ff33, #00ff00);
+          }
+        }
+
+        .neon-card {
+          animation: gradientChange 5s ease-in-out infinite;
+        }
+
+        .fade-in {
+          animation: fadeIn 1s ease-in-out;
+        }
+
+        .pulse {
+          animation: pulse 2s infinite;
+        }
+
+        .neon-text {
+          color: #e9e4e0;
+          transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+        }
+
+        .neon-text:hover {
+          color: #3dd61f;
+          text-shadow: 0 0 15px rgba(61, 214, 31, 0.8), 0 0 30px rgba(61, 214, 31, 0.6);
+        }
+
+        .neon-card:hover .neon-text {
+          color: #3dd61f;
+        }
+
+        .neon-card:hover .neon-text {
+          animation: typing 1s steps(10) 1 normal both;
+        }
+
+        @keyframes typing {
+          0% {
+            width: 0;
+            opacity: 0;
+          }
+          100% {
+            width: 100%;
+            opacity: 1;
+          }
+        }
+      `}</style>
     </div>
   );
 };

@@ -13,7 +13,6 @@ import {
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 import { Press_Start_2P } from "next/font/google";
 import BreathingText from '../ui/BreathingText';
-import Link from "next/link";
 
 const press_start_2p = Press_Start_2P({
   weight: "400",
@@ -22,7 +21,13 @@ const press_start_2p = Press_Start_2P({
   preload: true,
 });
 
-const COLORS_TOP = ["#97FE71", "#1f54fb", "#47DE81", "#1f54fb"];
+const COLORS_TOP = [
+  "rgba(151, 254, 113, 0.3)",  // lighter green with decreased intensity
+  "rgba(31, 84, 251, 0.5)",    // lighter blue with decreased intensity
+  "rgba(71, 222, 129, 0.5)",   // lighter green with decreased intensity
+  "rgba(31, 84, 251, 0.3)"     // same lighter blue with decreased intensity
+];
+
 
 const RotatingStars = () => {
   const starsRef = useRef<Points>(null);
@@ -46,7 +51,7 @@ const CountdownTimer = () => {
   });
 
   useEffect(() => {
-    const targetDate = new Date("2025-03-07T09:00:00").getTime();
+    const targetDate = new Date("2025-03-07T11:00:00").getTime();
 
     const updateTimer = () => {
       const now = new Date().getTime();
@@ -104,7 +109,19 @@ const Hero = () => {
     });
   }, [color]);
 
-  const backgroundImage = useMotionTemplate`radial-gradient(150% 150% at 50% 0%, #020617 50%, ${color})`;
+  const backgroundImage = useMotionTemplate`radial-gradient(100% 100% at 50% 0%, #020617 50%, ${color})`;
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://apply.devfolio.co/v2/sdk.js';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    }
+  }, []);
+
   return (
     <motion.section
       id="main"
@@ -125,17 +142,21 @@ const Hero = () => {
             <CardItem translateZ="30" className="text-2xl sm:text-4xl mb-2 text-center font-bold overused-grotesk text-white">
               <div className="flex flex-col items-center justify-center text-white">
                 <BreathingText
-                  label="Dream Design Develop"
+                  label="Ideate | Innovate | Inspire"
                   staggerDuration={0.1}
                   fromFontVariationSettings="'wght' 100, 'slnt' 0"
                   toFontVariationSettings="'wght' 800, 'slnt' -10"
                 />
               </div>
             </CardItem>
-            <CardItem translateZ="60" className="text-xl sm:text-3xl mb-2 text-center font-bold text-white">
-              <Link href="https://guide.devfolio.co/organizers/apply-with-devfolio-integration" target="_blank" className="text-white bg-blue-500 rounded-2xl p-4">
-                Apply with Devfolio
-              </Link>
+            {/* Applying Devfolio Button Here */}
+            <CardItem translateZ="60" className="w-full flex items-center justify-center">
+              <div
+                className="apply-button"
+                data-hackathon-slug="YOUR-HACKATHON-SLUG"
+                data-button-theme="light"
+                style={{ height: "44px", width: "312px" }}
+              ></div>
             </CardItem>
             <CardItem translateZ="50" className="w-full">
               <CountdownTimer />
@@ -150,7 +171,7 @@ const Hero = () => {
         </Canvas>
       </div>
     </motion.section>
-  )
-}
+  );
+};
 
 export default Hero;

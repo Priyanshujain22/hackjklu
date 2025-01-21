@@ -1,31 +1,38 @@
 [
     {
       "title": "Sustainability & Environment",
-      "image": "/Themes/sustainiblity.webp"
+      "image": "/Themes/sustainiblity.webp",
+      "description": "Covers climate change, renewable energy, circular economy, smart cities, and agriculture & food security. The focus is on solutions that promote environmental sustainability and address climate-related challenges."
     },
     {
       "title": "Healthcare & Well-being",
-      "image": "/Themes/healthcare.webp"
+      "image": "/Themes/healthcare.webp",
+      "description": "Encompasses digital health, telemedicine, mental health, biotechnology, genomics, and pandemic response. This track focuses on improving healthcare access, quality, and personal well-being using technology."
     },
     {
       "title": "Technology & Innovation",
-      "image": "/Themes/technology.webp"
+      "image": "/Themes/technology.webp",
+      "description": "Merges AI/ML, cybersecurity, robotics, IoT, blockchain, AR/VR, and smart technologies. This track highlights innovation in emerging technologies that can solve a variety of global challenges across industries."
     },
     {
       "title": "Education & Social Innovation",
-      "image": "/Themes/education.webp"
+      "image": "/Themes/education.webp",
+      "description": "Covers EdTech, skill development, social impact, inclusion, humanitarian efforts, and disaster response. The emphasis is on enhancing education, providing equal opportunities, and using technology to address societal problems."
     },
     {
       "title": "Finance & Business Solutions",
-      "image": "/Themes/buisness.webp"
+      "image": "/Themes/buisness.webp",
+      "description": "Combines FinTech, legalTech, supply chain, mobility, and smart infrastructure. This track focuses on improving financial services, legal systems, business operations, and logistics through technology."
     },
     {
       "title": "Entertainment, Media & Culture",
-      "image": "/Themes/media.webp"
+      "image": "/Themes/media.webp",
+      "description": "Includes gaming, media, content creation, digital art, and cultural exchange. It focuses on using technology for creative expression, entertainment, and preserving cultural heritage.."
     },
     {
       "title": "Open Innovation",
-      "image": "/Themes/innovation.webp"
+      "image": "/Themes/innovation.webp",
+      "description": "This domain serves as a catch-all for problem statements that don't neatly fit into the other six domains. It invites solutions from external contributors, fostering collaboration and idea sharing across all industries. It's about promoting creative, diverse approaches to solve global challenges, leveraging crowdsourcing, and engaging a wide range of problem-solvers from all over the world."
     }
   ]
   

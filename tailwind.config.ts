@@ -56,7 +56,7 @@ const config: Config = {
 					'3': 'hsl(var(--chart-3))',
 					'4': 'hsl(var(--chart-4))',
 					'5': 'hsl(var(--chart-5))'
-				}, 
+				},
 				neonGreen: '#0BFB00',
 				neonBlue: '#1f54fb',
 			},
@@ -85,11 +85,16 @@ const config: Config = {
 					to: {
 						transform: "translate(calc(-50% - 0.5rem))",
 					},
-				}
+				},        moveGround: {
+					'0%': { transform: 'translateX(0)' },
+					'50%': { transform: 'translateX(-50%)' }, 
+					'100%': { transform: 'translateX(-100%)' },
+				  },
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
+				ground: 'moveGround 10s linear infinite',
 				scroll: "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
 			},
 
