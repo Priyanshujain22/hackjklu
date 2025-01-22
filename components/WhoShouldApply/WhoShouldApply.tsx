@@ -2,20 +2,13 @@ import React from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import styles from "./WhoShouldApply.module.css"
-import { Share_Tech_Mono, Inter } from "next/font/google";
+import { Share_Tech_Mono } from "next/font/google";
 import { CardContainer } from "@/components/ui/3d-card";
 import Header from '../Header/Header';
 
 const tech_mono = Share_Tech_Mono({ subsets: ["latin"], weight: ["400"] });
-const inter = Inter({ subsets: ["latin"] });
 
 const WhoShouldApply = () => {
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
 
   return (
     <div className={`mx-4 md:mx-40 ${tech_mono.className} relative z-10`}>

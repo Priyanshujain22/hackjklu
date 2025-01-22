@@ -88,7 +88,7 @@ const YetToBeDisclosed: React.FC = () => {
           </div>
           {/* Subheading */}
           <div className="text-supporting-mediumGray text-sm sm:text-base lg:text-[24px] mb-6 lg:mb-10 font-medium text-center">
-            Why don't you check these out!
+            Why don&apos;t you check these out!
           </div>
           {/* Redirecting Cards */}
           <div className="flex flex-wrap justify-center gap-4 lg:gap-[44px]">
