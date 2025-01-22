@@ -1,29 +1,23 @@
 "use client";
 import React from "react";
-import Image, { StaticImageData } from "next/image";
 import Header from "../Header/Header";
-
-// Images
-import galleryPageSticker from "@/public/yetToDisclose/gallerySticker.webp";
-import faqsPageSticker from "@/public/yetToDisclose/faqsSticker.webp";
-import humansPageSticker from "@/public/yetToDisclose/humansSticker.webp";
 
 // Redirecting Data Array
 const redirectingData = [
   {
-    title: "Gallery",
+    title: "Hey!", // Updated text
     link: "/gallery",
-    image: galleryPageSticker,
+    image: "Image placeholder ", // Placeholder text
   },
   {
-    title: "FAQS",
+    title: "Hey!", // Updated text
     link: "/faq",
-    image: faqsPageSticker,
+    image: "Image placeholder", // Placeholder text
   },
   {
-    title: "Humans",
+    title: "Hey!", // Updated text
     link: "/humans",
-    image: humansPageSticker,
+    image: "Image placeholder", // Placeholder text
   },
 ];
 
@@ -31,7 +25,7 @@ const redirectingData = [
 interface RedirectCardsProps {
   title: string;
   link: string;
-  image: StaticImageData;
+  image: string; // Changed to string for placeholder text
 }
 
 // RedirectingCard Component with Green Theme and Effects
@@ -47,7 +41,10 @@ const RedirectingCard = ({ title, link, image }: RedirectCardsProps) => {
             "0 0 15px rgba(61, 214, 31, 0.8), 0 0 30px rgba(61, 214, 31, 0.5)",
         }}
       >
-        <Image src={image} alt={title} className="w-24 sm:w-36 lg:w-48 rounded-full" />
+        {/* Image placeholder */}
+        <div className="w-24 sm:w-36 lg:w-48 rounded-full bg-gray-300 flex items-center justify-center text-center text-white font-semibold">
+          <span>{image}</span> {/* Display placeholder text */}
+        </div>
         <div
           className="text-white text-base sm:text-xl lg:text-[40px] font-bold mt-4 neon-text"
           style={{
@@ -55,7 +52,7 @@ const RedirectingCard = ({ title, link, image }: RedirectCardsProps) => {
               "0 0 10px rgba(61, 214, 31, 0.8), 0 0 20px rgba(61, 214, 31, 0.6)",
           }}
         >
-          {title}
+          {title} {/* Display "Hey!" */}
         </div>
       </div>
     </a>
@@ -98,9 +95,9 @@ const YetToBeDisclosed: React.FC = () => {
             {redirectingData.map((data) => (
               <RedirectingCard
                 key={data.title}
-                title={data.title}
+                title={data.title} // "Hey!" for each
                 link={data.link}
-                image={data.image}
+                image={data.image} // Placeholder text
               />
             ))}
           </div>
