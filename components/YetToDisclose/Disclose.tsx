@@ -1,5 +1,4 @@
-
-
+import React from "react";
 import Image from "next/image";
 import { StaticImageData } from "next/image";
 
@@ -39,8 +38,10 @@ const RedirectingCard = ({ title, link, image }: RedirectCardsProps) => {
   return (
     <a href={link} className="block">
       <div className="bg-[#333333] rounded-[22px] flex flex-col gap-2 items-center justify-center p-[16px] shadow-lg hover:shadow-xl transition-shadow duration-300">
-        <Image src={image} alt={title} className="w-48" />
-        <div className="text-white lg:text-[40px] text-xl font-bold">{title}</div>
+        <Image src={image} alt={title} className="w-24 sm:w-36 lg:w-48" />
+        <div className="text-white text-base sm:text-xl lg:text-[40px] font-bold">
+          {title}
+        </div>
       </div>
     </a>
   );
@@ -49,26 +50,37 @@ const RedirectingCard = ({ title, link, image }: RedirectCardsProps) => {
 // YetToBeDisclosed Component
 const YetToBeDisclosed: React.FC = () => {
   return (
-    <div className="flex flex-col gap-4 items-center justify-center py-16 mt-4">
-      <div className="text-white lg:text-[64px] text-2xl page-title font-black">
-        Yet to be disclosed
-      </div>
-      <div className="text-supporting-mediumGray text-base md:text-lg lg:text-[24px] font-medium text-center">
-        These details are not yet disclosed, so stay sharp.
-      </div>
-      <div className="text-white lg:text-[32px] text-xl font-bold">Meanwhile,</div>
-      <div className="text-supporting-mediumGray lg:text-[24px] lg:mb-[40px] mb-4 font-medium">
-        why don't you check these out!
-      </div>
-      <div className="flex md:flex-row flex-col gap-4 lg:gap-[44px]">
-        {redirectingData.map((data) => (
-          <RedirectingCard
-            key={data.title}
-            title={data.title}
-            link={data.link}
-            image={data.image}
-          />
-        ))}
+    <div className="relative w-screen min-h-screen flex items-center justify-center px-4 sm:px-8 py-16 lg:py-20">
+      <div className="relative w-full max-w-[900px] mx-auto border-2 sm:border-4 border-dashed border-white rounded-lg p-4 sm:p-8 lg:p-12">
+        <div className="flex flex-col gap-6 items-center justify-center">
+          {/* Title */}
+          <div className="text-white text-2xl sm:text-4xl lg:text-[64px] page-title font-black text-center">
+            Yet to be disclosed
+          </div>
+          {/* Subtitle */}
+          <div className="text-supporting-mediumGray text-sm sm:text-base lg:text-[24px] font-medium text-center leading-snug">
+            These details are not yet disclosed, so stay sharp.
+          </div>
+          {/* Heading */}
+          <div className="text-white text-lg sm:text-xl lg:text-[32px] font-bold">
+            Meanwhile,
+          </div>
+          {/* Subheading */}
+          <div className="text-supporting-mediumGray text-sm sm:text-base lg:text-[24px] mb-6 lg:mb-10 font-medium text-center">
+            Why don't you check these out!
+          </div>
+          {/* Redirecting Cards */}
+          <div className="flex flex-wrap justify-center gap-4 lg:gap-[44px]">
+            {redirectingData.map((data) => (
+              <RedirectingCard
+                key={data.title}
+                title={data.title}
+                link={data.link}
+                image={data.image}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

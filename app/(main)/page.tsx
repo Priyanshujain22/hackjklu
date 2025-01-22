@@ -23,8 +23,9 @@ export default function Home() {
       <WhoShouldApply />
       <Itenary />
       <GalleryHome />
-      <FAQ />
       <YetToBeDisclosed/>
+
+      <FAQ />
     </>
   );
 }
