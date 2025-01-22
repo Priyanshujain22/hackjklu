@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Header from "../Header/Header";
 
 import img1 from "@/public/Commitee_Images/groupimage.jpg";
 import img2 from "@/public/Commitee_Images/groupimage.jpg";
@@ -16,7 +17,6 @@ import img10 from "@/public/Commitee_Images/groupimage.jpg";
 const Carousel = () => {
   const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10];
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [showTitle, setShowTitle] = useState(true);
 
   // Function to go to the next slide
   const nextSlide = () => {
@@ -34,36 +34,19 @@ const Carousel = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 3000); // Change image every 3 seconds
+    }, 500); // Change image every 3 seconds
 
     return () => clearInterval(interval); // Clear the interval on component unmount
   }, []);
 
-  // Logic for hiding the title after 5 seconds
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowTitle(false);
-    }, 5000); // Hide after 5 seconds
-
-    return () => clearTimeout(timer); // Clear the timeout on component unmount
-  }, []);
-
   return (
-    <div className="relative w-full flex flex-col items-center space-y-8 mt-8 mb-8">
+    <div className="relative w-full flex flex-col items-center space-y-5   mt-8 mb-8">
       {/* Title */}
-      {showTitle && (
-        <div
-          className="absolute top-0 w-full text-center p-4"
-          style={{
-            transition: "opacity 0.5s ease-in-out",
-            opacity: showTitle ? 1 : 0,
-          }}
-        >
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800">
-            Our Community Crew
-          </h2>
-        </div>
-      )}
+      <div className="text-center">
+      <h2 className="text-[2.5rem] md:text-[4rem] font-bold text-center my-[4rem] md:my-[6rem] text-[#e9e4e0]">
+          <Header text="Our Communittee Crew" />
+        </h2>
+      </div>
 
       {/* Carousel */}
       <div className="custom-carousel relative overflow-hidden w-full h-[300px] md:h-[400px] max-w-4xl mx-auto">
@@ -73,15 +56,18 @@ const Carousel = () => {
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
           {images.map((img, index) => (
-            <div key={index} className="min-w-full flex justify-center items-center">
+            <div
+              key={index}
+              className="min-w-full flex justify-center items-center"
+            >
               <Image
                 src={img}
                 alt={`Carousel Image ${index + 1}`}
                 className="rounded-xl object-cover"
                 placeholder="blur"
                 quality={100}
-                width={800} // Adjust width as per your preference
-                height={600} // Adjust height as per your preference
+                width={800}
+                height={600}
               />
             </div>
           ))}
