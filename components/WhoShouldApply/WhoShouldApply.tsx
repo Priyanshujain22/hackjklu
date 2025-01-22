@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import styles from "./whoshouldapply.module.css";
+import styles from "./WhoShouldApply.module.css"
 import { Share_Tech_Mono, Inter } from "next/font/google";
 import { CardContainer } from "@/components/ui/3d-card";
 import Header from '../Header/Header';
