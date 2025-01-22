@@ -24,7 +24,7 @@ const Footer = () => {
       {/* <div className="my-10"></div> */}
 
       {/* Quote Section */}
-      <div className="text-center text-3xl md:text-4xl font-bold mb-8">
+      <div className="text-center text-xl md:text-2xl font-bold mb-8">
         <span className="text-white">&quot;It&apos;s not just about writing </span>
         <span className="text-neonGreen font-semibold ">code</span>
         <span className="text-white">, it&apos;s about the </span>

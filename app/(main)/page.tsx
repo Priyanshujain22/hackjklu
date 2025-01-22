@@ -7,7 +7,7 @@ import Prize from "@/components/Prizes/Prizes";
 import PastSponsors from "@/components/Sponsors/PastSponsors";
 import Theme from "@/components/Theme/Theme";
 import GalleryHome from "@/components/Gallery/GalleryHome";
-// import Speakersjudges from "@/components/Judges/Judges"
+import Speakersjudges from "@/components/Judges/Judges"
 import WhoShouldApply from "@/components/WhoShouldApply/WhoShouldApply";
 
 export default function Home() {
@@ -18,7 +18,7 @@ export default function Home() {
       <About />
       <Theme />
       <Prize />
-      {/* <Speakersjudges/> */}
+      <Speakersjudges/>
       <PastSponsors />
       <WhoShouldApply />
       <Itenary />

@@ -49,6 +49,8 @@ const Speakersjudges: React.FC = () => {
                 border: "2px solid rgba(61, 214, 31, 0.8)",
                 boxShadow: "0 0 15px rgba(61, 214, 31, 0.8), 0 0 30px rgba(61, 214, 31, 0.5)",
                 animation: `${member.animation?.type || "none"} ${member.animation?.duration || "0s"}`,
+                padding: "1rem", // Added padding here
+                margin: "1rem", // Added margin here
               }}
             >
               <Button
@@ -57,6 +59,7 @@ const Speakersjudges: React.FC = () => {
                 style={{
                   background: "rgba(0,0,0,0)",
                   padding: "0.75rem",
+                  margin: "0.5rem", // Added margin here
                 }}
                 className="relative overflow-hidden flex items-center justify-center rounded-full transition-transform duration-300 transform hover:scale-110"
               >
@@ -67,6 +70,7 @@ const Speakersjudges: React.FC = () => {
                     style={{
                       border: "3px solid rgba(61, 214, 31, 0.8)",
                       boxShadow: "0 0 10px rgba(61, 214, 31, 0.8), 0 0 20px rgba(61, 214, 31, 0.6)",
+                      margin: "0.5rem", // Added margin here
                     }}
                   >
                     <Image
@@ -81,12 +85,13 @@ const Speakersjudges: React.FC = () => {
               </Button>
 
               {/* Name and Details */}
-              <div className="flex flex-col mt-4">
+              <div className="flex flex-col mt-4" style={{ margin: "0.5rem" }}> {/* Added margin here */}
                 <p
                   className="font-bold text-xl sm:text-2xl lg:text-3xl mb-2 text-white transform transition duration-300"
                   style={{
                     textShadow:
                       "0 0 10px rgba(61, 214, 31, 0.8), 0 0 20px rgba(61, 214, 31, 0.6)",
+                    margin: "0.5rem", // Added margin here
                   }}
                 >
                   <span
@@ -101,6 +106,7 @@ const Speakersjudges: React.FC = () => {
                 </p>
                 <p
                   className="text-sm sm:text-base lg:text-lg text-[#e9e4e0] transform transition-all duration-300 hover:scale-105 hover:text-[#3dd61f] tracking-normal hover:tracking-wider"
+                  style={{ margin: "0.5rem" }} // Added margin here
                 >
                   {getShortenedRole(member.role)}
                 </p>
