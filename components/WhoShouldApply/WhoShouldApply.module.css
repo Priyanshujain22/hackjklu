@@ -24,3 +24,11 @@
     animation: gradientFlow 5s cubic-bezier(0.42, 0, 0.58, 1) infinite;
 }
 
+/* Add media query for mobile devices */
+@media (max-width: 768px) {
+    .gradientText {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+

@@ -20,6 +20,25 @@ const Itenary = () => {
   const { day1Events, day2Events, day3Events } = itineraryData as ItineraryData;
 
   const [activeFilter, setActiveFilter] = useState("all");
+  const [isMobile, setIsMobile] = useState(false);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    // Set initial value
+    handleResize();
+
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const buttonGroupStyle = isMobile ? { marginTop: '-10px' } : {};
+  const buttonStyle = isMobile ? { padding: '6px 12px', margin: '12px 8px', fontSize: '0.75rem' } : {};
 
   const highlightClass = (tags: string[]) => {
     // Check if any of the event's tags match the activeFilter
@@ -39,38 +58,42 @@ const Itenary = () => {
           </h2>
 
           {/* Button Group for Highlighting */}
-          <div className="text-center my-4">
+          <div className="text-center my-4 button-group" style={buttonGroupStyle}>
             <button
-              className={`px-4 py-2 rounded-lg mx-2 ${activeFilter === "all" ? "bg-neonBlue text-white" : "bg-transparent text-neonGreen border border-neonGreen"}`}
+              className={`px-4 py-2 rounded-lg mx-2 ${activeFilter === "all" ? "bg-neonBlue text-white" : "bg-transparent text-neonGreen border border-neonGreen"} filter-button`}
+              style={buttonStyle}
               onClick={() => setActiveFilter("all")}
             >
               All
             </button>
             <button
-              className={`px-4 py-2 rounded-lg mx-2 ${activeFilter === "mandatory" ? "bg-neonBlue text-white" : "bg-transparent text-neonGreen border border-neonGreen"}`}
+              className={`px-4 py-2 rounded-lg mx-2 ${activeFilter === "mandatory" ? "bg-neonBlue text-white" : "bg-transparent text-neonGreen border border-neonGreen"} filter-button`}
+              style={buttonStyle}
               onClick={() => setActiveFilter("mandatory")}
             >
               Mandatory
             </button>
             <button
-              className={`px-4 py-2 rounded-lg mx-2 ${activeFilter === "fun" ? "bg-neonBlue text-white" : "bg-transparent text-neonGreen border border-neonGreen"}`}
+              className={`px-4 py-2 rounded-lg mx-2 ${activeFilter === "fun" ? "bg-neonBlue text-white" : "bg-transparent text-neonGreen border border-neonGreen"} filter-button`}
+              style={buttonStyle}
               onClick={() => setActiveFilter("fun")}
             >
               Fun
             </button>
             <button
-              className={`px-4 py-2 rounded-lg mx-2 ${activeFilter === "food" ? "bg-neonBlue text-white" : "bg-transparent text-neonGreen border border-neonGreen "}`}
+              className={`px-4 py-2 rounded-lg mx-2 ${activeFilter === "food" ? "bg-neonBlue text-white" : "bg-transparent text-neonGreen border border-neonGreen "} filter-button`}
+              style={buttonStyle}
               onClick={() => setActiveFilter("food")}
             >
               Food
             </button>
             <button
-              className={`px-4 py-2 rounded-lg mx-2 ${activeFilter === "workshop" ? "bg-neonBlue text-white" : "bg-transparent text-neonGreen border border-neonGreen"}`}
+              className={`px-4 py-2 rounded-lg mx-2 ${activeFilter === "workshop" ? "bg-neonBlue text-white" : "bg-transparent text-neonGreen border border-neonGreen"} filter-button`}
+              style={buttonStyle}
               onClick={() => setActiveFilter("workshop")}
             >
               Workshop
             </button>
-
           </div>
 
           {/* Itinerary Sections */}

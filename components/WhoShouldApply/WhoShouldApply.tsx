@@ -12,14 +12,14 @@ const WhoShouldApply = () => {
 
   return (
     <div className={`mx-4 md:mx-40 ${tech_mono.className} relative z-10`}>
-      <div className="flex flex-col md:flex-row justify-center items-center my-20 md:my-48">
+      <div className="flex flex-col md:flex-row justify-center items-center my-10 md:my-24">
         <div className="hidden md:block">
           <CardContainer className={cn("flex justify-center items-center")}>
             <Image src="/whoshouldapplyimg.webp" alt="" width={1040} height={1300} />
           </CardContainer>
         </div>
         <div className="m-6 md:ml-8">
-          <h1 className="text-center my-10">
+          <h1 className="text-center my-4">
             <Header text="Who Should Apply?" />
           </h1>
           <div className={cn("flex justify-center items-center md:hidden")}>

@@ -1,0 +1,16 @@
+/* Itenary.css */
+@media (max-width: 768px) {
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin-top: -10px; /* Move the buttons up for mobile */
+    }
+  
+    .filter-button {
+      padding: 4px 10px; /* Reduce padding for smaller buttons */
+      width: auto;
+      font-size: 0.75rem; /* Smaller font size */
+    }
+  }
