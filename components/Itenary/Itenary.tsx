@@ -57,39 +57,34 @@ const Itenary = () => {
             <Header text="Itinerary" />
           </h2>
 
-          {/* Button Group for Highlighting */}
-          <div className="text-center my-4 button-group" style={buttonGroupStyle}>
+
+          <div className="text-center my-4 flex flex-wrap justify-center gap-4">
             <button
-              className={`px-4 py-2 rounded-lg mx-2 ${activeFilter === "all" ? "bg-neonBlue text-white" : "bg-transparent text-neonGreen border border-neonGreen"} filter-button`}
-              style={buttonStyle}
+              className={`px-4 py-2 rounded-lg mx-2 mt-1 ${activeFilter === "all" ? "bg-neonBlue text-white" : "bg-transparent text-neonGreen border border-neonGreen"}`}
               onClick={() => setActiveFilter("all")}
             >
               All
             </button>
             <button
-              className={`px-4 py-2 rounded-lg mx-2 ${activeFilter === "mandatory" ? "bg-neonBlue text-white" : "bg-transparent text-neonGreen border border-neonGreen"} filter-button`}
-              style={buttonStyle}
+              className={`px-4 py-2 rounded-lg mx-2 mt-1 ${activeFilter === "mandatory" ? "bg-neonBlue text-white" : "bg-transparent text-neonGreen border border-neonGreen"}`}
               onClick={() => setActiveFilter("mandatory")}
             >
               Mandatory
             </button>
             <button
-              className={`px-4 py-2 rounded-lg mx-2 ${activeFilter === "fun" ? "bg-neonBlue text-white" : "bg-transparent text-neonGreen border border-neonGreen"} filter-button`}
-              style={buttonStyle}
+              className={`px-4 py-2 rounded-lg mx-2 mt-1 ${activeFilter === "fun" ? "bg-neonBlue text-white" : "bg-transparent text-neonGreen border border-neonGreen"}`}
               onClick={() => setActiveFilter("fun")}
             >
               Fun
             </button>
             <button
-              className={`px-4 py-2 rounded-lg mx-2 ${activeFilter === "food" ? "bg-neonBlue text-white" : "bg-transparent text-neonGreen border border-neonGreen "} filter-button`}
-              style={buttonStyle}
+              className={`px-4 py-2 rounded-lg mx-2 mt-1 ${activeFilter === "food" ? "bg-neonBlue text-white" : "bg-transparent text-neonGreen border border-neonGreen "}`}
               onClick={() => setActiveFilter("food")}
             >
               Food
             </button>
             <button
-              className={`px-4 py-2 rounded-lg mx-2 ${activeFilter === "workshop" ? "bg-neonBlue text-white" : "bg-transparent text-neonGreen border border-neonGreen"} filter-button`}
-              style={buttonStyle}
+              className={`px-4 py-2 rounded-lg mx-2 mt-1 ${activeFilter === "workshop" ? "bg-neonBlue text-white" : "bg-transparent text-neonGreen border border-neonGreen"}`}
               onClick={() => setActiveFilter("workshop")}
             >
               Workshop
