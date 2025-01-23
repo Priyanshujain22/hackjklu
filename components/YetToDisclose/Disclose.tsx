@@ -82,9 +82,9 @@ const YetToBeDisclosed: React.FC = () => {
             Why don&apos;t you check these out!
           </div>
           <div className="flex flex-wrap justify-center gap-4 lg:gap-[44px]">
-            {redirectingData.map((data) => (
+            {redirectingData.map((data, _id) => (
               <RedirectingCard
-                key={data.title}
+                key={_id}
                 title={data.title}
                 link={data.link}
                 image={data.image}

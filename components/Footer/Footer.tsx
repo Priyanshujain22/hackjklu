@@ -17,12 +17,6 @@ const SocialMediaIcon: React.FC<SocialMediaIconProps> = ({ Icon, href }) => (
 const Footer = () => {
   return (
     <div className="flex flex-col mt-16 relative text-white">
-      {/* Infinite Scrolling Background */}
-      {/* <span className="absolute inset-x-0 w-full h-[30px] bg-[url('/dino/ground.png')] bg-repeat-x animate-ground-secondary"></span>
-            <span className="absolute inset-x-0 w-full h-[30px] bg-[url('/dino/ground.png')] bg-repeat-x animate-ground"></span> */}
-
-      {/* <div className="my-10"></div> */}
-
       {/* Quote Section */}
       <div className="text-center text-xl md:text-2xl font-bold mb-8">
         <span className="text-white">&quot;It&apos;s not just about writing </span>
