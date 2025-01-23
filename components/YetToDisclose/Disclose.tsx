@@ -2,33 +2,30 @@
 import React from "react";
 import Header from "../Header/Header";
 
-// Redirecting Data Array
 const redirectingData = [
   {
-    title: "Hey!", // Updated text
+    title: "Hey!",
     link: "/gallery",
-    image: "Image placeholder ", // Placeholder text
+    image: "Image placeholder ",
   },
   {
-    title: "Hey!", // Updated text
+    title: "Hey!",
     link: "/faq",
-    image: "Image placeholder", // Placeholder text
+    image: "Image placeholder", 
   },
   {
-    title: "Hey!", // Updated text
+    title: "Hey!",
     link: "/humans",
-    image: "Image placeholder", // Placeholder text
+    image: "Image placeholder", 
   },
 ];
 
-// Props Interface for Redirecting Card Component
 interface RedirectCardsProps {
   title: string;
   link: string;
-  image: string; // Changed to string for placeholder text
+  image: string;
 }
 
-// RedirectingCard Component with Green Theme and Effects
 const RedirectingCard = ({ title, link, image }: RedirectCardsProps) => {
   return (
     <a href={link} className="block">
@@ -41,9 +38,8 @@ const RedirectingCard = ({ title, link, image }: RedirectCardsProps) => {
             "0 0 15px rgba(61, 214, 31, 0.8), 0 0 30px rgba(61, 214, 31, 0.5)",
         }}
       >
-        {/* Image placeholder */}
         <div className="w-24 sm:w-36 lg:w-48 rounded-full bg-gray-300 flex items-center justify-center text-center text-white font-semibold">
-          <span>{image}</span> {/* Display placeholder text */}
+          <span>{image}</span> 
         </div>
         <div
           className="text-white text-base sm:text-xl lg:text-[40px] font-bold mt-4 neon-text"
@@ -52,17 +48,16 @@ const RedirectingCard = ({ title, link, image }: RedirectCardsProps) => {
               "0 0 10px rgba(61, 214, 31, 0.8), 0 0 20px rgba(61, 214, 31, 0.6)",
           }}
         >
-          {title} {/* Display "Hey!" */}
+          {title} 
         </div>
       </div>
     </a>
   );
 };
 
-// YetToBeDisclosed Component
 const YetToBeDisclosed: React.FC = () => {
   return (
-    <div className="relative w-screen min-h-screen flex items-center justify-center px-4 sm:px-8 py-16 lg:py-20">
+    <div className="relative  flex items-center justify-center px-4 sm:px-8 py-16 lg:py-20">
       <div
         className="relative w-full max-w-[900px] mx-auto border-2 sm:border-4 border-dashed rounded-lg p-4 sm:p-8 lg:p-12 neon-border"
         style={{
@@ -72,32 +67,27 @@ const YetToBeDisclosed: React.FC = () => {
         }}
       >
         <div className="flex flex-col gap-6 items-center justify-center">
-          {/* Title */}
           <div className="w-full flex justify-center">
             <h2 className="text-[1.5rem] md:text-[2em] font-bold text-center my-[2rem] md:my-[4rem] text-[#e9e4e0]">
               <Header text="Yet to disclose" />
             </h2>
           </div>
-          {/* Subtitle */}
           <div className="text-supporting-mediumGray text-sm sm:text-base lg:text-[24px] font-medium text-center leading-snug">
             These details are not yet disclosed, so stay sharp.
           </div>
-          {/* Heading */}
           <div className="text-white text-lg sm:text-xl lg:text-[32px] font-bold">
             Meanwhile,
           </div>
-          {/* Subheading */}
           <div className="text-supporting-mediumGray text-sm sm:text-base lg:text-[24px] mb-6 lg:mb-10 font-medium text-center">
             Why don&apos;t you check these out!
           </div>
-          {/* Redirecting Cards */}
           <div className="flex flex-wrap justify-center gap-4 lg:gap-[44px]">
             {redirectingData.map((data) => (
               <RedirectingCard
                 key={data.title}
-                title={data.title} // "Hey!" for each
+                title={data.title}
                 link={data.link}
-                image={data.image} // Placeholder text
+                image={data.image}
               />
             ))}
           </div>

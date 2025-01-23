@@ -49,8 +49,8 @@ const Speakersjudges: React.FC = () => {
                 border: "2px solid rgba(61, 214, 31, 0.8)",
                 boxShadow: "0 0 15px rgba(61, 214, 31, 0.8), 0 0 30px rgba(61, 214, 31, 0.5)",
                 animation: `${member.animation?.type || "none"} ${member.animation?.duration || "0s"}`,
-                padding: "1rem", // Added padding here
-                margin: "1rem", // Added margin here
+                padding: "1rem",
+                margin: "1rem",
               }}
             >
               <Button
@@ -59,18 +59,17 @@ const Speakersjudges: React.FC = () => {
                 style={{
                   background: "rgba(0,0,0,0)",
                   padding: "0.75rem",
-                  margin: "0.5rem", // Added margin here
+                  margin: "0.5rem",
                 }}
                 className="relative overflow-hidden flex items-center justify-center rounded-full transition-transform duration-300 transform hover:scale-110"
               >
-                {/* Image (wrapped with <a> tag to link to LinkedIn profile) */}
                 <a href={member.linkedin || "#"} target="_blank" rel="noopener noreferrer">
                   <div
                     className="relative w-[10rem] h-[10rem] overflow-hidden rounded-full neon-border"
                     style={{
                       border: "3px solid rgba(61, 214, 31, 0.8)",
                       boxShadow: "0 0 10px rgba(61, 214, 31, 0.8), 0 0 20px rgba(61, 214, 31, 0.6)",
-                      margin: "0.5rem", // Added margin here
+                      margin: "0.5rem",
                     }}
                   >
                     <Image
@@ -84,14 +83,13 @@ const Speakersjudges: React.FC = () => {
                 </a>
               </Button>
 
-              {/* Name and Details */}
-              <div className="flex flex-col mt-4" style={{ margin: "0.5rem" }}> {/* Added margin here */}
+              <div className="flex flex-col mt-4" style={{ margin: "0.5rem" }}>
                 <p
                   className="font-bold text-xl sm:text-2xl lg:text-3xl mb-2 text-white transform transition duration-300"
                   style={{
                     textShadow:
                       "0 0 10px rgba(61, 214, 31, 0.8), 0 0 20px rgba(61, 214, 31, 0.6)",
-                    margin: "0.5rem", // Added margin here
+                    margin: "0.5rem",
                   }}
                 >
                   <span
@@ -106,7 +104,7 @@ const Speakersjudges: React.FC = () => {
                 </p>
                 <p
                   className="text-sm sm:text-base lg:text-lg text-[#e9e4e0] transform transition-all duration-300 hover:scale-105 hover:text-[#3dd61f] tracking-normal hover:tracking-wider"
-                  style={{ margin: "0.5rem" }} // Added margin here
+                  style={{ margin: "0.5rem" }}
                 >
                   {getShortenedRole(member.role)}
                 </p>

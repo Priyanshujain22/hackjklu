@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Header from "../Header/Header";
 
@@ -18,39 +18,33 @@ const Carousel = () => {
   const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10];
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Function to go to the next slide
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
+  }, [images.length]);
 
-  // Function to go to the previous slide
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
-  };
+  }, [images.length]);
 
-  // Automatic sliding logic using useEffect
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 500); // Change image every 3 seconds
+    }, 2000);
 
-    return () => clearInterval(interval); // Clear the interval on component unmount
-  }, []);
+    return () => clearInterval(interval);
+  }, [nextSlide]);
 
   return (
-    <div className="relative w-full flex flex-col items-center space-y-5   mt-8 mb-8">
-      {/* Title */}
+    <div className="relative w-full flex flex-col items-center space-y-5 mt-8 mb-8">
       <div className="text-center">
-      <h2 className="text-[2.5rem] md:text-[4rem] font-bold text-center my-[4rem] md:my-[6rem] text-[#e9e4e0]">
-          <Header text="Our Communittee Crew" />
+        <h2 className="text-[2.5rem] md:text-[4rem] font-bold text-center my-[4rem] md:my-[6rem] text-[#e9e4e0]">
+          <Header text="Our Committee Crew" />
         </h2>
       </div>
 
-      {/* Carousel */}
       <div className="custom-carousel relative overflow-hidden w-full h-[300px] md:h-[400px] max-w-4xl mx-auto">
-        {/* Images */}
         <div
           className="flex transition-transform ease-in-out duration-500"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -72,8 +66,6 @@ const Carousel = () => {
             </div>
           ))}
         </div>
-
-        {/* Navigation */}
         <button
           className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-10"
           onClick={prevSlide}
