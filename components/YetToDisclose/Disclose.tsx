@@ -142,6 +142,23 @@ const YetToBeDisclosed: React.FC = () => {
           color: #3dd61f;
           text-shadow: 0 0 15px rgba(61, 214, 31, 0.8), 0 0 30px rgba(61, 214, 31, 0.6);
         }
+
+        @media (max-width: 640px) {
+          .neon-card {
+            width: 120px; /* Adjust width for mobile */
+            height: 120px; /* Adjust height for mobile */
+          }
+
+          .neon-card div {
+            width: 60px; /* Adjust image placeholder size for mobile */
+            height: 60px;
+            font-size: 10px; /* Adjust font size for mobile */
+          }
+
+          .neon-text {
+            font-size: 12px; /* Adjust text size for mobile */
+          }
+        }
       `}</style>
     </div>
   );
