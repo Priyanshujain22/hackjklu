@@ -3,7 +3,6 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import themesData from '../../data/themes.json';
 import Header from "../Header/Header";
-// import styles from "./Themes.module.css";
 
 interface CardData {
   image: string;
@@ -35,37 +34,21 @@ const useIntersectionObserver = (options: IntersectionObserverOptions = {}) => {
     };
   }, [options]);
 
-
   return [elementRef, isIntersecting] as const;
 };
 
-
-const Card: React.FC<CardData & { delay?: number }> = React.memo(
-  ({ image, title, description, delay = 0 }) => {
+const Card: React.FC<CardData & { delay?: number; isActive: boolean; onClick: () => void }> = React.memo(
+  ({ image, title, description, delay = 0, isActive, onClick }) => {
     const [coords, setCoords] = useState({ x: 0, y: 0 });
-    const [isHovered, setIsHovered] = useState(false);
     const [isTouched, setIsTouched] = useState(false);
     const touchTimeout = useRef<NodeJS.Timeout>();
-    const [isMobile, setIsMobile] = useState(false);
     const [ref, isVisible] = useIntersectionObserver({
       threshold: 0.1,
       rootMargin: "150px",
     });
 
-    // Check if device is mobile on mount and window resize
-    useEffect(() => {
-      const checkMobile = () => {
-        setIsMobile(window.matchMedia('(max-width: 768px)').matches);
-      };
-      
-      checkMobile();
-      window.addEventListener('resize', checkMobile);
-      
-      return () => window.removeEventListener('resize', checkMobile);
-    }, []);
-
     const handleMouseMove = useCallback((e: React.MouseEvent) => {
-      if (isMobile) return;
+      if (isTouched) return; // Prevent mouse move effect when touched
       const card = e.currentTarget as HTMLElement;
       const box = card.getBoundingClientRect();
       const x = e.clientX - box.left;
@@ -76,10 +59,19 @@ const Card: React.FC<CardData & { delay?: number }> = React.memo(
       const rotateY = ((x - centerX) / centerX) * 10;
 
       setCoords({ x: rotateX, y: rotateY });
-    }, [isMobile]);
+    }, [isTouched]);
+
+    const handleMouseEnter = () => {
+      setIsTouched(true); // Set touched state to true on hover
+      setCoords({ x: 0, y: 0 }); // Reset coordinates on hover
+    };
+
+    const handleMouseLeave = () => {
+      setIsTouched(false); // Reset touched state on mouse leave
+      setCoords({ x: 0, y: 0 });
+    };
 
     const handleTouchStart = () => {
-      if (!isMobile) return;
       setIsTouched(!isTouched);
       if (isTouched) {
         setCoords({ x: 0, y: 0 });
@@ -89,7 +81,6 @@ const Card: React.FC<CardData & { delay?: number }> = React.memo(
     };
 
     const handleTouchEnd = () => {
-      if (!isMobile) return;
       if (!isTouched) {
         touchTimeout.current = setTimeout(() => {
           setCoords({ x: 0, y: 0 });
@@ -105,72 +96,52 @@ const Card: React.FC<CardData & { delay?: number }> = React.memo(
       };
     }, []);
 
-    const handleMouseEnter = () => !isMobile && setIsHovered(true);
-    const handleMouseLeave = () => {
-      if (!isMobile) {
-        setIsHovered(false);
-        setCoords({ x: 0, y: 0 });
-      }
-    };
-
-    const isActive = isMobile ? isTouched : isHovered;
+    const isActiveState = isActive;
 
     const cardStyle = {
-      transform: isActive
+      transform: isActiveState
         ? `perspective(1000px) rotateX(${coords.x}deg) rotateY(${coords.y}deg) scale3d(1.02,1.02,1.02)`
         : "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)",
-    };
-
-    const backgroundStyle = {
-      transform: isActive
-        ? `translateX(${coords.y * -1}px) translateY(${coords.x * 1}px)`
-        : "translateX(0) translateY(0)",
-      backgroundImage: `url(${image})`,
+      height: '240px', // Original height
+      width: '100%', // Original width
+      padding: '0', // No padding to fill the image
     };
 
     return (
       <div
         ref={ref}
-        className={`relative w-full px-1 sm:px-4 md:p-3 h-[160px] sm:h-[180px] md:h-[240px] mx-1 sm:mx-2 cursor-pointer group transition-all duration-500 ${
+        className={`relative w-full px-1 sm:px-4 md:p-3 mx-1 sm:mx-2 cursor-pointer group transition-all duration-500 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
         }`}
-        style={{ transitionDelay: `${delay}ms` }}
+        style={{ transitionDelay: `${delay}ms`, ...cardStyle }} // Apply card styles
         onMouseMove={handleMouseMove}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
+        onMouseEnter={handleMouseEnter} // Hover effect for laptops
+        onMouseLeave={handleMouseLeave} // Hover effect for laptops
+        onTouchStart={handleTouchStart} // Tap feature for mobile/iPad
+        onTouchEnd={handleTouchEnd} // Tap feature for mobile/iPad
+        onClick={onClick} // Handle click to toggle description
       >
         <div
-          className="w-full h-full rounded-lg sm:rounded-xl border border-opacity-50 border-neonGreen bg-[#333] overflow-hidden transition-all duration-700 ease-out"
+          className={`w-full h-full rounded-lg sm:rounded-xl border border-opacity-50 border-neonGreen bg-[#333] overflow-hidden transition-all duration-700 ease-out`}
           style={cardStyle}
         >
-          <div
-            className={`absolute inset-[-38px] bg-cover bg-center transition-all duration-700 ease-out ${
-              isActive ? "opacity-80" : "opacity-60"
-            }`}
-            style={backgroundStyle}
-          />
-          <div
-            className={`absolute bottom-0 left-0 right-0 p-2 sm:p-4 text-white transition-all duration-700 ease-out ${
-              isActive 
-                ? "h-[85%] sm:h-3/4 translate-y-0 bg-[rgba(0,0,0,0.85)] sm:bg-[rgba(0,0,0,0.6)]" 
-                : "h-auto bg-transparent"
-            }`}
-          >
+          <img src={image} alt={title} className="w-full h-full object-cover" /> {/* Ensure image fills the card */}
+          <div className={`absolute bottom-0 left-0 right-0 p-2 sm:p-4 text-white transition-all duration-700 ease-out ${
+            isActiveState || isTouched // Show description if active or touched
+              ? "h-auto bg-[rgba(0,0,0,0.85)] sm:bg-[rgba(0,0,0,0.6)]" 
+              : "h-0 bg-transparent overflow-hidden"
+          }`}>
             <div className="relative z-1 flex flex-col h-full">
               <p 
-                className={`text-xs sm:text-sm md:text-md mb-2 transition-all duration-300 line-clamp-4 ${
-                  isActive 
+                className={`text-xs sm:text-sm md:text-md mb-2 transition-all duration-300 ${
+                  isActiveState || isTouched // Show description if active or touched
                     ? "opacity-100 translate-y-0 order-1" 
                     : "opacity-0 translate-y-4 order-1"
                 }`}
               >
                 {description}
               </p>
-              <h2 className={`text-sm sm:text-lg md:text-xl font-bold text-shadow-lg order-2 ${
-                isMobile ? "drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]" : ""
-              }`}>
+              <h2 className={`text-sm sm:text-lg md:text-xl font-bold text-shadow-lg order-2`}>
                 {title}
               </h2>
             </div>
@@ -184,6 +155,13 @@ const Card: React.FC<CardData & { delay?: number }> = React.memo(
 Card.displayName = "Card";
 
 const Theme = () => {
+  const [activeCardIndex, setActiveCardIndex] = useState<number | null>(null);
+
+  const handleCardClick = (index: number) => {
+    // If the clicked card is already active, set it to null to hide the description
+    setActiveCardIndex(activeCardIndex === index ? null : index);
+  };
+
   return (
     <section className="pt-5 sm:pt-10 relative" id="themes">
       <h2 className="text-center my-5 sm:my-10">
@@ -192,7 +170,13 @@ const Theme = () => {
       <div className="mt-8 sm:mt-16 mb-8 sm:mb-12">
         <div className="grid grid-cols-1 px-3 sm:px-4 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 justify-items-center">
           {themesData.map((card, index) => (
-            <Card key={index} {...card} delay={index * 100} />
+            <Card 
+              key={index} 
+              {...card} 
+              delay={index * 100} 
+              isActive={activeCardIndex === index} // Pass active state to card
+              onClick={() => handleCardClick(index)} // Pass click handler
+            />
           ))}
         </div>
       </div>
@@ -200,4 +184,4 @@ const Theme = () => {
   );
 }
 
-export default Theme
+export default Theme;
