@@ -45,10 +45,10 @@ const Speakersjudges: React.FC = () => {
               key={member.name}
               className="flex flex-col items-center text-center justify-center p-6 rounded-lg shadow-md transform transition-all duration-500 hover:scale-105 hover:shadow-xl neon-card fade-in pulse"
               style={{
-                background: "rgba(7, 190, 210, 0.1)",
+                background: "black",
                 border: "2px solid rgba(61, 214, 31, 0.8)",
-                boxShadow: "0 0 15px rgba(61, 214, 31, 0.8), 0 0 30px rgba(61, 214, 31, 0.5)",
-                animation: `${member.animation?.type || "none"} ${member.animation?.duration || "0s"}`,
+                boxShadow: "0 0 15px rgba(0,0,0), 0 0 30px rgba(0, 0 ,0 ,0)",
+                //animation: `${member.animation?.type || "none"} ${member.animation?.duration || "0s"}`,
                 padding: "1rem",
                 margin: "1rem",
               }}
@@ -67,8 +67,8 @@ const Speakersjudges: React.FC = () => {
                   <div
                     className="relative w-[10rem] h-[10rem] overflow-hidden rounded-full neon-border"
                     style={{
-                      border: "3px solid rgba(61, 214, 31, 0.8)",
-                      boxShadow: "0 0 10px rgba(61, 214, 31, 0.8), 0 0 20px rgba(61, 214, 31, 0.6)",
+                      //border: "3px solid rgba(61, 214, 31, 0.8)",
+                      //boxShadow: "0 0 10px rgba(61, 214, 31, 0.8), 0 0 20px rgba(61, 214, 31, 0.6)",
                       margin: "0.5rem",
                     }}
                   >

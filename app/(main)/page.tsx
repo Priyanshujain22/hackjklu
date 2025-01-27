@@ -11,24 +11,14 @@ import Speakersjudges from "@/components/Judges/Judges"
 import WhoShouldApply from "@/components/WhoShouldApply/WhoShouldApply";
 import YetToBeDisclosed from "@/components/YetToDisclose/Disclose";
 import Carousel from "@/components/Commitee/committee";
-import { VelocityScroll } from "@/components/ui/VelocityScroll";
 
 export default function Home() {
   return (
     <>
       <Hero />
       <AboutStrip />
-      <VelocityScroll>
-        HackJKLU v4.0 |
-      </VelocityScroll>
       <About />
-      <VelocityScroll>
-        Themes | Tracks | Category |
-      </VelocityScroll>
       <Theme />
-      <VelocityScroll>
-        Prizes | Winners | Runner Ups | 
-      </VelocityScroll>
       <Prize />
       <Speakersjudges />
       <PastSponsors />
