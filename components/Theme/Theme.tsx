@@ -194,11 +194,6 @@ import themesData from '../../data/themes.json';
 import Header from "../Header/Header";
 import { motion } from "framer-motion";
 
-interface CardData {
-  image: string;
-  title: string;
-  description?: string;
-}
 
 const Theme = () => {
   const [activeCardIndex, setActiveCardIndex] = useState<number>(0); // Default to the first card

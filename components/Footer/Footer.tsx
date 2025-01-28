@@ -2,42 +2,8 @@
 
 import { Linkedin, Youtube, Instagram } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 const Footer = () => {
-  const [isHovering, setIsHovering] = useState(false);
-  const [displayText, setDisplayText] = useState(
-    "Reaching JK Lakshmipat University"
-  );
-  const [isUnscrambling, setIsUnscrambling] = useState(false);
-
-  useEffect(() => {
-    let interval: NodeJS.Timeout;
-    if (isHovering) {
-      let scrambleCount = 0;
-      interval = setInterval(() => {
-        if (scrambleCount < 10) {
-          setDisplayText((prev) => {
-            const scrambled = prev
-              .split("")
-              .map(() => String.fromCharCode(33 + Math.random() * 94))
-              .join("");
-            return scrambled;
-          });
-          scrambleCount++;
-        } else {
-          setDisplayText("Reaching JK Lakshmipat University");
-          setIsUnscrambling(true); // Set unscrambling state to true
-          clearInterval(interval);
-        }
-      }, 90);
-    } else {
-      setDisplayText("Reaching JK Lakshmipat University");
-      setIsUnscrambling(false); // Reset unscrambling state
-    }
-    return () => clearInterval(interval);
-  }, [isHovering]);
-
   return (
     <footer className="px-6 pb-4 md:px-16 relative pt-24">
       <div className="mx-auto space-y-8 text-white max-w-6xl px-4 md:px-8">

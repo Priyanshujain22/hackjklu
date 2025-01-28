@@ -10,8 +10,8 @@ import Theme from "@/components/Theme/Theme";
 import GalleryHome from "@/components/Gallery/GalleryHome";
 import Speakersjudges from "@/components/Judges/Judges";
 import WhoShouldApply from "@/components/WhoShouldApply/WhoShouldApply";
-import YetToBeDisclosed from "@/components/YetToDisclose/Disclose";
-import Carousel from "@/components/Commitee/committee";
+// import YetToBeDisclosed from "@/components/YetToDisclose/Disclose";
+// import Carousel from "@/components/Commitee/committee";
 
 export default function Home() {
   return (
