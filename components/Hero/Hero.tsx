@@ -5,7 +5,6 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Points } from "three";
 import React, { useEffect, useState, useRef } from "react";
 import {
-  useMotionTemplate,
   useMotionValue,
   motion,
   animate,
@@ -109,7 +108,7 @@ const Hero = () => {
     });
   }, [color]);
 
-  const backgroundImage = useMotionTemplate`radial-gradient(100% 100% at 50% 0%, #020617 50%, ${color})`;
+  // const backgroundImage = useMotionTemplate`radial-gradient(100% 100% at 50% 0%, #020617 50%, ${color})`;
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -125,27 +124,29 @@ const Hero = () => {
   return (
     <motion.section
       id="main"
-      style={{
-        backgroundImage,
-      }}
-      className="relative mx-auto grid min-h-screen place-content-center overflow-hidden bg-gray-950 px-4 py-24 sm:px-8 sm:py-20 text-gray-200"
+      // style={{
+      //   backgroundImage,
+      // }}
+      className="relative mx-auto grid min-h-screen place-content-center overflow-hidden px-4 py-24 sm:px-8 sm:py-20 text-gray-200"
     >
       <div className="relative z-10 flex flex-col items-center">
         <CardContainer className="z-50 p-4">
           <CardBody className="relative group/card border-white/[0.2] flex flex-col gap-y-10 justify-center items-center w-auto rounded-xl p-6 sm:p-10">
-            <CardItem translateZ="50" className={`text-4xl sm:text-6xl text-center font-bold text-white ${press_start_2p.className}`}>
-              HackJKLU v4.0
-            </CardItem>
+          <CardItem translateZ="50" className={`text-4xl sm:text-6xl text-center font-bold text-white ${press_start_2p.className}`}>
+            <span style={{ color: "#1f54fb" }}>Hack</span>
+            <span style={{ color: "#0bfb00" }}>JKLU</span> v4.0
+          </CardItem>
             <CardItem translateZ="60" className="text-2xl sm:text-3xl text-center font-bold text-white">
               7 - 9 March 2025
             </CardItem>
-            <CardItem translateZ="30" className="text-2xl sm:text-4xl mb-2 text-center font-bold overused-grotesk text-white">
-              <div className="flex flex-col items-center justify-center text-white">
+            <CardItem translateZ="30" className="text-2xl sm:text-4xl mb-2 text-center font-bold overused-grotesk text-white not-italic">
+              <div className="flex flex-col items-center justify-center text-white not-italic">
                 <BreathingText
-                  label="Ideate | Innovate | Inspire"
+                  label="Ideate . Innovate . Inspire"
                   staggerDuration={0.1}
-                  fromFontVariationSettings="'wght' 100, 'slnt' 0"
-                  toFontVariationSettings="'wght' 800, 'slnt' -10"
+                  fromFontVariationSettings="'wght' 100"
+                 toFontVariationSettings="'wght' 800"
+                 className="not-italic !important"
                 />
               </div>
             </CardItem>
@@ -165,7 +166,7 @@ const Hero = () => {
         </CardContainer>
       </div>
 
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-[-1]">
         <Canvas>
           <RotatingStars />
         </Canvas>

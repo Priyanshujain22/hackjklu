@@ -1,106 +1,175 @@
+"use client";
+
+import { Linkedin, Youtube, Instagram } from "lucide-react";
 import Link from "next/link";
-import { Linkedin, Instagram, Youtube } from "lucide-react";
-import navData from "../../data/navbar.json";
-
-// Type definition for the props of SocialMediaIcon component
-interface SocialMediaIconProps {
-  Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>; // The Icon should be a React component that takes SVG props
-  href: string;
-  className?: string;
-}
-
-const SocialMediaIcon: React.FC<SocialMediaIconProps> = ({ Icon, href, className }) => (
-  <a href={href} target="_blank" rel="noopener noreferrer">
-    <Icon
-      className={`w-${className} h-${className} hover:text-neonGreen text-white transition ease-in-out delay-150 hover:scale-125 duration-300`}
-    />
-  </a>
-);
+import { useEffect, useState } from "react";
 
 const Footer = () => {
+  const [isHovering, setIsHovering] = useState(false);
+  const [displayText, setDisplayText] = useState(
+    "Reaching JK Lakshmipat University"
+  );
+  const [isUnscrambling, setIsUnscrambling] = useState(false);
+
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+    if (isHovering) {
+      let scrambleCount = 0;
+      interval = setInterval(() => {
+        if (scrambleCount < 10) {
+          setDisplayText((prev) => {
+            const scrambled = prev
+              .split("")
+              .map(() => String.fromCharCode(33 + Math.random() * 94))
+              .join("");
+            return scrambled;
+          });
+          scrambleCount++;
+        } else {
+          setDisplayText("Reaching JK Lakshmipat University");
+          setIsUnscrambling(true); // Set unscrambling state to true
+          clearInterval(interval);
+        }
+      }, 90);
+    } else {
+      setDisplayText("Reaching JK Lakshmipat University");
+      setIsUnscrambling(false); // Reset unscrambling state
+    }
+    return () => clearInterval(interval);
+  }, [isHovering]);
+
   return (
-    <div className="flex flex-col mt-4 md:mt-16 relative text-white">
-      {/* Quote Section */}
-      <div className="text-center text-sm md:text-2xl font-bold mb-2 md:mb-6">
-        <span className="text-white text-sm md:text-xl">&quot;It&apos;s not just about writing </span>
-        <span className="text-neonGreen font-semibold text-sm md:text-xl">code</span>
-        <span className="text-white text-sm md:text-xl">, it&apos;s about the </span>
-        <span className="text-neonGreen font-semibold text-sm md:text-xl">experience</span>
-        <span className="text-white text-sm md:text-xl">&quot;</span>
-      </div>
+    <footer className="px-6 pb-4 md:px-16 relative pt-24">
+      <div className="mx-auto space-y-8 text-white max-w-6xl px-4 md:px-8">
+        {/* Quote Section */}
+        <div className="text-center text-sm md:text-xl font-bold mb-2 italic md:mb-4">
+          <span className="text-white text-sm md:text-xl">&quot;It&apos;s not just about writing </span>
+          <span className="text-neonGreen font-semibold text-sm md:text-xl">code</span>
+          <span className="text-white text-sm md:text-xl">, it&apos;s about the </span>
+          <span className="text-neonGreen font-semibold text-sm md:text-xl">experience</span>
+          <span className="text-white text-sm md:text-xl">&quot;</span>
+        </div>
 
-      <hr className="border-t-2 border-neonGreen my-1 md:my-2" />
-
-      <div className="px-4 flex flex-col lg:flex-row gap-2 lg:gap-4 justify-center lg:justify-between items-center lg:items-start">
-        {/* Links Section */}
-        <div className="w-full md:w-auto flex flex-wrap items-center lg:items-start mb-2 md:mb-4 justify-center lg:justify-start">
-          {/* Mobile Layout: 4 links in the first row, 3 in the second */}
-          <div className="flex flex-wrap justify-center lg:hidden gap-x-4 gap-y-1">
-            {/* First row of links */}
-            <div className="flex justify-center gap-4 w-full mb-1">
-              {navData.slice(0, 4).map(({ name, link }: { name: string; link: string }) => (
-                <Link
-                  href={link}
-                  key={name}
-                  className="text-white text-sm font-normal hover:text-neonGreen"
-                >
-                  {name}
-                </Link>
-              ))}
-            </div>
-            {/* Second row of links */}
-            <div className="flex justify-center gap-4 w-full">
-              {navData.slice(4).map(({ name, link }: { name: string; link: string }) => (
-                <Link
-                  href={link}
-                  key={name}
-                  className="text-white text-sm font-normal hover:text-neonGreen"
-                >
-                  {name}
-                </Link>
-              ))}
+        {/* Combined Section */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Call Us Section */}
+          <div className="bg-black bg-opacity-60 border border-neon-green rounded-lg p-6 text-center shadow-lg hover:shadow-neon-green hover:shadow-[0_0_20px_20px_rgba(31,84,251,0.5)] transition-shadow duration-300">
+            <h3 className="text-xl font-bold DinoGame mb-4">Call Us</h3>
+            <div className="mt-4 space-y-4">
+              <div className="flex flex-col items-center">
+                <p className="text-lg font-bold text-neon-green">
+                  Promotion and Outreach
+                </p>
+                <p className="font-medium text-lg">
+                  Rachit: <span className="text-white">+91 93511 87511</span>
+                </p>
+              </div>
+              <div className="flex flex-col items-center">
+                <p className="text-lg font-bold text-neon-green">
+                  Registrations
+                </p>
+                <p className="font-medium text-lg">
+                  Karan: <span className="text-white">+91 93133 08922</span>
+                </p>
+              </div>
+              <div className="flex flex-col items-center">
+                <p className="text-lg font-bold text-neon-green">Hospitality</p>
+                <p className="font-medium text-lg">
+                  Niharika:{" "}
+                  <span className="text-white">+91 98282 23577</span>
+                </p>
+              </div>
             </div>
           </div>
 
-          {/* Desktop Layout: All links in a single row */}
-          <div className="hidden lg:flex flex-wrap gap-4">
-            {navData.map(({ name, link }: { name: string; link: string }) => (
-              <Link
-                href={link}
-                key={name}
-                className="text-white text-sm sm:text-lg font-normal leading-5 md:leading-normal tracking-wide md:tracking-tight hover:text-neonGreen relative after:content-[''] after:bg-neonGreen after:h-[1px] after:w-0 after:left-0 after:bottom-[-4px] after:absolute after:duration-300 hover:after:w-full mb-1 sm:mb-2"
-              >
-                {name}
-              </Link>
-            ))}
+          {/* Address Section */}
+          <div className="bg-black bg-opacity-60 border border-neon-green rounded-lg p-6 text-center shadow-lg hover:shadow-neon-green hover:shadow-[0_0_20px_20px_rgba(31,84,251,0.5)] transition-shadow duration-300">
+            <h3 className="text-xl font-bold DinoGame mb-4">Address</h3>
+            <div className="mt-4">
+              <p className="font-medium text-lg text-white">
+                JK Lakshmipat University, Near Mahindra SEZ, Mahapura, Ajmer
+                Road, Jaipur, Rajasthan 302026
+              </p>
+              <div className="mt-8 ">
+                <a
+                  href="https://www.google.com/maps/dir/?api=1&destination=JK+Lakshmipat+University,+Jaipur"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block border border-neon-green text-neon-green  font-bold py-2 px-4 rounded-full hover:bg-neon-green transition-colors duration-200"
+                >
+                  Click to Navigate
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Social Media Section */}
+          <div className="bg-black bg-opacity-60 border border-neon-green rounded-lg p-6 text-center shadow-lg hover:shadow-neon-green hover:shadow-[0_0_20px_20px_rgba(31,84,251,0.5)] transition-shadow duration-300">
+            <h3 className="text-xl font-bold DinoGame mb-4">Social Media</h3>
+            <div className="mt-6 space-y-8 flex flex-col items-center justify-center">
+              <div className="flex items-center space-x-4">
+                <Link
+                  target="_blank"
+                  href={"https://www.instagram.com/hackjklu"}
+                  className="flex items-center space-x-4"
+                >
+                  <Instagram
+                    size={30}
+                    className="text-neon-pink transition-colors duration-200 hover:text-[#39FF14]"
+                  />
+                  <span className="text-lg text-white">Instagram</span>
+                </Link>
+              </div>
+              <div className="flex items-center space-x-4">
+                <Link
+                  target="_blank"
+                  href={"https://www.youtube.com/@CouncilofTechnicalAffairs"}
+                  className="flex items-center space-x-4"
+                >
+                  <Youtube
+                    size={30}
+                    className="text-neon-pink transition-colors duration-200 hover:text-[#39FF14]"
+                  />
+                  <span className="text-lg text-white">YouTube</span>
+                </Link>
+              </div>
+              <div className="flex items-center space-x-4">
+                <Link
+                  target="_blank"
+                  href={
+                    "https://www.linkedin.com/in/council-of-technical-affairs-jklu/"
+                  }
+                  className="flex items-center space-x-4"
+                >
+                  <Linkedin
+                    size={30}
+                    className="text-neon-pink transition-colors duration-200 hover:text-[#39FF14]"
+                  />
+                  <span className="text-lg text-white">LinkedIn</span>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Social Media Icons */}
-        <div className="flex gap-6 justify-center lg:justify-start">
-          <SocialMediaIcon
-            href="https://www.instagram.com/hackjklu"
-            Icon={Instagram}
-            className="6 md:8"
-          />
-          <SocialMediaIcon
-            href="https://www.youtube.com/@CouncilofTechnicalAffairs"
-            Icon={Youtube}
-            className="6 md:8"
-          />
-          <SocialMediaIcon
-            href="https://www.linkedin.com/in/council-of-technical-affairs-jklu/"
-            Icon={Linkedin}
-            className="6 md:8"
-          />
+        {/* Email Section */}
+        <div className="bg-black bg-opacity-60 border border-neon-green rounded-lg p-4 md:p-6 text-center shadow-lg hover:shadow-neon-green hover:shadow-[0_0_20px_20px_rgba(31,84,251,0.5)] transition-shadow duration-300 mt-8">
+          <h3 className="text-xl font-bold DinoGame mb-4">Email Us</h3>
+          <div className="mt-4">
+            <p className="font-medium text-lg text-white">
+              For general inquiries:{" "}
+              <span className="text-neon-green">hackjklu@jklu.edu.in</span>
+            </p>
+            <p className="font-medium text-lg text-white">
+              For technical issues:{" "}
+              <span className="text-neon-green">
+                counciloftechnicalaffairs@jklu.edu.in
+              </span>
+            </p>
+          </div>
         </div>
       </div>
-
-      {/* Copyright */}
-      <p className="text-white text-xs md:text-xs font-normal text-center leading-normal tracking-tight pt-2 md:pt-8 mb-1 md:mb-4">
-        © 2025 HackJKLU 4.0, All rights reserved
-      </p>
-    </div>
+    </footer>
   );
 };
 
