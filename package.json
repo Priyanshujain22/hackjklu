@@ -11,6 +11,7 @@
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.2",
     "@radix-ui/react-label": "^2.1.1",
+    "@radix-ui/react-slot": "^1.1.1",
     "@react-three/drei": "^9.120.5",
     "@react-three/fiber": "^8.17.10",
     "@tabler/icons-react": "^3.26.0",
@@ -43,6 +44,7 @@
     "eslint-config-next": "14.2.21",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.17",
+    "ts-prune": "^0.10.3",
     "typescript": "^5"
   }
 }
