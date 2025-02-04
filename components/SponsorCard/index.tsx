@@ -19,7 +19,7 @@ const SponsorCard: React.FC<SponsorCardProps> = ({
   site,
 }) => {
   const defaultBgColor = "#262626";
-  const defaultTextColor = "#BBBBBB";
+  // const defaultTextColor = "#BBBBBB";
   const sponsorColor: {
     [key in SponsorCardProps["category"]]: {
       bgColor: string;
@@ -41,7 +41,7 @@ const SponsorCard: React.FC<SponsorCardProps> = ({
   };
 
   const bgColor = sponsorColor[category]?.bgColor ?? defaultBgColor;
-  const textColor = sponsorColor[category]?.textColor ?? defaultTextColor;
+  // const textColor = sponsorColor[category]?.textColor ?? defaultTextColor;
 
   return (
     <motion.div

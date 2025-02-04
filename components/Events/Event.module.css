@@ -9,17 +9,18 @@
 
 .card {
   max-width: 35ch;
-  padding: clamp(1.5rem, 20vh, 10rem) 0 0;
-  background-size: cover;
+  padding-top: 65.25%; /* Maintain aspect ratio */
+  background-size: contain; /* Ensures the image fits without stretching */
   background-position: center;
+  background-repeat: no-repeat; /* Prevents repeating */
+  position: relative;
   margin: auto;
   color: white;
   box-shadow: 0 1em 2em rgb(0 0 0 / 0.2);
   transition: transform ease 250ms;
   border-radius: 0.5rem;
   overflow: hidden;
-  box-shadow: 0 0 5px 1px #10dc3c;
-  min-height: 400px;
+  min-height: 600px; /* Ensures a minimum height */
   display: flex;
   flex-direction: column;
 }

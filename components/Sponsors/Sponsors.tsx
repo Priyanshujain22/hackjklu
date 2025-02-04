@@ -27,7 +27,7 @@ const sponsorsData = sponsorsJson.map((sponsor, index) => ({
 const WSCubeTechSponsorCard: React.FC = () => {
   return (
     <a
-      href="https://www.wscubeTech.com/en-in/mx/master-series.html"
+      href="/sponsors/ws-cube-tech"
       target="_blank"
       rel="noreferrer"
       className="w-full xl:max-w-[95%] flex justify-center md:px-8 lg:px-0"

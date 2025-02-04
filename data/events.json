@@ -1,37 +1,67 @@
 [
     {
-        "title": "BIT Code",
+        "title": "Clutch Arena",
         "description": "A Monthly event of coding contest based on algorithms, data structures and problem solving.",
-        "bgImage": "/events/bitcode.jpg"
+        "bgImage": "/events/1.webp"
     },
     {
-        "title": "WEB-A-THON",
+        "title": "Battle Blitz",
         "description": "A web development contest for solving the general BIT Sindri problems. This contest helps all the students in boosting their productivity and innovation together with like-minded people.",
-        "bgImage": "/events/web-a-thon.jpg"
+        "bgImage": "/events/2.webp"
     },
     {
-        "title": "CodeStorm",
+        "title": "Bidding Before Wicket",
         "description": "A coding competetion where participants get to engage themselves in showcasing their coding skills by solving a series of mind bending problems with ingenious algorithms.",
-        "bgImage": "/events/codestorm.jpg"
+        "bgImage": "/events/4.webp"
     },
     {
-        "title": "The Monsoon Code",
+        "title": "Bot Soccer",
         "description": "The Monsoon Code 2020 in association with Codechef and TAP Cell, BIT Sindri was a short contest with problems varying from implementations to usage of algorithms.",
-        "bgImage": "/events/tmc.jpeg"
+        "bgImage": "/events/5.webp"
     },
     {
-        "title": "Design-a-Tello",
+        "title": "Escape Room",
         "description": "A Logo Re-Design competition conducted by the design team of hncc where one can showcase their creativity and imagination",
-        "bgImage": "/events/designatello.jpg"
+        "bgImage": "/events/6.webp"
     },
     {
-        "title": "DOTY",
+        "title": "Escape The Matrix",
         "description": "The event had four basic domains based on the platform for development, viz. App Development, Game Development, Web Development and Machine Learning implementations.",
-        "bgImage": "/events/doty.jpg"
+        "bgImage": "/events/7.webp"
     },
     {
-        "title": "Hackatron",
+        "title": "Glow Weekend",
         "description": "HnCC BIT Sindri is here with a national level hackathon, \"Hackatron\" and aims to promote solutions which are hard to find. It comes with cash prizes worth Rs 55000 and cool swags.",
-        "bgImage": "/events/hackatron.jpg"
+        "bgImage": "/events/8.webp"
+    },
+    {
+        "title": "Print Your Style",
+        "description": "HnCC BIT Sindri is here with a national level hackathon, \"Hackatron\" and aims to promote solutions which are hard to find. It comes with cash prizes worth Rs 55000 and cool swags.",
+        "bgImage": "/events/9.webp"
+    },
+    {
+        "title": "Kintsugi",
+        "description": "HnCC BIT Sindri is here with a national level hackathon, \"Hackatron\" and aims to promote solutions which are hard to find. It comes with cash prizes worth Rs 55000 and cool swags.",
+        "bgImage": "/events/10.webp"
+    },
+    {
+        "title": "RoboMaze",
+        "description": "HnCC BIT Sindri is here with a national level hackathon, \"Hackatron\" and aims to promote solutions which are hard to find. It comes with cash prizes worth Rs 55000 and cool swags.",
+        "bgImage": "/events/11.webp"
+    },
+    {
+        "title": "Telescope Pointing Competition",
+        "description": "HnCC BIT Sindri is here with a national level hackathon, \"Hackatron\" and aims to promote solutions which are hard to find. It comes with cash prizes worth Rs 55000 and cool swags.",
+        "bgImage": "/events/12.webp"
+    },
+    {
+        "title": "Venus Mars Conjunction",
+        "description": "HnCC BIT Sindri is here with a national level hackathon, \"Hackatron\" and aims to promote solutions which are hard to find. It comes with cash prizes worth Rs 55000 and cool swags.",
+        "bgImage": "/events/13.webp"
+    },
+    {
+        "title": "Algo-Runners",
+        "description": "HnCC BIT Sindri is here with a national level hackathon, \"Hackatron\" and aims to promote solutions which are hard to find. It comes with cash prizes worth Rs 55000 and cool swags.",
+        "bgImage": "/events/e.webp"
     }
 ]
