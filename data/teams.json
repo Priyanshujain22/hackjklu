@@ -142,10 +142,12 @@
     },
 
     {
-        "name":"xyz",
+        "name":"Tamanna Chandnani",
         "title":"Design",
-        "imageSrc": "KavishaGupta",
+        "imageSrc": "TamannaChandnani",
         "socials":{
+            "linkedin": "https://www.linkedin.com/in/tamanna-chandnani-0b4232236?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+            "email": "tamannachandnani@jklu.edu.in"
         }
     }
 
