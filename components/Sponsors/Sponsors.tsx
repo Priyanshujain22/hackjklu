@@ -3,6 +3,7 @@ import HeaderSmall from '../HeaderSmall/HeaderSmall';
 import { Button } from "../ui/MovingBorders";
 import Image from 'next/image';
 import sponsors from '@/data/sponsors.json';
+import Header from '../Header/Header';
 
 // Define TypeScript types for the sponsor data structure
 interface Sponsor {
@@ -51,7 +52,17 @@ const renderCards = (data: Sponsor[]) => {
 
 const Sponsors: React.FC = () => {
   return (
-    <section className="relative" id="sponsors">
+    <section className="relative pt-20" id="sponsors">
+      <h2 className="text-center mb-10">
+        <Header text="Sponsors" />
+      </h2>
+
+      {/* Pre Hackathon Sponsors */}
+      <div className="p-10 text-center">
+        <HeaderSmall text="Pre Hackathon Sponsors" />
+        <div className="flex justify-center">{renderCards(sponsorsData.gold)}</div>
+      </div>
+
       {/* Gold Sponsors */}
       <div className="p-10 text-center">
         <HeaderSmall text="Gold" />
