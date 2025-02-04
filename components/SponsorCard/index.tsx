@@ -18,7 +18,6 @@ const SponsorCard: React.FC<SponsorCardProps> = ({
   sponsorimgsrc,
   site,
 }) => {
-  // card colors depends on the category of the sponsor
   const defaultBgColor = "#262626";
   const defaultTextColor = "#BBBBBB";
   const sponsorColor: {
@@ -45,45 +44,88 @@ const SponsorCard: React.FC<SponsorCardProps> = ({
   const textColor = sponsorColor[category]?.textColor ?? defaultTextColor;
 
   return (
-    <>
-      <motion.div
-        className="card"
-        initial={{ opacity: 0 }}
-        whileInView={{
-          opacity: 1,
-          transition: {
-            duration: 1,
-          },
-        }}
-        viewport={{ once: true }}
-      >
-        <a href={site} target="_blank" rel="noreferrer" key={index}>
-          <div className="w-full text-white hover:scale-105 duration-300 max-w-[400px]">
+    <motion.div
+      className="card"
+      initial={{ opacity: 0 }}
+      whileInView={{
+        opacity: 1,
+        transition: {
+          duration: 1,
+        },
+      }}
+      viewport={{ once: true }}
+    >
+      <a href={site} target="_blank" rel="noreferrer" key={index}>
+        <div className="w-full text-white hover:scale-105 duration-300 border border-neonGreen rounded-[20px]">
+          {/* <LampContainer> */}
+          <div className="w-full h-[161px] xl:h-[186px] flex items-center justify-center">
             <Image
               src={sponsorimgsrc}
-              className="w-full h-[181px] xl:h-[216px] rounded-t-[20px] outline-none"
+              width={300}
+              height={200}
+              className="rounded-t-[20px] outline-none"
               placeholder="blur"
               alt={sponsor}
+              style={{ objectFit: "contain" }}
             />
-            <div
-              className="flex justify-between items-start p-[22px] rounded-b-[20px]"
-              style={{ backgroundColor: bgColor }}
-            >
-              <div className="flex flex-col">
-                <p className="sm:text-[28px] text-xl font-white">{sponsor}</p>
-                <p
-                  className="sm:text-[18px] text-xl leading-9 font-bold"
-                  style={{ color: textColor }}
-                >
-                  {category}
-                </p>
-              </div>
-            </div>
           </div>
-        </a>
-      </motion.div>
-    </>
+          {/* </LampContainer> */}
+          <div
+            className="flex justify-between items-start p-[22px] rounded-b-[20px]"
+            style={{ backgroundColor: bgColor }}
+          >
+            <div className="flex flex-col w-full text-center">
+              <p className="sm:text-[28px] text-xl font-white">{sponsor}</p>
+              {/* <p
+                className="sm:text-[18px] text-xl leading-9 font-bold"
+                style={{ color: textColor }}
+              >
+                {category}
+              </p> */}
+            </div>
+
+          </div>
+        </div>
+      </a>
+    </motion.div>
   );
 };
 
 export default SponsorCard;
+
+
+
+
+
+// import { cn } from "@/lib/utils";
+
+
+// const LampContainer = ({
+//   children,
+//   className,
+// }: {
+//   children: React.ReactNode;
+//   className?: string;
+// }) => {
+//   return (
+//     <div
+//       className={cn(
+//         "relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-slate-950 w-full rounded-md z-0",
+//         className
+//       )}
+//     >
+//       <div className="relative flex w-full flex-1 scale-y-125 items-center justify-center isolate z-0">
+//         <div className="absolute top-1/2 h-48 w-full translate-y-12 scale-x-150 bg-slate-950 blur-2xl"></div>
+//         <div className="absolute top-1/2 z-50 h-48 w-full bg-transparent opacity-10 backdrop-blur-md"></div>
+//         <div className="absolute inset-auto z-50 h-36 w-[28rem] -translate-y-1/2 rounded-full bg-cyan-500 opacity-50 blur-3xl"></div>
+//         <div className="absolute inset-auto z-30 h-36 w-64 -translate-y-[6rem] rounded-full bg-cyan-400 blur-2xl"></div>
+//         <div className="absolute inset-auto z-50 h-0.5 w-[30rem] -translate-y-[7rem] bg-cyan-400"></div>
+//         <div className="absolute inset-auto z-40 h-44 w-full -translate-y-[12.5rem] bg-slate-950"></div>
+//       </div>
+
+//       <div className="relative z-50 flex -translate-y-80 flex-col items-center px-5">
+//         {children}
+//       </div>
+//     </div>
+//   );
+// };
