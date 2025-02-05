@@ -22,8 +22,6 @@ const Gallery = () => {
                 width={500}
                 height={300}
                 priority={index < 10}
-                // placeholder="blur"
-                // blurDataURL="/placeholder.jpg"
                 className="rounded-lg object-cover responsive"
               />
             </div>

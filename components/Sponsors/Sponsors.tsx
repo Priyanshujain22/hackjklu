@@ -3,18 +3,18 @@ import Image, { StaticImageData } from "next/image";
 import SponsorCard from "@/components/SponsorCard";
 import sponsorsJson from "@/data/sponsors.json";
 
-import devfolio from "@/public/sponsors/devfolio.png";
-import ethindia from "@/public/sponsors/ethindia.png";
-import polygon from "@/public/sponsors/polygon.png";
-import wscubeTech from "@/public/sponsors/devfolio.png";
+import devfolio from "@/public/sponsors/devfolio.webp";
+import ethindia from "@/public/sponsors/ethindia.webp";
+import polygon from "@/public/sponsors/polygon.webp";
+import wscubeTech from "@/public/sponsors/WsCubeTech.webp";
 
 import Header from '../Header/Header';
 import HeaderSmall from '../HeaderSmall/HeaderSmall';
 
 const imageMap: { [key: string]: StaticImageData } = {
-  "/sponsors/devfolio.png": devfolio,
-  "/sponsors/ethindia.png": ethindia,
-  "/sponsors/polygon.png": polygon,
+  "/sponsors/devfolio.webp": devfolio,
+  "/sponsors/ethindia.webp": ethindia,
+  "/sponsors/polygon.webp": polygon,
 };
 
 const sponsorsData = sponsorsJson.map((sponsor, index) => ({
@@ -28,8 +28,6 @@ const WSCubeTechSponsorCard: React.FC = () => {
   return (
     <a
       href="/sponsors/ws-cube-tech"
-      target="_blank"
-      rel="noreferrer"
       className="w-full xl:max-w-[95%] flex justify-center md:px-8 lg:px-0"
     >
       <div className="flex flex-col md:flex-row">
@@ -38,7 +36,6 @@ const WSCubeTechSponsorCard: React.FC = () => {
               md:rounded-r-none md:rounded-l-[20px]"
           src={wscubeTech}
           alt="wscubeTech"
-          placeholder="blur"
           style={{ objectFit: "contain" }}
         />
         <div

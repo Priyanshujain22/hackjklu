@@ -143,7 +143,6 @@
 // //               src={bestGirls}
 // //               alt=""
 // //               className="w-[6.5rem] h-[6.5rem]"
-// //               placeholder="blur"
 // //             />
 // //             <div className="w-full flex flex-col items-center gap-2">
 // //               <p className="text-[#fff] text-[2rem] font-normal text-center">
@@ -175,7 +174,6 @@
 // //               src={bestBeginner}
 // //               alt=""
 // //               className="w-[6.5rem] h-[6.5rem]"
-// //               placeholder="blur"
 // //             />
 // //             <div className="w-full flex flex-col items-center gap-2">
 // //               <p className="text-[#fff] text-[2rem] font-normal text-center">
@@ -348,7 +346,6 @@
 //               src={bestGirls}
 //               alt=""
 //               className="w-[6.5rem] h-[6.5rem]"
-//               placeholder="blur"
 //             />
 //             <div className="w-full flex flex-col items-center gap-2">
 //               <p className="text-[#fff] text-[2rem] font-normal text-center">
@@ -380,7 +377,6 @@
 //               src={bestBeginner}
 //               alt=""
 //               className="w-[6.5rem] h-[6.5rem]"
-//               placeholder="blur"
 //             />
 //             <div className="w-full flex flex-col items-center gap-2">
 //               <p className="text-[#fff] text-[2rem] font-normal text-center">
@@ -559,7 +555,6 @@ const Prize = () => {
               src={bestGirls}
               alt="Best Girls"
               className="w-[6.5rem] h-[6.5rem]"
-              placeholder="blur"
             />
             <div className="w-full flex flex-col items-center gap-2">
               <p className="text-[#fff] text-[2rem] font-normal text-center">
@@ -591,7 +586,6 @@ const Prize = () => {
               src={bestBeginner}
               alt="Best Beginner"
               className="w-[6.5rem] h-[6.5rem]"
-              placeholder="blur"
             />
             <div className="w-full flex flex-col items-center gap-2">
               <p className="text-[#fff] text-[2rem] font-normal text-center">

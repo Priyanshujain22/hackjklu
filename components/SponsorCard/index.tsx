@@ -64,7 +64,6 @@ const SponsorCard: React.FC<SponsorCardProps> = ({
               width={300}
               height={200}
               className="rounded-t-[20px] outline-none"
-              placeholder="blur"
               alt={sponsor}
               style={{ objectFit: "contain" }}
             />
