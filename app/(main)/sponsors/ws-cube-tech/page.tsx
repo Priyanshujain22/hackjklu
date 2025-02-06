@@ -13,7 +13,7 @@ export default function SponsorPage(): JSX.Element {
   return (
     <section className="px-10 relative pt-24 text-center">
       <h2 className="text-center mb-10">
-        <Header text="Hackathon Partner" />
+        <Header text="Pre-Hackathon Partner" />
       </h2>
       <RevealBento />
     </section>
@@ -32,6 +32,7 @@ const RevealBento = (): JSX.Element => {
         <HeaderBlock />
         <SocialsBlock />
         <AboutBlock />
+        <OfferingBlock />
       </motion.div>
     </div>
   );
@@ -85,7 +86,7 @@ const SocialsBlock = (): JSX.Element => (
       rotate: "-2.5deg",
       scale: 1.05,
     }} className="col-span-6 bg-gradient-to-r from-neonBlue to-neonGreen md:col-span-3">
-      <a href="https://www.wscubetech.com/" className="grid h-full place-content-center text-6xl text-white">
+      <a href="https://www.wscubetech.com/" className="grid h-full place-content-center text-5xl text-white">
         <TbBrowserMaximize />
       </a>
     </Block>
@@ -93,7 +94,7 @@ const SocialsBlock = (): JSX.Element => (
       rotate: "1.5deg",
       scale: 1.05,
     }} className="col-span-6 bg-red-500 md:col-span-3">
-      <a href="https://www.youtube.com/@wscubetech/videos" className="grid h-full place-content-center text-6xl text-white">
+      <a href="https://www.youtube.com/@wscubetech/videos" className="grid h-full place-content-center text-5xl text-white">
         <SiYoutube />
       </a>
     </Block >
@@ -101,15 +102,15 @@ const SocialsBlock = (): JSX.Element => (
       rotate: "2deg",
       scale: 1.05,
     }} className="col-span-6 bg-[#0077B5] md:col-span-3">
-      <a href="https://www.linkedin.com/company/wscubetechindia/?originalSubdomain=in" className="grid h-full place-content-center text-6xl text-white">
+      <a href="https://www.linkedin.com/company/wscubetechindia/?originalSubdomain=in" className="grid h-full place-content-center text-5xl text-white">
         <SiLinkedin />
       </a>
     </Block>
     <Block whileHover={{
-      rotate: "1.5deg",
+      rotate: "-1.5deg",
       scale: 1.05,
     }} className="col-span-6 bg-gradient-to-r from-[#F58529] via-[#DD2A7B] to-[#8134AF] md:col-span-3">
-      <a href="https://www.instagram.com/wscubetechindia/" className="grid h-full place-content-center text-6xl text-white">
+      <a href="https://www.instagram.com/wscubetechindia/" className="grid h-full place-content-center text-5xl text-white">
         <SiInstagram />
       </a>
     </Block>
@@ -122,6 +123,14 @@ const AboutBlock = (): JSX.Element => (
     <p>
       WS Cube Tech is a leading provider of IT training and services, empowering individuals and businesses
       with cutting-edge skills and solutions.
+    </p>
+  </Block>
+);
+
+const OfferingBlock = (): JSX.Element => (
+  <Block className="col-span-12 text-3xl leading-snug">
+    <p>
+      WS Cube Tech is providing us.......
     </p>
   </Block>
 );
