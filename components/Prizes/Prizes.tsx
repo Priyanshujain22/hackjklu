@@ -5,7 +5,7 @@ import Header from "../Header/Header";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import confetti from "canvas-confetti";
-import { FaTrophy } from "react-icons/fa"; // Importing the trophy icon
+import { FaTrophy } from "react-icons/fa";
 
 import bestBeginner from "@/public/prizesPage/best_beginner.png";
 import bestGirls from "@/public/prizesPage/best_girls.png";
@@ -38,7 +38,7 @@ const PrizeCard: React.FC<PrizeCardProps> = ({
       }}
     >
       <div
-        className={`flex flex-col justify-center items-center py-[6rem] md:py-[7.25rem]
+        className={`flex flex-col justify-center items-center py-[4rem] md:py-[3.25rem]
           rounded-[8px] border-2 border-white ${isCenter ? "md:col-span-2" : ""}`} // White border added
         style={{
           "--default-gradient": default_bg,
@@ -114,7 +114,7 @@ const Prize = () => {
         <Header text="Prizes" />
       </h2>
       <div className="px-10 sm:px-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
           <PrizeCard
             amount="₹25K"
             category="2nd prize"
@@ -138,7 +138,7 @@ const Prize = () => {
         <div className="grid grid-cols-1 gap-6 md:gap-8 lg:grid-cols-2 mt-8">
           <div
             className="flex flex-col items-center gap-12 px-8 py-6
-                  md:flex-row md:px-6 rounded-[8px] border border-[rgba(255,255,255,0.5)]"
+                  md:flex-row md:px-6 rounded-[8px] border-2 border-white"
             style={{
               background:
                 "radial-gradient(371.89% 134.33% at 3.21% 1.26%, rgba(255, 255, 255, 0.07) 0%, rgba(217, 217, 217, 0.00) 100%)",
@@ -169,7 +169,7 @@ const Prize = () => {
           </div>
           <div
             className="flex flex-col items-center gap-12 px-8 py-6
-                  md:flex-row md:px-6 rounded-[8px] border border-[rgba(255,255,255,0.5)]"
+                  md:flex-row md:px-6 rounded-[8px] border-2 border-white"
             style={{
               background:
                 "radial-gradient(371.89% 134.33% at 3.21% 1.26%, rgba(255, 255, 255, 0.07) 0%, rgba(217, 217, 217, 0.00) 100%)",
