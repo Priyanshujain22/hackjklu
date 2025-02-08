@@ -86,7 +86,7 @@ const Hero = () => {
       // style={{
       //   backgroundImage,
       // }}
-      className="relative mx-auto grid min-h-screen place-content-center overflow-hidden px-4 py-24 sm:px-8 sm:py-20 text-gray-200"
+      className="relative mx-auto grid min-h-screen place-content-center overflow-hidden px-4 pt-24 sm:px-8 sm:pt-20 text-gray-200"
     >
       <div className="relative z-10 flex flex-col items-center">
         <CardContainer className="z-50 p-4">
