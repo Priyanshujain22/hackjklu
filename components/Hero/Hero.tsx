@@ -1,14 +1,7 @@
 "use client";
 
-import { Stars } from "@react-three/drei";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { Points } from "three";
-import React, { useEffect, useState, useRef } from "react";
-import {
-  useMotionValue,
-  motion,
-  animate,
-} from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { motion, } from "framer-motion";
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 import { Press_Start_2P } from "next/font/google";
 import BreathingText from '../ui/BreathingText';
@@ -19,27 +12,6 @@ const press_start_2p = Press_Start_2P({
   subsets: ["latin"],
   preload: true,
 });
-
-const COLORS_TOP = [
-  "rgba(151, 254, 113, 0.3)",  // lighter green with decreased intensity
-  "rgba(31, 84, 251, 0.5)",    // lighter blue with decreased intensity
-  "rgba(71, 222, 129, 0.5)",   // lighter green with decreased intensity
-  "rgba(31, 84, 251, 0.3)"     // same lighter blue with decreased intensity
-];
-
-
-const RotatingStars = () => {
-  const starsRef = useRef<Points>(null);
-
-  useFrame(() => {
-    if (starsRef.current) {
-      starsRef.current.rotation.y += 0.0001;
-      starsRef.current.rotation.x -= 0.0001;
-    }
-  });
-
-  return <Stars ref={starsRef} radius={50} count={1000} factor={4} fade speed={1} />;
-};
 
 const CountdownTimer = () => {
   const [timeRemaining, setTimeRemaining] = useState({
@@ -97,19 +69,6 @@ const CountdownTimer = () => {
 };
 
 const Hero = () => {
-  const color = useMotionValue(COLORS_TOP[0]);
-
-  useEffect(() => {
-    animate(color, COLORS_TOP, {
-      ease: "easeInOut",
-      duration: 10,
-      repeat: Infinity,
-      repeatType: "mirror",
-    });
-  }, [color]);
-
-  // const backgroundImage = useMotionTemplate`radial-gradient(100% 100% at 50% 0%, #020617 50%, ${color})`;
-
   useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://apply.devfolio.co/v2/sdk.js';
@@ -132,10 +91,10 @@ const Hero = () => {
       <div className="relative z-10 flex flex-col items-center">
         <CardContainer className="z-50 p-4">
           <CardBody className="relative group/card border-white/[0.2] flex flex-col gap-y-10 justify-center items-center w-auto rounded-xl p-6 sm:p-10">
-          <CardItem translateZ="50" className={`text-4xl sm:text-6xl text-center font-bold text-white ${press_start_2p.className}`}>
-            <span style={{ color: "#1f54fb" }}>Hack</span>
-            <span style={{ color: "#0bfb00" }}>JKLU</span> v4.0
-          </CardItem>
+            <CardItem translateZ="50" className={`text-4xl sm:text-6xl text-center font-bold text-white ${press_start_2p.className}`}>
+              <span style={{ color: "#1f54fb" }}>Hack</span>
+              <span style={{ color: "#0bfb00" }}>JKLU</span> v4.0
+            </CardItem>
             <CardItem translateZ="60" className="text-2xl sm:text-3xl text-center font-bold text-white">
               7 - 9 March 2025
             </CardItem>
@@ -145,8 +104,8 @@ const Hero = () => {
                   label="Ideate . Innovate . Inspire"
                   staggerDuration={0.1}
                   fromFontVariationSettings="'wght' 100"
-                 toFontVariationSettings="'wght' 800"
-                 className="not-italic !important"
+                  toFontVariationSettings="'wght' 800"
+                  className="not-italic !important"
                 />
               </div>
             </CardItem>
@@ -164,12 +123,6 @@ const Hero = () => {
             </CardItem>
           </CardBody>
         </CardContainer>
-      </div>
-
-      <div className="absolute inset-0 z-[-1]">
-        <Canvas>
-          <RotatingStars />
-        </Canvas>
       </div>
     </motion.section>
   );
