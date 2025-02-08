@@ -81,7 +81,7 @@ const Footer: React.FC = () => {
 
       {/* Footer Bottom Section */}
       <div className="flex flex-col mt-6  text-center md:text-left">
-        <div className="px-6 flex flex-col lg:flex-row gap-4 lg:gap-12 justify-center lg:justify-between items-center">
+        <div className="px-1 flex flex-col lg:flex-row gap-4 lg:gap-12 justify-center lg:justify-between items-center">
           {/* Social Media Icons */}
           <div className="flex gap-6">
             <SocialMediaIcon href="https://www.instagram.com/hackjklu" Icon={Instagram} />
@@ -96,7 +96,7 @@ const Footer: React.FC = () => {
 
           {/* Made By */}
           <p className="text-white text-sm md:text-base font-normal">
-            Made with ❤️ by Preet Taparia & Team
+            Made with ❤️ by Team HackJKLU
           </p>
         </div>
       </div>
