@@ -113,8 +113,8 @@ const About = () => {
               </p>
             </div>
             <div>
-              <p className="tracking-wide text-sm sm:text-base lg:text-lg text-justify">
-                This year&apos;s hackathon goes beyond traditional competitions—HackJKLU v4.0 fosters a collaborative ecosystem for interdisciplinary problem-solving and empowers participants to make meaningful contributions to global issues.
+              <p className="tracking-wide text-base sm:text-lg lg:text-xl text-justify">
+                This year&apos;s hackathon goes beyond traditional competitions HackJKLU v4.0 fosters a collaborative ecosystem for interdisciplinary problem-solving and empowers participants to make meaningful contributions to global issues.
               </p>
             </div>
           </div>
