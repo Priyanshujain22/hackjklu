@@ -1,6 +1,5 @@
 import Gallery from "@/components/Gallery/Gallery";
 import Header from "@/components/Header/Header";
-import Carousel from "@/components/Commitee/committee";
 
 export default function GalleryPage() {
   return (
@@ -10,7 +9,6 @@ export default function GalleryPage() {
           <Header text="Gallery" />
         </h2>
         <Gallery />
-        <Carousel />
       </section>
     </>
   );
