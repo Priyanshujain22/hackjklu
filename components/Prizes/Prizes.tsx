@@ -115,33 +115,42 @@ const Prize = () => {
       </h2>
       <div className="px-10 sm:px-20">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
-          <PrizeCard
-            amount="₹25K"
-            category="2nd prize"
-            default_bg="transparent" // Fully transparent background
-            hover_bg="transparent" // Fully transparent background on hover
-          />
-          <PrizeCard
-            amount="₹50K"
-            category="1st prize"
-            default_bg="transparent"
-            hover_bg="transparent"
-            isCenter={true}
-          />
-          <PrizeCard
-            amount="₹10K"
-            category="3rd prize"
-            default_bg="transparent"
-            hover_bg="transparent"
-          />
+          <div className="order-2 lg:order-1">
+            <PrizeCard
+              amount="₹25K"
+              category="2nd prize"
+              default_bg="transparent"
+              hover_bg="transparent"
+            />
+          </div>
+          <div className="order-1 lg:order-2">
+            <PrizeCard
+              amount="₹50K"
+              category="1st prize"
+              default_bg="transparent"
+              hover_bg="transparent"
+              isCenter={true}
+            />
+          </div>
+          <div className="order-3 lg:order-3">
+            <PrizeCard
+              amount="₹10K"
+              category="3rd prize"
+              default_bg="transparent"
+              hover_bg="transparent"
+            />
+          </div>
         </div>
         <div className="grid grid-cols-1 gap-6 md:gap-8 lg:grid-cols-2 mt-8">
           <div
-            className="flex flex-col items-center gap-12 px-8 py-6
-                  md:flex-row md:px-6 rounded-[8px] border-2 border-white"
-            style={{
-              background:
-                "radial-gradient(371.89% 134.33% at 3.21% 1.26%, rgba(255, 255, 255, 0.07) 0%, rgba(217, 217, 217, 0.00) 100%)",
+            className="flex flex-col items-center gap-12 px-8 py-6 md:flex-row md:px-6 rounded-[8px] border-2 border-white transition-all duration-300"
+            onMouseEnter={(e) => {
+              e.currentTarget.style.boxShadow = "0 0 20px 10px rgba(31, 84, 251, 0.5)";
+              e.currentTarget.style.transform = "scale(1.05)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.boxShadow = "none";
+              e.currentTarget.style.transform = "scale(1)";
             }}
           >
             <Image
@@ -168,11 +177,14 @@ const Prize = () => {
             </div>
           </div>
           <div
-            className="flex flex-col items-center gap-12 px-8 py-6
-                  md:flex-row md:px-6 rounded-[8px] border-2 border-white"
-            style={{
-              background:
-                "radial-gradient(371.89% 134.33% at 3.21% 1.26%, rgba(255, 255, 255, 0.07) 0%, rgba(217, 217, 217, 0.00) 100%)",
+            className="flex flex-col items-center gap-12 px-8 py-6 md:flex-row md:px-6 rounded-[8px] border-2 border-white transition-all duration-300"
+            onMouseEnter={(e) => {
+              e.currentTarget.style.boxShadow = "0 0 20px 10px rgba(31, 84, 251, 0.5)";
+              e.currentTarget.style.transform = "scale(1.05)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.boxShadow = "none";
+              e.currentTarget.style.transform = "scale(1)";
             }}
           >
             <Image
