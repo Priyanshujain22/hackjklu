@@ -88,7 +88,7 @@ const Prize = () => {
         if (entry.isIntersecting && !confettiTriggered.current) {
           confettiTriggered.current = true;
           confetti({
-            particleCount: 200,
+            particleCount: 100,
             spread: 120,
             origin: { y: 0.6 },
             colors: ["#0000FF", "#008000"],

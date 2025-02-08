@@ -119,7 +119,7 @@ const About = () => {
             </div>
           </div>
           <div className="w-full flex items-center justify-center order-1 md:order-2 mb-6 sm:mb-8 lg:mb-10">
-            <div className=" w-[100%] sm:w-[50%] md:w-[90%] lg:w-[98%] xl:w-[45%] max-w-[400px]">
+            <div className=" w-[70%] sm:w-[50%] md:w-[90%] lg:w-[98%] xl:w-[45%] max-w-[400px]">
               <Image
                 src="/hackjklu-logo.png"
                 alt="HackJKLU logo"

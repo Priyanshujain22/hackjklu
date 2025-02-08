@@ -37,42 +37,35 @@ const TeamCard: React.FC<TeamCardProps> = ({ name, title, socials, imageSrc }) =
         <h4 className={styles.title}>{title}</h4>
       </div>
       <div className={styles.socials}>
-        {socials.gb || socials.email || socials.linkedin ? (
-          <>
-            {socials.gb && (
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href={socials.gb}
-              >
-                <Github size={ICON_SIZE} width={ICON_SIZE} />
-              </a>
-            )}
-
-            {socials.linkedin && (
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href={socials.linkedin}
-              >
-                <Linkedin size={ICON_SIZE} />
-              </a>
-            )}
-            {socials.email && (
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href={`mailto:${socials.email}`}
-              >
-                <Mail size={ICON_SIZE} />
-              </a>
-            )}
-          </>
-        ) : (
-          <span style={{ color: 'rgba(255,255,255,0.45)' }}>
-            Socially Invisible
-          </span>
+        {socials.gb && (
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href={socials.gb}
+          >
+            <Github size={ICON_SIZE} width={ICON_SIZE} />
+          </a>
         )}
+
+        {socials.linkedin && (
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href={socials.linkedin}
+          >
+            <Linkedin size={ICON_SIZE} />
+          </a>
+        )}
+        {socials.email && (
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href={`mailto:${socials.email}`}
+          >
+            <Mail size={ICON_SIZE} />
+          </a>
+        )}
+
       </div>
     </div>
   );

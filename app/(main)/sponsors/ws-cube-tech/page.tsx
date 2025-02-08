@@ -11,12 +11,25 @@ import { SiLinkedin, SiInstagram, SiYoutube } from "react-icons/si";
 
 export default function SponsorPage(): JSX.Element {
   return (
-    <section className="px-10 relative pt-24 text-center">
-      <h2 className="text-center mb-10">
-        <Header text="Pre-Hackathon Partner" />
-      </h2>
-      <RevealBento />
-    </section>
+    <>
+      {/* <Head>
+        <title>WS Cube Tech | HackJKLU v4.0 </title>
+        <meta name="description" content="Meet WS Cube Tech, the Pre-Hackathon Partner for HackJKLU v4.0. Learn about their offerings and connect via social media." />
+        <meta name="keywords" content="sponsor, hackathon, WS Cube Tech, HackJKLU, technology, IT training, partner, social media" />
+        <meta property="og:title" content="Sponsor | HackJKLU v4.0 - Pre-Hackathon Partner" />
+        <meta property="og:description" content="Learn about WS Cube Tech's involvement with HackJKLU v4.0 and how they are contributing to the event." />
+        <meta property="og:image" content="/sponsors/WsCubeTech.webp" />
+        <meta name="twitter:title" content="Sponsor | HackJKLU v4.0 - Pre-Hackathon Partner" />
+        <meta name="twitter:description" content="Learn about WS Cube Tech's role as the Pre-Hackathon Partner for HackJKLU v4.0." />
+        <meta name="twitter:image" content="/sponsors/WsCubeTech.webp" />
+      </Head> */}
+      <section className="px-10 relative pt-24 text-center">
+        <h2 className="text-center mb-10">
+          <Header text="Pre-Hackathon Partner" />
+        </h2>
+        <RevealBento />
+      </section>
+    </>
   );
 }
 
