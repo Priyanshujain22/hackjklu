@@ -1,7 +1,11 @@
 import React from 'react';
 import Image, { StaticImageData } from "next/image";
 import SponsorCard from "@/components/SponsorCard";
-import sponsorsJson from "@/data/sponsors.json";
+
+// Import sponsor data for each category
+import sponsorsGold from "@/data/sponsorsGold.json";
+import sponsorsSilver from "@/data/sponsorsSilver.json";
+import sponsorsBronze from "@/data/sponsorsBronze.json";
 
 import devfolio from "@/public/sponsors/devfolio.webp";
 import ethindia from "@/public/sponsors/ethindia.webp";
@@ -17,12 +21,18 @@ const imageMap: { [key: string]: StaticImageData } = {
   "/sponsors/polygon.webp": polygon,
 };
 
-const sponsorsData = sponsorsJson.map((sponsor, index) => ({
-  ...sponsor,
-  sponsorimgsrc: imageMap[sponsor.sponsorimgsrc],
-  index,
-}));
+const mapSponsors = (sponsors: Array<any>) => {
+  return sponsors.map((sponsor, index) => ({
+    ...sponsor,
+    sponsorimgsrc: imageMap[sponsor.sponsorimgsrc],
+    index,
+  }));
+};
 
+// Map sponsor data for each category
+const goldSponsors = mapSponsors(sponsorsGold);
+const silverSponsors = mapSponsors(sponsorsSilver);
+const bronzeSponsors = mapSponsors(sponsorsBronze);
 
 const WSCubeTechSponsorCard: React.FC = () => {
   return (
@@ -71,13 +81,19 @@ const Sponsors: React.FC = () => {
         <div className="w-full flex mt-8 flex-col items-center gap-8 xl:gap-12">
           <WSCubeTechSponsorCard />
         </div>
-
       </div>
 
       {/* Gold Sponsors */}
-      {/* <div className="p-10 text-center">
-        <HeaderSmall text="Gold" />
-      </div> */}
+      <div className="p-10 text-center">
+        <HeaderSmall text="Gold Sponsors" />
+        <div
+          className="w-full grid grid-cols-1 mt-8 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-[44px] md:px-8 lg:px-10"
+        >
+          {goldSponsors.map((sponsor) => (
+            <SponsorCard key={sponsor.index} {...sponsor} />
+          ))}
+        </div>
+      </div>
 
       {/* Silver Sponsors */}
       <div className="p-10 text-center">
@@ -85,17 +101,23 @@ const Sponsors: React.FC = () => {
         <div
           className="w-full grid grid-cols-1 mt-8 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-[44px] md:px-8 lg:px-10"
         >
-          {sponsorsData.map((sponsor) => (
+          {silverSponsors.map((sponsor) => (
             <SponsorCard key={sponsor.index} {...sponsor} />
           ))}
         </div>
       </div>
 
       {/* Bronze Sponsors */}
-      {/* <div className="p-10 text-center">
-        <HeaderSmall text="Bronze" />
-      </div> */}
-
+      <div className="p-10 text-center">
+        <HeaderSmall text="Bronze Sponsors" />
+        <div
+          className="w-full grid grid-cols-1 mt-8 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-[44px] md:px-8 lg:px-10"
+        >
+          {bronzeSponsors.map((sponsor) => (
+            <SponsorCard key={sponsor.index} {...sponsor} />
+          ))}
+        </div>
+      </div>
     </section>
   );
 };
