@@ -15,7 +15,7 @@ const SocialMediaIcon: React.FC<SocialMediaIconProps> = ({ Icon, href }) => (
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#000000c6] mt-4 md:mt-8 text-white p-5 md:p-8 relative z-[100]">
+    <footer className="bg-[#000000c6] mt-4 md:mt-8 text-white p-5 md:p-8 relative z-[10]">
       <div className="text-center text-lg md:text-xl font-bold italic py-6 md:py-10">
         <span className="text-white">&quot;It&apos;s not just about writing </span>
         <span className="text-neonGreen font-semibold">code</span>

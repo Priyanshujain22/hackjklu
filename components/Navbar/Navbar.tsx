@@ -46,27 +46,26 @@ const Navbar = () => {
       ) : (
         <>
           <div
-            className={`fixed top-0 w-full text-white z-50 flex justify-between items-center p-4 ${
-              isScrolled ? "border-b-[#10dc3c] border-b-2 bg-[rgba(0,0,0,0.6)]" : ""} ${isSidebarOpen ? "bg-[rgba(0,0,0,0.9)]" : ""} `}
+            className={`fixed top-0 w-full text-white z-50 flex justify-between items-center p-4 ${isScrolled ? "border-b-[#10dc3c] border-b-2 bg-[rgba(0,0,0,0.6)]" : ""} ${isSidebarOpen ? "bg-[rgba(0,0,0,0.9)]" : ""} `}
           >
             {/* Logo and Text as Link to Homepage */}
             <div className={`flex items-center space-x-2`}>
               {/* Wrapping Image with Link */}
-                <a href="/">
-                  <Image
-                    src="/hackjklu-logo.png"
-                    alt="Hack JKLU Logo"
-                    width={40}
-                    height={40}
-                    className="h-10"
-                  />
-                </a>
+              <a href="/">
+                <Image
+                  src="/hackjklu-logo.png"
+                  alt="Hack JKLU Logo"
+                  width={40}
+                  height={40}
+                  className="h-10"
+                />
+              </a>
               {/* Wrapping text with Link */}
-                <a className="hidden sm:block" href="/">
-                  <h1 className={` ${press_start_2p.className} text-xl font-bold text-white`}>
-                    HackJKLU v4.0
-                  </h1>
-                </a>
+              <a className="hidden sm:block" href="/">
+                <h1 className={` ${press_start_2p.className} text-xl font-bold text-white`}>
+                  HackJKLU v4.0
+                </h1>
+              </a>
             </div>
 
             <button onClick={toggleSidebar} className="lg:hidden p-2 text-white">
@@ -76,13 +75,17 @@ const Navbar = () => {
 
           {/* Sidebar */}
           <div
-            className={`fixed top-20 w-full bg-[rgba(0,0,0,0.9)] text-white h-full z-30 transition-transform duration-300 ${
-              isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-            }`}
+            className={`fixed top-20 w-full bg-[rgba(0,0,0,0.9)] text-white h-full z-30 transition-transform duration-300 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+              }`}
           >
             <div className="flex flex-col space-y-6 p-4 items-center">
               {navData.map((item, index) => (
-                <a key={index} href={item.link} className="block text-2xl">
+                <a
+                  key={index}
+                  href={item.link}
+                  className="block text-2xl"
+                  onClick={() => setIsSidebarOpen(false)}
+                >
                   {item.name}
                 </a>
               ))}
