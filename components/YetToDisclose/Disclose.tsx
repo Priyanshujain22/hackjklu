@@ -1,32 +1,28 @@
 "use client";
 import React from "react";
-import Header from "../Header/Header";
+import HeaderSmall from "../HeaderSmall/HeaderSmall";
 
 const redirectingData = [
   {
-    title: "Hey!",
-    link: "/gallery",
-    image: "Image placeholder ",
+    title: "About",
+    link: "/#about",
   },
   {
-    title: "Hey!",
-    link: "/faq",
-    image: "Image placeholder", 
+    title: "FAQ",
+    link: "/#faq",
   },
   {
-    title: "Hey!",
-    link: "/humans",
-    image: "Image placeholder", 
+    title: "Events",
+    link: "/events",
   },
 ];
 
 interface RedirectCardsProps {
   title: string;
   link: string;
-  image: string;
 }
 
-const RedirectingCard = ({ title, link, image }: RedirectCardsProps) => {
+const RedirectingCard = ({ title, link }: RedirectCardsProps) => {
   return (
     <a href={link} className="block">
       <div
@@ -34,21 +30,16 @@ const RedirectingCard = ({ title, link, image }: RedirectCardsProps) => {
         style={{
           background: "rgba(7, 190, 210, 0.1)",
           border: "2px solid rgba(61, 214, 31, 0.8)",
-          boxShadow:
-            "0 0 15px rgba(61, 214, 31, 0.8), 0 0 30px rgba(61, 214, 31, 0.5)",
         }}
       >
-        <div className="w-24 sm:w-36 lg:w-48 rounded-full bg-gray-300 flex items-center justify-center text-center text-white font-semibold">
-          <span>{image}</span> 
-        </div>
         <div
-          className="text-white text-base sm:text-xl lg:text-[40px] font-bold mt-4 neon-text"
+          className="text-white text-base sm:text-xl lg:text-[40px] font-bold md:p-6 neon-text"
           style={{
             textShadow:
               "0 0 10px rgba(61, 214, 31, 0.8), 0 0 20px rgba(61, 214, 31, 0.6)",
           }}
         >
-          {title} 
+          {title}
         </div>
       </div>
     </a>
@@ -57,9 +48,9 @@ const RedirectingCard = ({ title, link, image }: RedirectCardsProps) => {
 
 const YetToBeDisclosed: React.FC = () => {
   return (
-    <div className="relative  flex items-center justify-center px-4 sm:px-8 py-16 lg:py-20">
+    <div className=" flex items-center justify-center px-4 sm:px-8">
       <div
-        className="relative w-full max-w-[900px] mx-auto border-2 sm:border-4 border-dashed rounded-lg p-4 sm:p-8 lg:p-12 neon-border"
+        className="w-full max-w-[900px] mx-auto border-2 sm:border-4 border-dashed rounded-lg p-4 sm:p-6 lg:p-10 neon-border"
         style={{
           borderColor: "rgba(61, 214, 31, 0.8)",
           boxShadow:
@@ -68,8 +59,8 @@ const YetToBeDisclosed: React.FC = () => {
       >
         <div className="flex flex-col gap-6 items-center justify-center">
           <div className="w-full flex justify-center">
-            <h2 className="text-[1.5rem] md:text-[2em] font-bold text-center my-[2rem] md:my-[4rem] text-[#e9e4e0]">
-              <Header text="Yet to disclose" />
+            <h2 className="text-[1.5rem] md:text-[2em] font-bold text-center my-[2rem] text-[#e9e4e0]">
+              <HeaderSmall text="Yet to be disclosed" />
             </h2>
           </div>
           <div className="text-supporting-mediumGray text-sm sm:text-base lg:text-[24px] font-medium text-center leading-snug">
@@ -78,7 +69,7 @@ const YetToBeDisclosed: React.FC = () => {
           <div className="text-white text-lg sm:text-xl lg:text-[32px] font-bold">
             Meanwhile,
           </div>
-          <div className="text-supporting-mediumGray text-sm sm:text-base lg:text-[24px] mb-6 lg:mb-10 font-medium text-center">
+          <div className="text-supporting-mediumGray text-sm sm:text-base lg:text-[24px] mb-3 lg:mb-10 font-medium text-center">
             Why don&apos;t you check these out!
           </div>
           <div className="flex flex-wrap justify-center gap-4 lg:gap-[44px]">
@@ -87,7 +78,6 @@ const YetToBeDisclosed: React.FC = () => {
                 key={_id}
                 title={data.title}
                 link={data.link}
-                image={data.image}
               />
             ))}
           </div>

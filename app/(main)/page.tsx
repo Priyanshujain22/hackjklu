@@ -1,9 +1,8 @@
 import About from "@/components/About/About";
 import FAQ from "@/components/FAQ/FAQ";
 import Hero from "@/components/Hero/Hero";
-// import Itenary from "@/components/Itenary/Itenary";
+import Itenary from "@/components/Itenary/Itenary";
 import RetroPrizesSection from "@/components/Prizes/Prizes";
-// import LogoAnimation from "@/components/PastSponsor/PastSponsor";
 import Sponsors from "@/components/Sponsors/Sponsors";
 import Theme from "@/components/Theme/Theme";
 import GalleryHome from "@/components/Gallery/GalleryHome";
@@ -17,12 +16,9 @@ export default function Home() {
       <About />
       <Theme />
       <RetroPrizesSection />
-      {/* <LogoAnimation /> */}
       <Sponsors />
       <WhoShouldApply />
-      {/* <Itenary /> */}
-      {/* <SpeakersJudges/> */}
-      <YetToBeDisclosed/>
+      <Itenary />
       <GalleryHome />
       <FAQ />
     </>
