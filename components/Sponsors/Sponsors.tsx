@@ -10,24 +10,33 @@ import sponsorsBronze from "@/data/sponsorsBronze.json";
 import devfolio from "@/public/sponsors/devfolio.webp";
 import ethindia from "@/public/sponsors/ethindia.webp";
 import polygon from "@/public/sponsors/polygon.webp";
+import aptos from "@/public/sponsors/Aptos.png";
 import wscubeTech from "@/public/sponsors/WsCubeTech.webp";
 
 import Header from '../Header/Header';
 import HeaderSmall from '../HeaderSmall/HeaderSmall';
 
 const imageMap: { [key: string]: StaticImageData } = {
-  "/sponsors/devfolio.webp": devfolio,
-  "/sponsors/ethindia.webp": ethindia,
-  "/sponsors/polygon.webp": polygon,
+  "Devfolio": devfolio,
+  "EthIndia": ethindia,
+  "Polygon": polygon,
+  "Aptos Foundation": aptos,
 };
 
-const mapSponsors = (sponsors: Array<any>) => {
+interface Sponsor {
+  sponsor: string;
+  site: string;
+  category: string;
+}
+
+const mapSponsors = (sponsors: Sponsor[]) => {
   return sponsors.map((sponsor, index) => ({
     ...sponsor,
-    sponsorimgsrc: imageMap[sponsor.sponsorimgsrc],
+    sponsorimgsrc: imageMap[sponsor.sponsor],
     index,
   }));
 };
+
 
 // Map sponsor data for each category
 const goldSponsors = mapSponsors(sponsorsGold);
@@ -77,7 +86,7 @@ const Sponsors: React.FC = () => {
 
       {/* Pre Hackathon Sponsors */}
       <div className="p-10 text-center">
-        <HeaderSmall text="Pre Hackathon Partners" />
+        <HeaderSmall text="Pre-Hackathon Partner" />
         <div className="w-full flex mt-8 flex-col items-center gap-8 xl:gap-12">
           <WSCubeTechSponsorCard />
         </div>

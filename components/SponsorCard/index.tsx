@@ -57,18 +57,17 @@ const SponsorCard: React.FC<SponsorCardProps> = ({
     >
       <a href={site} target="_blank" rel="noreferrer" key={index}>
         <div className="w-full text-white hover:scale-105 duration-300 border border-neonGreen rounded-[20px]">
-          {/* <LampContainer> */}
-          <div className="w-full h-[161px] xl:h-[186px] flex items-center justify-center">
+          <div className="w-full h-[161px] xl:h-[186px] flex items-center justify-center overflow-hidden relative p-10">
             <Image
               src={sponsorimgsrc}
-              width={300}
-              height={200}
+              fill
               className="rounded-t-[20px] outline-none"
               alt={sponsor}
-              style={{ objectFit: "contain" }}
+              style={{ objectFit: "contain", padding: "20px" }}
             />
           </div>
-          {/* </LampContainer> */}
+
+
           <div
             className="flex justify-between items-start p-[22px] rounded-b-[20px]"
             style={{ backgroundColor: bgColor }}

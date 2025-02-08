@@ -2,19 +2,16 @@
     {
       "sponsor": "Devfolio",
       "category": "Bronze Sponsor",
-      "sponsorimgsrc": "/sponsors/devfolio.webp",
       "site": "https://devfolio.co"
     },
     {
       "sponsor": "EthIndia",
       "category": "Bronze Sponsor",
-      "sponsorimgsrc": "/sponsors/ethindia.webp",
       "site": "https://ethindia.co/"
     },
     {
       "sponsor": "Polygon",
       "category": "Bronze Sponsor",
-      "sponsorimgsrc": "/sponsors/polygon.webp",
       "site": "https://polygon.technology/"
     }
   ]

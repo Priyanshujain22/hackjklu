@@ -112,9 +112,9 @@ const Hero = () => {
             {/* Applying Devfolio Button Here */}
             <CardItem translateZ="60" className="w-full flex items-center justify-center">
               <div
-                className="apply-button"
-                data-hackathon-slug="YOUR-HACKATHON-SLUG"
-                data-button-theme="light"
+                className="apply-button relative min-h-[44px] w-full max-w-[312px] xs:w-[280px] sm:w-[312px]"
+                data-hackathon-slug="hackjklu-v4"
+                data-button-theme="dark-inverted"
                 style={{ height: "44px", width: "312px" }}
               ></div>
             </CardItem>

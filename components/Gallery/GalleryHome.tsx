@@ -3,7 +3,7 @@ import Header from '../Header/Header';
 import { InfiniteMovingCards } from '../ui/infinite-moving-cards';
 
 const images = Array.from({ length: 18 }, (_, i) => ({
-  src: `/galleryHome/${i + 1}.jpg`,
+  src: `/galleryHome/${i + 1}.webp`,
   name: `Image ${i + 1}`,
 }));
 

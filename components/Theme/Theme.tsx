@@ -137,24 +137,6 @@ const Theme = () => {
       </h2>
       <div className="relative flex items-center justify-center mt-8 sm:mt-16 mb-8 sm:mb-12">
         <div className="relative w-full max-w-4xl h-80 sm:h-96 flex items-center justify-center">
-          {/* Previous Card */}
-          <motion.div
-            key={`prev-${activeCardIndex}`}
-            className="absolute left-0 w-1/3 h-full opacity-50 blur-md"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 0.5, x: 0 }}
-            exit={{ opacity: 0, x: -50 }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="relative w-full h-full rounded-lg overflow-hidden">
-              <Image
-                src={themesData[(activeCardIndex - 1 + themesData.length) % themesData.length].image}
-                alt={themesData[(activeCardIndex - 1 + themesData.length) % themesData.length].title}
-                layout="fill"
-                objectFit="cover"
-              />
-            </div>
-          </motion.div>
 
           {/* Current Card */}
           <motion.div
@@ -169,8 +151,8 @@ const Theme = () => {
               <Image
                 src={themesData[activeCardIndex].image}
                 alt={themesData[activeCardIndex].title}
-                layout="fill"
-                objectFit="cover"
+                fill
+                style={{ objectFit: "cover" }}
               />
               <div className="absolute bottom-0 left-0 right-0 p-4 bg-[rgba(0,0,0,0.85)] text-white">
                 <h2 className="text-lg font-bold mb-2">
@@ -180,25 +162,6 @@ const Theme = () => {
                   {themesData[activeCardIndex].description}
                 </p>
               </div>
-            </div>
-          </motion.div>
-
-          {/* Next Card */}
-          <motion.div
-            key={`next-${activeCardIndex}`}
-            className="absolute right-0 w-1/3 h-full opacity-50 blur-md"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 0.5, x: 0 }}
-            exit={{ opacity: 0, x: 50 }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="relative w-full h-full rounded-lg overflow-hidden">
-              <Image
-                src={themesData[(activeCardIndex + 1) % themesData.length].image}
-                alt={themesData[(activeCardIndex + 1) % themesData.length].title}
-                layout="fill"
-                objectFit="cover"
-              />
             </div>
           </motion.div>
         </div>
