@@ -47,11 +47,10 @@ const Navbar = () => {
         <>
           <div
             className={`fixed top-0 w-full text-white z-50 flex justify-between items-center p-4 ${
-              isScrolled ? "border-b-[#10dc3c] border-b-2 bg-[rgba(0,0,0,0.6)]" : "bg-[rgba(0,0,0,0.2)]"
-            }`}
+              isScrolled ? "border-b-[#10dc3c] border-b-2 bg-[rgba(0,0,0,0.6)]" : ""} ${isSidebarOpen ? "bg-[rgba(0,0,0,0.9)]" : ""} `}
           >
             {/* Logo and Text as Link to Homepage */}
-            <div className="flex items-center space-x-2">
+            <div className={`flex items-center space-x-2`}>
               {/* Wrapping Image with Link */}
                 <a href="/">
                   <Image
@@ -77,7 +76,7 @@ const Navbar = () => {
 
           {/* Sidebar */}
           <div
-            className={`fixed top-20 w-full bg-[rgba(0,0,0,0.6)] text-white h-full z-30 transition-transform duration-300 ${
+            className={`fixed top-20 w-full bg-[rgba(0,0,0,0.9)] text-white h-full z-30 transition-transform duration-300 ${
               isSidebarOpen ? "translate-x-0" : "-translate-x-full"
             }`}
           >
