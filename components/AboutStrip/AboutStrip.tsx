@@ -8,11 +8,11 @@ import TechhLogo from "@/public/tech-affair.png";
 
 const AboutStrip = () => {
   return (
-    <div className="relative">
-      <div className="mt-10 px-8 lg:px-16 flex-col md:flex-row">
+    <div className="relative mb-10">
+      <div className="px-8 lg:px-16 flex-col md:flex-row">
         <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-8 sm:gap-0">
           {/* Logos section */}
-          <div className="flex flex-col sm:flex-row gap-8 items-center justify-center mt-8 sm:mt-0">
+          <div className="flex flex-col sm:flex-row gap-8 items-center justify-center">
             <div className="w-72 transform transition-all duration-300 hover:scale-105">
               <a href="https://jklu.edu.in/council-of-technical-affairs/">
                 <Image
@@ -37,7 +37,7 @@ const AboutStrip = () => {
             </div>
           </div>
           {/* Social media links */}
-          <div className="flex gap-8 justify-center">
+          <div className="flex gap-10 sm:gap-2 md:gap-8 justify-center">
             <Link target="_blank" href={"https://www.instagram.com/hackjklu"}>
               <Instagram size={36} className="hover:fill-neonGreen transition-all" />
             </Link>
