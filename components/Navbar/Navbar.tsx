@@ -61,9 +61,9 @@ const Navbar = () => {
                 />
               </a>
               {/* Wrapping text with Link */}
-              <a className="hidden sm:block" href="/">
-                <h1 className={` ${press_start_2p.className} text-xl font-bold text-white`}>
-                  HackJKLU v4.0
+              <a href="/">
+                <h1 className={` ${press_start_2p.className} text-lg font-bold text-white`}>
+                  <span className="text-neonBlue">Hack</span><span className="text-neonGreen">JKLU</span> v4.0
                 </h1>
               </a>
             </div>

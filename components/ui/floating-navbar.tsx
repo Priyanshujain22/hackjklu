@@ -52,7 +52,7 @@ export const FloatingNav = ({
             `text-xl lg:text-2xl pl-2 font-extrabold text-white ${press_start_2p.className} `
           )}
         ><a href="/">
-            HackJKLU v4.0
+            <span className="text-neonBlue">Hack</span><span className="text-neonGreen">JKLU</span> v4.0
           </a>
         </h1>
       </div>
