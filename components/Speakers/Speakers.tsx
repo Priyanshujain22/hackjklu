@@ -1,13 +1,13 @@
 import React from "react";
 import Image from "next/image";
-import data from "../../data/judges.json";
+import data from "../../data/speakers.json";
 import Header from "../Header/Header";
 
-const Judges: React.FC = () => {
+const Speakers: React.FC = () => {
   return (
-    <section className="pt-5 sm:pt-10 relative" id="judges">
+    <section className="pt-5 sm:pt-10 relative" id="Speakers">
       <h2 className="text-center my-5 sm:my-10">
-        <Header text="Judges" />
+        <Header text="Speakers" />
       </h2>
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-8 px-5 md:px-8">
@@ -60,4 +60,4 @@ const Judges: React.FC = () => {
   );
 };
 
-export default Judges;
+export default Speakers;

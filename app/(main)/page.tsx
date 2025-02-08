@@ -7,6 +7,8 @@ import Sponsors from "@/components/Sponsors/Sponsors";
 import Theme from "@/components/Theme/Theme";
 import GalleryHome from "@/components/Gallery/GalleryHome";
 import WhoShouldApply from "@/components/WhoShouldApply/WhoShouldApply";
+import Speakers from "@/components/Speakers/Speakers";
+import Judges from "@/components/Judges/Judges";
 
 export default function Home() {
   return (
@@ -18,6 +20,8 @@ export default function Home() {
       <Sponsors />
       <WhoShouldApply />
       <Itenary />
+      <Speakers />
+      <Judges />
       <GalleryHome />
       <FAQ />
     </>
