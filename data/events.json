@@ -1,67 +1,67 @@
 [
     {
         "title": "Clutch Arena",
-        "description": "A Monthly event of coding contest based on algorithms, data structures and problem solving.",
+        "description": "A high-stakes Valorant showdown where teams battle it out in intense tactical gameplay. Strategy, skill, and teamwork are the keys to securing victory in this fast-paced FPS competition.",
         "bgImage": "/events/1.webp"
     },
     {
         "title": "Battle Blitz",
-        "description": "A web development contest for solving the general BIT Sindri problems. This contest helps all the students in boosting their productivity and innovation together with like-minded people.",
+        "description": "An adrenaline-fueled BGMI squad battle where teams fight to be the last ones standing. With strategic gameplay, sharp shooting, and survival instincts, only the strongest squad claims victory.",
         "bgImage": "/events/2.webp"
     },
     {
         "title": "Bidding Before Wicket",
-        "description": "A coding competetion where participants get to engage themselves in showcasing their coding skills by solving a series of mind bending problems with ingenious algorithms.",
+        "description": "The participants bid for top cricketing talent to create their ideal fantasy team. It simulates the real IPL player auction drama and strategy, with intense bidding wars and unpredictable outcomes.",
         "bgImage": "/events/4.webp"
     },
     {
         "title": "Bot Soccer",
-        "description": "The Monsoon Code 2020 in association with Codechef and TAP Cell, BIT Sindri was a short contest with problems varying from implementations to usage of algorithms.",
+        "description": "Bot Soccer is a high-energy, one-on-one robotics showdown where teams deploy their bots to push the ball into the opponent’s goal. Strategy, control, and teamwork are key. With intense battles, fast-paced action, and nail-biting finishes, the bot that outmaneuvers its rival and scores the most goals claims victory in this action-packed challenge.",
         "bgImage": "/events/5.webp"
     },
     {
-        "title": "Escape Room",
-        "description": "A Logo Re-Design competition conducted by the design team of hncc where one can showcase their creativity and imagination",
+        "title": "The Escape Room",
+        "description": "Two teams race through a series of puzzle rooms, each solving challenges to unlock the next clue. The final destination? A single Escape Room, but only one team can enter first, earning a 15-second advantage. The team with the fastest total time and the fewest mistakes among all the teams wins the Game.",
         "bgImage": "/events/6.webp"
     },
     {
         "title": "Escape The Matrix",
-        "description": "The event had four basic domains based on the platform for development, viz. App Development, Game Development, Web Development and Machine Learning implementations.",
+        "description": "Teams receive a question and proceed if correct. If wrong, they complete a task while others continue. The first team to finish wins. Difficulty increases at each stage. Teams cannot solve during tasks. The fastest team to complete all puzzles wins the competition.",
         "bgImage": "/events/7.webp"
     },
     {
         "title": "Glow Weekend",
-        "description": "HnCC BIT Sindri is here with a national level hackathon, \"Hackatron\" and aims to promote solutions which are hard to find. It comes with cash prizes worth Rs 55000 and cool swags.",
+        "description": "A vibrant celebration filled with neon lights, music, and exciting challenges. Experience a weekend of fun, energy, and unforgettable moments in a glowing spectacle of entertainment.",
         "bgImage": "/events/8.webp"
     },
     {
         "title": "Print Your Style",
-        "description": "HnCC BIT Sindri is here with a national level hackathon, \"Hackatron\" and aims to promote solutions which are hard to find. It comes with cash prizes worth Rs 55000 and cool swags.",
+        "description": "We are gonna give people tote bags on ticket basis , which will be theirs after taking the tickets now they are gonna create design on their own bags using wood block printing techniques under supervision. It’s a fun time passing activity and you can visit anytime in between 15-20 minutes activities.",
         "bgImage": "/events/9.webp"
     },
     {
         "title": "Kintsugi",
-        "description": "HnCC BIT Sindri is here with a national level hackathon, \"Hackatron\" and aims to promote solutions which are hard to find. It comes with cash prizes worth Rs 55000 and cool swags.",
+        "description": "We are gonna give people broken crockery and make them repair it using the art of kintsugi. Kintsugi is the Japanese art of repairing broken pottery by mending the areas of breakage with urushi lacquer dusted or mixed with powdered gold, silver, or platinum. We’ll use glitter instead of gold and silver.",
         "bgImage": "/events/10.webp"
     },
     {
         "title": "RoboMaze",
-        "description": "HnCC BIT Sindri is here with a national level hackathon, \"Hackatron\" and aims to promote solutions which are hard to find. It comes with cash prizes worth Rs 55000 and cool swags.",
+        "description": "Robo Maze is a thrilling robotics challenge where participants navigate their RC robots through a complex maze filled with sharp turns and obstacles. Precision, agility, and quick decision-making are crucial as teams race to conquer the maze and cross the finish line in the shortest time to claim victory.",
         "bgImage": "/events/11.webp"
     },
     {
         "title": "Telescope Pointing Competition",
-        "description": "HnCC BIT Sindri is here with a national level hackathon, \"Hackatron\" and aims to promote solutions which are hard to find. It comes with cash prizes worth Rs 55000 and cool swags.",
+        "description": "Telescope Pointing Competition, where participants will compete to accurately point a telescope at a selected planet in the shortest time. This event aims to enhance observational skills, promote hands-on learning, and make stargazing exciting. A small entry fee and a prize for the winner are included.",
         "bgImage": "/events/12.webp"
     },
     {
         "title": "Venus Mars Conjunction",
-        "description": "HnCC BIT Sindri is here with a national level hackathon, \"Hackatron\" and aims to promote solutions which are hard to find. It comes with cash prizes worth Rs 55000 and cool swags.",
+        "description": "Venus-Mars Conjunction, where both planets will appear close together in the night sky. The event will feature telescope observations and discussions on planetary motions to enhance student engagement.",
         "bgImage": "/events/13.webp"
     },
     {
         "title": "Algo-Runners",
-        "description": "HnCC BIT Sindri is here with a national level hackathon, \"Hackatron\" and aims to promote solutions which are hard to find. It comes with cash prizes worth Rs 55000 and cool swags.",
+        "description": "Reverse Coding in relay format is a team-based competition where participants decode the logic or algorithm behind given outputs. Teams of 3-4 members solve tasks in stages, with only one member working at a time and passing their progress to the next. The event emphasizes problem-solving, teamwork, and strategy.",
         "bgImage": "/events/e.webp"
     }
 ]

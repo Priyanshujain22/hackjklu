@@ -32,7 +32,7 @@ const WhoShouldApply = () => {
               />
             </CardContainer>
           </div>
-          <ul className="ml-4 md:ml-5 mt-2 text-4xl flex flex-col items-center md:items-start">
+          <ul className="ml-4 md:ml-5 text-4xl flex flex-col items-center md:items-start">
             <li className="text-xl md:text-4xl mb-2 text-center md:text-left">
               <span role="img" aria-label="student">👨‍🎓</span> <span className={cn(styles.gradientText)}>STUDENTS</span>
             </li>

@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 
 const Theme = () => {
   const [activeCardIndex, setActiveCardIndex] = useState<number>(0);
+  const [isDescriptionVisible, setIsDescriptionVisible] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -19,12 +20,18 @@ const Theme = () => {
 
   const handleNextCard = () => {
     setActiveCardIndex((prevIndex) => (prevIndex + 1) % themesData.length);
+    setIsDescriptionVisible(false);
   };
 
   const handlePreviousCard = () => {
     setActiveCardIndex((prevIndex) =>
       prevIndex === 0 ? themesData.length - 1 : prevIndex - 1
     );
+    setIsDescriptionVisible(false);
+  };
+
+  const toggleDescription = () => {
+    setIsDescriptionVisible(!isDescriptionVisible);
   };
 
   return (
@@ -33,8 +40,7 @@ const Theme = () => {
         <Header text="Themes" />
       </h2>
       <div className="relative flex flex-col items-center justify-center mt-8 sm:mt-16 mb-8 sm:mb-12">
-        <div className="relative w-full max-w-5xl h-[450px] sm:h-[550px] flex items-center justify-center">
-          {/* Current Card */}
+        <div className="relative w-full max-w-3xl h-[350px] sm:h-[450px] flex items-center justify-center">
           <motion.div
             key={activeCardIndex}
             className="relative w-3/4 h-full"
@@ -50,35 +56,51 @@ const Theme = () => {
                 fill
                 style={{ objectFit: "cover" }}
               />
-              <div className="absolute bottom-0 left-0 right-0 p-6 bg-[rgba(0,0,0,0.85)] text-white">
-                <h2 className="text-xl text-center font-bold mb-3">
-                  {themesData[activeCardIndex].title}
-                </h2>
-                <p className="text-base text-justify">
-                  {themesData[activeCardIndex].description}
-                </p>
+              <div 
+                className={`absolute bottom-0 left-0 right-0 transition-all duration-300
+                  sm:block sm:bg-[rgba(0,0,0,0.85)]
+                  ${isDescriptionVisible ? 'bg-[rgba(0,0,0,0.85)]' : 'bg-[rgba(0,0,0,0.6)]'}
+                `}
+              >
+                <div 
+                  className="p-6 cursor-pointer sm:cursor-default"
+                  onClick={toggleDescription}
+                >
+                  <h2 className="text-xl text-center font-bold mb-3 text-white">
+                    {themesData[activeCardIndex].title}
+                  </h2>
+                  <p className={`text-base text-justify text-white
+                    transition-all duration-300 sm:block
+                    ${isDescriptionVisible ? 'block' : 'hidden'}
+                  `}>
+                    {themesData[activeCardIndex].description}
+                  </p>
+                  <div className="sm:hidden text-center text-white text-sm leading-3 mt-1">
+                    {!isDescriptionVisible && "Tap to read more"}
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
         </div>
 
-        {/* Navigation Dots */}
         <div className="flex mt-4 space-x-2">
           {themesData.map((_, index) => (
             <button
               key={index}
-              onClick={() => setActiveCardIndex(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                activeCardIndex === index ? "bg-neonGreen" : "bg-gray-400"
-              }`}
+              onClick={() => {
+                setActiveCardIndex(index);
+                setIsDescriptionVisible(false);
+              }}
+              className={`w-3 h-3 rounded-full transition-all duration-300 
+                ${activeCardIndex === index ? "bg-neonGreen" : "bg-gray-400"}`}
             />
           ))}
         </div>
 
-        {/* Navigation Arrows */}
         <button
           onClick={handlePreviousCard}
-          className="absolute left-1/4 sm:left-20 p-3 bg-neonGreen text-black rounded-full shadow-md"
+          className="absolute top-1/2 left-4 sm:left-10 transform -translate-y-1/2 p-2 sm:p-3 bg-neonGreen text-black rounded-full shadow-md z-10"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -86,18 +108,14 @@ const Theme = () => {
             viewBox="0 0 24 24"
             strokeWidth={2}
             stroke="currentColor"
-            className="w-8 h-8"
+            className="w-6 h-6 sm:w-8 sm:h-8"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M15 19l-7-7 7-7"
-            />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
           </svg>
         </button>
         <button
           onClick={handleNextCard}
-          className="absolute right-1/4 sm:right-20 p-3 bg-neonGreen text-black rounded-full shadow-md"
+          className="absolute top-1/2 right-4 sm:right-10 transform -translate-y-1/2 p-2 sm:p-3 bg-neonGreen text-black rounded-full shadow-md z-10"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -105,13 +123,9 @@ const Theme = () => {
             viewBox="0 0 24 24"
             strokeWidth={2}
             stroke="currentColor"
-            className="w-8 h-8"
+            className="w-6 h-6 sm:w-8 sm:h-8"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M9 5l7 7-7 7"
-            />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
           </svg>
         </button>
       </div>

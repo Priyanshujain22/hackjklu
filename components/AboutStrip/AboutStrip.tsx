@@ -9,7 +9,7 @@ import TechhLogo from "@/public/tech-affair.png";
 
 const AboutStrip = () => {
   return (
-    <div className="relative mb-10">
+    <div className="relative mt-5 mb-10">
       <div className="px-8 lg:px-16 flex-col md:flex-row">
         <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-8 sm:gap-0">
           {/* Logos section */}

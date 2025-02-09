@@ -10,8 +10,8 @@ const Itenary = dynamic(() => import('@/components/Itenary/Itenary'));
 const GalleryHome = dynamic(() => import('@/components/Gallery/GalleryHome'));
 const WhoShouldApply = dynamic(() => import('@/components/WhoShouldApply/WhoShouldApply'));
 const Speakers = dynamic(() => import('@/components/Speakers/Speakers'));
-const Judges = dynamic(() => import('@/components/Judges/Judges'));
-const Mentors = dynamic(() => import('@/components/Mentors/Mentors'));
+// const Judges = dynamic(() => import('@/components/Judges/Judges'));
+// const Mentors = dynamic(() => import('@/components/Mentors/Mentors'));
 const FAQ = dynamic(() => import('@/components/FAQ/FAQ'));
 
 import { Metadata } from "next";
@@ -49,8 +49,8 @@ export default function Home() {
       <WhoShouldApply />
       <Itenary />
       <Speakers />
-      <Judges />
-      <Mentors />
+      {/* <Judges /> */}
+      {/* <Mentors /> */}
       <GalleryHome />
       <FAQ />
     </>

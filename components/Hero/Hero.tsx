@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion, } from "framer-motion";
+import { motion } from "framer-motion";
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 import { Press_Start_2P } from "next/font/google";
 import BreathingText from '../ui/BreathingText';
@@ -69,7 +69,7 @@ const CountdownTimer = () => {
 };
 
 const Hero = () => {
-  useEffect(() => {
+  React.useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://apply.devfolio.co/v2/sdk.js';
     script.async = true;
@@ -83,7 +83,7 @@ const Hero = () => {
   return (
     <motion.section
       id="main"
-      className="relative mx-auto grid min-h-screen place-content-center overflow-hidden px-4 pt-24 sm:px-8 sm:pt-20 text-gray-200"
+      className="relative mx-auto grid min-h-screen place-content-center overflow-hidden px-4 py-24 sm:px-8 sm:py-20 text-gray-200 bg-[url('/hero.png')] bg-center bg-cover"
     >
       <div className="relative z-10 flex flex-col items-center">
         <CardContainer className="z-50 p-4">
@@ -106,15 +106,25 @@ const Hero = () => {
                 />
               </div>
             </CardItem>
-            {/* Applying Devfolio Button Here */}
             <CardItem translateZ="60" className="w-full flex items-center justify-center">
               <div
                 className="apply-button relative min-h-[44px] w-full max-w-[312px] xs:w-[280px] sm:w-[312px]"
                 data-hackathon-slug="hackjklu-v4"
                 data-button-theme="dark-inverted"
-                style={{ height: "44px", width: "312px" }}
-              ></div>
+              >
+                {/* Fallback button while Devfolio loads */}
+                <div
+                  className="absolute inset-0 flex items-center justify-center bg-white text-black rounded-md"
+                  style={{
+                    // opacity: isDevfolioLoaded ? 0 : 1,
+                    transition: 'opacity 0.3s'
+                  }}
+                >
+                  Apply with Devfolio
+                </div>
+              </div>
             </CardItem>
+
             <CardItem translateZ="50" className="w-full">
               <CountdownTimer />
             </CardItem>

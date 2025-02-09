@@ -54,7 +54,7 @@ export default function TeamPage() {
         <Header text="The Team" />
       </h2>
 
-      <Carousel images={[{ src: "/team/TeamMain.webp", blurDataURL: "/team/TeamBlur.webp" }]} interval={3000} autoPlay={true} />
+      <Carousel images={[{ src: "/team/TeamMain.webp", blurDataURL: "/team/TeamBlur.webp" }]} />
     </section>
   );
 }

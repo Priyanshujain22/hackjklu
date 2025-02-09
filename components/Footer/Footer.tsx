@@ -47,9 +47,18 @@ const Footer: React.FC = () => {
               <p className="text-sm md:text-base mt-2">
                 <strong>Email:</strong>
                 <br />
-                General queries: <a href="mailto:hackjklu@jklu.edu.in" className="text-white hover:text-neonGreen">hackjklu@jklu.edu.in</a>
+                General queries:
+                <br className="block md:hidden" />
+                <a href="mailto:hackjklu@jklu.edu.in" className="text-white hover:text-neonGreen">
+                  hackjklu@jklu.edu.in
+                </a>
+                <br className="block md:hidden" />
                 <br />
-                Technical issues: <a href="mailto:counciloftechnicalaffairs@jklu.edu.in" className="text-white hover:text-neonGreen">counciloftechnicalaffairs@jklu.edu.in</a>
+                Technical issues:
+                <br className="block md:hidden" />
+                <a href="mailto:counciloftechnicalaffairs@jklu.edu.in" className="text-white hover:text-neonGreen">
+                  counciloftechnicalaffairs@jklu.edu.in
+                </a>
               </p>
               <p className="text-sm text-white md:text-base mt-4">
                 <strong>Call Us:</strong>

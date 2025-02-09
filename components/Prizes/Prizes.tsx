@@ -8,8 +8,6 @@ import confetti from "canvas-confetti";
 import { GiTrophyCup } from "react-icons/gi";
 import { HiTrophy } from "react-icons/hi2";
 
-
-
 import bestBeginner from "@/public/prizesPage/best_beginner.png";
 import bestGirls from "@/public/prizesPage/best_girls.png";
 
@@ -21,6 +19,35 @@ interface PrizeCardProps {
   isCenter?: boolean;
 }
 
+const prizeColors: {
+  [key: string]: {
+    borderColor: string;
+    glowColor: string;
+    defaultGlow: string;
+    trophyColor?: string;
+  };
+} = {
+  "1st prize": {
+    borderColor: "rgba(255, 215, 0, 0.8)", // Gold
+    glowColor: "rgba(255, 215, 0, 0.5)",
+    defaultGlow: "rgba(255, 215, 0, 0.2)",
+    trophyColor: "#FFD700"
+  },
+  "2nd prize": {
+    borderColor: "rgba(192, 192, 192, 0.8)", // Silver
+    glowColor: "rgba(192, 192, 192, 0.5)",
+    defaultGlow: "rgba(192, 192, 192, 0.2)",
+    trophyColor: "#C0C0C0"
+  },
+  "3rd prize": {
+    borderColor: "rgba(205, 127, 50, 0.8)", // Bronze
+    glowColor: "rgba(205, 127, 50, 0.5)",
+    defaultGlow: "rgba(205, 127, 50, 0.2)",
+    trophyColor: "#CD7F32"
+  },
+};
+
+
 const PrizeCard: React.FC<PrizeCardProps> = ({
   amount,
   category,
@@ -28,6 +55,9 @@ const PrizeCard: React.FC<PrizeCardProps> = ({
   hover_bg,
   isCenter,
 }) => {
+
+  const colors = prizeColors[category];
+
   return (
     <motion.div
       initial={{
@@ -42,16 +72,18 @@ const PrizeCard: React.FC<PrizeCardProps> = ({
     >
       <div
         className={`flex flex-col justify-center items-center py-[64px] md:py-[52px]
-          rounded-[8px] border-2 border-white ${isCenter ? "md:col-span-2" : ""}`}
+        rounded-[8px] border-2 border-dashed ${isCenter ? "md:col-span-2" : ""}  `}
         style={{
           "--default-gradient": default_bg,
           "--hover-gradient": hover_bg,
           background: "var(--default-gradient)",
+          borderColor: colors.borderColor,
+          boxShadow: `0 0 10px 2px ${colors.defaultGlow}`,
           transition: "all 0.3s ease",
         } as React.CSSProperties}
         onMouseEnter={(e) => {
           e.currentTarget.style.background = "var(--hover-gradient)";
-          e.currentTarget.style.boxShadow = "0 0 20px 10px rgba(31, 84, 251, 0.5)";
+          e.currentTarget.style.boxShadow = `0 0 20px 10px ${colors.glowColor}`;
           e.currentTarget.style.transform = "scale(1.05)";
         }}
         onMouseLeave={(e) => {
@@ -61,17 +93,15 @@ const PrizeCard: React.FC<PrizeCardProps> = ({
         }}
       >
         <div className="text-white flex flex-col justify-center items-center space-y-4">
-          {category == "1st prize" ? <GiTrophyCup className="text-6xl text-yellow-500 fill-yellow-500 " /> : <HiTrophy className="text-6xl" />}
-          <p
-            className="px-5 font-[500] text-[64px] leading-[72px]
-              md:text-[88px] md:leading-[96px]"
-          >
+          {category === "1st prize" ? (
+            <GiTrophyCup className="text-6xl" style={{ color: colors.trophyColor }} />
+          ) : (
+            <HiTrophy className="text-6xl" style={{ color: colors.trophyColor }} />
+          )}
+          <p className="px-5 font-[500] text-[64px] leading-[72px] md:text-[88px] md:leading-[96px]">
             {amount}
           </p>
-          <p
-            className="text-[rgba(255,255,255,0.85)] font-[500]
-              text-[20px] md:text-[24px]"
-          >
+          <p className="text-[rgba(255,255,255,0.85)] font-[500] text-[20px] md:text-[24px]">
             {category}
           </p>
         </div>
@@ -148,7 +178,7 @@ const Prize = () => {
         </div>
         <div className="grid grid-cols-1 gap-6 md:gap-8 lg:grid-cols-2 mt-8">
           <div
-            className="flex flex-col items-center gap-12 px-8 py-6 md:flex-row md:px-6 rounded-[8px] border-2 border-white transition-all duration-300"
+            className="flex flex-col items-center gap-12 px-8 py-6 md:flex-row md:px-6 rounded-[8px] border-2 border-dashed border-white transition-all duration-300"
             onMouseEnter={(e) => {
               e.currentTarget.style.boxShadow = "0 0 20px 10px rgba(31, 84, 251, 0.5)";
               e.currentTarget.style.transform = "scale(1.05)";
@@ -173,13 +203,13 @@ const Prize = () => {
               <p className="text-[#C3C3C3] text-[20px] font-normal text-center">
                 Social Media Winners consists of Linkedin, Instagram, Youtube Vlog
               </p>
-              <button className="text-[#C3C3C3] p-3 rounded-lg border border-white text-[20px] font-normal text-center">
+              {/* <button className="text-[#C3C3C3] p-3 rounded-lg border border-white text-[20px] font-normal text-center">
                 View Documentation
-              </button>
+              </button> */}
             </div>
           </div>
           <div
-            className="flex flex-col items-center gap-12 px-8 py-6 md:flex-row md:px-6 rounded-[8px] border-2 border-white transition-all duration-300"
+            className="flex flex-col items-center gap-12 px-8 py-6 md:flex-row md:px-6 rounded-[8px] border-2 border-dashed border-white transition-all duration-300"
             onMouseEnter={(e) => {
               e.currentTarget.style.boxShadow = "0 0 20px 10px rgba(31, 84, 251, 0.5)";
               e.currentTarget.style.transform = "scale(1.05)";
@@ -204,9 +234,9 @@ const Prize = () => {
               <p className="text-[#C3C3C3] text-[20px] font-normal text-center">
                 Make-a-thon is a competition for school students
               </p>
-              <button className="text-[#C3C3C3] p-3 rounded-lg border border-white text-[20px] font-normal text-center">
+              {/* <button className="text-[#C3C3C3] p-3 rounded-lg border border-white text-[20px] font-normal text-center">
                 View Documentation
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

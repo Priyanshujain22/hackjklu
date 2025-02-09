@@ -1,18 +1,22 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
-import data from "../../data/speakers.json";
+// import Image from "next/image";
+// import data from "../../data/speakers.json";
+import Carousel from "../Carousel/Carousel";
 import Header from "../Header/Header";
 
 const Speakers: React.FC = () => {
   return (
-    <section className="pt-5 sm:pt-10 relative" id="Speakers">
+    // <section className="pt-5 sm:pt-10 relative" id="speakers">
+    <section className="mx-5 pt-10 relative" id="speakers">
       <h2 className="text-center my-5 sm:my-10">
-        <Header text="Speakers" />
+        <Header text="Speakers & Judges" />
       </h2>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-8 px-5 md:px-8">
+      <Carousel images={[{ src: "/reveal.jpeg" }]} />
+
+      {/* <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-8 px-5 md:px-8">
         {data.map(({ name, linkedin, photo, role }) => (
           <div
             key={name}
@@ -48,7 +52,7 @@ const Speakers: React.FC = () => {
               </div>
             </a>
             <div className="flex flex-col mt-4">
-              <p className="font-bold text-xl sm:text-2xl mb-2 text-white">
+              <p className="font-bold text-xl sm:text-2xl mb-2 neon-text text-white">
                 {name}
               </p>
               <p className="text-sm sm:text-base lg:text-lg text-[#f0edeb]">
@@ -58,6 +62,48 @@ const Speakers: React.FC = () => {
           </div>
         ))}
       </div>
+      <style jsx global>{`
+        @keyframes flicker {
+          0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+            opacity: 0.99;
+            filter: drop-shadow(0 0 1px #10dc3c) drop-shadow(0 0 3px #10dc3c) drop-shadow(0 0 10px #10dc3c);
+          }
+          21%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+            opacity: 0.4;
+            filter: none;
+          }
+        }
+
+        @keyframes glitch {
+          0% {
+            transform: translate(0);
+          }
+          20% {
+            transform: translate(-2px, 2px);
+          }
+          40% {
+            transform: translate(-2px, -2px);
+          }
+          60% {
+            transform: translate(2px, 2px);
+          }
+          80% {
+            transform: translate(2px, -2px);
+          }
+          100% {
+            transform: translate(0);
+          }
+        }
+
+        .neon-text {
+          animation: flicker 3s linear infinite;
+        }
+
+        .glitch {
+          animation: glitch 0.3s linear infinite;
+          animation-play-state: running;
+        }
+      `}</style> */}
     </section>
   );
 };
