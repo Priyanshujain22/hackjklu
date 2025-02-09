@@ -99,14 +99,14 @@ import AboutStrip from "@/components/AboutStrip/AboutStrip";
 
 const About = () => {
   return (
-    <section id="about" className="relative">
+    <section id="about" className="relative bg-black/50">
       <AboutStrip />
       <h2 className="text-center my-5 sm:my-10">
         <Header text="About Us" />
       </h2>
       <div className="px-10 lg:px-16">
         <div className="text-sm lg:text-base flex flex-col md:flex-row items-center my-4 sm:my-6 lg:my-8">
-          <div className="w-full lg:p-6 leading-relaxed order-2 md:order-1">
+          <div className="w-2/3 lg:p-6 leading-relaxed order-2 md:order-1">
             <div className="mb-4">
               <p className="tracking-wide text-base sm:text-lg lg:text-xl text-justify">
                 We gladly announce the return of HackJKLU, a premier national-level hackathon hosted by Council of Technical Affairs at JK Lakshmipat University (JKLU), a leading institution in innovation, technology, and interdisciplinary education. This exciting event takes place within the span of 3 days bringing together top-tier talent from across the nation to solve real-world challenges that impact industries, communities, and the environment.
@@ -118,7 +118,7 @@ const About = () => {
               </p>
             </div>
           </div>
-          <div className="w-full flex items-center justify-center order-1 md:order-2 mb-6 sm:mb-8 lg:mb-10">
+          <div className="w-1/3 flex items-center justify-center order-1 md:order-2 mb-6 sm:mb-8 lg:mb-10">
             <div className=" w-[70%] sm:w-[50%] md:w-[90%] lg:w-[98%] xl:w-[45%] max-w-[400px]">
               <Image
                 src="/hackjklu-logo.png"

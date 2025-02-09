@@ -5,7 +5,10 @@ import Header from "../Header/Header";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import confetti from "canvas-confetti";
-import { FaTrophy } from "react-icons/fa";
+import { GiTrophyCup } from "react-icons/gi";
+import { HiTrophy } from "react-icons/hi2";
+
+
 
 import bestBeginner from "@/public/prizesPage/best_beginner.png";
 import bestGirls from "@/public/prizesPage/best_girls.png";
@@ -48,17 +51,17 @@ const PrizeCard: React.FC<PrizeCardProps> = ({
         } as React.CSSProperties}
         onMouseEnter={(e) => {
           e.currentTarget.style.background = "var(--hover-gradient)";
-          e.currentTarget.style.boxShadow = "0 0 20px 10px rgba(31, 84, 251, 0.5)"; 
-          e.currentTarget.style.transform = "scale(1.05)"; 
+          e.currentTarget.style.boxShadow = "0 0 20px 10px rgba(31, 84, 251, 0.5)";
+          e.currentTarget.style.transform = "scale(1.05)";
         }}
         onMouseLeave={(e) => {
           e.currentTarget.style.background = "var(--default-gradient)";
-          e.currentTarget.style.boxShadow = "none"; 
-          e.currentTarget.style.transform = "scale(1)"; 
+          e.currentTarget.style.boxShadow = "none";
+          e.currentTarget.style.transform = "scale(1)";
         }}
       >
         <div className="text-white flex flex-col justify-center items-center space-y-4">
-          <FaTrophy className="text-6xl" /> 
+          {category == "1st prize" ? <GiTrophyCup className="text-6xl text-yellow-500 fill-yellow-500 " /> : <HiTrophy className="text-6xl" />}
           <p
             className="px-5 font-[500] text-[64px] leading-[72px]
               md:text-[88px] md:leading-[96px]"
@@ -158,18 +161,21 @@ const Prize = () => {
             <Image
               src={bestGirls}
               alt="Best Girls"
-              className="w-[104px] h-[104px]" 
+              className="w-[104px] h-[104px]"
             />
             <div className="w-full flex flex-col items-center gap-2">
-              <p className="text-[#fff] text-[32px] font-normal text-center"> 
+              <p className="text-[#fff] text-[32px] font-normal text-center">
                 Social Media Winners
               </p>
-              <p className="text-[#C3C3C3] text-[20px] font-normal text-center"> 
+              <p className="text-[#C3C3C3] text-[20px] font-normal text-center">
                 ₹ 15,000.00
               </p>
-              <p className="text-[#C3C3C3] text-[20px] font-normal text-center"> 
+              <p className="text-[#C3C3C3] text-[20px] font-normal text-center">
                 Social Media Winners consists of Linkedin, Instagram, Youtube Vlog
               </p>
+              <button className="text-[#C3C3C3] p-3 rounded-lg border border-white text-[20px] font-normal text-center">
+                View Documentation
+              </button>
             </div>
           </div>
           <div
@@ -186,18 +192,21 @@ const Prize = () => {
             <Image
               src={bestBeginner}
               alt="Best Beginner"
-              className="w-[104px] h-[104px]" 
+              className="w-[104px] h-[104px]"
             />
             <div className="w-full flex flex-col items-center gap-2">
-              <p className="text-[#fff] text-[32px] font-normal text-center"> 
+              <p className="text-[#fff] text-[32px] font-normal text-center">
                 Make-a-thon Winners
               </p>
-              <p className="text-[#C3C3C3] text-[20px] font-normal text-center"> 
+              <p className="text-[#C3C3C3] text-[20px] font-normal text-center">
                 ₹ 10,000.00
               </p>
-              <p className="text-[#C3C3C3] text-[20px] font-normal text-center"> 
+              <p className="text-[#C3C3C3] text-[20px] font-normal text-center">
                 Make-a-thon is a competition for school students
               </p>
+              <button className="text-[#C3C3C3] p-3 rounded-lg border border-white text-[20px] font-normal text-center">
+                View Documentation
+              </button>
             </div>
           </div>
         </div>

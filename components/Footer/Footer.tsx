@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
-import { Linkedin, Instagram, Youtube } from "lucide-react";
+import { FaYoutube } from "react-icons/fa";
+import { BiLogoInstagramAlt, BiLogoLinkedinSquare } from "react-icons/bi";
 
 interface SocialMediaIconProps {
   Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
@@ -53,11 +54,11 @@ const Footer: React.FC = () => {
               <p className="text-sm text-white md:text-base mt-4">
                 <strong>Call Us:</strong>
                 <br />
-                Promotion & Outreach: +91 93511 87511 (Rachit)
+                Promotion & Outreach: +91 93511 87511
                 <br />
-                Registrations: +91 93133 08922 (Karan)
+                Registrations: +91 93133 08922
                 <br />
-                Hospitality: +91 98282 23577 (Niharika)
+                Hospitality: +91 98282 23577
               </p>
             </div>
           </div>
@@ -84,9 +85,9 @@ const Footer: React.FC = () => {
         <div className="px-1 md:px-12 flex flex-col lg:flex-row gap-4 lg:gap-12 justify-center lg:justify-between items-center">
           {/* Social Media Icons */}
           <div className="flex gap-6">
-            <SocialMediaIcon href="https://www.instagram.com/hackjklu" Icon={Instagram} />
-            <SocialMediaIcon href="https://www.youtube.com/@CouncilofTechnicalAffairs" Icon={Youtube} />
-            <SocialMediaIcon href="https://www.linkedin.com/in/council-of-technical-affairs-jklu/" Icon={Linkedin} />
+            <SocialMediaIcon href="https://www.instagram.com/hackjklu" Icon={BiLogoInstagramAlt} />
+            <SocialMediaIcon href="https://www.youtube.com/@CouncilofTechnicalAffairs" Icon={FaYoutube} />
+            <SocialMediaIcon href="https://www.linkedin.com/in/council-of-technical-affairs-jklu/" Icon={BiLogoLinkedinSquare} />
           </div>
 
           {/* Copyright */}

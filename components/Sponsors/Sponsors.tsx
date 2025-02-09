@@ -3,9 +3,9 @@ import Image, { StaticImageData } from "next/image";
 import SponsorCard from "@/components/SponsorCard";
 
 // Import sponsor data for each category
-import sponsorsGold from "@/data/sponsorsGold.json";
+// import sponsorsGold from "@/data/sponsorsGold.json";
 import sponsorsSilver from "@/data/sponsorsSilver.json";
-import sponsorsBronze from "@/data/sponsorsBronze.json";
+// import sponsorsBronze from "@/data/sponsorsBronze.json";
 
 import devfolio from "@/public/sponsors/devfolio.webp";
 import ethindia from "@/public/sponsors/ethindia.webp";
@@ -39,14 +39,14 @@ const mapSponsors = (sponsors: Sponsor[]) => {
 
 
 // Map sponsor data for each category
-const goldSponsors = mapSponsors(sponsorsGold);
+// const goldSponsors = mapSponsors(sponsorsGold);
 const silverSponsors = mapSponsors(sponsorsSilver);
-const bronzeSponsors = mapSponsors(sponsorsBronze);
+// const bronzeSponsors = mapSponsors(sponsorsBronze);
 
 const WSCubeTechSponsorCard: React.FC = () => {
   return (
     <a
-      href="/sponsors/ws-cube-tech"
+      href="/partners/ws-cube-tech"
       className="w-full xl:max-w-[95%] flex justify-center md:px-8 lg:px-0"
     >
       <div className="flex flex-col md:flex-row">
@@ -68,8 +68,8 @@ const WSCubeTechSponsorCard: React.FC = () => {
             </p>
           </div>
           <p className="text-supporting-mediumGray font-medium text-[1rem] md:text[1.125rem]">
-            The MX Master Series is expertly designed for users, empowering
-            coders to unleash productivity.
+            WS Cube Tech is a leading provider of IT training and services, empowering individuals and businesses
+            with cutting-edge skills and solutions.
           </p>
         </div>
       </div>
@@ -93,7 +93,7 @@ const Sponsors: React.FC = () => {
       </div>
 
       {/* Gold Sponsors */}
-      <div className="p-10 text-center">
+      {/* <div className="p-10 text-center">
         <HeaderSmall text="Gold Sponsors" />
         <div
           className="w-full grid grid-cols-1 mt-8 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-[44px] md:px-8 lg:px-10"
@@ -102,7 +102,7 @@ const Sponsors: React.FC = () => {
             <SponsorCard key={sponsor.index} {...sponsor} />
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* Silver Sponsors */}
       <div className="p-10 text-center">
@@ -117,7 +117,7 @@ const Sponsors: React.FC = () => {
       </div>
 
       {/* Bronze Sponsors */}
-      <div className="p-10 text-center">
+      {/* <div className="p-10 text-center">
         <HeaderSmall text="Bronze Sponsors" />
         <div
           className="w-full grid grid-cols-1 mt-8 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-[44px] md:px-8 lg:px-10"
@@ -126,7 +126,7 @@ const Sponsors: React.FC = () => {
             <SponsorCard key={sponsor.index} {...sponsor} />
           ))}
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };

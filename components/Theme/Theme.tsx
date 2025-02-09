@@ -1,124 +1,21 @@
-// "use client";
-
-// import React, { useState, useEffect, useCallback, useRef } from "react";
-// import themesData from '../../data/themes.json';
-// import Header from "../Header/Header";
-
-// interface CardData {
-//   image: string;
-//   title: string;
-//   description?: string;
-// }
-
-// const Card: React.FC<CardData> = React.memo(({ image, title, description }) => {
-//   const [coords, setCoords] = useState({ x: 0, y: 0 });
-//   const [isHovered, setIsHovered] = useState(false);
-
-//   const handleMouseMove = useCallback((e: React.MouseEvent) => {
-//     const card = e.currentTarget as HTMLElement;
-//     const box = card.getBoundingClientRect();
-//     const x = e.clientX - box.left;
-//     const y = e.clientY - box.top;
-//     const centerX = box.width / 2;
-//     const centerY = box.height / 2;
-//     const rotateX = ((y - centerY) / centerY) * -20;
-//     const rotateY = ((x - centerX) / centerX) * 20;
-
-//     setCoords({ x: rotateX, y: rotateY });
-//   }, []);
-
-//   const handleMouseEnter = () => setIsHovered(true);
-//   const handleMouseLeave = () => {
-//     setIsHovered(false);
-//     setCoords({ x: 0, y: 0 });
-//   };
-
-//   const cardStyle = {
-//     transform: isHovered
-//       ? `perspective(1000px) rotateX(${coords.x}deg) rotateY(${coords.y}deg) scale3d(1.05,1.05,1.05)`
-//       : "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)",
-//   };
-
-//   const backgroundStyle = {
-//     transform: isHovered
-//       ? `translateX(${coords.y * -2}px) translateY(${coords.x * 2}px)`
-//       : "translateX(0) translateY(0)",
-//     backgroundImage: `url(${image})`,
-//   };
-
-//   return (
-//     <div
-//       className="relative w-full h-[250px] md:h-[300px] mx-2 cursor-pointer group transition-all duration-500 opacity-100 translate-y-0"
-//       onMouseMove={handleMouseMove}
-//       onMouseEnter={handleMouseEnter}
-//       onMouseLeave={handleMouseLeave}
-//     >
-//       <div
-//         className="w-full h-full rounded-xl border border-opacity-50 border-neonGreen bg-[#333] overflow-hidden transition-all duration-700 ease-out"
-//         style={cardStyle}
-//       >
-//         <div
-//           className="absolute inset-[-38px] bg-cover bg-center transition-all duration-700 ease-out opacity-50 group-hover:opacity-80"
-//           style={backgroundStyle}
-//         />
-//         <div
-//           className={`absolute bottom-0 left-0 right-0 p-4 bg-black/80 text-white transition-transform duration-700 ease-out ${
-//             isHovered ? "translate-y-0" : "translate-y-[40%]"
-//           }`}
-//         >
-//           <div className="relative z-1 max-h-full overflow-auto">
-//             <h2 className={`text-lg sm:text-xl font-bold text-shadow-lg ${isHovered? "": "mb-10"} `}>
-//               {title}
-//             </h2>
-//             {isHovered && (
-//               <p className="text-sm opacity-100 transition-opacity duration-500 max-h-full overflow-auto">
-//                 {description}
-//               </p>
-//             )}
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// });
-
-// Card.displayName = "Card";
-
-// const Theme = () => {
-//   return (
-//     <section className="pt-10 relative" id="themes">
-//       <h2 className="text-center my-10">
-//         <Header text="Themes" />
-//       </h2>
-//       <div className="px-10 md:px-16">
-//         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
-//           {themesData.map((card, index) => (
-//             <Card key={index} {...card} />
-//           ))}
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Theme;
-
-
-
-
-
-
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import themesData from '../../data/themes.json';
 import Header from "../Header/Header";
 import { motion } from "framer-motion";
 
-
 const Theme = () => {
-  const [activeCardIndex, setActiveCardIndex] = useState<number>(0); // Default to the first card
+  const [activeCardIndex, setActiveCardIndex] = useState<number>(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveCardIndex((prevIndex) => (prevIndex + 1) % themesData.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const handleNextCard = () => {
     setActiveCardIndex((prevIndex) => (prevIndex + 1) % themesData.length);
@@ -135,13 +32,12 @@ const Theme = () => {
       <h2 className="text-center my-5 sm:my-10">
         <Header text="Themes" />
       </h2>
-      <div className="relative flex items-center justify-center mt-8 sm:mt-16 mb-8 sm:mb-12">
-        <div className="relative w-full max-w-4xl h-80 sm:h-96 flex items-center justify-center">
-
+      <div className="relative flex flex-col items-center justify-center mt-8 sm:mt-16 mb-8 sm:mb-12">
+        <div className="relative w-full max-w-5xl h-[450px] sm:h-[550px] flex items-center justify-center">
           {/* Current Card */}
           <motion.div
             key={activeCardIndex}
-            className="relative w-2/3 h-full"
+            className="relative w-3/4 h-full"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
@@ -154,11 +50,11 @@ const Theme = () => {
                 fill
                 style={{ objectFit: "cover" }}
               />
-              <div className="absolute bottom-0 left-0 right-0 p-4 bg-[rgba(0,0,0,0.85)] text-white">
-                <h2 className="text-lg font-bold mb-2">
+              <div className="absolute bottom-0 left-0 right-0 p-6 bg-[rgba(0,0,0,0.85)] text-white">
+                <h2 className="text-xl text-center font-bold mb-3">
                   {themesData[activeCardIndex].title}
                 </h2>
-                <p className="text-sm">
+                <p className="text-base text-justify">
                   {themesData[activeCardIndex].description}
                 </p>
               </div>
@@ -166,10 +62,23 @@ const Theme = () => {
           </motion.div>
         </div>
 
+        {/* Navigation Dots */}
+        <div className="flex mt-4 space-x-2">
+          {themesData.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setActiveCardIndex(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                activeCardIndex === index ? "bg-neonGreen" : "bg-gray-400"
+              }`}
+            />
+          ))}
+        </div>
+
         {/* Navigation Arrows */}
         <button
           onClick={handlePreviousCard}
-          className="absolute left-4 sm:left-10 p-2 bg-neonGreen text-black rounded-full shadow-md"
+          className="absolute left-1/4 sm:left-20 p-3 bg-neonGreen text-black rounded-full shadow-md"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -177,7 +86,7 @@ const Theme = () => {
             viewBox="0 0 24 24"
             strokeWidth={2}
             stroke="currentColor"
-            className="w-6 h-6"
+            className="w-8 h-8"
           >
             <path
               strokeLinecap="round"
@@ -188,7 +97,7 @@ const Theme = () => {
         </button>
         <button
           onClick={handleNextCard}
-          className="absolute right-4 sm:right-10 p-2 bg-neonGreen text-black rounded-full shadow-md"
+          className="absolute right-1/4 sm:right-20 p-3 bg-neonGreen text-black rounded-full shadow-md"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -196,7 +105,7 @@ const Theme = () => {
             viewBox="0 0 24 24"
             strokeWidth={2}
             stroke="currentColor"
-            className="w-6 h-6"
+            className="w-8 h-8"
           >
             <path
               strokeLinecap="round"
@@ -211,8 +120,3 @@ const Theme = () => {
 };
 
 export default Theme;
-
-
-
-
-

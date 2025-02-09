@@ -11,12 +11,13 @@ const GalleryHome = dynamic(() => import('@/components/Gallery/GalleryHome'));
 const WhoShouldApply = dynamic(() => import('@/components/WhoShouldApply/WhoShouldApply'));
 const Speakers = dynamic(() => import('@/components/Speakers/Speakers'));
 const Judges = dynamic(() => import('@/components/Judges/Judges'));
+const Mentors = dynamic(() => import('@/components/Mentors/Mentors'));
 const FAQ = dynamic(() => import('@/components/FAQ/FAQ'));
 
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "HackJKLU v4.0 - Official Website",
+  title: "HackJKLU v4.0",
   description: "HackJKLU v4.0 is a high-energy offline hackathon happening from March 7-9, 2025, at JK Lakshmipat University. Compete for cash prizes worth up to Rs. 2,00,000!",
   keywords: [
     "Hackathon", "JK Lakshmipat University", "HackJKLU", "Coding", "Tech", 
@@ -25,13 +26,13 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Council of Technical Affairs, JKLU" }],
   openGraph: {
-    title: "HackJKLU v4.0 - Official Website",
+    title: "HackJKLU v4.0",
     description: "Join HackJKLU v4.0, a dynamic offline hackathon from March 7-9, 2025, with cash prizes and the chance to showcase your tech skills!",
     url: "https://www.hackjklu.com",
     type: "website",
   },
   twitter: {
-    title: "HackJKLU v4.0 - Official Website",
+    title: "HackJKLU v4.0",
     description: "HackJKLU v4.0 is a high-energy, offline hackathon with exciting prizes and opportunities for college students, school students, and tech enthusiasts!",
     card: "summary_large_image",
   },
@@ -49,6 +50,7 @@ export default function Home() {
       <Itenary />
       <Speakers />
       <Judges />
+      <Mentors />
       <GalleryHome />
       <FAQ />
     </>

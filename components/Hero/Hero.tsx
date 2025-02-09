@@ -83,9 +83,6 @@ const Hero = () => {
   return (
     <motion.section
       id="main"
-      // style={{
-      //   backgroundImage,
-      // }}
       className="relative mx-auto grid min-h-screen place-content-center overflow-hidden px-4 pt-24 sm:px-8 sm:pt-20 text-gray-200"
     >
       <div className="relative z-10 flex flex-col items-center">

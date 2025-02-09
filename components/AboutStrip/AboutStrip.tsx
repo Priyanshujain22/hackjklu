@@ -1,6 +1,7 @@
 "use client";
 
-import { Linkedin, Instagram, Youtube } from "lucide-react";
+import { FaYoutube } from "react-icons/fa";
+import { BiLogoInstagramAlt, BiLogoLinkedinSquare } from "react-icons/bi";
 import Link from "next/link";
 import Image from "next/image";
 import JKLULogo from "@/public/jklu.png";
@@ -24,7 +25,7 @@ const AboutStrip = () => {
                 />
               </a>
             </div>
-            <div className="w-32 transform transition-all duration-300 hover:scale-105">
+            <div className="hidden sm:block w-32 transform transition-all duration-300 hover:scale-105">
               <a href="https://jklu.edu.in/">
                 <Image
                   width={400}
@@ -37,15 +38,15 @@ const AboutStrip = () => {
             </div>
           </div>
           {/* Social media links */}
-          <div className="flex gap-10 sm:gap-2 md:gap-8 justify-center">
+          <div className="hidden sm:flex gap-10 sm:gap-2 md:gap-8 justify-center">
             <Link target="_blank" href={"https://www.instagram.com/hackjklu"}>
-              <Instagram size={36} className="hover:fill-neonGreen transition-all" />
+              <BiLogoInstagramAlt size={40} className="hover:fill-neonGreen transition-all" />
             </Link>
             <Link target="_blank" href={"https://www.youtube.com/@CouncilofTechnicalAffairs"}>
-              <Youtube size={36} className="hover:fill-neonGreen transition-all" />
+              <FaYoutube size={40} className="hover:fill-neonGreen transition-all" />
             </Link>
             <Link target="_blank" href={"https://www.linkedin.com/in/council-of-technical-affairs-jklu/"}>
-              <Linkedin size={36} className="hover:fill-neonGreen transition-all" />
+              <BiLogoLinkedinSquare size={40} className="hover:fill-neonGreen transition-all" />
             </Link>
           </div>
         </div>
