@@ -5,15 +5,12 @@
     45deg,
     rgba(20, 204, 60, 0.2) 0%,
     rgba(16, 232, 60, 0.3) 100%
-
-    
   );
   transition: all 300ms ease-in-out;
-  width: 280px;
+  width: 260px;
   height: 410px;
   margin: 20px;
   box-sizing: border-box;
-  
 }
 
 .cardContainer {

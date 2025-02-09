@@ -65,7 +65,6 @@ const TeamCard: React.FC<TeamCardProps> = ({ name, title, socials, imageSrc }) =
             <Mail size={ICON_SIZE} />
           </a>
         )}
-
       </div>
     </div>
   );
