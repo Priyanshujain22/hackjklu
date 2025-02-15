@@ -101,12 +101,12 @@ const Footer: React.FC = () => {
 
           {/* Copyright */}
           <p className="text-white text-sm md:text-base font-normal">
-            © 2025 HackJKLU 4.0, All rights reserved
+            © 2025 HackJKLU v4.0, All rights reserved
           </p>
 
           {/* Made By */}
           <p className="text-white text-sm md:text-base font-normal">
-            Made with ❤️ by Team HackJKLU
+            Made with ❤️ by Preet Taparia
           </p>
         </div>
       </div>
