@@ -6,12 +6,6 @@ import themesData from "../../data/themes.json";
 import Header from "../Header/Header";
 import { motion } from "framer-motion";
 
-interface ThemeData {
-  image: string;
-  title: string;
-  description: string;
-}
-
 interface DotIndicatorProps {
   isActive: boolean;
   onClick: () => void;
