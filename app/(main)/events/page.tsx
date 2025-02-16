@@ -9,17 +9,6 @@ export const metadata: Metadata = {
   title: "Events | HackJKLU v4.0",
   description: "Explore the exciting events of HackJKLU v4.0. Join us for a series of engaging and challenging competitions.",
   keywords: ["events", "hackathon", "HackJKLU", "coding events", "competitions", "technology events", "JK Lakshmipat University", "Jaipur"],
-  openGraph: {
-    title: "Events | HackJKLU v4.0",
-    description: "Explore the exciting events of HackJKLU v4.0. Join us for a series of engaging and challenging competitions.",
-    url: "https://www.hackjklu.com/events",
-    type: "website",
-  },
-  twitter: {
-    title: "Events | HackJKLU v4.0",
-    description: "Join us for exciting events at HackJKLU v4.0 and challenge yourself to compete in various tech competitions.",
-    card: "summary_large_image",
-  },
 };
 
 export default function AboutPage() {

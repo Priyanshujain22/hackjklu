@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+
 import HeaderSmall from "../HeaderSmall/HeaderSmall";
 
 const redirectingData = [

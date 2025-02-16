@@ -8,8 +8,8 @@ import confetti from "canvas-confetti";
 import { GiTrophyCup } from "react-icons/gi";
 import { HiTrophy } from "react-icons/hi2";
 
-import bestBeginner from "@/public/prizesPage/best_beginner.png";
-import bestGirls from "@/public/prizesPage/best_girls.png";
+import bestBeginner from "@/public/prizesPage/best_beginner.webp";
+import bestGirls from "@/public/prizesPage/best_girls.webp";
 
 interface PrizeCardProps {
   amount: string | number;
@@ -144,7 +144,7 @@ const Prize = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="pt-10 relative" id="prizes">
+    <section ref={sectionRef} className="pt-10 relative bg-black/50" id="prizes">
       <h2 className="text-center my-10">
         <Header text="Prizes" />
       </h2>
@@ -235,7 +235,7 @@ const Prize = () => {
                 Make-a-thon is a competition for school students
               </p>
               {/* <button className="text-[#C3C3C3] p-3 rounded-lg border border-white text-[20px] font-normal text-center">
-                View Documentation
+                View Rules
               </button> */}
             </div>
           </div>

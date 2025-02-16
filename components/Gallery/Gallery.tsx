@@ -7,7 +7,7 @@ const Gallery = () => {
   const imageCount = 20;
   const imageList = Array.from(
     { length: imageCount },
-    (_, index) => `/gallery/${index + 1}.jpg`
+    (_, index) => `/gallery/${index + 1}.webp`
   );
 
   return (

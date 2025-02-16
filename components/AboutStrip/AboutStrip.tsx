@@ -4,8 +4,8 @@ import { FaYoutube } from "react-icons/fa";
 import { BiLogoInstagramAlt, BiLogoLinkedinSquare } from "react-icons/bi";
 import Link from "next/link";
 import Image from "next/image";
-import JKLULogo from "@/public/jklu.png";
-import TechhLogo from "@/public/tech-affair.png";
+import JKLULogo from "@/public/jklu.webp";
+import TechhLogo from "@/public/tech-affair.webp";
 
 const AboutStrip = () => {
   return (

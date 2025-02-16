@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+'use client';
+
+import { useState } from "react";
+import { HiOutlineMenuAlt3 } from "react-icons/hi";
+import { RxCross2 } from "react-icons/rx";
 import Image from "next/image";
-import useWindowDimensions from "../../hooks/useWindowDimension";
-import { FloatingNav } from "../ui/floating-navbar";
-import navData from "../../data/navbar.json";
 import { Press_Start_2P } from "next/font/google";
+import navData from "../../data/navbar.json";
 
 const press_start_2p = Press_Start_2P({
   weight: "400",
@@ -16,84 +17,60 @@ const press_start_2p = Press_Start_2P({
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const { width } = useWindowDimensions();
 
-  const handleScroll = () => {
-    if (window.scrollY > 80) {
-      setIsScrolled(true);
-    } else {
-      setIsScrolled(false);
-    }
-  };
+  if (typeof window !== "undefined") {
+    window.onscroll = () => setIsScrolled(window.scrollY > 80);
+  }
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
+  const toggleSidebar = () => setIsSidebarOpen((prev) => !prev);
 
   return (
-    <div
-      className={`relative w-full transition-all duration-300 ${isScrolled ? "scrolled" : ""}`}
-    >
-      {width >= 1024 ? (
-        <FloatingNav navItems={navData} isScrolled={isScrolled} />
-      ) : (
-        <>
-          <div
-            className={`fixed top-0 w-full text-white z-50 flex justify-between items-center p-4 ${isScrolled ? "border-b-[#10dc3c] border-b-2 bg-[rgba(0,0,0,0.6)]" : ""} ${isSidebarOpen ? "bg-[rgba(0,0,0,0.9)]" : ""} `}
-          >
-            {/* Logo and Text as Link to Homepage */}
-            <div className={`flex items-center space-x-2`}>
-              {/* Wrapping Image with Link */}
-              <a href="/">
-                <Image
-                  src="/hackjklu-logo.png"
-                  alt="Hack JKLU Logo"
-                  width={40}
-                  height={40}
-                  className="h-10"
-                />
-              </a>
-              {/* Wrapping text with Link */}
-              <a href="/">
-                <h1 className={` ${press_start_2p.className} text-lg font-bold text-white`}>
-                  <span className="text-neonBlue">Hack</span><span className="text-neonGreen">JKLU</span> v4.0
-                </h1>
-              </a>
-            </div>
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-black/90 border-b-2 border-green-500" : ""}`}>
+      <div className="flex justify-between items-center p-4">
+        <a href="/" className="flex items-center space-x-2">
+          <Image src="/hackjklu-logo.webp" alt="Hack JKLU Logo" width={40} height={40} />
+          <span className={`text-xl font-bold text-white ${press_start_2p.className}`}>
+            <span className="text-neonBlue">Hack</span>
+            <span className="text-neonGreen">JKLU</span> v4.0
+          </span>
+        </a>
 
-            <button onClick={toggleSidebar} className="lg:hidden p-2 text-white">
-              {!isSidebarOpen ? <Menu size={32} /> : <X size={32} />}
-            </button>
-          </div>
+        {/* Desktop Navigation */}
+        <div className="hidden lg:flex space-x-8">
+          {navData.map(({ link, name }, idx) => (
+            <a key={idx} href={link} className="text-white hover:text-gray-300 font-bold">
+              {name}
+            </a>
+          ))}
+        </div>
 
-          {/* Sidebar */}
-          <div
-            className={`fixed top-20 w-full bg-[rgba(0,0,0,0.9)] text-white h-full z-30 transition-transform duration-300 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-              }`}
-          >
-            <div className="flex flex-col space-y-6 p-4 items-center">
-              {navData.map((item, index) => (
-                <a
-                  key={index}
-                  href={item.link}
-                  className="block text-2xl"
-                  onClick={() => setIsSidebarOpen(false)}
-                >
-                  {item.name}
-                </a>
-              ))}
-            </div>
-          </div>
-        </>
-      )}
-    </div>
+        {/* Mobile Menu Button */}
+        {!isSidebarOpen && <button onClick={toggleSidebar} className="lg:hidden text-white" aria-label="Toggle menu">
+          <HiOutlineMenuAlt3 size={40} />
+        </button>}
+      </div>
+
+      {/* Mobile Sidebar */}
+      <aside className={`fixed inset-0 bg-black/90 text-white transform ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} transition-transform duration-300 z-40 flex flex-col pt-5`}>
+        <div className="flex justify-between items-center w-full px-5">
+          <a href="/" className={`text-xl font-bold text-white ${press_start_2p.className}`}>
+            <span className="text-neonBlue">Hack</span>
+            <span className="text-neonGreen">JKLU</span> v4.0
+          </a>
+          <button onClick={toggleSidebar} className="text-white" aria-label="Toggle menu">
+            <RxCross2 size={40} />
+          </button>
+        </div>
+
+        <nav className="flex flex-col items-center mt-10 space-y-6">
+          {navData.map(({ link, name }, idx) => (
+            <a key={idx} href={link} className="text-2xl" onClick={toggleSidebar}>
+              {name}
+            </a>
+          ))}
+        </nav>
+      </aside>
+    </nav>
   );
 };
 

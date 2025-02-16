@@ -11,8 +11,8 @@ const tech_mono = Share_Tech_Mono({ subsets: ["latin"], weight: ["400"] });
 const WhoShouldApply = () => {
 
   return (
-    <div className={`mx-4 md:mx-40 ${tech_mono.className} relative z-10`}>
-      <div className="flex flex-col md:flex-row justify-center items-center">
+    <section className={`bg-black/50 ${tech_mono.className} relative `}>
+      <div className="mx-5 md:mx-20 flex flex-col md:flex-row justify-center items-center">
         <div className="hidden md:block">
           <CardContainer className={cn("flex justify-center items-center")}>
             <Image src="/whoshouldapplyimg.webp" alt="" width={1040} height={650} />
@@ -33,7 +33,7 @@ const WhoShouldApply = () => {
             </CardContainer>
           </div>
           <ul className="ml-4 md:ml-5 text-4xl flex flex-col items-center md:items-start">
-            <li className="text-xl md:text-4xl mb-2 text-center md:text-left">
+            <li className="text-2xl md:text-4xl mb-2 text-center md:text-left">
               <span role="img" aria-label="student">👨‍🎓</span> <span className={cn(styles.gradientText)}>STUDENTS</span>
             </li>
             <div
@@ -43,7 +43,7 @@ const WhoShouldApply = () => {
                   "0px 0px 2.783px 0px #FFF, 0px 0px 5.566px 0px #FFF, 0px 0px 19.481px 0px #FFF",
               }}
             ></div>
-            <li className="text-xl md:text-4xl my-2 text-center md:text-left">
+            <li className="text-2xl md:text-4xl my-2 text-center md:text-left">
               <span role="img" aria-label="entrepreneur">💼</span> <span className={cn(styles.gradientText)}>ENTREPRENEURS</span>
             </li>
             <div
@@ -53,7 +53,7 @@ const WhoShouldApply = () => {
                   "0px 0px 2.783px 0px #FFF, 0px 0px 5.566px 0px #FFF, 0px 0px 19.481px 0px #FFF",
               }}
             ></div>
-            <li className="text-xl md:text-4xl my-2 text-center md:text-left">
+            <li className="text-2xl md:text-4xl my-2 text-center md:text-left">
               <span role="img" aria-label="enthusiast">🚀</span> <span className={cn(styles.gradientText)}>ENTHUSIASTS</span>
             </li>
             <div
@@ -66,7 +66,7 @@ const WhoShouldApply = () => {
           </ul>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -83,7 +83,7 @@ const Hero = () => {
   return (
     <motion.section
       id="main"
-      className="relative mx-auto grid min-h-screen place-content-center overflow-hidden px-4 py-24 sm:px-8 sm:py-20 text-gray-200 bg-[url('/hero.png')] bg-center bg-cover"
+      className="relative mx-auto grid min-h-screen place-content-center overflow-hidden px-4 py-24 sm:px-8 sm:py-20 text-gray-200 bg-[url('/hero.webp')] bg-center bg-cover"
     >
       <div className="relative z-10 flex flex-col items-center">
         <CardContainer className="z-50 p-4">

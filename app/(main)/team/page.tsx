@@ -11,19 +11,6 @@ export const metadata: Metadata = {
   title: "Meet the Team | HackJKLU v4.0",
   description: "Meet the organizing and core team behind HackJKLU v4.0. Get to know the passionate individuals making the event happen.",
   keywords: ["team", "hackathon", "HackJKLU", "core team", "organizing team", "technology event", "Jaipur", "JK Lakshmipat University"],
-  openGraph: {
-    title: "Meet the Team | HackJKLU v4.0",
-    description: "Meet the organizing and core team behind HackJKLU v4.0. Get to know the passionate individuals making the event happen.",
-    url: "https://www.hackjklu.com/team",
-    images: [{ url: "/team/TeamMain.webp", width: 1200, height: 630, alt: "HackJKLU v4.0 Team" }],
-    type: "website",
-  },
-  twitter: {
-    title: "Meet the Team | HackJKLU v4.0",
-    description: "Meet the organizing and core team behind HackJKLU v4.0. Get to know the passionate individuals making the event happen.",
-    images: ["/team/TeamMain.webp"],
-    card: "summary_large_image",
-  },
 };
 
 export default function TeamPage() {
@@ -44,11 +31,12 @@ export default function TeamPage() {
         ))}
       </div>
 
-      <h2 className="text-center my-10">
-        <Header text="Core Team" />
-      </h2>
-
-      <ResponsiveTeam teamData={teams} />
+      <div className="bg-black/50">
+        <h2 className="text-center my-10">
+          <Header text="Core Team" />
+        </h2>
+        <ResponsiveTeam teamData={teams} />
+      </div>
 
       <h2 className="text-center my-10">
         <Header text="The Team" />

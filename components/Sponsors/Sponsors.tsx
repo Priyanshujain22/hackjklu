@@ -10,7 +10,6 @@ import sponsorsSilver from "@/data/sponsorsSilver.json";
 import devfolio from "@/public/sponsors/devfolio.webp";
 import ethindia from "@/public/sponsors/ethindia.webp";
 import polygon from "@/public/sponsors/polygon.webp";
-import aptos from "@/public/sponsors/Aptos.png";
 import wscubeTech from "@/public/sponsors/WsCubeTech.webp";
 
 import Header from '../Header/Header';
@@ -20,7 +19,6 @@ const imageMap: { [key: string]: StaticImageData } = {
   "Devfolio": devfolio,
   "EthIndia": ethindia,
   "Polygon": polygon,
-  "Aptos Foundation": aptos,
 };
 
 interface Sponsor {

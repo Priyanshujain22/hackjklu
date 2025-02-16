@@ -153,7 +153,7 @@ export default function SignupFormDemo() {
     <div className="mx-auto rounded-lg p-6 shadow-lg flex flex-col md:flex-row gap-6">
 
       <div className="md:w-2/5 flex flex-col justify-center items-center space-y-6 px-4 md:px-8">
-        <Image src="/hackjklu-logo.png" alt="HackJKLU v4.0" width={250} height={250} className="mb-2" />
+        <Image src="/hackjklu-logo.webp" alt="HackJKLU v4.0" width={250} height={250} className="mb-2" />
         <h2 className="font-bold text-3xl md:text-4xl text-neutral-100 mb-2 text-center">
           Welcome to HackJKLU v4.0
         </h2>
