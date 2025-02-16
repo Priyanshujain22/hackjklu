@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Mail, Github, Linkedin } from "lucide-react";
+import { CiMail } from "react-icons/ci";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 import styles from "@/components/Team/Team.module.css";
 import TeamCard from "./Team";
 
@@ -105,7 +106,7 @@ export default function ResponsiveTeam({ teamData }: Props) {
                                                 rel="noopener noreferrer"
                                                 href={member.socials.gb}
                                             >
-                                                <Github size={ICON_SIZE} width={ICON_SIZE} />
+                                                <FaGithub size={ICON_SIZE} width={ICON_SIZE} />
                                             </a>
                                         )}
 
@@ -115,7 +116,7 @@ export default function ResponsiveTeam({ teamData }: Props) {
                                                 rel="noopener noreferrer"
                                                 href={member.socials.linkedin}
                                             >
-                                                <Linkedin size={ICON_SIZE} />
+                                                <FaLinkedin size={ICON_SIZE} />
                                             </a>
                                         )}
                                         {member.socials.email && (
@@ -124,7 +125,7 @@ export default function ResponsiveTeam({ teamData }: Props) {
                                                 rel="noopener noreferrer"
                                                 href={`mailto:${member.socials.email}`}
                                             >
-                                                <Mail size={ICON_SIZE} />
+                                                <CiMail size={ICON_SIZE} />
                                             </a>
                                         )}
                                     </div>

@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from "./Team.module.css";
 import Image from 'next/image';
-import { Mail, Github, Linkedin } from 'lucide-react';
+import { CiMail } from "react-icons/ci";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const ICON_SIZE = 28;
 
@@ -43,7 +44,7 @@ const TeamCard: React.FC<TeamCardProps> = ({ name, title, socials, imageSrc }) =
             rel="noopener noreferrer"
             href={socials.gb}
           >
-            <Github size={ICON_SIZE} width={ICON_SIZE} />
+            <FaGithub size={ICON_SIZE} width={ICON_SIZE} />
           </a>
         )}
 
@@ -53,7 +54,7 @@ const TeamCard: React.FC<TeamCardProps> = ({ name, title, socials, imageSrc }) =
             rel="noopener noreferrer"
             href={socials.linkedin}
           >
-            <Linkedin size={ICON_SIZE} />
+            <FaLinkedin size={ICON_SIZE} />
           </a>
         )}
         {socials.email && (
@@ -62,7 +63,7 @@ const TeamCard: React.FC<TeamCardProps> = ({ name, title, socials, imageSrc }) =
             rel="noopener noreferrer"
             href={`mailto:${socials.email}`}
           >
-            <Mail size={ICON_SIZE} />
+            <CiMail size={ICON_SIZE} />
           </a>
         )}
       </div>

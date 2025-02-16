@@ -27,8 +27,8 @@ const WhoShouldApply = () => {
               <Image
                 src="/whoshouldapplyimg.webp"
                 alt=""
-                width={520}
-                height={650}
+                width={320}
+                height={320}
               />
             </CardContainer>
           </div>
