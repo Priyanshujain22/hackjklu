@@ -66,8 +66,7 @@ const WSCubeTechSponsorCard: React.FC = () => {
             </p>
           </div>
           <p className="text-supporting-mediumGray font-medium text-[1rem] md:text[1.125rem]">
-            WS Cube Tech is a leading provider of IT training and services, empowering individuals and businesses
-            with cutting-edge skills and solutions.
+            WsCube is a Hybrid Upskilling Edtech, develops and disseminates Tech-powered Career Acceleration Programs and Job Oriented Professional Courses curated for Aspirants of Bharat, readying them for Global workforce opportunities.
           </p>
         </div>
       </div>
@@ -77,7 +76,7 @@ const WSCubeTechSponsorCard: React.FC = () => {
 
 const Sponsors: React.FC = () => {
   return (
-    <section className="relative pt-20" id="partners">
+    <section className="relative pb-5 pt-20" id="partners">
       <h2 className="text-center mb-10">
         <Header text="Partners" />
       </h2>

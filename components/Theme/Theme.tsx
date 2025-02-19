@@ -51,7 +51,7 @@ const Theme: React.FC = () => {
   };
 
   return (
-    <section className="pt-5 sm:pt-10 relative" id="themes">
+    <section className="py-5 sm:pt-10 relative" id="themes">
       <h2 className="text-center my-5 sm:my-10">
         <Header text="Themes" />
       </h2>

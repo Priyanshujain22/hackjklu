@@ -2,13 +2,13 @@ import { Metadata } from "next";
 import "./globals.css";
 import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"]});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "HackJKLU v4.0",
   description: "HackJKLU v4.0 is a high-energy offline hackathon happening from March 7-9, 2025, at JK Lakshmipat University. Compete for cash prizes worth up to Rs. 2,00,000!",
   keywords: [
-    "Hackathon", "JK Lakshmipat University", "HackJKLU", "Coding", "Tech", 
+    "Hackathon", "JK Lakshmipat University", "HackJKLU", "Coding", "Tech",
     "Competition", "Cash Prizes", "Devfolio", "Web Development", "Hackathon",
     "Cyber Security", "AI/ML", "IoT", "Game Development", "AR/VR"
   ],
@@ -23,6 +23,9 @@ export const metadata: Metadata = {
     title: "HackJKLU v4.0",
     description: "HackJKLU v4.0 is a high-energy, offline hackathon with exciting prizes and opportunities for college students, school students, and tech enthusiasts!",
     card: "summary_large_image",
+  },
+  other: {
+    "google-site-verification": "8n02rwqYXn26PtramspGciQKyueVuaY-IvEt05wSnMw",
   },
 };
 

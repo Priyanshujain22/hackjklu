@@ -6,8 +6,9 @@ import Sponsors from '@/components/Sponsors/Sponsors';
 import Itenary from '@/components/Itenary/Itenary';
 import GalleryHome from '@/components/Gallery/GalleryHome';
 import WhoShouldApply from '@/components/WhoShouldApply/WhoShouldApply';
-// import Speakers from '@/components/Speakers/Speakers';
-import People from '@/components/PeopleSections/PeopleSections';
+import Speakers from '@/components/Speakers/Speakers';
+import Judges from '@/components/Speakers/Judges';
+// import People from '@/components/PeopleSections/PeopleSections';
 import FAQ from '@/components/FAQ/FAQ';
 
 export default function Home() {
@@ -20,8 +21,9 @@ export default function Home() {
       <Sponsors />
       <WhoShouldApply />
       <Itenary />
-      {/* <Speakers /> */}
-      <People />
+      <Speakers />
+      <Judges />
+      {/* <People /> */}
       <GalleryHome />
       <FAQ />
     </>

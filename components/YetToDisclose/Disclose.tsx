@@ -48,7 +48,7 @@ const RedirectingCard = ({ title, link }: RedirectCardsProps) => {
 
 const YetToBeDisclosed: React.FC = () => {
   return (
-    <div className=" flex items-center justify-center px-4 sm:px-8">
+    <div className="mb-10 flex items-center justify-center px-4 sm:px-8">
       <div
         className="w-full max-w-[900px] mx-auto border-2 sm:border-4 border-dashed rounded-lg p-4 sm:p-6 lg:p-10 neon-border"
         style={{

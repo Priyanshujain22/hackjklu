@@ -144,7 +144,7 @@ import YetToBeDisclosed from "../../components/YetToDisclose/Disclose";
 
 const Itenary = () => {
   return (
-    <section id="itinerary" className='pt-10 relative'>
+    <section id="itinerary" className='py:5 sm:pt-10 relative'>
           <h2 className="text-center my-10">
             <Header text="Itinerary" />
           </h2>

@@ -144,7 +144,7 @@ const Prize = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="pt-10 relative bg-black/50" id="prizes">
+    <section ref={sectionRef} className="py-5 sm:pt-10 relative bg-black/50" id="prizes">
       <h2 className="text-center my-10">
         <Header text="Prizes" />
       </h2>

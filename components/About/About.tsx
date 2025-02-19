@@ -4,7 +4,7 @@ import AboutStrip from "@/components/AboutStrip/AboutStrip";
 
 const About = () => {
   return (
-    <section id="about" className="relative bg-black/50">
+    <section id="about" className="pb-5 relative bg-black/50">
       <AboutStrip />
       <h2 className="text-center my-5 sm:my-10">
         <Header text="About Us" />

@@ -1,108 +1,88 @@
 "use client";
 
-// import Image from "next/image";
-// import data from "../../data/speakers.json";
-import Carousel from "../Carousel/Carousel";
+import { useEffect, useState } from "react";
 import Header from "../Header/Header";
+import HeaderSmall from "../HeaderSmall/HeaderSmall";
+
+const igShortcode = "DGQTeRSS7br"; // Replace with dynamic shortcode if needed
 
 const Speakers: React.FC = () => {
+  const [bgImage, setBgImage] = useState("/screenBlur.webp"); // Initial blurred background
+  const [isInstagramLoaded, setIsInstagramLoaded] = useState(false);
+
+  useEffect(() => {
+    // Preload the high-quality image
+    const img = new Image();
+    img.src = "/screen.webp";
+    img.onload = () => setBgImage("/screen.webp"); // Replace when loaded
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!isInstagramLoaded && window.scrollY > 300) { // Load only when scrolled
+        setIsInstagramLoaded(true);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isInstagramLoaded]);
+
+  useEffect(() => {
+    if (isInstagramLoaded) {
+      const script = document.createElement("script");
+      script.async = true;
+      script.src = "https://www.instagram.com/embed.js";
+      document.body.appendChild(script);
+    }
+  }, [isInstagramLoaded]);
+
   return (
-    // <section className="pt-5 sm:pt-10 relative" id="speakers">
-    <section className="mx-5 pt-10 relative bg-black/50" id="speakers">
-      <h2 className="text-center my-5 sm:my-10">
-        <Header text="Speakers & Judges" />
+    <section
+      className="px-5 :pt-10 relative bg-black/50"
+      id="speakers"
+      style={{
+        backgroundImage: `url(${bgImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "left",
+        transition: "background-image 0.5s ease-in-out",
+      }}
+    >
+      {/* Accessibility: Use an img tag with alt text for SEO */}
+      <img
+        src="/screen.webp"
+        srcSet="/screenBlur.webp 480w, /screen.webp 1080w"
+        alt="Event background"
+        className="hidden" // Keep hidden for SEO purposes
+        fetchPriority="high"
+      />
+
+      <h2 className="text-center my-5 sm:my-10 relative z-10">
+        <Header text="Speaker" />
       </h2>
 
-      <Carousel images={[{ src: "/reveal.webp" }]} />
-
-      {/* <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-8 px-5 md:px-8">
-        {data.map(({ name, linkedin, photo, role }) => (
-          <div
-            key={name}
-            className="flex flex-col items-center text-center justify-center p-2 rounded-lg shadow-md transform transition-all duration-500 hover:scale-105 hover:shadow-lg neon-card fade-in pulse"
+      <div className="flex justify-center relative z-10">
+        {isInstagramLoaded ? (
+          <blockquote
+            className="instagram-media"
+            data-instgrm-permalink={`https://www.instagram.com/p/${igShortcode}/?utm_source=ig_embed&amp;utm_campaign=loading`}
+            data-instgrm-version="12"
             style={{
-              background: "transparent",
-              border: "2px solid rgba(61, 214, 31, 0.8)",
-              boxShadow: "0 0 15px rgba(0,0,0), 0 0 30px rgba(0,0,0,0)",
+              background: "#000",
+              border: "0",
+              borderRadius: "3px",
+              boxShadow: "0 0 5px rgba(255, 255, 255, 0.2)",
+              margin: "1px",
+              maxWidth: "540px",
+              minWidth: "326px",
+              padding: "0",
+              width: "99.375%",
+              overflow: "hidden",
             }}
-          >
-            <a
-              href={linkedin || "#"}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={linkedin ? `Visit ${name}'s LinkedIn profile` : `LinkedIn unavailable`}
-            >
-              <div
-                className="relative w-32 h-32 overflow-hidden rounded-full neon-border"
-                style={{
-                  border: "3px solid rgba(0,0,0)",
-                  boxShadow: "0 0 10px rgba(0,0,0), 0 0 20px rgba(0,0,0)",
-                  margin: "0.5rem",
-                }}
-              >
-                <Image
-                  src={photo}
-                  alt={name}
-                  width={160}
-                  height={160}
-                  className="rounded-full object-cover"
-                  priority
-                />
-              </div>
-            </a>
-            <div className="flex flex-col mt-4">
-              <p className="font-bold text-xl sm:text-2xl mb-2 neon-text text-white">
-                {name}
-              </p>
-              <p className="text-sm sm:text-base lg:text-lg text-[#f0edeb]">
-                {role}
-              </p>
-            </div>
-          </div>
-        ))}
+          ></blockquote>
+        ) : (
+          <HeaderSmall text="Loading Instagram Reel..." />
+        )}
       </div>
-      <style jsx global>{`
-        @keyframes flicker {
-          0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
-            opacity: 0.99;
-            filter: drop-shadow(0 0 1px #10dc3c) drop-shadow(0 0 3px #10dc3c) drop-shadow(0 0 10px #10dc3c);
-          }
-          21%, 21.999%, 63%, 63.999%, 65%, 69.999% {
-            opacity: 0.4;
-            filter: none;
-          }
-        }
-
-        @keyframes glitch {
-          0% {
-            transform: translate(0);
-          }
-          20% {
-            transform: translate(-2px, 2px);
-          }
-          40% {
-            transform: translate(-2px, -2px);
-          }
-          60% {
-            transform: translate(2px, 2px);
-          }
-          80% {
-            transform: translate(2px, -2px);
-          }
-          100% {
-            transform: translate(0);
-          }
-        }
-
-        .neon-text {
-          animation: flicker 3s linear infinite;
-        }
-
-        .glitch {
-          animation: glitch 0.3s linear infinite;
-          animation-play-state: running;
-        }
-      `}</style> */}
     </section>
   );
 };

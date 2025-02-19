@@ -123,8 +123,7 @@ const SocialsBlock = (): JSX.Element => (
 const AboutBlock = (): JSX.Element => (
   <Block className="col-span-12 text-3xl leading-snug">
     <p>
-      WS Cube Tech is a leading provider of IT training and services, empowering individuals and businesses
-      with cutting-edge skills and solutions.
+    WsCube is a Hybrid Upskilling Edtech, develops and disseminates Tech-powered Career Acceleration Programs and Job Oriented Professional Courses curated for Aspirants of Bharat, readying them for Global workforce opportunities.
     </p>
   </Block>
 );
@@ -132,7 +131,7 @@ const AboutBlock = (): JSX.Element => (
 const OfferingBlock = (): JSX.Element => (
   <Block className="col-span-12 text-3xl leading-snug">
     <p>
-      WS Cube Tech is providing us.......
+      WS Cube Tech is providing us with knowledge about HTML, CSS, JS, React, git and Github as part of pre-hackathon bootcamp.
     </p>
   </Block>
 );

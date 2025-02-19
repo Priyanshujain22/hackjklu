@@ -10,7 +10,7 @@ const images = Array.from({ length: 18 }, (_, i) => ({
 const GalleryHome = () => {
   return (
     <section className="pt-10">
-      <h2 className="text-center my-10 relative">
+      <h2 className="text-center my-10 relative bg-black/50">
         <Header text="Past Photos" />
       </h2>
       <div className="py-10">
