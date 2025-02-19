@@ -19,7 +19,7 @@ const Speakers: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!isInstagramLoaded && window.scrollY > 300) { // Load only when scrolled
+      if (!isInstagramLoaded) {
         setIsInstagramLoaded(true);
       }
     };
@@ -72,16 +72,25 @@ const Speakers: React.FC = () => {
               borderRadius: "3px",
               boxShadow: "0 0 5px rgba(255, 255, 255, 0.2)",
               margin: "1px",
-              maxWidth: "540px",
-              minWidth: "326px",
+              maxWidth: "400px",
+              minWidth: "300px",
               padding: "0",
-              width: "99.375%",
+              width: "90%",
               overflow: "hidden",
             }}
           ></blockquote>
         ) : (
           <HeaderSmall text="Loading Instagram Reel..." />
         )}
+        {/* <div className=" ml-5 flex flex-col text-white text-5xl font-bold tracking-widest">
+          {"ANKUR WARIKOO".split("").map((word, index) => (
+            <span key={index} className="leading-none">
+              {word.split("").map((letter, i) => (
+                <div key={i}>{letter}</div>
+              ))}
+            </span>
+          ))}
+        </div> */}
       </div>
     </section>
   );
