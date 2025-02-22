@@ -106,7 +106,7 @@ const Footer: React.FC = () => {
 
           {/* Made By */}
           <p className="text-white text-sm md:text-base font-normal">
-            Made with ❤️ by Preet Taparia
+            Made with ❤️ by Preet Taparia and Team
           </p>
         </div>
       </div>
