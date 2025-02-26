@@ -19,29 +19,30 @@ const SponsorCard: React.FC<SponsorCardProps> = ({
   site,
 }) => {
   const defaultBgColor = "#262626";
-  // const defaultTextColor = "#BBBBBB";
+  const defaultTextColor = "#BBBBBB";
+  
   const sponsorColor: {
     [key in SponsorCardProps["category"]]: {
       bgColor: string;
       textColor: string;
     };
   } = {
-    "Gold Sponsor": {
+    "Gold Partner": {
       bgColor: "#4E3E1D",
       textColor: "#FFDC96",
     },
-    "Silver Sponsor": {
+    "Silver Partner": {
       bgColor: "#3A3A3A",
       textColor: "#BBBBBB",
     },
-    "Bronze Sponsor": {
+    "Bronze Partner": {
       bgColor: "#463026",
       textColor: "#E49977",
     },
   };
 
   const bgColor = sponsorColor[category]?.bgColor ?? defaultBgColor;
-  // const textColor = sponsorColor[category]?.textColor ?? defaultTextColor;
+  const textColor = sponsorColor[category]?.textColor ?? defaultTextColor;
 
   return (
     <motion.div
@@ -74,12 +75,12 @@ const SponsorCard: React.FC<SponsorCardProps> = ({
           >
             <div className="flex flex-col w-full text-center">
               <p className="sm:text-[28px] text-xl font-white">{sponsor}</p>
-              {/* <p
+              <p
                 className="sm:text-[18px] text-xl leading-9 font-bold"
                 style={{ color: textColor }}
               >
                 {category}
-              </p> */}
+              </p>
             </div>
 
           </div>

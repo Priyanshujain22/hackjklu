@@ -2,15 +2,15 @@ import React from 'react';
 import Image, { StaticImageData } from "next/image";
 import SponsorCard from "@/components/SponsorCard";
 
-// Import sponsor data for each category
-// import sponsorsGold from "@/data/sponsorsGold.json";
-import sponsorsSilver from "@/data/sponsorsSilver.json";
-// import sponsorsBronze from "@/data/sponsorsBronze.json";
+import sponsorsData from "@/data/sponsors.json";
 
+import wscubeTech from "@/public/sponsors/WsCubeTech.webp";
+import ention from "@/public/sponsors/ention.webp";
+
+import gfg from "@/public/sponsors/geeksforgeeks.webp";
 import devfolio from "@/public/sponsors/devfolio.webp";
 import ethindia from "@/public/sponsors/ethindia.webp";
-import polygon from "@/public/sponsors/polygon.webp";
-import wscubeTech from "@/public/sponsors/WsCubeTech.webp";
+import devarmy from "@/public/sponsors/devarmy.webp";
 
 import Header from '../Header/Header';
 import HeaderSmall from '../HeaderSmall/HeaderSmall';
@@ -18,55 +18,44 @@ import HeaderSmall from '../HeaderSmall/HeaderSmall';
 const imageMap: { [key: string]: StaticImageData } = {
   "Devfolio": devfolio,
   "EthIndia": ethindia,
-  "Polygon": polygon,
+  "Geeks For Geeks": gfg,
+  "Devarmy": devarmy,
 };
 
-interface Sponsor {
-  sponsor: string;
-  site: string;
-  category: string;
-}
+const mappedSponsors = sponsorsData.map((sponsor, index) => ({
+  ...sponsor,
+  sponsorimgsrc: imageMap[sponsor.sponsor],
+  index,
+}));
 
-const mapSponsors = (sponsors: Sponsor[]) => {
-  return sponsors.map((sponsor, index) => ({
-    ...sponsor,
-    sponsorimgsrc: imageMap[sponsor.sponsor],
-    index,
-  }));
-};
-
-
-// Map sponsor data for each category
-// const goldSponsors = mapSponsors(sponsorsGold);
-const silverSponsors = mapSponsors(sponsorsSilver);
-// const bronzeSponsors = mapSponsors(sponsorsBronze);
-
-const WSCubeTechSponsorCard: React.FC = () => {
+const MajorSponsor: React.FC<{
+  name: string;
+  image: StaticImageData;
+  bgColor: string;
+  link: string;
+  description: string;
+  roundedSide: "left" | "right";
+}> = ({ name, image, bgColor, link, description, roundedSide }) => {
   return (
-    <a
-      href="/partners/ws-cube-tech"
-      className="w-full xl:max-w-[95%] flex justify-center md:px-8 lg:px-0"
-    >
-      <div className="flex flex-col md:flex-row">
-        <Image
-          className="w-full md:w-[300px] lg:w-[350px] xl:w-[42%] rounded-t-[20px] 
-              md:rounded-r-none md:rounded-l-[20px]"
-          src={wscubeTech}
-          alt="wscubeTech"
-          style={{ objectFit: "contain" }}
-        />
+    <a href={link} className="w-full xl:max-w-[95%] flex justify-center md:px-8 lg:px-0">
+      <div className={`flex flex-col md:flex-row ${roundedSide === "left" ? "md:flex-row-reverse" : ""} min-h-[350px] md:max-h-[350px] w-full `}>
+        <div className="w-full md:w-4/12">
+          <Image
+            className="w-full h-full object-contain rounded-t-[20px] md:rounded-none"
+            src={image}
+            alt={name}
+          />
+        </div>
         <div
-          className="flex flex-col mt-8 md:mt-0 ml-0 md:ml-10 justify-center items-start bg-[#0834d8] px-4 
-              xl:px-8 py-8 md:p-[40px] gap-2 rounded-b-[20px] md:rounded-l-none 
-              md:rounded-r-[20px]"
+          style={{ backgroundColor: bgColor }}
+          className={`w-full md:w-8/12 flex flex-col justify-center items-start px-4 xl:px-8 py-8 md:p-[40px] gap-2 rounded-b-[20px] md:rounded-l-none md:rounded-r-none ${roundedSide === "right" ? "md:rounded-r-xl" : "md:rounded-l-xl"
+            } h-full`}
         >
-          <div className="w-full flex justify-between items-center">
-            <p className="font-black w-full text-white text-center text-[2rem] xl:text-[4rem]">
-              WS CubeTech
-            </p>
-          </div>
-          <p className="text-supporting-mediumGray font-medium text-[1rem] md:text[1.125rem]">
-            WsCube is a Hybrid Upskilling Edtech, develops and disseminates Tech-powered Career Acceleration Programs and Job Oriented Professional Courses curated for Aspirants of Bharat, readying them for Global workforce opportunities.
+          <p className="font-black w-full text-white text-center text-[2rem] xl:text-[4rem]">
+            {name}
+          </p>
+          <p className="text-white font-medium text-[1rem] md:text-[1.125rem]">
+            {description}
           </p>
         </div>
       </div>
@@ -76,54 +65,51 @@ const WSCubeTechSponsorCard: React.FC = () => {
 
 const Sponsors: React.FC = () => {
   return (
-    <section className="relative pb-5 pt-20" id="partners">
+    <section className="relative pb-20 pt-20" id="partners">
       <h2 className="text-center mb-10">
         <Header text="Partners" />
       </h2>
+
+      {/* Gold Partner */}
+      <div className="p-10 text-center">
+        <HeaderSmall text="Gold Partner" />
+        <div className="w-full flex mt-8 flex-col items-center gap-8 xl:gap-12">
+          <MajorSponsor
+            name="Ention"
+            image={ention}
+            bgColor="#DDC72D"
+            link="http://ention.in/"
+            description="Ention is a leading innovator in digital solutions, empowering businesses with cutting-edge technology and advanced automation tools to optimize operations and drive growth."
+            roundedSide="right"
+          />
+        </div>
+      </div>
 
       {/* Pre Hackathon Sponsors */}
       <div className="p-10 text-center">
         <HeaderSmall text="Pre-Hackathon Partner" />
         <div className="w-full flex mt-8 flex-col items-center gap-8 xl:gap-12">
-          <WSCubeTechSponsorCard />
+          <MajorSponsor
+            name="WS CubeTech"
+            image={wscubeTech}
+            bgColor="#0834d8"
+            link="/partners/ws-cube-tech"
+            description="WsCube is a Hybrid Upskilling Edtech, develops and disseminates Tech-powered Career Acceleration Programs and Job Oriented Professional Courses curated for Aspirants of Bharat, readying them for Global workforce opportunities."
+            roundedSide="left"
+          />
         </div>
       </div>
 
-      {/* Gold Sponsors */}
-      {/* <div className="p-10 text-center">
-        <HeaderSmall text="Gold Sponsors" />
-        <div
-          className="w-full grid grid-cols-1 mt-8 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-[44px] md:px-8 lg:px-10"
-        >
-          {goldSponsors.map((sponsor) => (
-            <SponsorCard key={sponsor.index} {...sponsor} />
-          ))}
-        </div>
-      </div> */}
-
-      {/* Silver Sponsors */}
+      {/* All Sponsors */}
       <div className="p-10 text-center">
-        <HeaderSmall text="Silver Sponsors" />
         <div
           className="w-full grid grid-cols-1 mt-8 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-[44px] md:px-8 lg:px-10"
         >
-          {silverSponsors.map((sponsor) => (
+          {mappedSponsors.map((sponsor) => (
             <SponsorCard key={sponsor.index} {...sponsor} />
           ))}
         </div>
       </div>
-
-      {/* Bronze Sponsors */}
-      {/* <div className="p-10 text-center">
-        <HeaderSmall text="Bronze Sponsors" />
-        <div
-          className="w-full grid grid-cols-1 mt-8 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-[44px] md:px-8 lg:px-10"
-        >
-          {bronzeSponsors.map((sponsor) => (
-            <SponsorCard key={sponsor.index} {...sponsor} />
-          ))}
-        </div>
-      </div> */}
     </section>
   );
 };

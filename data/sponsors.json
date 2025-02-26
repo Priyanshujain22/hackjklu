@@ -1,0 +1,57 @@
+[
+  {
+    "sponsor": "Geeks For Geeks",
+    "category": "Silver Partner",
+    "site": "https://example.com"
+  },
+  {
+    "sponsor": "Devfolio",
+    "category": "Silver Partner",
+    "site": "https://devfolio.co"
+  },
+  {
+    "sponsor": "EthIndia",
+    "category": "Silver Partner",
+    "site": "https://ethindia.co/"
+  },
+  {
+    "sponsor": "Balsamiq",
+    "category": "Bronze Partner",
+    "site": "https://balsamiq.com"
+  },
+  {
+    "sponsor": "Devarmy",
+    "category": "Community Partner",
+    "site": "https://example.com"
+  },
+  {
+    "sponsor": "GDG",
+    "category": "Community Partner",
+    "site": "https://gdg.community.dev/"
+  },
+  {
+    "sponsor": "IIT Delhi",
+    "category": "Community Partner",
+    "site": "https://home.iitd.ac.in/"
+  },
+  {
+    "sponsor": "IIT Kharagpur",
+    "category": "Community Partner",
+    "site": "http://www.iitkgp.ac.in/"
+  },
+  {
+    "sponsor": "IIIT Delhi",
+    "category": "Community Partner",
+    "site": "https://www.iiitd.ac.in/"
+  },
+  {
+    "sponsor": "IIIT Dharbar",
+    "category": "Community Partner",
+    "site": "https://example.com"
+  },
+  {
+    "sponsor": "IIT Patna",
+    "category": "Community Partner",
+    "site": "https://www.iitp.ac.in/"
+  }
+]

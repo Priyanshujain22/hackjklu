@@ -87,10 +87,16 @@ const Hero = () => {
     >
       <div className="relative z-10 flex flex-col items-center">
         <CardContainer className="z-50 p-4">
-          <CardBody className="relative group/card border-white/[0.2] flex flex-col gap-y-10 justify-center items-center w-auto rounded-xl p-6 sm:p-10">
+          <CardBody className="relative group/card border-white/[0.2] flex flex-col gap-y-7 sm:gap-y-10 justify-center items-center w-auto rounded-xl p-6 sm:p-10">
             <CardItem translateZ="50" className={`text-4xl sm:text-6xl text-center font-bold text-white ${press_start_2p.className}`}>
               <span style={{ color: "#1f54fb" }}>Hack</span>
               <span style={{ color: "#0bfb00" }}>JKLU</span> v4.0
+            </CardItem>
+            <CardItem translateZ="50" className={`text-xl sm:text-3xl text-center font-bold text-white flex items-center justify-center gap-1 ${press_start_2p.className}`}>
+              Copowered By ENTION
+              {/* <span className="inline-block">
+                <img src="/sponsors/ention.webp" width={100} className="inline" />
+              </span> */}
             </CardItem>
             <CardItem translateZ="60" className="text-2xl sm:text-3xl text-center font-bold text-white">
               7 - 9 March 2025

@@ -1,44 +1,38 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Header from "../Header/Header";
-import HeaderSmall from "../HeaderSmall/HeaderSmall";
 
-const igShortcode = "DGQTeRSS7br"; // Replace with dynamic shortcode if needed
-
-const Speakers: React.FC = () => {
-  const [bgImage, setBgImage] = useState("/screenBlur.webp"); // Initial blurred background
-  const [isInstagramLoaded, setIsInstagramLoaded] = useState(false);
+const Speakers = () => {
+  const [bgImage, setBgImage] = useState("/screenBlur.webp");
+  const [showReel, setShowReel] = useState(false);
 
   useEffect(() => {
-    // Preload the high-quality image
-    const img = new Image();
+    const img = document.createElement("img");
     img.src = "/screen.webp";
-    img.onload = () => setBgImage("/screen.webp"); // Replace when loaded
+    img.onload = () => setBgImage("/screen.webp");
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (!isInstagramLoaded) {
-        setIsInstagramLoaded(true);
-      }
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = "https://www.instagram.com/embed.js";
+    script.onload = () => {
+      setTimeout(() => {
+        setShowReel(true);
+        if ((window as unknown as { instgrm?: { Embeds: { process: () => void } } }).instgrm) {
+          (window as unknown as { instgrm: { Embeds: { process: () => void } } }).instgrm.Embeds.process();
+        }
+      }, 500);
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [isInstagramLoaded]);
+    document.body.appendChild(script);
+  }, []);
 
-  useEffect(() => {
-    if (isInstagramLoaded) {
-      const script = document.createElement("script");
-      script.async = true;
-      script.src = "https://www.instagram.com/embed.js";
-      document.body.appendChild(script);
-    }
-  }, [isInstagramLoaded]);
 
   return (
     <section
-      className="px-5 :pt-10 relative bg-black/50"
+      className="px-5 md:pt-10 relative bg-black/50 md:pb-10"
       id="speakers"
       style={{
         backgroundImage: `url(${bgImage})`,
@@ -47,50 +41,92 @@ const Speakers: React.FC = () => {
         transition: "background-image 0.5s ease-in-out",
       }}
     >
-      {/* Accessibility: Use an img tag with alt text for SEO */}
-      <img
-        src="/screen.webp"
-        srcSet="/screenBlur.webp 480w, /screen.webp 1080w"
-        alt="Event background"
-        className="hidden" // Keep hidden for SEO purposes
-        fetchPriority="high"
-      />
-
       <h2 className="text-center my-5 sm:my-10 relative z-10">
-        <Header text="Speaker" />
+        <Header text="Speakers" />
       </h2>
 
-      <div className="flex justify-center relative z-10">
-        {isInstagramLoaded ? (
-          <blockquote
-            className="instagram-media"
-            data-instgrm-permalink={`https://www.instagram.com/p/${igShortcode}/?utm_source=ig_embed&amp;utm_campaign=loading`}
-            data-instgrm-version="12"
-            style={{
-              background: "#000",
-              border: "0",
-              borderRadius: "3px",
-              boxShadow: "0 0 5px rgba(255, 255, 255, 0.2)",
-              margin: "1px",
-              maxWidth: "400px",
-              minWidth: "300px",
-              padding: "0",
-              width: "90%",
-              overflow: "hidden",
-            }}
-          ></blockquote>
-        ) : (
-          <HeaderSmall text="Loading Instagram Reel..." />
-        )}
-        {/* <div className=" ml-5 flex flex-col text-white text-5xl font-bold tracking-widest">
-          {"ANKUR WARIKOO".split("").map((word, index) => (
-            <span key={index} className="leading-none">
-              {word.split("").map((letter, i) => (
-                <div key={i}>{letter}</div>
-              ))}
-            </span>
-          ))}
-        </div> */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:h-full auto-rows-[auto,1fr]"> 
+        {/* Instagram Reel Section */}
+        <div className="lg:col-span-5 rounded-lg flex items-center justify-center relative h-[550px] sm:h-[600px] md:h-full">
+          <div className="relative w-full h-full">
+            <Image
+              src="/speakers/ankur-warikoo.webp"
+              alt="Ankur Warikoo"
+              fill
+              className="object-cover object-center"
+              priority
+            />
+            <div className="absolute bottom-0 left-0 w-full bg-black/70 p-4 text-white">
+              <h3 className="text-lg font-bold">Ankur Warikoo</h3>
+              <p>Content Creator</p>
+              <a href="https://www.linkedin.com/in/warikoo/" className="text-blue-400">LinkedIn</a>
+            </div>
+          </div>
+
+          {/* Instagram reel overlay */}
+          <div
+            className={`absolute inset-0 transition-opacity duration-500 z-20 ${
+              showReel ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <blockquote
+              className="instagram-media w-full h-full"
+              data-instgrm-permalink="https://www.instagram.com/p/DGQTeRSS7br/?utm_source=ig_embed&amp;utm_campaign=loading"
+              data-instgrm-version="12"
+            ></blockquote>
+          </div>
+        </div>
+
+        {/* Right side - Speakers */}
+        <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-8 gap-4">
+          {/* Main speaker */}
+          <div className="md:col-span-8 rounded-lg overflow-hidden relative aspect-video">
+            <Image
+              src="/speakers/sandeep-jain.webp"
+              alt="Sandeep Jain"
+              fill
+              className="object-cover object-center"
+              priority
+            />
+            <div className="absolute bottom-0 left-0 w-full bg-black/70 p-4 text-white">
+              <h3 className="text-lg font-bold">Sandeep Jain</h3>
+              <p>Founder & CEO at GeeksforGeeks</p>
+              <a href="https://www.linkedin.com/in/sandeep-jain-" className="text-blue-400">LinkedIn</a>
+            </div>
+          </div>
+
+          {/* Other speakers */}
+          <div className="grid grid-cols-1 md:grid-cols-2 md:col-span-8 gap-4">
+            <div className="rounded-lg overflow-hidden relative aspect-[4/3]">
+              <Image
+                src="/speakers/bhagirath-giri.webp"
+                alt="Bhagirath Giri"
+                fill
+                className="object-cover object-center"
+              />
+              <div className="absolute bottom-0 left-0 w-full bg-black/70 p-4 text-white">
+                <h3 className="text-lg font-bold">Bhagirath Giri</h3>
+                <p>Managing Director, WsCube Career School</p>
+                <a href="https://www.linkedin.com/in/bhagirath-giri/" className="text-blue-400">LinkedIn</a>
+              </div>
+            </div>
+
+            <div className="rounded-lg overflow-hidden relative aspect-[4/3]">
+              <Image
+                src="/speakers/jaskaransingh.webp"
+                alt="Jaskaran Singh"
+                fill
+                className="object-cover object-center"
+              />
+              <div className="absolute bottom-0 left-0 w-full bg-black/70 p-4 text-white">
+                <h3 className="text-lg font-bold">Jaskaran Singh</h3>
+                <p>SDE at Typeface</p>
+                <a href="https://www.linkedin.com/in/jaskaransingh/" className="text-blue-400">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
   );

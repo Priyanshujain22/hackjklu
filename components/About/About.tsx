@@ -14,7 +14,7 @@ const About = () => {
           {/* Text Content */}
           <div className="w-full md:w-2/3 order-2 md:order-1 flex flex-col justify-center h-full min-h-[300px] md:min-h-[350px] space-y-4 lg:space-y-6 leading-relaxed">
             <p className="tracking-wide text-base sm:text-lg lg:text-xl text-justify">
-              We gladly announce the return of HackJKLU, a premier national-level hackathon hosted by the Council of Technical Affairs at JK Lakshmipat University (JKLU), a leading institution in innovation, technology, and interdisciplinary education. This exciting event spans three days, bringing together top-tier talent from across the nation to solve real-world challenges that impact industries, communities, and the environment.
+              We gladly announce the return of HackJKLU, a premier national-level hackathon hosted by the Council of Technical Affairs at JK Lakshmipat University (JKLU), a leading institution in innovation, technology, and interdisciplinary education. This exciting event spans 36 Hours, bringing together top-tier talent from across the nation to solve real-world challenges that impact industries, communities, and the environment.
             </p>
             <p className="tracking-wide text-base sm:text-lg lg:text-xl text-justify">
               This year&apos;s hackathon goes beyond traditional competitions. HackJKLU v4.0 fosters a collaborative ecosystem for interdisciplinary problem-solving and empowers participants to make meaningful contributions to global issues.

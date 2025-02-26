@@ -3,7 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import Header from "../Header/Header";
-import speakersData from "../../data/speakers.json";
 import mentorsData from "../../data/mentors.json";
 import judgesData from "../../data/judges.json";
 
@@ -78,7 +77,6 @@ const People: React.FC<PeopleProps> = ({ title, data, id, className }) => {
 const PeopleSections: React.FC = () => {
   return (
     <>
-      <People title="Speakers" data={speakersData} id="speakers" className="bg-black/50" />
       <People title="Mentors" data={mentorsData} id="mentors" />
       <People title="Judges" data={judgesData} id="judges" className="bg-black/50" />
     </>
