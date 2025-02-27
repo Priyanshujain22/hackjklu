@@ -8,20 +8,34 @@ import sponsorsData from "@/data/sponsors.json";
 import wscubeTech from "@/public/sponsors/WsCubeTech.webp";
 import ention from "@/public/sponsors/ention.webp";
 
+
 import gfg from "@/public/sponsors/geeksforgeeks.webp";
 import devfolio from "@/public/sponsors/devfolio.webp";
 import ethindia from "@/public/sponsors/ethindia.webp";
 import devarmy from "@/public/sponsors/devarmy.webp";
+import balsamiq from "@/public/sponsors/balsamiq.webp";
+import gdg from "@/public/sponsors/gdg.webp";
+import iitDelhi from "@/public/sponsors/iit_delhi.webp";
+import iitKharagpur from "@/public/sponsors/iit_kharagpur.webp";
+import iiitDelhi from "@/public/sponsors/iiit_delhi.webp";
+import iitPatna from "@/public/sponsors/iit_patna.webp";
+
 
 import Header from "../Header/Header";
 import HeaderSmall from "../HeaderSmall/HeaderSmall";
 
 // Map predefined sponsors with imported images
 const imageMap: { [key: string]: StaticImageData } = {
+  "Geeks For Geeks": gfg,
   "Devfolio": devfolio,
   "EthIndia": ethindia,
-  "Geeks For Geeks": gfg,
+  "Balsamiq": balsamiq,
   "Devarmy": devarmy,
+  "GDG": gdg,
+  "IIT Delhi": iitDelhi,
+  "IIT Kharagpur": iitKharagpur,
+  "IIIT Delhi": iiitDelhi,
+  "IIT Patna": iitPatna,
 };
 
 // Map sponsors, handling both imported and JSON image paths
@@ -75,7 +89,7 @@ const Sponsors: React.FC = () => {
             image={ention}
             bgColor="#DDC72D"
             link="http://ention.in/"
-            description="Ention is a leading innovator in digital solutions."
+            description="Ention is a leading innovator in digital solutions, empowering businesses with cutting-edge technology and advanced automation tools to optimize operations and drive growth."
             roundedSide="right"
           />
         </div>
@@ -90,7 +104,7 @@ const Sponsors: React.FC = () => {
             image={wscubeTech}
             bgColor="#0834d8"
             link="/partners/ws-cube-tech"
-            description="WsCube is a Hybrid Upskilling Edtech."
+            description="WsCube is a Hybrid Upskilling Edtech, develops and disseminates Tech-powered Career Acceleration Programs and Job Oriented Professional Courses curated for Aspirants of Bharat, readying them for Global workforce opportunities."
             roundedSide="left"
           />
         </div>

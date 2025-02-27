@@ -7,7 +7,7 @@ interface SponsorCardProps {
   index: number;
   sponsor: string;
   category: string;
-  sponsorimgsrc: StaticImageData;
+  sponsorimgsrc: string | StaticImageData;
   site: string;
 }
 
@@ -67,8 +67,6 @@ const SponsorCard: React.FC<SponsorCardProps> = ({
               style={{ objectFit: "contain", padding: "20px" }}
             />
           </div>
-
-
           <div
             className="flex justify-between items-start p-[22px] rounded-b-[20px]"
             style={{ backgroundColor: bgColor }}
@@ -91,40 +89,3 @@ const SponsorCard: React.FC<SponsorCardProps> = ({
 };
 
 export default SponsorCard;
-
-
-
-
-
-// import { cn } from "@/lib/utils";
-
-
-// const LampContainer = ({
-//   children,
-//   className,
-// }: {
-//   children: React.ReactNode;
-//   className?: string;
-// }) => {
-//   return (
-//     <div
-//       className={cn(
-//         "relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-slate-950 w-full rounded-md z-0",
-//         className
-//       )}
-//     >
-//       <div className="relative flex w-full flex-1 scale-y-125 items-center justify-center isolate z-0">
-//         <div className="absolute top-1/2 h-48 w-full translate-y-12 scale-x-150 bg-slate-950 blur-2xl"></div>
-//         <div className="absolute top-1/2 z-50 h-48 w-full bg-transparent opacity-10 backdrop-blur-md"></div>
-//         <div className="absolute inset-auto z-50 h-36 w-[28rem] -translate-y-1/2 rounded-full bg-cyan-500 opacity-50 blur-3xl"></div>
-//         <div className="absolute inset-auto z-30 h-36 w-64 -translate-y-[6rem] rounded-full bg-cyan-400 blur-2xl"></div>
-//         <div className="absolute inset-auto z-50 h-0.5 w-[30rem] -translate-y-[7rem] bg-cyan-400"></div>
-//         <div className="absolute inset-auto z-40 h-44 w-full -translate-y-[12.5rem] bg-slate-950"></div>
-//       </div>
-
-//       <div className="relative z-50 flex -translate-y-80 flex-col items-center px-5">
-//         {children}
-//       </div>
-//     </div>
-//   );
-// };
