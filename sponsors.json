@@ -1,0 +1,62 @@
+[
+  {
+    "sponsor": "Geeks For Geeks",
+    "category": "Silver Partner",
+    "site": "https://www.geeksforgeeks.org/",
+    "image": "/sponsors/geeksforgeeks.webp"
+  },
+  {
+    "sponsor": "Devfolio",
+    "category": "Silver Partner",
+    "site": "https://devfolio.co",
+    "image": "/sponsors/devfolio.webp"
+  },
+  {
+    "sponsor": "EthIndia",
+    "category": "Silver Partner",
+    "site": "https://ethindia.co/",
+    "image": "/sponsors/ethindia.webp"
+  },
+  {
+    "sponsor": "Balsamiq",
+    "category": "Bronze Partner",
+    "site": "https://balsamiq.com",
+    "image": "/sponsors/balsamiq.webp"
+  },
+  {
+    "sponsor": "Devarmy",
+    "category": "Community Partner",
+    "site": "https://thedevarmy.com/",
+    "image": "/sponsors/devarmy.webp"
+  },
+  {
+    "sponsor": "GDG",
+    "category": "Community Partner",
+    "site": "https://gdg.community.dev/",
+    "image": "/sponsors/gdg.webp"
+  },
+  {
+    "sponsor": "IIT Delhi",
+    "category": "Community Partner",
+    "site": "https://home.iitd.ac.in/",
+    "image": "/sponsors/iit_delhi.webp"
+  },
+  {
+    "sponsor": "IIT Kharagpur",
+    "category": "Community Partner",
+    "site": "http://www.iitkgp.ac.in/",
+    "image": "/sponsors/iit_kharagpur.webp"
+  },
+  {
+    "sponsor": "IIIT Delhi",
+    "category": "Community Partner",
+    "site": "https://www.iiitd.ac.in/",
+    "image": "/sponsors/iiit_delhi.webp"
+  },
+  {
+    "sponsor": "IIT Patna",
+    "category": "Community Partner",
+    "site": "https://www.iitp.ac.in/",
+    "image": "/sponsors/iit_patna.webp"
+  }
+]

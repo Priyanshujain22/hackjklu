@@ -1,0 +1,27 @@
+[
+  {
+    "name": "HOME",
+    "link": "/#"
+  },
+  {
+    "name": "THEMES",
+    "link": "/#themes"
+  },
+  {
+    "name": "PRIZES",
+    "link": "/#prizes"
+  },
+  {
+    "name": "PARTNERS",
+    "link": "/#partners"
+  },
+  {
+    "name": "EVENTS",
+    "link": "/events"
+  },
+  {
+    "name": "TEAM",
+    "link": "/team"
+  }
+  
+]

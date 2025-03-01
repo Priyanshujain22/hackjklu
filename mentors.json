@@ -1,0 +1,60 @@
+[
+    {
+      "role": "SDE-II at Microsoft",
+      "name": "Pranav M",
+      "photo": "/mentors/pranav.webp",
+      "linkedin": "https://www.linkedin.com/in/candidatepstx-95adfsdk23/",
+      "color": "#FF5733",
+      "animation": {
+        "type": "slide-in-left",
+        "duration": "1.5s"
+      }
+
+    },
+    
+    {
+      "role": "Head CSE at IIT Ropar",
+      "name": "Sudarshan Iyengar",
+      "photo": "/mentors/profiyengar.webp",
+      "linkedin": "https://www.linkedin.com/in/sudarshan-iyengar-3560b8145/",
+      "color": "#33FF57",
+      "animation": {
+        "type": "slide-in-right",
+        "duration": "1.5s"
+      }
+    },
+    {
+      "role": "Founder at Hygge",
+      "name": "Sandhita Agarwal",
+      "photo": "/mentors/sandhitaagarwal.webp",
+      "linkedin": "https://www.linkedin.com/in/sandhitaagarwal/",
+      "color": "#3357FF",
+      "animation": {
+        "type": "slide-in-left",
+        "duration": "1.5s"
+      }
+    },
+    {
+      "role": "Founder at Ecovia",
+      "name": "Aman",
+      "photo": "/mentors/aman.webp",
+      "linkedin": "https://ecovia-pro.com/",
+      "color": "#FF33A1",
+      "animation": {
+        "type": "slide-in-right",
+        "duration": "1.5s"
+      }
+    },
+    {
+      "role": "Co-Founder at Humanli AI",
+      "name": "Rishabh Nag",
+      "photo": "/mentors/rishabhnag.webp",
+      "linkedin": "https://www.linkedin.com/in/rishabh-nag-founder03/",
+      "color": "#A133FF",
+      "animation": {
+        "type": "slide-in-left",
+        "duration": "1.5s"
+      }
+    }
+    
+  ]
